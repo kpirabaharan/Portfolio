@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Lobster } from 'next/font/google';
 
 import useMediaQuery from '@/hooks/useMediaQuery';
@@ -17,16 +18,16 @@ const Navbar = () => {
       <Container>
         <div className='hidden lg:flex flex-row items-center justify-between w-full'>
           <div>
-            <h1 style={lobster.style} className='text-3xl'>
+            <a href='/' style={lobster.style} className='text-3xl'>
               K P
-            </h1>
+            </a>
           </div>
           <div className='flex flex-row gap-x-8'>
-            <p>Home</p>
-            <p>About</p>
-            <p>Skills</p>
-            <p>Projects</p>
-            <p>Contact</p>
+            <a href='/'>Home</a>
+            <a href='#about'>About</a>
+            <a href='#skills'>Skills</a>
+            <a>Projects</a>
+            <a>Contact</a>
           </div>
         </div>
       </Container>
