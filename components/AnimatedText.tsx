@@ -2,15 +2,12 @@
 
 import { TypeAnimation } from 'react-type-animation';
 
-interface AnimatedDescriptorProps {
+interface AnimatedTextProps {
   className?: string;
   text: (string | number)[];
 }
 
-export const AnimatedDescriptor = ({
-  className,
-  text,
-}: AnimatedDescriptorProps) => {
+export const AnimatedText = ({ className, text }: AnimatedTextProps) => {
   return (
     <TypeAnimation
       className={className}
