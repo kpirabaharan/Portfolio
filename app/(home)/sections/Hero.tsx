@@ -1,32 +1,29 @@
-import { Bebas_Neue } from 'next/font/google';
-
 import { heroSubHeading } from '@/constants';
 
 import { Container } from '@/components/Container';
 import { AnimatedText } from '@/components/AnimatedText';
-
-const bebasNeue = Bebas_Neue({ weight: '400', subsets: ['latin'] });
+import Location from '@/components/Location';
+import TranslatingName from '@/components/TranslatingName';
 
 const Hero = () => {
   return (
-    <Container
-      className='flex flex-col gap-y-4 justify-center items-center h-screen'
-    >
-      <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold'>
-        Hi, I&apos;m
-        <span
-          style={bebasNeue.style}
-          className='text-teal-600 text-5xl sm:text-6xl md:text-7xl lg:text-8xl'
-        >
-          {' '}
-          Keeshigan Pirabaharan
-        </span>
-      </h1>
-      <AnimatedText
-        className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center'
-        text={heroSubHeading}
-      />
-    </Container>
+    <div className='flex flex-col gap-y-4 justify-center items-center h-full'>
+      <div className='absolute right-8 md:right-16 bottom-16 md:bottom-auto md:top-1/2 md:-translate-y-1/2'>
+        <AnimatedText
+          className='text-3xl font-light text-center'
+          text={heroSubHeading}
+        />
+      </div>
+      <div className='absolute left-0 top-48 md:top-1/2 md:-translate-y-1/2'>
+        <Location />
+      </div>
+      <div
+        className='absolute top-[60%] -translate-y-[50%] md:top-auto md:bottom-0
+        md:translate-y-0 w-full'
+      >
+        <TranslatingName />
+      </div>
+    </div>
   );
 };
 

@@ -16,6 +16,8 @@ module.exports = {
       },
     },
     extend: {
+      fontSize: { '10xl': '10rem', '15xl': '15rem' },
+      rotate: { full: '360deg' },
       backgroundImage: {
         wallpaper: "url('/bg-wallpaper.jpg')",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

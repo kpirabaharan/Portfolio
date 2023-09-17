@@ -13,7 +13,7 @@ export const AnimatedText = ({ className, text }: AnimatedTextProps) => {
       className={className}
       sequence={[...text]}
       wrapper='span'
-      cursor={true}
+      cursor={false}
       repeat={Infinity}
       speed={50}
       deletionSpeed={65}
