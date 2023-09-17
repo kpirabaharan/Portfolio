@@ -1,7 +1,11 @@
 'use client';
 
+// import { Orbitron } from 'next/font/google';
+
 import { useState, useEffect, useRef } from 'react';
 import useDetectScroll from '@smakss/react-scroll-direction';
+
+// const orbitron = Orbitron({ weight: '800', subsets: ['latin'] });
 
 const TranslatingName = () => {
   const [translateValue, setTranslateValue] = useState<number>(0);
@@ -52,6 +56,7 @@ const TranslatingName = () => {
         }}
       >
         <p
+          // style={{ ...orbitron.style, fontSize: textSize }}
           style={{ fontSize: textSize }}
           className='text-15xl overflow-x-hidden text-clip whitespace-nowrap leading-relaxed'
         >
@@ -65,6 +70,7 @@ const TranslatingName = () => {
         }}
       >
         <p
+          // style={{ ...orbitron.style, fontSize: textSize }}
           style={{ fontSize: textSize }}
           className='text-15xl overflow-x-hidden text-clip whitespace-nowrap leading-relaxed'
         >
@@ -80,6 +86,7 @@ const TranslatingName = () => {
         }}
       >
         <p
+          // style={{ ...orbitron.style, fontSize: textSize }}
           style={{ fontSize: textSize }}
           className='overflow-x-hidden text-clip whitespace-nowrap leading-relaxed'
         >

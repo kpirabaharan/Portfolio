@@ -2,6 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+import StandingNavbar from '@/components/navbar/StandingNavbar';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {

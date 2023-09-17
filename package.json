@@ -11,6 +11,7 @@
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.4",
     "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tooltip": "^1.0.6",
     "@react-three/drei": "^9.83.9",
     "@react-three/fiber": "^8.14.1",
     "@smakss/react-scroll-direction": "^3.0.1",

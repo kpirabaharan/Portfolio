@@ -1,15 +1,13 @@
 'use client';
 
 import { useState, useEffect, PropsWithChildren } from 'react';
-import { Menu, X } from 'lucide-react';
+import { X } from 'lucide-react';
 
 import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
@@ -30,7 +28,7 @@ const NavbarSheet = ({ children: Trigger }: NavbarSheetProps) => {
   return (
     <Sheet>
       <SheetTrigger>{Trigger}</SheetTrigger>
-      <SheetContent className='w-full sm:w-[540px]'>
+      <SheetContent className='w-full sm:w-[540px] sm:max-w-full'>
         <SheetClose className='absolute' asChild>
           <Button className='flex lg:hidden right-6 top-6' size={'floating'}>
             <X size={24} />

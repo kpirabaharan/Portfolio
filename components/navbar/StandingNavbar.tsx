@@ -1,30 +1,48 @@
-'use client';
-
-import Link from 'next/link';
-
-import useMediaQuery from '@/hooks/useMediaQuery';
-
 import NavbarSheet from '@/components/navbar/NavbarSheet';
-import CodeBy from '../CodeBy';
-import { Button } from '../ui/button';
-import { Menu } from 'lucide-react';
+import CodeBy from '@/components/CodeBy';
 
-const Navbar = () => {
-  const isLargeScreen = useMediaQuery('(min-width: 1024px)');
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
+import NavLink from './NavLink';
 
+const StandingNavbar = () => {
   return (
     <nav
-      className='flex flex-row gap-x-8 justify-between sm:justify-start 
+      className='flex flex-row gap-x-12 justify-between md:justify-start 
       items-center w-full z-20 h-[80px] px-8'
     >
       <CodeBy />
       <NavbarSheet>
-        <a className='flex sm:hidden hover:'>Menu</a>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              <a className='flex md:hidden hover:'>Menu</a>
+            </TooltipTrigger>
+            <TooltipContent
+              side='left'
+              className='border-none bg-background delay-0 duration-100'
+            >
+              <div className='w-1 h-1 rounded-full bg-white' />
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </NavbarSheet>
-      <a className='ml-auto hidden sm:flex'>About</a>
-      <a className='hidden sm:flex'>Skills</a>
-      <a className='hidden sm:flex'>Projects</a>
-      <a className='hidden sm:flex'>Contact</a>
+      <NavLink className='ml-auto hidden md:flex'>
+        <a>About</a>
+      </NavLink>
+      <NavLink className='hidden md:flex'>
+        <a>Skills</a>
+      </NavLink>
+      <NavLink className='hidden md:flex'>
+        <a>Projects</a>
+      </NavLink>
+      <NavLink className='hidden md:flex'>
+        <a>Contact</a>
+      </NavLink>
     </nav>
   );
 };
@@ -38,4 +56,4 @@ size={'floating'}
 </Button> */
 }
 
-export default Navbar;
+export default StandingNavbar;
