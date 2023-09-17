@@ -1,6 +1,5 @@
 import { heroSubHeading } from '@/constants';
 
-import { Container } from '@/components/Container';
 import { AnimatedText } from '@/components/AnimatedText';
 import Location from '@/components/Location';
 import TranslatingName from '@/components/TranslatingName';
@@ -8,9 +7,9 @@ import TranslatingName from '@/components/TranslatingName';
 const Hero = () => {
   return (
     <div className='flex flex-col gap-y-4 justify-center items-center h-full'>
-      <div className='absolute right-8 md:right-16 bottom-16 md:bottom-auto md:top-1/2 md:-translate-y-1/2'>
+      <div className='absolute right-4 bottom-16 md:bottom-auto md:top-1/2 md:-translate-y-1/2'>
         <AnimatedText
-          className='text-3xl font-light text-center'
+          className='text-3xl md:text-4xl xl:text-5xl font-light text-center'
           text={heroSubHeading}
         />
       </div>

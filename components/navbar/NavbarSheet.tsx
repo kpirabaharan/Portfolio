@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, PropsWithChildren } from 'react';
 import { Menu, X } from 'lucide-react';
 
 import {
@@ -14,7 +14,9 @@ import {
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 
-const NavbarSheet = () => {
+interface NavbarSheetProps extends PropsWithChildren {}
+
+const NavbarSheet = ({ children: Trigger }: NavbarSheetProps) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -27,15 +29,8 @@ const NavbarSheet = () => {
 
   return (
     <Sheet>
-      <SheetTrigger>
-        <Button
-          className='fixed flex lg:hidden right-6 top-6'
-          size={'floating'}
-        >
-          <Menu size={24} />
-        </Button>
-      </SheetTrigger>
-      <SheetContent className='w-[400px] sm:w-[540px]'>
+      <SheetTrigger>{Trigger}</SheetTrigger>
+      <SheetContent className='w-full sm:w-[540px]'>
         <SheetClose className='absolute' asChild>
           <Button className='flex lg:hidden right-6 top-6' size={'floating'}>
             <X size={24} />
