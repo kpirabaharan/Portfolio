@@ -1,47 +1,41 @@
 'use client';
 
-// import { Orbitron } from 'next/font/google';
-
-import { useState, useEffect, useRef, useMemo } from 'react';
-import { useScrollDirection } from 'react-use-scroll-direction';
-
-// const orbitron = Orbitron({ weight: '800', subsets: ['latin'] });
+import { useState, useEffect, useRef } from 'react';
+import useDetectScroll from '@smakss/react-scroll-direction';
 
 const TranslatingName = () => {
   const [translateValue, setTranslateValue] = useState<number>(0);
   const middleDivRef = useRef<HTMLDivElement>(null);
   const mainDivRef = useRef<HTMLDivElement>(null);
-  const { isScrolling, isScrollingUp, isScrollingDown } = useScrollDirection();
-  const [lastScroll, setLastScroll] = useState<'up' | 'down'>('down');
-
+  const scrollDir = useDetectScroll();
+  const [lastScrollDir, setLastScrollDir] = useState<'down' | 'up'>('down');
   const [textSize, setTextSize] = useState('10rem');
 
   useEffect(() => {
-    if (isScrollingDown) setLastScroll('down');
-    else if (isScrollingUp) setLastScroll('up');
-  }, [isScrollingDown, isScrollingUp]);
+    if (scrollDir === 'down') {
+      setLastScrollDir('down');
+    } else if (scrollDir === 'up') {
+      setLastScrollDir('up');
+    }
+  }, [scrollDir]);
 
   useEffect(() => {
-    var increment = 0.1;
-
-    if (isScrollingUp || isScrollingDown) increment = 0.2;
-
-    if (lastScroll == 'down') {
+    if (lastScrollDir === 'down') {
       if (translateValue > 100) {
         setTranslateValue(0);
         return;
       }
-      setTimeout(() => setTranslateValue((old) => old + increment), 10);
+      setTimeout(() => setTranslateValue((old) => old + 0.1), 10);
     }
-    if (lastScroll === 'up') {
+    if (lastScrollDir === 'up') {
       if (translateValue < -100) {
         setTranslateValue(0);
         return;
       }
-      setTimeout(() => setTranslateValue((old) => old - increment), 10);
+      setTimeout(() => setTranslateValue((old) => old - 0.1), 10);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [translateValue, lastScroll]);
+  }, [translateValue]);
 
   useEffect(() => {
     const txtSize = 3 + (mainDivRef.current?.clientWidth ?? 0) * 0.006;

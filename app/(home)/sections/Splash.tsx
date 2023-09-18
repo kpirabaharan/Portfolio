@@ -9,7 +9,7 @@ interface SplashProps {
 const Splash = ({ setIsLoading }: SplashProps) => {
   return (
     <AnimatedText
-      className='text-7xl'
+      className='text-4xl md:text-7xl'
       text={["Keeshigan's Portfolio", 500, () => setIsLoading(false)]}
     />
   );

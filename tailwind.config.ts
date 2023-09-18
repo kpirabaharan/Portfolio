@@ -19,7 +19,7 @@ module.exports = {
       fontSize: { '10xl': '10rem', '15xl': '15rem' },
       rotate: { full: '360deg' },
       backgroundImage: {
-        wallpaper: "url('/bg-wallpaper.jpg')",
+        heroWallpaper: "url('/hero-wallpaper.jpg')",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',

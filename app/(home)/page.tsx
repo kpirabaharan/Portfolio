@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -11,6 +11,7 @@ import Work from './sections/Work';
 import StandingNavbar from '@/components/navbar/StandingNavbar';
 import Splash from './sections/Splash';
 import Education from './sections/Education';
+import { StarsCanvas } from '@/components/StarCanvas';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -40,14 +41,17 @@ const Home = () => {
             transition={{
               duration: 1,
             }}
-            className='h-screen bg-wallpaper bg-no-repeat bg-cover bg-center relative'
+            className='h-screen bg-heroWallpaper bg-no-repeat bg-cover bg-center relative'
           >
             <StandingNavbar />
             <Hero />
           </motion.div>
-          <About />
-          <Work />
-          <Education />
+          <div className='h-full w-full relative'>
+            <About />
+            <Work />
+            <Education />
+            <StarsCanvas />
+          </div>
         </>
       )}
     </div>
