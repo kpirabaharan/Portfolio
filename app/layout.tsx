@@ -2,8 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import StandingNavbar from '@/components/navbar/StandingNavbar';
-import FluidNavButton from '@/components/navbar/FluidNavButton';
+import { StandingNavbar } from '@/components/navbar/StandingNavbar';
+import { FloatingNavButton } from '@/components/navbar/FloatingNavButton';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,7 +17,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang='en'>
       <body className={inter.className}>
         <div className='fixed z-20 top-6 right-6'>
-          <FluidNavButton />
+          <FloatingNavButton />
         </div>
         {children}
       </body>

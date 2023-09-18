@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import useDetectScroll from '@smakss/react-scroll-direction';
 
-const TranslatingName = () => {
+export const TranslatingName = () => {
   const [translateValue, setTranslateValue] = useState<number>(0);
   const middleDivRef = useRef<HTMLDivElement>(null);
   const mainDivRef = useRef<HTMLDivElement>(null);
@@ -56,7 +56,7 @@ const TranslatingName = () => {
           style={{ fontSize: textSize }}
           className='text-15xl overflow-x-hidden text-clip whitespace-nowrap leading-relaxed'
         >
-          Keeshigan Pirabaharan <span>-</span>
+          Keeshigan Pirabaharan <span>&nbsp;</span>
         </p>
       </div>
       <div
@@ -70,7 +70,7 @@ const TranslatingName = () => {
           style={{ fontSize: textSize }}
           className='text-15xl overflow-x-hidden text-clip whitespace-nowrap leading-relaxed'
         >
-          Keeshigan Pirabaharan <span>-&nbsp;</span>
+          Keeshigan Pirabaharan <span>&nbsp;</span>
         </p>
       </div>
       <div
@@ -86,11 +86,9 @@ const TranslatingName = () => {
           style={{ fontSize: textSize }}
           className='overflow-x-hidden text-clip whitespace-nowrap leading-relaxed'
         >
-          Keeshigan Pirabaharan <span>-</span>
+          Keeshigan Pirabaharan <span>&nbsp;</span>
         </p>
       </div>
     </div>
   );
 };
-
-export default TranslatingName;

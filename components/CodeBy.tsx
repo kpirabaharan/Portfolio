@@ -1,10 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-
 import { motion } from 'framer-motion';
 
-const CodeBy = () => {
+export const CodeBy = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const animate = isHovered ? 'open' : 'closed';
@@ -28,7 +27,7 @@ const CodeBy = () => {
         animate={animate}
         variants={{
           open: { width: '180px' },
-          closed: { width: '119px' },
+          closed: { width: '114px' },
         }}
         transition={transition}
         className='overflow-hidden text-clip whitespace-nowrap relative'
@@ -37,16 +36,14 @@ const CodeBy = () => {
           initial='closed'
           animate={animate}
           variants={{
-            open: { x: -70 },
+            open: { x: -66 },
             closed: { x: 0 },
           }}
           transition={transition}
         >
-          &nbsp;Code by Keeshigan Pirabaharan
+          Code by Keeshigan Pirabaharan
         </motion.p>
       </motion.div>
     </div>
   );
 };
-
-export default CodeBy;

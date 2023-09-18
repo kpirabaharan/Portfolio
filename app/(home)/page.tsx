@@ -8,10 +8,9 @@ import Hero from '@/app/(home)/sections/Hero';
 import About from '@/app/(home)/sections/About';
 import Work from './sections/Work';
 
-import StandingNavbar from '@/components/navbar/StandingNavbar';
+import { StandingNavbar } from '@/components/navbar/StandingNavbar';
 import Splash from './sections/Splash';
 import Education from './sections/Education';
-import { StarsCanvas } from '@/components/StarCanvas';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -46,11 +45,10 @@ const Home = () => {
             <StandingNavbar />
             <Hero />
           </motion.div>
-          <div className='h-full w-full relative'>
+          <div className='h-full w-full relative bg-background'>
             <About />
             <Work />
             <Education />
-            <StarsCanvas />
           </div>
         </>
       )}

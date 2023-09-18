@@ -1,5 +1,3 @@
-'use client';
-
 import { TypeAnimation } from 'react-type-animation';
 
 interface AnimatedTextProps {

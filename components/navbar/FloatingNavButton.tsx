@@ -1,14 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Menu } from 'lucide-react';
 
-import NavbarSheet from './NavbarSheet';
+import { NavbarSheet } from '@/components/navbar/NavbarSheet';
 
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
 
-const FluidNavButton = () => {
+export const FloatingNavButton = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -51,5 +51,3 @@ const FluidNavButton = () => {
     </NavbarSheet>
   );
 };
-
-export default FluidNavButton;

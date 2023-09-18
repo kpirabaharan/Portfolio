@@ -1,50 +1,35 @@
-import NavbarSheet from '@/components/navbar/NavbarSheet';
-import CodeBy from '@/components/CodeBy';
+import { CodeBy } from '@/components/CodeBy';
+import { NavbarSheet } from '@/components/navbar/NavbarSheet';
+import { NavLink } from '@/components/navbar/NavLink';
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
-import NavLink from './NavLink';
-
-const StandingNavbar = () => {
+export const StandingNavbar = () => {
   return (
     <nav
       className='flex flex-row gap-x-12 justify-between md:justify-start 
       items-center w-full z-20 h-[80px] px-8'
     >
       <CodeBy />
+
+      {/* Mobile Nav */}
       <NavbarSheet>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger>
-              <a className='flex md:hidden hover:'>Menu</a>
-            </TooltipTrigger>
-            <TooltipContent
-              side='left'
-              className='border-none bg-background delay-0 duration-100'
-            >
-              <div className='w-1 h-1 rounded-full bg-white' />
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+        <NavLink className='ml-auto flex md:hidden cursor-pointer'>
+          <a>Menu</a>
+        </NavLink>
       </NavbarSheet>
-      <NavLink className='ml-auto hidden md:flex'>
+
+      {/* DesktopNav */}
+      <NavLink className='ml-auto hidden md:flex cursor-pointer'>
         <a>About</a>
       </NavLink>
-      <NavLink className='hidden md:flex'>
+      <NavLink className='hidden md:flex cursor-pointer'>
         <a>Skills</a>
       </NavLink>
-      <NavLink className='hidden md:flex'>
+      <NavLink className='hidden md:flex cursor-pointer'>
         <a>Projects</a>
       </NavLink>
-      <NavLink className='hidden md:flex'>
+      <NavLink className='hidden md:flex cursor-pointer'>
         <a>Contact</a>
       </NavLink>
     </nav>
   );
 };
-
-export default StandingNavbar;

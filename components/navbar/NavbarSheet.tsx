@@ -1,6 +1,4 @@
-'use client';
-
-import { useState, useEffect, PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import { X } from 'lucide-react';
 
 import {
@@ -14,17 +12,7 @@ import { Button } from '@/components/ui/button';
 
 interface NavbarSheetProps extends PropsWithChildren {}
 
-const NavbarSheet = ({ children: Trigger }: NavbarSheetProps) => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
-
+export const NavbarSheet = ({ children: Trigger }: NavbarSheetProps) => {
   return (
     <Sheet>
       <SheetTrigger>{Trigger}</SheetTrigger>
@@ -45,5 +33,3 @@ const NavbarSheet = ({ children: Trigger }: NavbarSheetProps) => {
     </Sheet>
   );
 };
-
-export default NavbarSheet;
