@@ -47,13 +47,4 @@ const StandingNavbar = () => {
   );
 };
 
-{
-  /* <Button
-className='fixed flex lg:hidden right-6 top-6'
-size={'floating'}
->
-<Menu size={24} />
-</Button> */
-}
-
 export default StandingNavbar;

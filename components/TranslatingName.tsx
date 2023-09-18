@@ -2,8 +2,8 @@
 
 // import { Orbitron } from 'next/font/google';
 
-import { useState, useEffect, useRef } from 'react';
-import useDetectScroll from '@smakss/react-scroll-direction';
+import { useState, useEffect, useRef, useMemo } from 'react';
+import { useScrollDirection } from 'react-use-scroll-direction';
 
 // const orbitron = Orbitron({ weight: '800', subsets: ['latin'] });
 
@@ -11,35 +11,37 @@ const TranslatingName = () => {
   const [translateValue, setTranslateValue] = useState<number>(0);
   const middleDivRef = useRef<HTMLDivElement>(null);
   const mainDivRef = useRef<HTMLDivElement>(null);
-  const scrollDir = useDetectScroll();
-  const [lastScrollDir, setLastScrollDir] = useState<'down' | 'up'>('down');
+  const { isScrolling, isScrollingUp, isScrollingDown } = useScrollDirection();
+  const [lastScroll, setLastScroll] = useState<'up' | 'down'>('down');
+
   const [textSize, setTextSize] = useState('10rem');
 
   useEffect(() => {
-    if (scrollDir === 'down') {
-      setLastScrollDir('down');
-    } else if (scrollDir === 'up') {
-      setLastScrollDir('up');
-    }
-  }, [scrollDir]);
+    if (isScrollingDown) setLastScroll('down');
+    else if (isScrollingUp) setLastScroll('up');
+  }, [isScrollingDown, isScrollingUp]);
 
   useEffect(() => {
-    if (lastScrollDir === 'down') {
+    var increment = 0.1;
+
+    if (isScrollingUp || isScrollingDown) increment = 0.2;
+
+    if (lastScroll == 'down') {
       if (translateValue > 100) {
         setTranslateValue(0);
         return;
       }
-      setTimeout(() => setTranslateValue((old) => old + 0.1), 10);
+      setTimeout(() => setTranslateValue((old) => old + increment), 10);
     }
-    if (lastScrollDir === 'up') {
+    if (lastScroll === 'up') {
       if (translateValue < -100) {
         setTranslateValue(0);
         return;
       }
-      setTimeout(() => setTranslateValue((old) => old - 0.1), 10);
+      setTimeout(() => setTranslateValue((old) => old - increment), 10);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [translateValue]);
+  }, [translateValue, lastScroll]);
 
   useEffect(() => {
     const txtSize = 3 + (mainDivRef.current?.clientWidth ?? 0) * 0.006;

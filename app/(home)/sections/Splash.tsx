@@ -8,12 +8,10 @@ interface SplashProps {
 
 const Splash = ({ setIsLoading }: SplashProps) => {
   return (
-    <div className='h-screen w-screen flex items-center justify-center'>
-      <AnimatedText
-        className='text-7xl'
-        text={["Keeshigan's Portfolio", 500, () => setIsLoading(false)]}
-      />
-    </div>
+    <AnimatedText
+      className='text-7xl'
+      text={["Keeshigan's Portfolio", 500, () => setIsLoading(false)]}
+    />
   );
 };
 

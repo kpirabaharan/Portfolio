@@ -30,8 +30,8 @@ const NavbarSheet = ({ children: Trigger }: NavbarSheetProps) => {
       <SheetTrigger>{Trigger}</SheetTrigger>
       <SheetContent className='w-full sm:w-[540px] sm:max-w-full'>
         <SheetClose className='absolute' asChild>
-          <Button className='flex lg:hidden right-6 top-6' size={'floating'}>
-            <X size={24} />
+          <Button className='right-6 top-6' size={'floating'}>
+            <X className='h-6 w-6 md:h-8 md:w-8' />
           </Button>
         </SheetClose>
         <SheetHeader className='items-center gap-y-8 h-full justify-center text-3xl'>

@@ -2,28 +2,42 @@
 
 import { useState } from 'react';
 
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import Hero from '@/app/(home)/sections/Hero';
 import About from '@/app/(home)/sections/About';
+import Work from './sections/Work';
 
 import StandingNavbar from '@/components/navbar/StandingNavbar';
 import Splash from './sections/Splash';
+import Education from './sections/Education';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isDoneLoading, setIsDoneLoading] = useState(false);
 
   return (
-    <div className='w-full overflow-x-hidden'>
-      {isLoading ? (
-        <Splash setIsLoading={setIsLoading} />
-      ) : (
+    <div className='w-full overflow-hidden'>
+      <AnimatePresence onExitComplete={() => setIsDoneLoading(true)}>
+        {isLoading && (
+          <motion.div
+            className='h-screen w-screen flex items-center justify-center'
+            initial={{ y: 0 }}
+            exit={{ y: '-50%' }}
+            transition={{
+              duration: 0.5,
+            }}
+          >
+            <Splash setIsLoading={setIsLoading} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {isDoneLoading && (
         <>
           <motion.div
-            initial={{ y: '200%' }}
+            initial={{ y: '150%' }}
             animate={{ y: 0 }}
             transition={{
-              ease: 'easeOut',
               duration: 1,
             }}
             className='h-screen bg-wallpaper bg-no-repeat bg-cover bg-center relative'
@@ -32,6 +46,8 @@ const Home = () => {
             <Hero />
           </motion.div>
           <About />
+          <Work />
+          <Education />
         </>
       )}
     </div>

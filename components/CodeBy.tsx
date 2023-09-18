@@ -27,7 +27,7 @@ const CodeBy = () => {
         initial='closed'
         animate={animate}
         variants={{
-          open: { width: '200px' },
+          open: { width: '180px' },
           closed: { width: '119px' },
         }}
         transition={transition}
