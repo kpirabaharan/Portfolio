@@ -26,7 +26,7 @@ const ExperienceCard = ({
   points,
 }: ExperienceType) => (
   <VerticalTimelineElement
-    contentStyle={{ background: '#0f172a', color: '#fff' }}
+    contentStyle={{ background: 'hsl(217.2 32.6% 17.5%)', color: '#fff' }}
     contentArrowStyle={{ borderRight: '7px solid #232631' }}
     iconStyle={{ background: iconBg }}
     icon={

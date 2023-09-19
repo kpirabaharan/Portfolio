@@ -1,36 +1,15 @@
-'use client';
+import { motion } from 'framer-motion';
 
-import { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import SectionWrapper from '@/hoc/SectionWrapper';
+import { styles } from '@/lib/styles';
+import { textVariant } from '@/lib/transitions';
 
 import { about } from '@/constants';
-import SectionWrapper from '@/hoc/SectionWrapper';
 
 const About = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-  }, [controls, inView]);
-
   return (
-    <motion.div
-      initial='hidden'
-      ref={ref}
-      animate={controls}
-      className='h-screen mx-auto max-w-7xl w-full sm:px-16 px-6 sm:py-16 py-6'
-    >
-      <motion.h2
-        className='text-xl md:text-2xl lg:text-3xl text-teal-600'
-        initial={{ x: '-100%' }}
-        animate={{ x: 0 }}
-      >
-        ABOUT
-      </motion.h2>
+    <motion.div variants={textVariant()}>
+      <h2 className={styles.sectionHead}>ABOUT</h2>
       <motion.p
         className='mt-4 text-secondary-2 text-[17px] max-w-3xl leading-[30px]'
         initial={{ x: '-100%' }}

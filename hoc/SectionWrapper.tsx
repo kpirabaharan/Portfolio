@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 
-const SectionWrapper = (Component: React.FC, id: string) =>
+import { cn } from '@/lib/utils';
+
+const SectionWrapper = (Component: React.FC, id: string, className?: string) =>
   function HOC() {
     return (
       <motion.section
@@ -15,8 +17,11 @@ const SectionWrapper = (Component: React.FC, id: string) =>
         }}
         initial='hidden'
         whileInView='show'
-        viewport={{ once: true, amount: 'all' }}
-        className='mx-auto max-w-7xl w-full sm:px-16 px-6 sm:py-16 py-6'
+        viewport={{ once: true, amount: 0.25 }}
+        className={cn(
+          'mx-auto max-w-7xl w-full sm:px-16 px-6 sm:py-16 py-6',
+          className,
+        )}
       >
         <div id={id} className='absolute -top-[80px] sm:-top-[84px]' />
         <Component />

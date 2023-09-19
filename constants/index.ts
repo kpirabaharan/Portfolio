@@ -1,4 +1,12 @@
-import { cw, opg } from '@/assets';
+import {
+  cw,
+  opg,
+  ecommerceStore,
+  netflixClone,
+  spotifyClone,
+  smartWindows,
+} from '@/assets';
+import { ExperienceType, FeaturedProjectType } from '@/types';
 
 export const heroSubHeading = [
   'Full Stack Developer',
@@ -8,7 +16,7 @@ export const heroSubHeading = [
   'Embedded Systems Engineer',
   1000,
   'Mechatronics/Software Engineer',
-  5000,
+  2000,
 ];
 
 export const about =
@@ -16,7 +24,7 @@ export const about =
 
 export const heroDescription = '';
 
-export const experiences = [
+export const experiences: ExperienceType[] = [
   {
     title: 'Associate Software Developer',
     company_name: 'Curtiss-Wright',
@@ -44,5 +52,32 @@ export const experiences = [
       `Exposure to industrial operations, complex system processes, and practical failure modes`,
       `Worked with a multidisciplinary team of engineers and technicians to support modifications`,
     ],
+  },
+];
+
+export const featuredProjects: FeaturedProjectType[] = [
+  {
+    name: 'E-Commerce Store',
+    image: ecommerceStore,
+    link: '/projects/ecommerce',
+    type: 'Full Stack Project',
+  },
+  {
+    name: 'Netflix Clone',
+    image: netflixClone,
+    link: '/projects/netflix',
+    type: 'Full Stack Project',
+  },
+  {
+    name: 'Spotify Clone',
+    image: spotifyClone,
+    link: '/projects/spotify',
+    type: 'Full Stack Project',
+  },
+  {
+    name: 'Smart Windows App',
+    image: smartWindows,
+    link: '/projects/smart-windows',
+    type: 'Mobile + Embedded Systems Project',
   },
 ];

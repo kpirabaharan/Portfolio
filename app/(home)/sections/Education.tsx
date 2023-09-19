@@ -1,18 +1,16 @@
-import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+
+import SectionWrapper from '@/hoc/SectionWrapper';
+import { styles } from '@/lib/styles';
+import { textVariant } from '@/lib/transitions';
 
 import { western } from '@/assets';
 
 const Education = () => {
   return (
-    <motion.div className='mx-auto max-w-7xl w-full sm:px-16 px-6 sm:py-16 py-6'>
-      <motion.h2
-        className='text-xl md:text-2xl lg:text-3xl text-teal-600'
-        initial={{ x: '-100%' }}
-        animate={{ x: 0 }}
-      >
-        EDUCATION
-      </motion.h2>
+    <motion.div variants={textVariant()}>
+      <h2 className={styles.sectionHead}>EDUCATION</h2>
       <div className='mt-4 flex flex-row bg-slate-900 p-8 rounded-2xl justify-center items-center'>
         <div className='w-[100px] h-[100px] relative'>
           <Image
@@ -40,4 +38,4 @@ const Education = () => {
   );
 };
 
-export default Education;
+export default SectionWrapper(Education, 'education');

@@ -3,5 +3,5 @@ export const styles = {
   paddingY: 'sm:py-16 py-6',
   padding: 'sm:px-16 px-2 sm:py-16 py-10',
 
-  sectionHead: 'text-3xl md:text-5xl lg:text-6xl',
+  sectionHead: 'text-xl md:text-2xl lg:text-3xl text-teal-600',
 };

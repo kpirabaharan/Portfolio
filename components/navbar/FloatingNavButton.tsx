@@ -31,7 +31,6 @@ export const FloatingNavButton = () => {
       <AnimatePresence>
         {scrolled && (
           <motion.div
-            className='fixed top-6 right-6'
             initial={{ scale: 0 }}
             animate={{
               scale: 1,

@@ -1,16 +1,16 @@
 'use client';
 
-import { useRef, useState } from 'react';
-
+import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
+import Splash from '@/app/(home)/sections/Splash';
 import Hero from '@/app/(home)/sections/Hero';
 import About from '@/app/(home)/sections/About';
-import Work from './sections/Work';
+import Work from '@/app/(home)/sections/Work';
+import Education from '@/app/(home)/sections/Education';
+import FeaturedProjects from '@/app/(home)/sections/FeaturedProjects';
 
 import { StandingNavbar } from '@/components/navbar/StandingNavbar';
-import Splash from './sections/Splash';
-import Education from './sections/Education';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,17 +45,16 @@ const Home = () => {
             <StandingNavbar />
             <Hero />
           </motion.div>
-          <div className='h-full w-full relative bg-background'>
+          <div className='h-full w-full bg-background'>
             <About />
             <Work />
             <Education />
+            <FeaturedProjects />
           </div>
         </>
       )}
     </div>
   );
 };
-
-// bg-wallpaper bg-no-repeat bg-cover bg-center
 
 export default Home;

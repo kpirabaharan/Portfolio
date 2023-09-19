@@ -10,15 +10,11 @@
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.4",
+    "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
-    "@radix-ui/react-tooltip": "^1.0.6",
-    "@react-three/drei": "^9.83.9",
+    "@react-three/drei": "^9.84.0",
     "@react-three/fiber": "^8.14.2",
     "@smakss/react-scroll-direction": "^3.0.1",
-    "@types/node": "20.6.2",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "18.2.7",
-    "@types/react-vertical-timeline-component": "^3.3.3",
     "autoprefixer": "10.4.15",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
@@ -27,13 +23,14 @@
     "framer-motion": "^10.16.4",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.279.0",
-    "maath": "^0.8.2",
+    "maath": "^0.9.0",
     "next": "13.4.19",
-    "postcss": "8.4.29",
+    "postcss": "8.4.30",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
     "react-intersection-observer": "^9.5.2",
+    "react-scroll": "^1.8.9",
     "react-type-animation": "^3.1.0",
     "react-vertical-timeline-component": "^3.6.0",
     "tailwind-merge": "^1.14.0",
@@ -41,5 +38,12 @@
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.156.1",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.2",
+    "@types/react": "^18.2.22",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-scroll": "^1.8.7",
+    "@types/react-vertical-timeline-component": "^3.3.3"
   }
 }
