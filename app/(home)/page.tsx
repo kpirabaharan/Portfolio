@@ -45,7 +45,7 @@ const Home = () => {
             <StandingNavbar />
             <Hero />
           </motion.div>
-          <div className='h-full w-full bg-background'>
+          <div className='h-full w-full bg-background overflow-none'>
             <About />
             <Work />
             <Education />
