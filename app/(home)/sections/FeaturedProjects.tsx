@@ -15,7 +15,6 @@ import { featuredProjects } from '@/constants';
 
 const ProjectCard = ({
   name,
-  image,
   link,
   type,
   setHoveredCard,
@@ -55,11 +54,13 @@ const ProjectCard = ({
 
 const HoveredCard = ({
   index,
+  lastIndex,
   hoveredCard,
   lastHoveredCard,
   image,
 }: {
   index: number;
+  lastIndex: number;
   hoveredCard: string;
   lastHoveredCard: string;
   image: StaticImageData;
@@ -72,40 +73,53 @@ const HoveredCard = ({
         left: mousePosition.x,
         top: mousePosition.y,
       }}
-      className={`absolute h-96 w-[28rem] z-20 ${
-        index % 2 === 0 ? 'bg-secondary' : 'bg-primary'
-      } flex items-center 
+      className={`absolute h-96 w-[28rem] z-20 bg-secondary flex items-center 
       justify-center overflow-hidden`}
       initial={{ scale: 0, x: '-50%', y: '-50%' }}
       animate={{ scale: 1, transition: { duration: 0.5 } }}
-      exit={{ scale: 0, transition: { duration: 0.25 } }}
+      exit={{ scale: 0, transition: { duration: 0.2 } }}
     >
-      <motion.div
-        key={hoveredCard}
-        initial={lastHoveredCard !== '' && { y: '-100%' }}
-        animate={
-          lastHoveredCard !== '' && {
-            y: 0,
-            transition: { duration: 0.5 },
+      <AnimatePresence>
+        <motion.div
+          key={hoveredCard}
+          initial={
+            lastHoveredCard !== ''
+              ? lastIndex < index
+                ? { y: '100%' }
+                : { y: '-100%' }
+              : {}
           }
-        }
-        className='w-full h-full flex justify-center items-center'
-      >
-        <div key={hoveredCard} className='w-[90%] h-[70%] relative'>
-          <Image
-            src={image.src}
-            alt={hoveredCard}
-            fill
-            className='object-cover object-center rounded-lg'
-          />
-          <div
-            className='fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+          animate={
+            lastHoveredCard !== '' && {
+              y: 0,
+              transition: { duration: 2, delay: 1 },
+            }
+          }
+          exit={
+            lastHoveredCard !== ''
+              ? lastIndex < index
+                ? { y: '100%', transition: { duration: 2, delay: 1 } }
+                : { y: '-100%', transition: { duration: 2, delay: 1 } }
+              : {}
+          }
+          className='absolute w-full h-full flex justify-center items-center'
+        >
+          <div key={hoveredCard} className='w-[90%] h-[70%] relative'>
+            <Image
+              src={image.src}
+              alt={hoveredCard}
+              fill
+              className='object-cover object-center rounded-lg'
+            />
+            <div
+              className='fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
             bg-muted-foreground h-24 w-24 rounded-full flex items-center justify-center'
-          >
-            View
+            >
+              View
+            </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </AnimatePresence>
     </motion.div>
   );
 };
@@ -137,6 +151,9 @@ const FeaturedProjects = () => {
           <HoveredCard
             index={featuredProjects.findIndex(
               (project) => project.name === hoveredCard,
+            )}
+            lastIndex={featuredProjects.findIndex(
+              (project) => project.name === lastHoveredCard,
             )}
             hoveredCard={hoveredCard}
             lastHoveredCard={lastHoveredCard}
