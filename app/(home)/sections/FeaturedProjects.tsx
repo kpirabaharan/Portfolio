@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
-import { AnimatePresence, motion } from 'framer-motion';
+import {
+  AnimatePresence,
+  TargetAndTransition,
+  VariantLabels,
+  motion,
+} from 'framer-motion';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
 import { useMousePosition } from '@/hooks/useMousePosition';
@@ -17,13 +22,13 @@ const ProjectCard = ({
   name,
   link,
   type,
-  setHoveredCard,
-  hoveredCard,
-  setLastHoveredCard,
+  currentIndex,
+  setCurrentIndex,
+  setLastIndex,
 }: FeaturedProjectType & {
-  setHoveredCard: (id: string) => void;
-  hoveredCard: string;
-  setLastHoveredCard: (id: string) => void;
+  currentIndex: number;
+  setCurrentIndex: (id: number) => void;
+  setLastIndex: (id: number) => void;
 }) => {
   const router = useRouter();
 
@@ -32,12 +37,14 @@ const ProjectCard = ({
       className='py-16 px-8 flex flex-row items-center justify-between 
       cursor-pointer group relative'
       onMouseEnter={() => {
-        setLastHoveredCard(hoveredCard);
-        setHoveredCard(name);
+        setLastIndex(currentIndex);
+        setCurrentIndex(
+          featuredProjects.findIndex((project) => project.name === name),
+        );
       }}
       onMouseLeave={() => {
-        setLastHoveredCard(hoveredCard);
-        setHoveredCard('');
+        setLastIndex(currentIndex);
+        setCurrentIndex(-1);
       }}
       onClick={() => router.push(link)}
     >
@@ -50,17 +57,15 @@ const ProjectCard = ({
 };
 
 const HoveredCard = ({
-  index,
-  lastIndex,
-  hoveredCard,
-  lastHoveredCard,
+  name,
   image,
+  initial,
+  exit,
 }: {
-  index: number;
-  lastIndex: number;
-  hoveredCard: string;
-  lastHoveredCard: string;
+  name: string;
   image: StaticImageData;
+  initial: { y: string | number };
+  exit: { y: string | number };
 }) => {
   const mousePosition = useMousePosition();
 
@@ -78,39 +83,25 @@ const HoveredCard = ({
     >
       <AnimatePresence>
         <motion.div
-          key={hoveredCard}
-          initial={
-            lastHoveredCard !== ''
-              ? lastIndex < index
-                ? { y: '100%' }
-                : { y: '-100%' }
-              : {}
-          }
-          animate={
-            lastHoveredCard !== '' && {
-              y: 0,
-              transition: { duration: 2, delay: 1 },
-            }
-          }
-          exit={
-            lastHoveredCard !== ''
-              ? lastIndex < index
-                ? { y: '100%', transition: { duration: 2, delay: 1 } }
-                : { y: '-100%', transition: { duration: 2, delay: 1 } }
-              : {}
-          }
+          key={name}
+          initial={initial}
+          animate={{
+            y: 0,
+            transition: { duration: 0.5, delay: 0.1 },
+          }}
+          exit={{ ...exit, transition: { duration: 0.5, delay: 0.1 } }}
           className='absolute w-full h-full flex justify-center items-center'
         >
-          <div key={hoveredCard} className='w-[90%] h-[70%] relative'>
+          <div className='w-[90%] h-[70%] relative'>
             <Image
               src={image.src}
-              alt={hoveredCard}
+              alt={name}
               fill
               className='object-cover object-center rounded-lg'
             />
             <div
               className='fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-            bg-muted-foreground h-24 w-24 rounded-full flex items-center justify-center'
+              bg-muted-foreground h-24 w-24 rounded-full flex items-center justify-center'
             >
               View
             </div>
@@ -122,8 +113,11 @@ const HoveredCard = ({
 };
 
 const FeaturedProjects = () => {
-  const [hoveredCard, setHoveredCard] = useState('');
-  const [lastHoveredCard, setLastHoveredCard] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(-1);
+  const [lastIndex, setLastIndex] = useState(-1);
+
+  const up = { y: '100%' };
+  const down = { y: '-100%' };
 
   return (
     <motion.div variants={textVariant()}>
@@ -134,36 +128,25 @@ const FeaturedProjects = () => {
           <>
             <ProjectCard
               key={ind}
+              currentIndex={currentIndex}
+              setCurrentIndex={setCurrentIndex}
+              setLastIndex={setLastIndex}
               {...project}
-              setHoveredCard={setHoveredCard}
-              hoveredCard={hoveredCard}
-              setLastHoveredCard={setLastHoveredCard}
             />
             <Separator />
           </>
         ))}
       </ul>
-      <AnimatePresence>
-        {hoveredCard !== '' && (
-          <HoveredCard
-            index={featuredProjects.findIndex(
-              (project) => project.name === hoveredCard,
-            )}
-            lastIndex={featuredProjects.findIndex(
-              (project) => project.name === lastHoveredCard,
-            )}
-            hoveredCard={hoveredCard}
-            lastHoveredCard={lastHoveredCard}
-            image={
-              (
-                featuredProjects.find(
-                  (project) => project.name === hoveredCard,
-                ) as FeaturedProjectType
-              ).image
-            }
-          />
-        )}
-      </AnimatePresence>
+      {/* <AnimatePresence> */}
+      {currentIndex !== -1 && (
+        <HoveredCard
+          // key={currentIndex}
+          initial={lastIndex < currentIndex ? up : down}
+          exit={lastIndex < currentIndex ? down : up}
+          {...featuredProjects[currentIndex]}
+        />
+      )}
+      {/* </AnimatePresence> */}
     </motion.div>
   );
 };
