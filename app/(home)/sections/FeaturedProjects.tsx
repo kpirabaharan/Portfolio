@@ -31,23 +31,20 @@ const ProjectCard = ({
     <motion.div
       className='py-16 px-8 flex flex-row items-center justify-between 
       cursor-pointer group relative'
+      onMouseEnter={() => {
+        setLastHoveredCard(hoveredCard);
+        setHoveredCard(name);
+      }}
+      onMouseLeave={() => {
+        setLastHoveredCard(hoveredCard);
+        setHoveredCard('');
+      }}
+      onClick={() => router.push(link)}
     >
       <h3 className='text-3xl lg:text-4xl xl:text-6xl'>{name}</h3>
       <p className='text-lg xl:text-xl font-light text-muted-foreground'>
         {type}
       </p>
-      <div
-        className='absolute left-0 top-0 w-full h-full z-30'
-        onMouseEnter={() => {
-          setLastHoveredCard(hoveredCard);
-          setHoveredCard(name);
-        }}
-        onMouseLeave={() => {
-          setLastHoveredCard(hoveredCard);
-          setHoveredCard('');
-        }}
-        onClick={() => router.push(link)}
-      />
     </motion.div>
   );
 };
@@ -74,7 +71,7 @@ const HoveredCard = ({
         top: mousePosition.y,
       }}
       className={`absolute h-96 w-[28rem] z-20 bg-secondary flex items-center 
-      justify-center overflow-hidden`}
+      justify-center overflow-hidden pointer-events-none`}
       initial={{ scale: 0, x: '-50%', y: '-50%' }}
       animate={{ scale: 1, transition: { duration: 0.5 } }}
       exit={{ scale: 0, transition: { duration: 0.2 } }}
