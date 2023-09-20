@@ -44,12 +44,12 @@ const Home = () => {
               duration: 1,
             }}
             onAnimationComplete={() => setIsCanvas(true)}
-            className='h-screen bg-heroWallpaper bg-no-repeat bg-cover bg-center relative'
+            className='h-screen bg-heroWallpaper bg-no-repeat bg-cover bg-center'
           >
             <StandingNavbar />
             <Hero />
           </motion.div>
-          <div className='h-full w-full bg-background overflow-none'>
+          <div className='h-full w-full overflow-none z-10'>
             <About />
             <Work />
             <Education />

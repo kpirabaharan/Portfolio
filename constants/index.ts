@@ -63,15 +63,15 @@ export const featuredProjects: FeaturedProjectType[] = [
     type: 'Full Stack Project',
   },
   {
-    name: 'Netflix Clone',
-    image: netflixClone,
-    link: '/projects/netflix',
-    type: 'Full Stack Project',
-  },
-  {
     name: 'Spotify Clone',
     image: spotifyClone,
     link: '/projects/spotify',
+    type: 'Full Stack Project',
+  },
+  {
+    name: 'Netflix Clone',
+    image: netflixClone,
+    link: '/projects/netflix',
     type: 'Full Stack Project',
   },
   {

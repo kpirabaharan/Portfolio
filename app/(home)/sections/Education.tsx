@@ -11,7 +11,10 @@ const Education = () => {
   return (
     <motion.div variants={textVariant()}>
       <h2 className={styles.sectionHead}>EDUCATION</h2>
-      <div className='mt-4 flex flex-row bg-slate-900 p-8 rounded-2xl justify-center items-center'>
+      <div
+        className='mt-4 flex flex-row bg-slate-900 p-8 rounded-2xl 
+        justify-center items-center'
+      >
         <div className='w-[100px] h-[100px] relative'>
           <Image
             className='w-full h-full object-contain'

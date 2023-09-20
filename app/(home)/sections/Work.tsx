@@ -1,20 +1,17 @@
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
-import Image from 'next/image';
-
-import { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import SectionWrapper from '@/hoc/SectionWrapper';
+import { ExperienceType } from '@/types';
 
 import { experiences } from '@/constants';
-
-import SectionWrapper from '@/hoc/SectionWrapper';
-
-import { ExperienceType } from '@/types';
+import { textVariant } from '@/lib/transitions';
+import { styles } from '@/lib/styles';
 
 const ExperienceCard = ({
   title,
@@ -27,7 +24,7 @@ const ExperienceCard = ({
 }: ExperienceType) => (
   <VerticalTimelineElement
     contentStyle={{ background: 'hsl(217.2 32.6% 17.5%)', color: '#fff' }}
-    contentArrowStyle={{ borderRight: '7px solid #232631' }}
+    contentArrowStyle={{ borderRight: '7px solid hsl(217.2 32.6% 15.5%)' }}
     iconStyle={{ background: iconBg }}
     icon={
       <Image
@@ -60,24 +57,10 @@ const ExperienceCard = ({
 );
 
 const Work = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-  }, [controls, inView]);
-
   return (
-    <motion.div
-      initial='hidden'
-      ref={ref}
-      animate={controls}
-      className='mx-auto max-w-7xl w-full sm:px-16 px-6 sm:py-16 py-6'
-    >
+    <motion.div variants={textVariant()}>
       <motion.h2
-        className='text-xl md:text-2xl lg:text-3xl text-teal-600'
+        className={styles.sectionHead}
         initial={{ x: '-100%' }}
         animate={{ x: 0 }}
       >
@@ -92,4 +75,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default SectionWrapper(Work, 'work');

@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 const Technologies = () => {
   return (
-    <motion.div className='mx-auto max-w-7xl w-full sm:px-16 px-6 sm:py-16 py-6'>
+    <motion.div className='w-full sm:px-16 px-6 sm:py-16 py-6'>
       <motion.h2
-        className='text-xl md:text-2xl lg:text-3xl text-teal-600'
+        className='text-xl md:text-2xl lg:text-3xl'
         initial={{ x: '-100%' }}
         animate={{ x: 0 }}
       >

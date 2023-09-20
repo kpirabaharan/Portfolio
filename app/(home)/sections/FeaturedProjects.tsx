@@ -38,7 +38,7 @@ const ProjectCard = ({
         {type}
       </p>
       <div
-        className='absolute h-1/2 top-0 left-0 w-full'
+        className='absolute h-1/2 top-0 left-0 w-full hover:scale-105'
         onMouseEnter={() => {
           setLastIndex(currentIndex - 1);
           setCurrentIndex(
@@ -51,7 +51,7 @@ const ProjectCard = ({
         }}
       />
       <div
-        className='absolute h-1/2 bottom-0 left-0 w-full'
+        className='absolute h-1/2 bottom-0 left-0 w-full hover:scale-105'
         onMouseEnter={() => {
           setLastIndex(currentIndex);
           setCurrentIndex(
@@ -72,9 +72,7 @@ const HoveredCard = ({
   image,
   initial,
   exit,
-}: {
-  name: string;
-  image: StaticImageData;
+}: FeaturedProjectType & {
   initial: { y: string | number };
   exit: { y: string | number };
 }) => {
@@ -86,8 +84,8 @@ const HoveredCard = ({
         left: mousePosition.x,
         top: mousePosition.y,
       }}
-      className={`absolute h-96 w-[28rem] z-20 bg-secondary flex items-center 
-      justify-center overflow-hidden pointer-events-none`}
+      className={`absolute h-96 w-[28rem] z-20 flex items-center justify-center 
+      overflow-hidden pointer-events-none bg-slate-900`}
       initial={{ scale: 0, x: '-50%', y: '-50%' }}
       animate={{ scale: 1, transition: { duration: 0.5, delay: 0.1 } }}
       exit={{ scale: 0, transition: { duration: 0.2 } }}
@@ -101,7 +99,7 @@ const HoveredCard = ({
             transition: { duration: 0.5, delay: 0.1 },
           }}
           exit={{ ...exit, transition: { duration: 0.5, delay: 0.1 } }}
-          className='absolute w-full h-full flex justify-center items-center'
+          className={`absolute w-full h-full flex justify-center items-center`}
         >
           <div className='w-[90%] h-[70%] relative'>
             <Image
@@ -160,4 +158,4 @@ const FeaturedProjects = () => {
   );
 };
 
-export default SectionWrapper(FeaturedProjects, 'projects', 'max-w-8xl');
+export default SectionWrapper(FeaturedProjects, 'projects');

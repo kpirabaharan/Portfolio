@@ -43,7 +43,7 @@ export const StarsCanvas = () => {
 
   return (
     gl && (
-      <div className='w-full h-full absolute inset-0'>
+      <div className='w-full h-full absolute inset-0 z-0'>
         <Canvas camera={{ position: [0, 0, 1] }}>
           <Suspense fallback={null}>
             <Stars />
