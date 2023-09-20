@@ -36,22 +36,38 @@ const ProjectCard = ({
     <motion.div
       className='py-16 px-8 flex flex-row items-center justify-between 
       cursor-pointer group relative'
-      onMouseEnter={() => {
-        setLastIndex(currentIndex);
-        setCurrentIndex(
-          featuredProjects.findIndex((project) => project.name === name),
-        );
-      }}
-      onMouseLeave={() => {
-        setLastIndex(currentIndex);
-        setCurrentIndex(-1);
-      }}
       onClick={() => router.push(link)}
     >
       <h3 className='text-3xl lg:text-4xl xl:text-6xl'>{name}</h3>
       <p className='text-lg xl:text-xl font-light text-muted-foreground'>
         {type}
       </p>
+      <div
+        className='absolute h-1/2 top-0 left-0 w-full'
+        onMouseEnter={() => {
+          setLastIndex(currentIndex - 1);
+          setCurrentIndex(
+            featuredProjects.findIndex((project) => project.name === name),
+          );
+        }}
+        onMouseLeave={() => {
+          setLastIndex(currentIndex);
+          setCurrentIndex(-1);
+        }}
+      />
+      <div
+        className='absolute h-1/2 bottom-0 left-0 w-full'
+        onMouseEnter={() => {
+          setLastIndex(currentIndex);
+          setCurrentIndex(
+            featuredProjects.findIndex((project) => project.name === name),
+          );
+        }}
+        onMouseLeave={() => {
+          setLastIndex(currentIndex);
+          setCurrentIndex(-1);
+        }}
+      />
     </motion.div>
   );
 };
@@ -137,16 +153,15 @@ const FeaturedProjects = () => {
           </>
         ))}
       </ul>
-      {/* <AnimatePresence> */}
-      {currentIndex !== -1 && (
-        <HoveredCard
-          // key={currentIndex}
-          initial={lastIndex < currentIndex ? up : down}
-          exit={lastIndex < currentIndex ? down : up}
-          {...featuredProjects[currentIndex]}
-        />
-      )}
-      {/* </AnimatePresence> */}
+      <AnimatePresence>
+        {currentIndex !== -1 && (
+          <HoveredCard
+            initial={lastIndex < currentIndex ? up : down}
+            exit={lastIndex < currentIndex ? up : down}
+            {...featuredProjects[currentIndex]}
+          />
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };
