@@ -136,16 +136,15 @@ const FeaturedProjects = () => {
       <ul className='list-disc flex flex-col mt-8'>
         <Separator />
         {featuredProjects.map((project, ind) => (
-          <>
+          <div key={ind}>
             <ProjectCard
-              key={ind}
               currentIndex={currentIndex}
               setCurrentIndex={setCurrentIndex}
               setLastIndex={setLastIndex}
               {...project}
             />
             <Separator />
-          </>
+          </div>
         ))}
       </ul>
       <AnimatePresence>

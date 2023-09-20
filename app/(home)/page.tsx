@@ -11,14 +11,16 @@ import Education from '@/app/(home)/sections/Education';
 import FeaturedProjects from '@/app/(home)/sections/FeaturedProjects';
 
 import { StandingNavbar } from '@/components/navbar/StandingNavbar';
+import { StarsCanvas } from '@/components/StarCanvas';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [isDoneLoading, setIsDoneLoading] = useState(false);
+  const [isPortfolio, setIsPortfolio] = useState(false);
+  const [isCanvas, setIsCanvas] = useState(false);
 
   return (
     <div className='w-full overflow-hidden'>
-      <AnimatePresence onExitComplete={() => setIsDoneLoading(true)}>
+      <AnimatePresence onExitComplete={() => setIsPortfolio(true)}>
         {isLoading && (
           <motion.div
             className='h-screen w-screen flex items-center justify-center'
@@ -32,14 +34,16 @@ const Home = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      {isDoneLoading && (
-        <>
+      {isPortfolio && (
+        <div className='relative'>
+          {isCanvas && <StarsCanvas />}
           <motion.div
             initial={{ y: '150%' }}
             animate={{ y: 0 }}
             transition={{
               duration: 1,
             }}
+            onAnimationComplete={() => setIsCanvas(true)}
             className='h-screen bg-heroWallpaper bg-no-repeat bg-cover bg-center relative'
           >
             <StandingNavbar />
@@ -51,7 +55,7 @@ const Home = () => {
             <Education />
             <FeaturedProjects />
           </div>
-        </>
+        </div>
       )}
     </div>
   );
