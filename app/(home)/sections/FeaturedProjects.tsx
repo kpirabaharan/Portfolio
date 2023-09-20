@@ -1,12 +1,7 @@
 import { useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
-import {
-  AnimatePresence,
-  TargetAndTransition,
-  VariantLabels,
-  motion,
-} from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
 import { useMousePosition } from '@/hooks/useMousePosition';
@@ -83,7 +78,7 @@ const HoveredCard = ({
   initial: { y: string | number };
   exit: { y: string | number };
 }) => {
-  const mousePosition = useMousePosition();
+  const mousePosition = useMousePosition(100);
 
   return (
     <motion.div
@@ -94,7 +89,7 @@ const HoveredCard = ({
       className={`absolute h-96 w-[28rem] z-20 bg-secondary flex items-center 
       justify-center overflow-hidden pointer-events-none`}
       initial={{ scale: 0, x: '-50%', y: '-50%' }}
-      animate={{ scale: 1, transition: { duration: 0.5 } }}
+      animate={{ scale: 1, transition: { duration: 0.5, delay: 0.1 } }}
       exit={{ scale: 0, transition: { duration: 0.2 } }}
     >
       <AnimatePresence>

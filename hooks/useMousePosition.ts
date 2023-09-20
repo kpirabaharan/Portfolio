@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useMousePosition = () => {
+export const useMousePosition = (debounce: number) => {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
     x: 0,
     y: 0,
@@ -8,12 +8,15 @@ export const useMousePosition = () => {
 
   useEffect(() => {
     const listener = (ev: MouseEvent) => {
-      setMousePosition({ x: ev.pageX, y: ev.pageY });
+      setTimeout(
+        () => setMousePosition({ x: ev.pageX, y: ev.pageY }),
+        debounce,
+      );
     };
 
     window.addEventListener('mousemove', listener);
     return () => window.removeEventListener('mousemove', listener);
-  }, [mousePosition]);
+  }, [mousePosition, debounce]);
 
   return mousePosition;
 };
