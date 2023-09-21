@@ -2,17 +2,19 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
-import { styles } from '@/lib/styles';
 import { textVariant } from '@/lib/transitions';
+import { styles } from '@/lib/styles';
 
 import { western } from '@/assets';
 
 const Education = () => {
   return (
-    <motion.div variants={textVariant()}>
-      <h2 className={styles.sectionHead}>EDUCATION</h2>
+    <div className='flex flex-col gap-y-8'>
+      <motion.h2 variants={textVariant()} className={styles.sectionHead}>
+        EDUCATION
+      </motion.h2>
       <div
-        className='mt-4 flex flex-row bg-slate-900 p-8 rounded-2xl 
+        className='flex flex-row bg-slate-900 p-8 rounded-2xl 
         justify-center items-center'
       >
         <div className='w-[100px] h-[100px] relative'>
@@ -37,7 +39,7 @@ const Education = () => {
           </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

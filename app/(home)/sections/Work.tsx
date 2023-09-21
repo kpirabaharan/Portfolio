@@ -7,11 +7,11 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
+import { styles } from '@/lib/styles';
 import { ExperienceType } from '@/types';
 
 import { experiences } from '@/constants';
 import { textVariant } from '@/lib/transitions';
-import { styles } from '@/lib/styles';
 
 const ExperienceCard = ({
   title,
@@ -23,6 +23,8 @@ const ExperienceCard = ({
   points,
 }: ExperienceType) => (
   <VerticalTimelineElement
+    className='vertical-timeline-element--work'
+    date={date}
     contentStyle={{ background: 'hsl(217.2 32.6% 17.5%)', color: '#fff' }}
     contentArrowStyle={{ borderRight: '7px solid hsl(217.2 32.6% 15.5%)' }}
     iconStyle={{ background: iconBg }}
@@ -35,19 +37,20 @@ const ExperienceCard = ({
       />
     }
   >
-    <h3 className='text-lg text-white font-semibold'>{title}</h3>
-    <h4 className='text-white'>
+    <h3 className='vertical-timeline-element-title font-bold text-lg'>
+      {title}
+    </h3>
+    <h4 className='vertical-timeline-element-subtitle'>
       {company_name}
       <span className='pl-4'>|</span>
       <span className='pl-4'>{location}</span>
     </h4>
 
-    <p className='text-primary'>{date}</p>
     <ul className='mt-5 list-disc ml-3 space-y-2'>
       {points.map((point, index) => (
         <li
           key={`experience-${index}`}
-          className='text-white-100 text-[14px] pl-1 tracking-widers'
+          className='text-muted-foreground text-[14px] pl-1 tracking-widers'
         >
           {point}
         </li>
@@ -58,12 +61,8 @@ const ExperienceCard = ({
 
 const Work = () => {
   return (
-    <motion.div variants={textVariant()}>
-      <motion.h2
-        className={styles.sectionHead}
-        initial={{ x: '-100%' }}
-        animate={{ x: 0 }}
-      >
+    <div className='flex flex-col gap-y-8'>
+      <motion.h2 variants={textVariant()} className={styles.sectionHead}>
         WORK EXPERIENCE
       </motion.h2>
       <VerticalTimeline>
@@ -71,7 +70,7 @@ const Work = () => {
           <ExperienceCard key={index} {...exp} />
         ))}
       </VerticalTimeline>
-    </motion.div>
+    </div>
   );
 };
 

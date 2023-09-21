@@ -129,9 +129,11 @@ const FeaturedProjects = () => {
   const down = { y: '-100%' };
 
   return (
-    <motion.div variants={textVariant()}>
-      <h2 className={styles.sectionHead}>FEATURED PROJECTS</h2>
-      <ul className='list-disc flex flex-col mt-8'>
+    <div className='flex flex-col gap-y-8'>
+      <motion.h2 variants={textVariant()} className={styles.sectionHead}>
+        FEATURED PROJECTS
+      </motion.h2>
+      <ul className='list-disc flex flex-col'>
         <Separator />
         {featuredProjects.map((project, ind) => (
           <div key={ind}>
@@ -154,7 +156,7 @@ const FeaturedProjects = () => {
           />
         )}
       </AnimatePresence>
-    </motion.div>
+    </div>
   );
 };
 

@@ -35,7 +35,7 @@ const Home = () => {
         )}
       </AnimatePresence>
       {isPortfolio && (
-        <div className='relative overflow-hidden'>
+        <div className='relative overflow-hidden w-full'>
           {isCanvas && <StarsCanvas />}
           <motion.div
             initial={{ y: '150%' }}
@@ -49,12 +49,11 @@ const Home = () => {
             <StandingNavbar />
             <Hero />
           </motion.div>
-          <>
-            <About />
-            <Work />
-            <Education />
-            <FeaturedProjects />
-          </>
+
+          <About />
+          <Work />
+          <Education />
+          <FeaturedProjects />
         </div>
       )}
     </div>
