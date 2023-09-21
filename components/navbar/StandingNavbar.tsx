@@ -1,4 +1,4 @@
-import * as Scroll from 'react-scroll';
+import { Link } from 'react-scroll';
 
 import { CodeBy } from '@/components/CodeBy';
 import { NavbarSheet } from '@/components/navbar/NavbarSheet';
@@ -21,16 +21,36 @@ export const StandingNavbar = () => {
 
       {/* DesktopNav */}
       <NavLink className='ml-auto hidden md:flex cursor-pointer'>
-        <a href='#about'>About</a>
+        <Link to='about' spy={true} smooth={true} offset={-50} duration={1000}>
+          About
+        </Link>
       </NavLink>
       <NavLink className='hidden md:flex cursor-pointer'>
-        <a>Skills</a>
+        <Link to='work' spy={true} smooth={true} offset={-50} duration={1000}>
+          Skills
+        </Link>
       </NavLink>
       <NavLink className='hidden md:flex cursor-pointer'>
-        <a>Projects</a>
+        <Link
+          to='projects'
+          spy={true}
+          smooth={true}
+          offset={-50}
+          duration={1000}
+        >
+          Projects
+        </Link>
       </NavLink>
       <NavLink className='hidden md:flex cursor-pointer'>
-        <a>Contact</a>
+        <Link
+          to='contact'
+          spy={true}
+          smooth={true}
+          offset={-50}
+          duration={1000}
+        >
+          Contact
+        </Link>
       </NavLink>
     </nav>
   );
