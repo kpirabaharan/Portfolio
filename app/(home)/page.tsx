@@ -19,7 +19,7 @@ const Home = () => {
   const [isCanvas, setIsCanvas] = useState(false);
 
   return (
-    <div className='w-full overflow-hidden'>
+    <div>
       <AnimatePresence onExitComplete={() => setIsPortfolio(true)}>
         {isLoading && (
           <motion.div
@@ -35,7 +35,7 @@ const Home = () => {
         )}
       </AnimatePresence>
       {isPortfolio && (
-        <div className='relative'>
+        <div className='relative overflow-hidden'>
           {isCanvas && <StarsCanvas />}
           <motion.div
             initial={{ y: '150%' }}
@@ -49,12 +49,12 @@ const Home = () => {
             <StandingNavbar />
             <Hero />
           </motion.div>
-          <div className='h-full w-full overflow-none z-10'>
+          <>
             <About />
             <Work />
             <Education />
             <FeaturedProjects />
-          </div>
+          </>
         </div>
       )}
     </div>
