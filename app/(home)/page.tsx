@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { scroller } from 'react-scroll';
 
 import Splash from '@/app/(home)/sections/Splash';
 import Hero from '@/app/(home)/sections/Hero';
@@ -17,6 +18,26 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isPortfolio, setIsPortfolio] = useState(false);
   const [isCanvas, setIsCanvas] = useState(false);
+
+  const [initialPortfolio, setInitialPortfolio] = useState<{
+    y: number | string;
+  }>({ y: '150%' });
+  const [animatePortfolio, setAnimatePortfolio] = useState<{ y: number }>({
+    y: 0,
+  });
+  const [transitionPortfolio, setTransitionPortfolio] = useState({
+    duration: 0.5,
+  });
+
+  useEffect(() => {
+    if (window.location.hash) {
+      setInitialPortfolio({ y: 0 });
+      setAnimatePortfolio({ y: 0 });
+      setTransitionPortfolio({ duration: 0 });
+    } else {
+      // Fragment doesn't exist
+    }
+  }, []);
 
   return (
     <div>
@@ -38,12 +59,13 @@ const Home = () => {
         <div className='relative overflow-hidden w-full'>
           {isCanvas && <StarsCanvas />}
           <motion.div
-            initial={{ y: '150%' }}
-            animate={{ y: 0 }}
-            transition={{
-              duration: 1,
+            initial={initialPortfolio}
+            animate={animatePortfolio}
+            transition={transitionPortfolio}
+            onAnimationComplete={() => {
+              setIsCanvas(true);
+              scroller.scrollTo('#active', { to: 'active' });
             }}
-            onAnimationComplete={() => setIsCanvas(true)}
             className='h-screen bg-heroWallpaper bg-no-repeat bg-cover bg-center'
           >
             <StandingNavbar />

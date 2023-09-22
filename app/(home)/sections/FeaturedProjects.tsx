@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
 import { useMousePosition } from '@/hooks/useMousePosition';
-import { textVariant } from '@/lib/transitions';
+import { slideIn, textVariant } from '@/lib/transitions';
 import { styles } from '@/lib/styles';
 import { FeaturedProjectType } from '@/types';
 
@@ -14,6 +14,7 @@ import { Separator } from '@/components/ui/separator';
 import { featuredProjects } from '@/constants';
 
 const ProjectCard = ({
+  cardIndex,
   name,
   link,
   type,
@@ -21,6 +22,7 @@ const ProjectCard = ({
   setCurrentIndex,
   setLastIndex,
 }: FeaturedProjectType & {
+  cardIndex: number;
   currentIndex: number;
   setCurrentIndex: (id: number) => void;
   setLastIndex: (id: number) => void;
@@ -29,8 +31,14 @@ const ProjectCard = ({
 
   return (
     <motion.div
+      variants={slideIn(
+        cardIndex % 2 === 0 ? 'right' : 'left',
+        'tween',
+        0.2,
+        0.5,
+      )}
       className='py-16 px-8 flex flex-row items-center justify-between 
-      cursor-pointer group relative'
+    cursor-pointer group relative'
       onClick={() => router.push(link)}
     >
       <h3 className='text-3xl lg:text-4xl xl:text-6xl'>{name}</h3>
@@ -138,6 +146,7 @@ const FeaturedProjects = () => {
         {featuredProjects.map((project, ind) => (
           <div key={ind}>
             <ProjectCard
+              cardIndex={ind}
               currentIndex={currentIndex}
               setCurrentIndex={setCurrentIndex}
               setLastIndex={setLastIndex}

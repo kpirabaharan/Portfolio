@@ -4,6 +4,8 @@ import SectionWrapper from '@/hoc/SectionWrapper';
 import { fadeIn, textVariant } from '@/lib/transitions';
 import { styles } from '@/lib/styles';
 
+import { Button } from '@/components/ui/button';
+
 const About = () => {
   return (
     <div className='flex flex-col gap-y-8'>
@@ -35,6 +37,9 @@ const About = () => {
       >
         I am actively seeking opportunities in software development.
       </motion.p>
+      <div className='flex flex-row justify-end w-full'>
+        <Button onClick={() => {}}>About Me</Button>
+      </div>
     </div>
   );
 };

@@ -14,41 +14,29 @@ export const StandingNavbar = () => {
 
       {/* Mobile Nav */}
       <NavbarSheet>
-        <NavLink className='ml-auto flex md:hidden cursor-pointer'>
+        <NavLink className='ml-auto flex md:hidden cursor-pointer' side='left'>
           <a>Menu</a>
         </NavLink>
       </NavbarSheet>
 
       {/* DesktopNav */}
       <NavLink className='ml-auto hidden md:flex cursor-pointer'>
-        <Link to='about' spy={true} smooth={true} offset={-50} duration={1000}>
+        <Link to='about' smooth={true} duration={1000}>
           About
         </Link>
       </NavLink>
       <NavLink className='hidden md:flex cursor-pointer'>
-        <Link to='work' spy={true} smooth={true} offset={-50} duration={1000}>
+        <Link to='work' smooth={true} duration={1000}>
           Skills
         </Link>
       </NavLink>
       <NavLink className='hidden md:flex cursor-pointer'>
-        <Link
-          to='projects'
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={1000}
-        >
+        <Link to='projects' smooth={true} duration={1000}>
           Projects
         </Link>
       </NavLink>
       <NavLink className='hidden md:flex cursor-pointer'>
-        <Link
-          to='contact'
-          spy={true}
-          smooth={true}
-          offset={-50}
-          duration={1000}
-        >
+        <Link to='contact' smooth={true} duration={1000}>
           Contact
         </Link>
       </NavLink>

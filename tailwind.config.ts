@@ -27,6 +27,9 @@ module.exports = {
       maxWidth: {
         '8xl': '90rem',
       },
+      screens: {
+        'md-height': { raw: '(min-height: 800px)' },
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

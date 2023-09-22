@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { redirect } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 export const CodeBy = () => {
@@ -18,6 +19,7 @@ export const CodeBy = () => {
       className='flex gap-x-1 group cursor-pointer'
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => window.location.assign('/')}
     >
       <p className='font-light group-hover:rotate-full transition duration-700'>
         &copy;{' '}
