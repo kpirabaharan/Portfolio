@@ -5,6 +5,7 @@ import { fadeIn, textVariant } from '@/lib/transitions';
 import { styles } from '@/lib/styles';
 
 import { Button } from '@/components/ui/button';
+import MagneticButton from '@/hoc/MagneticButton';
 
 const About = () => {
   return (
@@ -38,9 +39,11 @@ const About = () => {
         I am actively seeking opportunities in software development.
       </motion.p>
       <div className='flex flex-row justify-end w-full'>
-        <Button onClick={() => {}} size={'floating'} className='p-16'>
-          <p className='text-lg'>About Me</p>
-        </Button>
+        <MagneticButton>
+          <Button>
+            <p className='text-lg'>About Me</p>
+          </Button>
+        </MagneticButton>
       </div>
     </div>
   );

@@ -18,25 +18,23 @@ const FancyButton = () => {
   };
 
   const transition = {
-    duration: 0.25,
-    delay: 0.1,
+    duration: 0.3,
+    delay: 0.2,
   };
 
   return (
     <Button
       size={'floating'}
-      className='overflow-hidden relative'
-      onMouseEnter={() => setIsHovered('animate')}
-      onMouseLeave={() => {
-        setIsHovered('exit');
-        setTimeout(() => setIsHovered('initial'), 500);
-      }}
+      className='overflow-hidden relative group'
+      // onMouseEnter={() => setIsHovered('animate')}
+      // onMouseLeave={() => {
+      //   setIsHovered('exit');
+      //   setTimeout(() => setIsHovered('initial'), 500);
+      // }}
     >
-      <motion.div
-        className='absolute w-full h-full rounded-full bg-slate-500 pointer-events-none z-10'
-        variants={variants}
-        animate={isHovered}
-        transition={transition}
+      <div
+        className='absolute w-full h-full rounded-full bg-slate-500 
+        pointer-events-none z-10 animate-button-in group-hover:animate-button-out'
       />
       <Menu className='h-6 w-6 md:h-8 md:w-8 pointer-events-none z-20' />
     </Button>

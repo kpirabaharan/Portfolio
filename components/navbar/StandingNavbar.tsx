@@ -1,5 +1,7 @@
 import { Link } from 'react-scroll';
 
+import MagneticButton from '@/hoc/MagneticButton';
+
 import { CodeBy } from '@/components/CodeBy';
 import { NavbarSheet } from '@/components/navbar/NavbarSheet';
 import { NavLink } from '@/components/navbar/NavLink';
@@ -7,35 +9,45 @@ import { NavLink } from '@/components/navbar/NavLink';
 export const StandingNavbar = () => {
   return (
     <nav
-      className='flex flex-row gap-x-12 justify-between md:justify-start 
+      className='flex flex-row gap-x-4 justify-between md:justify-start 
       items-center w-full z-20 h-[80px] px-8'
     >
-      <CodeBy />
+      <MagneticButton modifier={{ x: 0.25, y: 0.5 }}>
+        <CodeBy />
+      </MagneticButton>
 
       {/* Mobile Nav */}
-      <NavbarSheet>
-        <NavLink className='ml-auto flex md:hidden cursor-pointer' side='left'>
-          <a>Menu</a>
-        </NavLink>
-      </NavbarSheet>
+      <MagneticButton
+        modifier={{ x: 0.25, y: 0.5 }}
+        className='ml-auto md:hidden flex cursor-pointer text-lg'
+      >
+        <NavbarSheet>
+          <NavLink side='left'>
+            <a>Menu</a>
+          </NavLink>
+        </NavbarSheet>
+      </MagneticButton>
 
       {/* DesktopNav */}
-      <NavLink className='ml-auto hidden md:flex cursor-pointer'>
+      <NavLink className='ml-auto hidden md:flex cursor-pointer text-lg'>
         <Link to='about' hashSpy smooth={true} duration={1000}>
           About
         </Link>
       </NavLink>
-      <NavLink className='hidden md:flex cursor-pointer'>
+
+      <NavLink className='hidden md:flex cursor-pointer text-lg'>
         <Link to='work' hashSpy smooth={true} duration={1000}>
           Skills
         </Link>
       </NavLink>
-      <NavLink className='hidden md:flex cursor-pointer'>
+
+      <NavLink className='hidden md:flex cursor-pointer text-lg'>
         <Link to='projects' hashSpy smooth={true} duration={1000}>
           Projects
         </Link>
       </NavLink>
-      <NavLink className='hidden md:flex cursor-pointer'>
+
+      <NavLink className='hidden md:flex cursor-pointer text-lg'>
         <Link to='contact' hashSpy smooth={true} duration={1000}>
           Contact
         </Link>
