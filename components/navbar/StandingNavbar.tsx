@@ -21,22 +21,22 @@ export const StandingNavbar = () => {
 
       {/* DesktopNav */}
       <NavLink className='ml-auto hidden md:flex cursor-pointer'>
-        <Link to='about' smooth={true} duration={1000}>
+        <Link to='about' hashSpy smooth={true} duration={1000}>
           About
         </Link>
       </NavLink>
       <NavLink className='hidden md:flex cursor-pointer'>
-        <Link to='work' smooth={true} duration={1000}>
+        <Link to='work' hashSpy smooth={true} duration={1000}>
           Skills
         </Link>
       </NavLink>
       <NavLink className='hidden md:flex cursor-pointer'>
-        <Link to='projects' smooth={true} duration={1000}>
+        <Link to='projects' hashSpy smooth={true} duration={1000}>
           Projects
         </Link>
       </NavLink>
       <NavLink className='hidden md:flex cursor-pointer'>
-        <Link to='contact' smooth={true} duration={1000}>
+        <Link to='contact' hashSpy smooth={true} duration={1000}>
           Contact
         </Link>
       </NavLink>

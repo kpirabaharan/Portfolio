@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { scroller } from 'react-scroll';
+import { animateScroll as scroll } from 'react-scroll';
 
 import Splash from '@/app/(home)/sections/Splash';
 import Hero from '@/app/(home)/sections/Hero';
@@ -13,31 +13,19 @@ import FeaturedProjects from '@/app/(home)/sections/FeaturedProjects';
 
 import { StandingNavbar } from '@/components/navbar/StandingNavbar';
 import { StarsCanvas } from '@/components/StarCanvas';
+import { useRouter } from 'next/navigation';
 
 const Home = () => {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [isPortfolio, setIsPortfolio] = useState(false);
   const [isCanvas, setIsCanvas] = useState(false);
 
-  const [initialPortfolio, setInitialPortfolio] = useState<{
-    y: number | string;
-  }>({ y: '150%' });
-  const [animatePortfolio, setAnimatePortfolio] = useState<{ y: number }>({
-    y: 0,
-  });
-  const [transitionPortfolio, setTransitionPortfolio] = useState({
-    duration: 0.5,
-  });
-
   useEffect(() => {
     if (window.location.hash) {
-      setInitialPortfolio({ y: 0 });
-      setAnimatePortfolio({ y: 0 });
-      setTransitionPortfolio({ duration: 0 });
-    } else {
-      // Fragment doesn't exist
+      router.replace('/');
     }
-  }, []);
+  }, [router]);
 
   return (
     <div>
@@ -59,23 +47,27 @@ const Home = () => {
         <div className='relative overflow-hidden w-full'>
           {isCanvas && <StarsCanvas />}
           <motion.div
-            initial={initialPortfolio}
-            animate={animatePortfolio}
-            transition={transitionPortfolio}
+            initial={{ y: '150%' }}
+            animate={{ y: 0 }}
+            transition={{
+              duration: 1,
+            }}
             onAnimationComplete={() => {
               setIsCanvas(true);
-              scroller.scrollTo('#active', { to: 'active' });
             }}
             className='h-screen bg-heroWallpaper bg-no-repeat bg-cover bg-center'
           >
             <StandingNavbar />
             <Hero />
           </motion.div>
-
-          <About />
-          <Work />
-          <Education />
-          <FeaturedProjects />
+          {isCanvas && (
+            <div>
+              <About />
+              <Work />
+              <Education />
+              <FeaturedProjects />
+            </div>
+          )}
         </div>
       )}
     </div>

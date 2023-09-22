@@ -6,6 +6,7 @@ interface NavLinkProps extends PropsWithChildren {
   className?: string;
   side?: 'left' | 'bottom';
   size?: 'small' | 'large';
+  isActive?: boolean;
 }
 
 export const NavLink = ({
@@ -13,14 +14,15 @@ export const NavLink = ({
   className,
   side = 'bottom',
   size = 'small',
+  isActive,
 }: NavLinkProps) => {
   return (
     <div className={cn('group relative', className)}>
       {children}
       <div
-        className={`group-hover:opacity-100 opacity-0 ${
-          size === 'large' ? 'w-3 h-3' : 'w-2 h-2'
-        } bg-white 
+        className={`group-hover:opacity-100 ${
+          isActive ? 'opacity-100' : 'opacity-0'
+        } ${size === 'large' ? 'w-3 h-3' : 'w-2 h-2'} bg-white 
         absolute ${
           side === 'left'
             ? size === 'large'
