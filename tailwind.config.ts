@@ -79,10 +79,28 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 },
         },
+        'button-in': {
+          from: {
+            transform: 'translateY(100%)',
+          },
+          to: {
+            transform: 'translateY(0%)',
+          },
+        },
+        'button-out': {
+          from: {
+            transform: 'translateY(0%)',
+          },
+          to: {
+            transform: 'translateY(-100%)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'button-in': 'button-in 1s ease-in-out',
+        'button-out': 'button-out 1s ease-in-out',
       },
     },
   },
