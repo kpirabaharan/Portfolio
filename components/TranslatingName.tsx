@@ -60,14 +60,14 @@ export const TranslatingName = () => {
       <p
         style={{ fontSize: textSize }}
         ref={firstRef}
-        className='m-0 font-bold'
+        className='m-0 font-bold uppercase'
       >
         Keeshigan Pirabaharan -
       </p>
       <p
         style={{ fontSize: textSize }}
         ref={secondRef}
-        className='m-0 font-bold absolute left-full'
+        className='m-0 font-bold absolute left-full uppercase'
       >
         Keeshigan Pirabaharan -
       </p>

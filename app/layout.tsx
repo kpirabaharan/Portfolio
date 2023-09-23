@@ -2,7 +2,9 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import { FloatingNavButton } from '@/components/navbar/FloatingNavButton';
+import ModalProvider from '@/providers/ModalProvider';
+
+import FloatingNav from '@/components/navbar/FloatingNav';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,12 +17,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='en' className='no-scrollbar'>
       <body className={inter.className}>
-        <div
-          className='fixed z-20 top-4 right-4 md:top-8 md:right-8 xl:top-10 
-          xl:right-10'
-        >
-          <FloatingNavButton />
-        </div>
+        <FloatingNav />
+        <ModalProvider />
         {children}
       </body>
     </html>
