@@ -10,8 +10,9 @@ export interface ExperienceType {
   points: string[];
 }
 export interface FeaturedProjectType {
-  name: string;
-  image: StaticImageData;
-  link: string;
+  title: string;
   type: string;
+  image: StaticImageData;
+  color: string;
+  link: string;
 }

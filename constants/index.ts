@@ -54,27 +54,31 @@ export const experiences: ExperienceType[] = [
 
 export const featuredProjects: FeaturedProjectType[] = [
   {
-    name: 'E-Commerce Store',
+    title: 'E-Commerce Store',
+    color: '#1e293b',
     image: ecommerceStore,
+    type: 'Full Stack Project',
     link: '/projects/ecommerce',
-    type: 'Full Stack Project',
   },
   {
-    name: 'Spotify Clone',
+    title: 'Spotify Clone',
+    color: '#042f2e',
     image: spotifyClone,
+    type: 'Full Stack Project',
     link: '/projects/spotify',
-    type: 'Full Stack Project',
   },
   {
-    name: 'Netflix Clone',
+    title: 'Netflix Clone',
+    color: '#1e293b',
     image: netflixClone,
-    link: '/projects/netflix',
     type: 'Full Stack Project',
+    link: '/projects/netflix',
   },
   {
-    name: 'Smart Windows App',
+    title: 'Smart Windows App',
+    color: '#042f2e',
     image: smartWindows,
-    link: '/projects/smart-windows',
     type: 'Mobile + Embedded Systems Project',
+    link: '/projects/smart-windows',
   },
 ];

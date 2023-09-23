@@ -26,6 +26,7 @@ export const TranslatingName = () => {
         start: 0,
         end: window.innerHeight,
         scrub: 0.25,
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         onUpdate: (e) => (direction = e.direction * -1),
       },
       x: '-=300px',

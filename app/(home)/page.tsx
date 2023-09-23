@@ -39,7 +39,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <main>
       <AnimatePresence onExitComplete={() => setIsPortfolio(true)}>
         {isLoading && (
           <motion.div
@@ -81,7 +81,7 @@ const Home = () => {
           )}
         </div>
       )}
-    </div>
+    </main>
   );
 };
 
