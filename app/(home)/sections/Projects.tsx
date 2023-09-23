@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
@@ -14,7 +14,6 @@ import { featuredProjects } from '@/constants';
 
 const Projects = () => {
   const [modal, setModal] = useState({ active: false, index: 0 });
-  const projectsRef = useRef<HTMLDivElement>(null!);
 
   return (
     <div className='flex flex-col gap-y-8'>
@@ -22,7 +21,7 @@ const Projects = () => {
         FEATURED PROJECTS
       </motion.h2>
 
-      <div ref={projectsRef} className='flex justify-center items-center'>
+      <div className='flex justify-center items-center'>
         <div className='flex flex-col justify-center items-center w-full'>
           <Separator />
           {featuredProjects.map((project, index) => {
@@ -38,11 +37,7 @@ const Projects = () => {
             );
           })}
         </div>
-        <ProjectModal
-          modal={modal}
-          projects={featuredProjects}
-          windowRef={projectsRef}
-        />
+        <ProjectModal modal={modal} projects={featuredProjects} />
       </div>
     </div>
   );
