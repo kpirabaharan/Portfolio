@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { animateScroll as scroll } from 'react-scroll';
+import Lenis from '@studio-freight/lenis';
 
 import Splash from '@/app/(home)/sections/Splash';
 import Hero from '@/app/(home)/sections/Hero';
@@ -26,6 +26,17 @@ const Home = () => {
       router.replace('/');
     }
   }, [router]);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    const raf = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+  }, []);
 
   return (
     <div>

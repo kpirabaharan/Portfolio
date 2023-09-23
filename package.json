@@ -15,6 +15,7 @@
     "@react-three/drei": "^9.83.9",
     "@react-three/fiber": "^8.14.2",
     "@smakss/react-scroll-direction": "^3.0.1",
+    "@studio-freight/lenis": "^1.0.23",
     "autoprefixer": "10.4.15",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
