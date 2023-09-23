@@ -17,8 +17,8 @@ import { useRouter } from 'next/navigation';
 
 const Home = () => {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
-  const [isPortfolio, setIsPortfolio] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isPortfolio, setIsPortfolio] = useState(false);
   const [isCanvas, setIsCanvas] = useState(false);
 
   useEffect(() => {

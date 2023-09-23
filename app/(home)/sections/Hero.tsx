@@ -10,7 +10,7 @@ const Hero = () => {
       className='flex flex-col gap-y-4 justify-center items-center h-[calc(100vh-80px)] 
       text-muted-foreground'
     >
-      <div className='absolute left-0 top-48 md:top-1/2 md:-translate-y-1/2'>
+      <div className='absolute left-0 top-1/4 md:top-1/2 md:-translate-y-1/2'>
         <Location />
       </div>
       <div className='absolute right-4 bottom-16 md:bottom-auto md:top-1/2 md:-translate-y-1/2'>
