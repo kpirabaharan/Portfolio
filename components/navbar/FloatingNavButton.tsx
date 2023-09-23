@@ -6,8 +6,6 @@ import { Menu } from 'lucide-react';
 
 import { NavbarSheet } from '@/components/navbar/NavbarSheet';
 
-import { Button } from '@/components/ui/button';
-import MagneticComponent from '@/hoc/MagneticComponent';
 import { MagneticButton } from '../MagneticButton';
 
 export const FloatingNavButton = () => {

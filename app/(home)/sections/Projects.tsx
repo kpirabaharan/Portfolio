@@ -129,7 +129,7 @@ const HoveredCard = ({
   );
 };
 
-const FeaturedProjects = () => {
+const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [lastIndex, setLastIndex] = useState(-1);
 
@@ -169,4 +169,4 @@ const FeaturedProjects = () => {
   );
 };
 
-export default SectionWrapper(FeaturedProjects, 'projects');
+export default SectionWrapper(Projects, 'projects');

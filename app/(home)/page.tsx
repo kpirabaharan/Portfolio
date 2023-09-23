@@ -9,7 +9,7 @@ import Hero from '@/app/(home)/sections/Hero';
 import About from '@/app/(home)/sections/About';
 import Work from '@/app/(home)/sections/Work';
 import Education from '@/app/(home)/sections/Education';
-import FeaturedProjects from '@/app/(home)/sections/FeaturedProjects';
+import Projects from '@/app/(home)/sections/Projects';
 
 import { StandingNavbar } from '@/components/navbar/StandingNavbar';
 import { StarsCanvas } from '@/components/StarCanvas';
@@ -44,7 +44,7 @@ const Home = () => {
         )}
       </AnimatePresence>
       {isPortfolio && (
-        <div className='relative w-full'>
+        <div className='relative overflow-hidden w-full'>
           {isCanvas && <StarsCanvas />}
           <motion.div
             initial={{ y: '150%' }}
@@ -65,7 +65,7 @@ const Home = () => {
               <About />
               <Work />
               <Education />
-              <FeaturedProjects />
+              <Projects />
             </div>
           )}
         </div>

@@ -1,6 +1,6 @@
 import { Location } from '@/components/Location';
 import { AnimatedText } from '@/components/AnimatedText';
-import {TranslatingName} from '@/components/TranslatingName';
+import { TranslatingName } from '@/components/TranslatingName';
 
 import { heroSubHeading } from '@/constants';
 
@@ -20,8 +20,8 @@ const Hero = () => {
         />
       </div>
       <div
-        className='absolute top-[60%] -translate-y-[50%] md:top-auto md:bottom-0
-        md:translate-y-0 w-full'
+        className='absolute top-[60%] left-0 -translate-y-[50%] md:top-auto md:bottom-0
+        md:translate-y-0'
       >
         <TranslatingName />
       </div>
