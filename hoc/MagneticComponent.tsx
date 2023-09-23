@@ -3,16 +3,16 @@
 import { useRef, useState, PropsWithChildren, MouseEvent } from 'react';
 import { motion } from 'framer-motion';
 
-interface MagneticButtonProps extends PropsWithChildren {
+interface MagneticComponentProps extends PropsWithChildren {
   className?: string;
   modifier?: { x: number; y: number };
 }
 
-const MagneticButton = ({
+const MagneticComponent = ({
   children,
   className,
   modifier = { x: 1, y: 1 },
-}: MagneticButtonProps) => {
+}: MagneticComponentProps) => {
   const ref = useRef<HTMLDivElement>(null!);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -44,4 +44,4 @@ const MagneticButton = ({
   );
 };
 
-export default MagneticButton;
+export default MagneticComponent;

@@ -2,9 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Menu } from 'lucide-react';
 
 import { NavbarSheet } from '@/components/navbar/NavbarSheet';
-import FancyButton from '@/components/FancyButton';
+
+import { Button } from '@/components/ui/button';
+import MagneticComponent from '@/hoc/MagneticComponent';
+import { MagneticButton } from '../MagneticButton';
 
 export const FloatingNavButton = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -29,6 +33,7 @@ export const FloatingNavButton = () => {
       <AnimatePresence>
         {scrolled && (
           <motion.div
+            className='z-40'
             initial={{ scale: 0 }}
             animate={{
               scale: 1,
@@ -39,7 +44,9 @@ export const FloatingNavButton = () => {
               transition: { ease: 'circInOut', duration: 0.2 },
             }}
           >
-            <FancyButton />
+            <MagneticButton>
+              <Menu className='h-6 w-6 md:h-8 md:w-8 xl:h-10 xl:w-10' />
+            </MagneticButton>
           </motion.div>
         )}
       </AnimatePresence>

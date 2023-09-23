@@ -15,7 +15,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='en' className='no-scrollbar'>
       <body className={inter.className}>
-        <div className='fixed z-20 top-6 right-6'>
+        <div
+          className='fixed z-20 top-4 right-4 md:top-8 md:right-8 xl:top-10 
+          xl:right-10'
+        >
           <FloatingNavButton />
         </div>
         {children}

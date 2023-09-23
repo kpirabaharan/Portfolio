@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { Separator } from '../ui/separator';
+import { MagneticButton } from '../MagneticButton';
 
 interface NavbarSheetProps extends PropsWithChildren {}
 
@@ -26,11 +27,13 @@ export const NavbarSheet = ({ children: Trigger }: NavbarSheetProps) => {
   return (
     <Sheet>
       <SheetTrigger>{Trigger}</SheetTrigger>
-      <SheetContent className='w-full sm:w-[540px] sm:max-w-full'>
-        <SheetClose className='absolute' asChild>
-          <Button className='right-6 top-6' size={'floating'}>
-            <X className='h-6 w-6 md:h-8 md:w-8' />
-          </Button>
+      <SheetContent className='w-full sm:w-[540px] sm:max-w-full z-30'>
+        <SheetClose asChild>
+          <div className='absolute top-6 right-6'>
+            <MagneticButton>
+              <X className='h-6 w-6 md:h-8 md:w-8 xl:h-10 xl:w-10' />
+            </MagneticButton>
+          </div>
         </SheetClose>
         <SheetHeader
           className='flex flex-col justify-center items-start w-2/3 mx-auto 
@@ -42,7 +45,7 @@ export const NavbarSheet = ({ children: Trigger }: NavbarSheetProps) => {
           </div>
 
           <NavLink
-            className='hidden md:flex cursor-pointer text-3xl md-height:lg:text-5xl'
+            className='cursor-pointer text-3xl md-height:text-5xl'
             side='left'
             size='large'
           >
@@ -55,7 +58,7 @@ export const NavbarSheet = ({ children: Trigger }: NavbarSheetProps) => {
 
           <Link to='about' smooth={true} duration={1000}>
             <NavLink
-              className='hidden md:flex cursor-pointer text-3xl md-height:lg:text-5xl'
+              className='cursor-pointer text-3xl md-height:text-5xl'
               side='left'
               size='large'
             >
@@ -65,7 +68,7 @@ export const NavbarSheet = ({ children: Trigger }: NavbarSheetProps) => {
 
           <Link to='work' smooth={true} duration={1000}>
             <NavLink
-              className='hidden md:flex cursor-pointer text-3xl md-height:lg:text-5xl'
+              className='cursor-pointer text-3xl md-height:text-5xl'
               side='left'
               size='large'
             >
@@ -75,7 +78,7 @@ export const NavbarSheet = ({ children: Trigger }: NavbarSheetProps) => {
 
           <Link to='projects' smooth={true} duration={1000}>
             <NavLink
-              className='hidden md:flex cursor-pointer text-3xl md-height:lg:text-5xl'
+              className='cursor-pointer text-3xl md-height:text-5xl'
               side='left'
               size='large'
             >
@@ -85,7 +88,7 @@ export const NavbarSheet = ({ children: Trigger }: NavbarSheetProps) => {
 
           <Link to='contact' smooth={true} duration={1000}>
             <NavLink
-              className='hidden md:flex cursor-pointer text-3xl md-height:lg:text-5xl'
+              className='cursor-pointer text-3xl md-height:text-5xl'
               side='left'
               size='large'
             >

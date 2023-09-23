@@ -1,6 +1,6 @@
 import { Link } from 'react-scroll';
 
-import MagneticButton from '@/hoc/MagneticButton';
+import MagneticComponent from '@/hoc/MagneticComponent';
 
 import { CodeBy } from '@/components/CodeBy';
 import { NavbarSheet } from '@/components/navbar/NavbarSheet';
@@ -12,12 +12,12 @@ export const StandingNavbar = () => {
       className='flex flex-row gap-x-4 justify-between md:justify-start 
       items-center w-full z-20 h-[80px] px-8'
     >
-      <MagneticButton modifier={{ x: 0.25, y: 0.5 }}>
+      <MagneticComponent modifier={{ x: 0.25, y: 0.5 }}>
         <CodeBy />
-      </MagneticButton>
+      </MagneticComponent>
 
       {/* Mobile Nav */}
-      <MagneticButton
+      <MagneticComponent
         modifier={{ x: 0.25, y: 0.5 }}
         className='ml-auto md:hidden flex cursor-pointer text-lg'
       >
@@ -26,7 +26,7 @@ export const StandingNavbar = () => {
             <a>Menu</a>
           </NavLink>
         </NavbarSheet>
-      </MagneticButton>
+      </MagneticComponent>
 
       {/* DesktopNav */}
       <NavLink className='ml-auto hidden md:flex cursor-pointer text-lg'>

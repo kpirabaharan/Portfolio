@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react';
 
 import { cn } from '@/lib/utils';
 
-import MagneticButton from '@/hoc/MagneticButton';
+import MagneticComponent from '@/hoc/MagneticComponent';
 
 interface NavLinkProps extends PropsWithChildren {
   className?: string;
@@ -19,8 +19,8 @@ export const NavLink = ({
   isActive,
 }: NavLinkProps) => {
   return (
-    <MagneticButton className={className} modifier={{ x: 0.25, y: 0.25 }}>
-      <div className={'group relative md:p-3'}>
+    <MagneticComponent className={className} modifier={{ x: 0.25, y: 0.25 }}>
+      <div className={'group relative p-3'}>
         {children}
         <div
           className={`group-hover:opacity-100 ${
@@ -36,6 +36,6 @@ export const NavLink = ({
         rounded-full transition duration-300`}
         />
       </div>
-    </MagneticButton>
+    </MagneticComponent>
   );
 };
