@@ -44,7 +44,7 @@ const Home = () => {
         )}
       </AnimatePresence>
       {isPortfolio && (
-        <div className='relative overflow-hidden w-full'>
+        <div className='relative w-full'>
           {isCanvas && <StarsCanvas />}
           <motion.div
             initial={{ y: '150%' }}
