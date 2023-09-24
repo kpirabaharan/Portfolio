@@ -6,6 +6,8 @@ import useNavModal from '@/hooks/useNavModal';
 
 import { NavLink } from './NavLink';
 import { Separator } from '@/components/ui/separator';
+import MagneticComponent from '@/hoc/MagneticComponent';
+import { Curve } from '@/components/navbar/Curve';
 
 const navLinks = [
   {
@@ -36,21 +38,25 @@ const socials = [
   { name: 'Resume', link: './Keeshigan-Pirabaharan-Resume.pdf' },
 ];
 
-const menuSlide: Variants = {
-  initial: { x: '100%' },
-  enter: { x: 0, transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
-  exit: { x: '100%', transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
-};
-
 export const NavModal = () => {
   const { isOpen, onClose } = useNavModal();
 
+  const menuSlide: Variants = {
+    initial: { x: 'calc(100% + 200px)' },
+    enter: { x: 0, transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
+    exit: {
+      x: 'calc(100% + 200px)',
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+    },
+  };
+
   return (
-    <AnimatePresence mode='wait'>
+    <AnimatePresence>
       {isOpen && (
         <div
           onClick={onClose}
-          className='fixed h-screen z-10 w-full backdrop-blur-sm transition duration-500'
+          className='fixed h-screen z-10 w-full backdrop-blur-sm transition 
+          duration-500 overflow-hidden'
         >
           <motion.div
             onClick={(e) => e.stopPropagation()}
@@ -58,10 +64,16 @@ export const NavModal = () => {
             initial='initial'
             animate='enter'
             exit='exit'
-            className='fixed h-screen z-20 bg-slate-900 top-0 right-0'
+            className='fixed h-screen z-20 top-0 right-0'
           >
-            <div className='box-border h-full w-[400px] xl:w-[700px] flex flex-col justify-between'>
-              <div className='flex flex-col justify-around h-[70%] xl:h-[80%] my-auto w-3/4 xl:w-3/5 mx-auto'>
+            <div
+              className='box-border h-full w-[400px] bg-slate-900 xl:w-[700px] 
+              flex flex-col justify-between'
+            >
+              <div
+                className='flex flex-col justify-around h-[70%] xl:h-[80%] my-auto 
+                w-3/4 xl:w-3/5 mx-auto'
+              >
                 <div className='uppercase flex flex-col gap-y-4'>
                   <p className='text-xs text-muted-foreground'>Navigation</p>
                   <Separator className='bg-muted-foreground' />
@@ -94,20 +106,26 @@ export const NavModal = () => {
                     {socials.map((item, index) => {
                       const { name, link } = item;
                       return (
-                        <a
-                          className='font-light'
+                        <MagneticComponent
                           key={index}
-                          href={link}
-                          target='_blank'
+                          modifier={{ x: 0.3, y: 0.3 }}
                         >
-                          {name}
-                        </a>
+                          <a
+                            className='font-light cursor-pointer hover:underline
+                            underline-offset-8'
+                            href={link}
+                            target='_blank'
+                          >
+                            {name}
+                          </a>
+                        </MagneticComponent>
                       );
                     })}
                   </div>
                 </div>
               </div>
             </div>
+            <Curve />
           </motion.div>
         </div>
       )}

@@ -23,7 +23,7 @@ const ExperienceCard = ({
   points,
 }: ExperienceType) => (
   <VerticalTimelineElement
-    className='vertical-timeline-element--work z-30'
+    className='vertical-timeline-element--work'
     date={date}
     contentStyle={{ background: 'hsl(217.2 32.6% 17.5%)', color: '#fff' }}
     contentArrowStyle={{ borderRight: '7px solid hsl(217.2 32.6% 15.5%)' }}

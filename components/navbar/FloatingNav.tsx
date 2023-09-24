@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { AnimatePresence, Variants, motion } from 'framer-motion';
 
 import useNavModal from '@/hooks/useNavModal';
+import MagneticComponent from '@/hoc/MagneticComponent';
 
 const floatingNavVariants: Variants = {
   initial: { scale: 0 },
@@ -47,22 +48,34 @@ const FloatingNav = () => {
   return (
     <AnimatePresence>
       {((isScrolled && !isOpen) || isOpen) && (
-        <motion.div
-          onClick={isOpen ? onClose : onOpen}
-          variants={floatingNavVariants}
-          initial='initial'
-          animate='enter'
-          exit='exit'
-          className='fixed right-0 m-6 md-height:m-10 w-16 md-height:xl:w-24 h-16 md-height:xl:h-24 bg-white rounded-full 
-        flex justify-center items-center z-40 cursor-pointer'
+        <MagneticComponent
+          className='fixed right-0 m-6 md-height:m-10 cursor-pointer z-40 rounded-full'
+          modifier={{ x: 0.4, y: 0.4 }}
         >
-          <div
-            className={`w-full ${css} ${
-              isOpen &&
-              'before:top-px after:-top-px before:-rotate-45 after:rotate-45'
-            }`}
-          />
-        </motion.div>
+          <motion.div
+            onClick={isOpen ? onClose : onOpen}
+            variants={floatingNavVariants}
+            initial='initial'
+            animate='enter'
+            exit='exit'
+            whileHover={{ scale: 1.15 }}
+            className='w-16 md-height:xl:w-24 h-16 md-height:xl:h-24 bg-white 
+            flex justify-center items-center rounded-full'
+          >
+            <MagneticComponent
+              className='absolute left-0 top-0 w-full h-full rounded-full
+              flex items-center justify-center'
+              modifier={{ x: 0.3, y: 0.3 }}
+            >
+              <div
+                className={`w-full ${css} ${
+                  isOpen &&
+                  'before:top-px after:-top-px before:-rotate-45 after:rotate-45'
+                }`}
+              />
+            </MagneticComponent>
+          </motion.div>
+        </MagneticComponent>
       )}
     </AnimatePresence>
   );

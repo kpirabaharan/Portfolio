@@ -5,18 +5,6 @@ import { motion, Variants } from 'framer-motion';
 
 import MagneticComponent from '@/hoc/MagneticComponent';
 
-const textSlide: Variants = {
-  initial: { x: '80px' },
-  enter: (i) => ({
-    x: 0,
-    transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.1 * i },
-  }),
-  exit: (i) => ({
-    x: '100px',
-    transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
-  }),
-};
-
 interface NavLinkProps extends PropsWithChildren {
   className?: string;
   index?: number;
@@ -33,6 +21,18 @@ export const NavLink = ({
   size = 'small',
   isActive,
 }: NavLinkProps) => {
+  const textSlide: Variants = {
+    initial: { x: '80px' },
+    enter: (i) => ({
+      x: 0,
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.1 * i },
+    }),
+    exit: (i) => ({
+      x: '100px',
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+    }),
+  };
+
   return (
     <MagneticComponent className={className} modifier={{ x: 0.25, y: 0.25 }}>
       <motion.div
