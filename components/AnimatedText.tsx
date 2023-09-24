@@ -10,11 +10,10 @@ export const AnimatedText = ({ className, text }: AnimatedTextProps) => {
     <TypeAnimation
       className={className}
       sequence={[...text]}
-      wrapper='span'
       cursor={false}
       repeat={Infinity}
       speed={50}
-      deletionSpeed={65}
+      deletionSpeed={75}
     />
   );
 };
