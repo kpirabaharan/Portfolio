@@ -21,22 +21,25 @@ const Projects = () => {
         FEATURED PROJECTS
       </motion.h2>
 
-      <div className='flex justify-center items-center'>
-        <div className='flex flex-col justify-center items-center w-full'>
-          <Separator />
-          {featuredProjects.map((project, index) => {
-            const { title, type } = project;
-            return (
-              <ProjectCard
-                key={index}
-                index={index}
-                title={title}
-                type={type}
-                setModal={setModal}
-              />
-            );
-          })}
-        </div>
+      <div
+        className='grid grid-cols-1 sm:grid-cols-2 gap-y-8 lg:flex flex-col lg:justify-center 
+        lg:items-center w-full'
+      >
+        <Separator className='hidden lg:flex' />
+        {featuredProjects.map((project, index) => {
+          const { title, type, image, color } = project;
+          return (
+            <ProjectCard
+              key={index}
+              index={index}
+              title={title}
+              image={image}
+              color={color}
+              type={type}
+              setModal={setModal}
+            />
+          );
+        })}
         <ProjectModal modal={modal} projects={featuredProjects} />
       </div>
     </div>

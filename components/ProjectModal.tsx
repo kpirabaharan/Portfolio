@@ -83,7 +83,7 @@ export const ProjectModal = ({ modal, projects }: ProjectModalProps) => {
         initial={'initial'}
         animate={active ? 'open' : 'closed'}
         className='h-[400px] w-[400px] xl:h-[450px] xl:w-[450px] absolute bg-white overflow-hidden
-        pointer-events-none flex justify-center items-center'
+        pointer-events-none lg:flex justify-center items-center hidden'
       >
         <div
           style={{
@@ -98,7 +98,7 @@ export const ProjectModal = ({ modal, projects }: ProjectModalProps) => {
               <div
                 key={index}
                 style={{ backgroundColor: color }}
-                className='h-full flex justify-center items-center relative'
+                className='h-full flex justify-center items-center'
               >
                 <div className='h-[75%] w-[80%] relative'>
                   <Image
@@ -121,7 +121,7 @@ export const ProjectModal = ({ modal, projects }: ProjectModalProps) => {
         animate={active ? 'open' : 'closed'}
         className='h-20 w-20 bg-blue-700 rounded-full absolute 
         pointer-events-none flex items-center justify-center'
-      ></motion.div>
+      />
       <motion.div
         className='absolute pointer-events-none flex items-center justify-center'
         ref={cursorLabelRef}
