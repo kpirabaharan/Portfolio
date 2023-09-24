@@ -41,7 +41,7 @@ export const NavLink = ({
         initial='initial'
         animate='enter'
         exit='exit'
-        className={'group relative py-4'}
+        className={'group relative p-0'}
       >
         {children}
         <div

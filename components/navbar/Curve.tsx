@@ -15,7 +15,7 @@ export const Curve = () => {
     initial: { d: initialPath },
     enter: {
       d: targetPath,
-      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+      transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
     },
     exit: {
       d: initialPath,

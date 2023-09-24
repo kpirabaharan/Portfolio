@@ -3,8 +3,10 @@ import MagneticComponent from '@/hoc/MagneticComponent';
 import { CodeBy } from '@/components/CodeBy';
 
 import { NavLink } from '@/components/navbar/NavLink';
+import useNavModal from '@/hooks/useNavModal';
 
 export const StandingNavbar = () => {
+  const { onOpen } = useNavModal();
   return (
     <nav
       className='flex flex-row gap-x-8 justify-between md:justify-start 
@@ -15,14 +17,13 @@ export const StandingNavbar = () => {
       </MagneticComponent>
 
       {/* Mobile Nav */}
-      <MagneticComponent
-        modifier={{ x: 0.25, y: 0.5 }}
-        className='ml-auto md:hidden flex cursor-pointer text-lg'
+
+      <NavLink
+        className='ml-auto flex md:hidden cursor-pointer p-4'
+        side='left'
       >
-        <NavLink side='left'>
-          <a>Menu</a>
-        </NavLink>
-      </MagneticComponent>
+        <p onClick={onOpen}>Menu</p>
+      </NavLink>
 
       {/* DesktopNav */}
     </nav>

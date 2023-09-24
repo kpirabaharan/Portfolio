@@ -3,11 +3,13 @@
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 
 import useNavModal from '@/hooks/useNavModal';
+import useWindowSize from '@/hooks/useWindowSize';
 
-import { NavLink } from './NavLink';
-import { Separator } from '@/components/ui/separator';
 import MagneticComponent from '@/hoc/MagneticComponent';
+import { NavLink } from '@/components/navbar/NavLink';
 import { Curve } from '@/components/navbar/Curve';
+
+import { Separator } from '@/components/ui/separator';
 
 const navLinks = [
   {
@@ -40,13 +42,61 @@ const socials = [
 
 export const NavModal = () => {
   const { isOpen, onClose } = useNavModal();
+  const [width, _] = useWindowSize();
 
   const menuSlide: Variants = {
     initial: { x: 'calc(100% + 200px)' },
-    enter: { x: 0, transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
+    enter: { x: 0, transition: { duration: 0.5 } },
     exit: {
       x: 'calc(100% + 200px)',
       transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+    },
+  };
+
+  const animate = width > 1280 ? 'xl' : width > 1024 ? 'lg' : 'base';
+  const fontS = width > 1280 ? '4rem' : width > 1024 ? '3rem' : '2rem';
+
+  const widthVariants: Variants = {
+    xl: {
+      width: 700,
+      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+    },
+    lg: {
+      width: 500,
+      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+    },
+    base: {
+      width: 400,
+      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+    },
+  };
+  const heightVariants: Variants = {
+    xl: {
+      height: '80%',
+      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+    },
+    lg: {
+      height: '70%',
+      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+    },
+    base: {
+      height: '50%',
+      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+    },
+  };
+  const linkVariants: Variants = {
+    initial: { fontSize: fontS },
+    xl: {
+      fontSize: fontS,
+      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+    },
+    lg: {
+      fontSize: fontS,
+      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+    },
+    base: {
+      fontSize: fontS,
+      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
     },
   };
 
@@ -66,13 +116,15 @@ export const NavModal = () => {
             exit='exit'
             className='fixed h-screen z-20 top-0 right-0'
           >
-            <div
-              className='box-border h-full w-[400px] bg-slate-900 xl:w-[700px] 
-              flex flex-col justify-between'
+            <motion.div
+              animate={animate}
+              variants={widthVariants}
+              className='box-border h-full bg-slate-900 flex flex-col justify-around'
             >
-              <div
-                className='flex flex-col justify-around h-[70%] xl:h-[80%] my-auto 
-                w-3/4 xl:w-3/5 mx-auto'
+              <motion.div
+                animate={animate}
+                variants={heightVariants}
+                className='flex flex-col justify-around my-auto w-3/4 xl:w-3/5 mx-auto min-h-[500px]'
               >
                 <div className='uppercase flex flex-col gap-y-4'>
                   <p className='text-xs text-muted-foreground'>Navigation</p>
@@ -88,13 +140,16 @@ export const NavModal = () => {
                       size='large'
                       side='left'
                     >
-                      <a
+                      <motion.a
+                        initial='initial'
+                        animate={animate}
+                        variants={linkVariants}
                         href={nav.href}
                         onClick={onClose}
-                        className='text-4xl md-height:xl:text-6xl'
+                        className='text-[2rem] lg-[4rem] xl-[5rem]'
                       >
                         {nav.title}
-                      </a>
+                      </motion.a>
                     </NavLink>
                   ))}
                 </div>
@@ -123,8 +178,8 @@ export const NavModal = () => {
                     })}
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
             <Curve />
           </motion.div>
         </div>

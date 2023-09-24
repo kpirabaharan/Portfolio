@@ -6,22 +6,21 @@ import { AnimatePresence, Variants, motion } from 'framer-motion';
 import useNavModal from '@/hooks/useNavModal';
 import MagneticComponent from '@/hoc/MagneticComponent';
 
-const floatingNavVariants: Variants = {
-  initial: { scale: 0 },
-  enter: {
-    scale: 1,
-    transition: { duration: 0.5, ease: [0.34, 1.56, 0.64, 1] },
-  },
-  exit: {
-    scale: 0,
-    transition: { duration: 0.5, ease: [0.36, 0, 0.66, -0.56] },
-  },
-};
-
 const FloatingNav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-
   const { isOpen, onOpen, onClose } = useNavModal();
+
+  const floatingNavVariants: Variants = {
+    initial: { scale: 0 },
+    enter: {
+      scale: 1,
+      transition: { duration: 0.5, ease: [0.34, 1.56, 0.64, 1] },
+    },
+    exit: {
+      scale: 0,
+      transition: { duration: 0.5, ease: [0.36, 0, 0.66, -0.56] },
+    },
+  };
 
   useEffect(() => {
     const handleScroll = () => {
