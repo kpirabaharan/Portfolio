@@ -9,6 +9,7 @@ export const TranslatingName = () => {
     `${3 + window.innerWidth * 0.006}rem`,
   );
 
+  const zeroRef = useRef<HTMLParagraphElement>(null!);
   const firstRef = useRef<HTMLParagraphElement>(null!);
   const secondRef = useRef<HTMLParagraphElement>(null!);
   const sliderRef = useRef<HTMLDivElement>(null!);
@@ -49,27 +50,38 @@ export const TranslatingName = () => {
   const translation = () => {
     if (xPercent <= -100) xPercent = 0;
     if (xPercent > 0) xPercent = -100;
+    gsap.set(zeroRef.current, { xPercent: xPercent });
     gsap.set(firstRef.current, { xPercent: xPercent });
     gsap.set(secondRef.current, { xPercent: xPercent });
-    xPercent += 0.12 * direction;
+    xPercent += 0.1 * direction;
     requestAnimationFrame(translation);
   };
 
   return (
-    <div ref={sliderRef} className='relative flex whitespace-nowrap'>
+    <div
+      ref={sliderRef}
+      className='relative flex whitespace-nowrap text-center items-center'
+    >
+      <p
+        style={{ fontSize: textSize }}
+        ref={zeroRef}
+        className='m-0 font-bold uppercase leading-none absolute -left-full'
+      >
+        &nbsp;Keeshigan Pirabaharan -
+      </p>
       <p
         style={{ fontSize: textSize }}
         ref={firstRef}
-        className='m-0 font-bold uppercase'
+        className='m-0 font-bold uppercase leading-none'
       >
-        Keeshigan Pirabaharan -
+        &nbsp;Keeshigan Pirabaharan -
       </p>
       <p
         style={{ fontSize: textSize }}
         ref={secondRef}
-        className='m-0 font-bold absolute left-full uppercase'
+        className='m-0 font-bold absolute left-full uppercase leading-none'
       >
-        Keeshigan Pirabaharan -
+        &nbsp;Keeshigan Pirabaharan -
       </p>
     </div>
   );

@@ -44,7 +44,7 @@ export const experiences: ExperienceType[] = [
     iconBg: '#FFFFFF',
     date: 'July 2020 - July 2021',
     points: [
-      `Managed small scale projects (< $200k) requiring engineering changes to the plant`,
+      `Managed small scale projects (<$200k) requiring engineering changes to the plant`,
       `Assisted senior project managers with capital project (>$200k), including coordination with internal stakeholder and EPC contractors to ensure project success`,
       `Exposure to industrial operations, complex system processes, and practical failure modes`,
       `Worked with a multidisciplinary team of engineers and technicians to support modifications`,

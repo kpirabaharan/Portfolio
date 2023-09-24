@@ -46,7 +46,7 @@ export const NavModal = () => {
 
   const menuSlide: Variants = {
     initial: { x: 'calc(100% + 200px)' },
-    enter: { x: 0, transition: { duration: 0.5 } },
+    enter: { x: 0, transition: { duration: 0.8 } },
     exit: {
       x: 'calc(100% + 200px)',
       transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
@@ -137,7 +137,7 @@ export const NavModal = () => {
                       className='cursor-pointer w-fit'
                       key={index}
                       index={index}
-                      size='large'
+                      size={width > 1024 ? 'large' : 'small'}
                       side='left'
                     >
                       <motion.a

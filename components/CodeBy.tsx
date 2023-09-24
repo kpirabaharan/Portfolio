@@ -29,7 +29,7 @@ export const CodeBy = () => {
         animate={animate}
         variants={{
           open: { width: '205px' },
-          closed: { width: '130px' },
+          closed: { width: '129px' },
         }}
         transition={transition}
         className='overflow-hidden text-clip whitespace-nowrap relative'

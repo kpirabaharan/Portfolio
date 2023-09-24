@@ -5,7 +5,7 @@ import SectionWrapper from '@/hoc/SectionWrapper';
 import { textVariant } from '@/lib/transitions';
 import { styles } from '@/lib/styles';
 
-import { Project } from '@/components/Project';
+import { ProjectCard } from '@/components/ProjectCard';
 import { ProjectModal } from '@/components/ProjectModal';
 
 import { Separator } from '@/components/ui/separator';
@@ -27,7 +27,7 @@ const Projects = () => {
           {featuredProjects.map((project, index) => {
             const { title, type } = project;
             return (
-              <Project
+              <ProjectCard
                 key={index}
                 index={index}
                 title={title}

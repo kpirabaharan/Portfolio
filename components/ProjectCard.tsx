@@ -2,14 +2,14 @@
 
 import { Separator } from '@/components/ui/separator';
 
-interface ProjectProps {
+interface ProjectCardProps {
   index: number;
   title: string;
   type: string;
   setModal: ({ active, index }: { active: boolean; index: number }) => void;
 }
 
-export const Project = ({ index, title, type, setModal }: ProjectProps) => {
+export const ProjectCard = ({ index, title, type, setModal }: ProjectCardProps) => {
   return (
     <>
       <div
@@ -19,13 +19,13 @@ export const Project = ({ index, title, type, setModal }: ProjectProps) => {
         onMouseLeave={() => setModal({ active: false, index })}
       >
         <h2
-          className='text-5xl xl:text-6xl font-normal transition duration-500 
+          className='text-3xl lg:text-5xl xl:text-6xl font-normal transition duration-500 
           group-hover:-translate-x-4'
         >
           {title}
         </h2>
         <p
-          className='text-sm xl:text-lg font-light transition duration-500 
+          className='text-sm lg:text-base xl:text-lg font-light transition duration-500 
           group-hover:translate-x-4'
         >
           {type}

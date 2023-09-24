@@ -15,18 +15,18 @@ export const Curve = () => {
     initial: { d: initialPath },
     enter: {
       d: targetPath,
-      transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
     },
     exit: {
       d: initialPath,
-      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
     },
   };
 
   return (
     <svg
       className='absolute top-0 -left-[199px] w-[200px] h-full 
-      stroke-none fill-slate-900'
+      stroke-none fill-slate-900 pointer-events-none'
     >
       <motion.path
         variants={pathAnimation}

@@ -34,14 +34,14 @@ export const NavLink = ({
   };
 
   return (
-    <MagneticComponent className={className} modifier={{ x: 0.25, y: 0.25 }}>
+    <MagneticComponent className={className} modifier={{ x: 0.3, y: 0.3 }}>
       <motion.div
         custom={index}
         variants={textSlide}
         initial='initial'
         animate='enter'
         exit='exit'
-        className={'group relative p-0'}
+        className={`group relative ${size === 'large' ? 'p-0' : 'p-0 md:p-4'}`}
       >
         {children}
         <div
@@ -52,7 +52,7 @@ export const NavLink = ({
             side === 'left'
               ? size === 'large'
                 ? '-left-8 bottom-1/2 translate-y-1/2'
-                : '-left-6 bottom-1/2 translate-y-1/2'
+                : '-left-2 bottom-1/2 translate-y-1/2'
               : '-bottom-2 left-1/2 -translate-x-1/2'
           } 
         rounded-full transition duration-300`}
