@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 
 interface MagneticButtonProps extends PropsWithChildren {
   buttonClass?: string;
-  size?: 'default' | 'sm' | 'lg' | 'icon' | 'round' | 'wide';
+  size?: 'default' | 'sm' | 'lg' | 'icon' | 'round' | 'filter' | 'wide';
 }
 
 export const MagneticButton = ({
@@ -18,7 +18,7 @@ export const MagneticButton = ({
   children,
 }: MagneticButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  
+
   const buttonHover: Variants = {
     initial: { y: '100%' },
     enter: {

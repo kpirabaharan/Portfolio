@@ -55,7 +55,7 @@ export const NavLink = ({
             side === 'left'
               ? size === 'large'
                 ? '-left-8 bottom-1/2 translate-y-1/2'
-                : '-left-2 bottom-1/2 translate-y-1/2'
+                : '-left-4 bottom-1/2 translate-y-1/2'
               : '-bottom-2 left-1/2 -translate-x-1/2'
           } 
         rounded-full transition duration-300`}

@@ -4,9 +4,13 @@ import SectionWrapper from '@/hoc/SectionWrapper';
 import { fadeIn, textVariant } from '@/lib/transitions';
 import { styles } from '@/lib/styles';
 
+import LocomotiveScroll from 'locomotive-scroll';
+
 import { MagneticButton } from '@/components/MagneticButton';
 
 const About = () => {
+  const scroll = new LocomotiveScroll();
+
   return (
     <div className='grid grid-cols-5 w-full relative gap-y-4'>
       <div className='flex flex-col gap-y-8 col-span-5 md:col-span-4 xl:col-span-3'>
@@ -48,12 +52,26 @@ const About = () => {
         className='relative h-full w-[80%] mx-auto col-span-5 md:col-span-1 xl:col-span-2
         flex justify-end'
       >
-        <div className='md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2'>
-          <MagneticButton>
-            <p className='text-lg lg:text-xl text-primary-foreground'>
-              About Me
-            </p>
-          </MagneticButton>
+        <div
+          className='md:absolute md:top-1/2 md:-translate-y-1/2 
+          md:left-1/2 md:-translate-x-1/2'
+        >
+          {/* Mobile */}
+          <div className='flex md:hidden'>
+            <MagneticButton>
+              <p className='text-lg lg:text-xl text-primary-foreground'>
+                About Me
+              </p>
+            </MagneticButton>
+          </div>
+          {/* Desktop */}
+          <div className='md:flex hidden' data-scroll data-scroll-speed={-0.1}>
+            <MagneticButton>
+              <p className='text-lg lg:text-xl text-primary-foreground'>
+                About Me
+              </p>
+            </MagneticButton>
+          </div>
         </div>
       </div>
     </div>
