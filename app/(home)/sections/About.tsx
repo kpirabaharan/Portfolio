@@ -50,7 +50,9 @@ const About = () => {
       >
         <div className='md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2'>
           <MagneticButton>
-            <p className='text-lg text-primary-foreground'>About Me</p>
+            <p className='text-lg lg:text-xl text-primary-foreground'>
+              About Me
+            </p>
           </MagneticButton>
         </div>
       </div>

@@ -21,7 +21,7 @@ const Education = () => {
         <div className='w-[100px] h-[100px] relative'>
           <Image
             className='w-full h-full object-contain'
-            src={western.src}
+            src={western}
             fill
             alt='Western'
           />

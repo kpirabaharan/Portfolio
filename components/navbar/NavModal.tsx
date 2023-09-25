@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 
 import useNavModal from '@/hooks/useNavModal';
@@ -11,28 +12,7 @@ import { Curve } from '@/components/navbar/Curve';
 
 import { Separator } from '@/components/ui/separator';
 
-const navLinks = [
-  {
-    title: 'Home',
-    href: '/',
-  },
-  {
-    title: 'About',
-    href: '#about',
-  },
-  {
-    title: 'Skills',
-    href: '#skills',
-  },
-  {
-    title: 'Projects',
-    href: '#projects',
-  },
-  {
-    title: 'Contact',
-    href: '#contact',
-  },
-];
+import { navLinks } from '@/constants';
 
 const socials = [
   { name: 'LinkedIn', link: 'https://linkedin.com/in/kpirabaharan' },
@@ -43,6 +23,7 @@ const socials = [
 export const NavModal = () => {
   const { isOpen, onClose } = useNavModal();
   const [width, _] = useWindowSize();
+  const router = useRouter();
 
   const menuSlide: Variants = {
     initial: { x: 'calc(100% + 200px)' },
@@ -137,6 +118,11 @@ export const NavModal = () => {
                       className='cursor-pointer w-fit'
                       key={index}
                       index={index}
+                      onClick={
+                        nav.href === '/'
+                          ? () => window.location.assign('/')
+                          : () => router.push(nav.href)
+                      }
                       size={width > 1024 ? 'large' : 'small'}
                       side='left'
                     >
@@ -144,7 +130,6 @@ export const NavModal = () => {
                         initial='initial'
                         animate={animate}
                         variants={linkVariants}
-                        href={nav.href}
                         onClick={onClose}
                         className='text-[2rem] lg-[4rem] xl-[5rem]'
                       >

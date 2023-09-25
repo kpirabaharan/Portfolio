@@ -24,7 +24,7 @@ export const ExperienceCard = ({
       iconStyle={{ background: iconBg }}
       icon={
         <Image
-          src={icon.src}
+          src={icon}
           alt={title}
           fill
           className={'object-contain h-[80%] w-[80%] rounded-full'}

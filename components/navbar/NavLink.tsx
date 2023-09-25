@@ -11,6 +11,7 @@ interface NavLinkProps extends PropsWithChildren {
   side?: 'left' | 'bottom';
   size?: 'small' | 'large';
   isActive?: boolean;
+  onClick: () => void;
 }
 
 export const NavLink = ({
@@ -20,6 +21,7 @@ export const NavLink = ({
   side = 'bottom',
   size = 'small',
   isActive,
+  onClick,
 }: NavLinkProps) => {
   const textSlide: Variants = {
     initial: { x: '80px' },
@@ -27,10 +29,10 @@ export const NavLink = ({
       x: 0,
       transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.1 * i },
     }),
-    exit: (i) => ({
+    exit: {
       x: '100px',
       transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
-    }),
+    },
   };
 
   return (
@@ -41,6 +43,7 @@ export const NavLink = ({
         initial='initial'
         animate='enter'
         exit='exit'
+        onClick={onClick}
         className={`group relative ${size === 'large' ? 'p-0' : 'p-0 md:p-4'}`}
       >
         {children}

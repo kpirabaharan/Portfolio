@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { Variants, motion } from 'framer-motion';
 
 import { AnimatedText } from '@/components/AnimatedText';
@@ -11,6 +12,22 @@ interface SplashProps {
 
 const Splash = ({ setIsLoading }: SplashProps) => {
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const pathname = usePathname();
+  var title: string;
+
+  switch (pathname) {
+    case '/about':
+      title = 'About';
+      break;
+    case '/projects':
+      title = 'Projects';
+      break;
+    case '/contact':
+      title = 'Contact';
+      break;
+    default:
+      title = "Keeshigan's Portfolio";
+  }
 
   useEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
@@ -57,7 +74,7 @@ const Splash = ({ setIsLoading }: SplashProps) => {
         <>
           <AnimatedText
             className='text-4xl md:text-7xl z-20'
-            text={["Keeshigan's Portfolio", 500, () => setIsLoading(false)]}
+            text={[title, 500, () => setIsLoading(false)]}
           />
           <svg
             className='absolute top-0 w-full h-[calc(100%+300px)] stroke-none 

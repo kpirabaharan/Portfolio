@@ -18,8 +18,11 @@ const Projects = () => {
 
   return (
     <div className='flex flex-col gap-y-8'>
-      <motion.h2 variants={textVariant()} className={styles.sectionHead}>
-        FEATURED PROJECTS
+      <motion.h2
+        variants={textVariant()}
+        className={`${styles.sectionHead} uppercase`}
+      >
+        Featured Projects
       </motion.h2>
 
       <div

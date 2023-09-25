@@ -70,7 +70,7 @@ export const ProjectCard = ({
           >
             <Image
               className='object-cover rounded-md'
-              src={image.src}
+              src={image}
               alt={title}
               fill
             />

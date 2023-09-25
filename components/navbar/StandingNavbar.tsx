@@ -1,16 +1,23 @@
-import MagneticComponent from '@/hoc/MagneticComponent';
+'use client';
 
-import { CodeBy } from '@/components/CodeBy';
+import { useRouter } from 'next/navigation';
 
-import { NavLink } from '@/components/navbar/NavLink';
 import useNavModal from '@/hooks/useNavModal';
 
+import MagneticComponent from '@/hoc/MagneticComponent';
+import { CodeBy } from '@/components/CodeBy';
+import { NavLink } from '@/components/navbar/NavLink';
+
+import { navLinks } from '@/constants';
+
 export const StandingNavbar = () => {
+  const router = useRouter();
   const { onOpen } = useNavModal();
+
   return (
     <nav
-      className='flex flex-row gap-x-2 justify-between md:justify-start 
-      items-center w-full z-20 h-[80px] px-2 md:px-8'
+      className='flex flex-row gap-x-2 justify-between items-center w-full z-20
+      h-[80px] px-2 md:px-8'
     >
       <MagneticComponent modifier={{ x: 0.25, y: 0.5 }}>
         <CodeBy />
@@ -20,24 +27,28 @@ export const StandingNavbar = () => {
       <NavLink
         className='ml-auto flex md:hidden cursor-pointer p-4'
         side='left'
+        onClick={onOpen}
       >
-        <p onClick={onOpen}>Menu</p>
+        <p>Menu</p>
       </NavLink>
 
       {/* DesktopNav */}
 
-      <NavLink className='ml-auto md:flex hidden cursor-pointer' side='bottom'>
-        <a>Home</a>
-      </NavLink>
-      <NavLink className='md:flex hidden cursor-pointer' side='bottom'>
-        <a>About</a>
-      </NavLink>
-      <NavLink className='md:flex hidden cursor-pointer' side='bottom'>
-        <a>Projects</a>
-      </NavLink>
-      <NavLink className='md:flex hidden cursor-pointer' side='bottom'>
-        <a>Contact</a>
-      </NavLink>
+      <div className='flex flex-row gap-x-2'>
+        {navLinks.map(
+          (link, index) =>
+            link.href !== '/' && (
+              <NavLink
+                key={index}
+                className='md:flex hidden cursor-pointer'
+                side='bottom'
+                onClick={() => router.push(link.href)}
+              >
+                <p>{link.title}</p>
+              </NavLink>
+            ),
+        )}
+      </div>
     </nav>
   );
 };

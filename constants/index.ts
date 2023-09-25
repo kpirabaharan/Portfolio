@@ -8,6 +8,29 @@ import {
 } from '@/assets';
 import { ExperienceType, FeaturedProjectType } from '@/types';
 
+export const navLinks = [
+  {
+    title: 'Home',
+    href: '/',
+  },
+  {
+    title: 'About',
+    href: '/about',
+  },
+  // {
+  //   title: 'Skills',
+  //   href: '/skills',
+  // },
+  {
+    title: 'Projects',
+    href: '/projects',
+  },
+  {
+    title: 'Contact',
+    href: '/contact',
+  },
+];
+
 export const heroSubHeading = [
   2500,
   'Full Stack Developer',
@@ -18,8 +41,6 @@ export const heroSubHeading = [
   1000,
   'Mechatronics/Software Engineer',
 ];
-
-export const heroDescription = '';
 
 export const experiences: ExperienceType[] = [
   {

@@ -103,7 +103,7 @@ export const ProjectModal = ({ modal, projects }: ProjectModalProps) => {
                 <div className='h-[75%] w-[80%] relative'>
                   <Image
                     className='object-cover rounded-lg'
-                    src={image.src}
+                    src={image}
                     alt={title}
                     fill
                   />

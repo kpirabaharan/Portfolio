@@ -4,12 +4,13 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Lenis from '@studio-freight/lenis';
 
-import Splash from '@/app/(home)/sections/Splash';
+import Splash from '@/app/components/Splash';
 import Hero from '@/app/(home)/sections/Hero';
 import About from '@/app/(home)/sections/About';
 import Work from '@/app/(home)/sections/Work';
 import Education from '@/app/(home)/sections/Education';
 import Projects from '@/app/(home)/sections/Projects';
+import Contact from '@/app/(home)/sections/Contact';
 
 import { StandingNavbar } from '@/components/navbar/StandingNavbar';
 import { StarsCanvas } from '@/components/StarCanvas';
@@ -52,6 +53,7 @@ const Home = () => {
           <Work />
           <Education />
           <Projects />
+          <Contact />
         </>
       </div>
     </main>
