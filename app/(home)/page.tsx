@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import Lenis from '@studio-freight/lenis';
 
 import Splash from '@/app/(home)/sections/Splash';
@@ -13,19 +13,9 @@ import Projects from '@/app/(home)/sections/Projects';
 
 import { StandingNavbar } from '@/components/navbar/StandingNavbar';
 import { StarsCanvas } from '@/components/StarCanvas';
-import { useRouter } from 'next/navigation';
 
 const Home = () => {
-  const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
-  const [isPortfolio, setIsPortfolio] = useState(false);
-  const [isCanvas, setIsCanvas] = useState(false);
-
-  useEffect(() => {
-    if (window.location.hash) {
-      router.replace('/');
-    }
-  }, [router]);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -38,49 +28,32 @@ const Home = () => {
     requestAnimationFrame(raf);
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main>
-      <AnimatePresence onExitComplete={() => setIsPortfolio(true)}>
-        {isLoading && (
-          <motion.div
-            className='h-screen w-screen flex items-center justify-center'
-            initial={{ y: 0 }}
-            exit={{ y: '-50%' }}
-            transition={{
-              duration: 0.5,
-            }}
-          >
-            <Splash setIsLoading={setIsLoading} />
-          </motion.div>
-        )}
+      <AnimatePresence>
+        {isLoading && <Splash setIsLoading={setIsLoading} />}
       </AnimatePresence>
-      {isPortfolio && (
-        <div className='relative overflow-hidden w-full'>
-          {isCanvas && <StarsCanvas />}
-          <motion.div
-            initial={{ y: '150%' }}
-            animate={{ y: 0 }}
-            transition={{
-              duration: 1,
-            }}
-            onAnimationComplete={() => {
-              setIsCanvas(true);
-            }}
-            className='h-screen bg-heroWallpaper bg-no-repeat bg-cover bg-center'
-          >
-            <StandingNavbar />
-            <Hero />
-          </motion.div>
-          {isCanvas && (
-            <div>
-              <About />
-              <Work />
-              <Education />
-              <Projects />
-            </div>
-          )}
+      <div
+        className={`relative ${
+          isLoading ? 'h-screen' : ''
+        } overflow-hidden w-full`}
+      >
+        {!isLoading && <StarsCanvas />}
+        <div className='h-screen bg-heroWallpaper bg-no-repeat bg-cover bg-center relative'>
+          <StandingNavbar />
+          <Hero />
         </div>
-      )}
+        <>
+          <About />
+          <Work />
+          <Education />
+          <Projects />
+        </>
+      </div>
     </main>
   );
 };

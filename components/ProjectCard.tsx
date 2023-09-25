@@ -1,8 +1,10 @@
 'use client';
 
 import Image, { StaticImageData } from 'next/image';
+import { motion } from 'framer-motion';
 
 import { Separator } from '@/components/ui/separator';
+import { slideIn } from '@/lib/transitions';
 
 interface ProjectCardProps {
   index: number;
@@ -23,9 +25,16 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <>
-      <div
-        className='hidden lg:flex justify-between items-center w-full py-12 xl:py-16
-        px-6 xl:px-12 cursor-pointer group hover:opacity-50'
+      {/* Desktop */}
+      <motion.div
+        variants={slideIn(
+          index % 2 === 1 ? 'right' : 'left',
+          'spring',
+          Math.floor(index / 2) * 0.4 + 0.2,
+          0.8,
+        )}
+        className='hidden lg:flex justify-between items-center w-full h-full py-12
+        xl:py-16 px-6 xl:px-12 cursor-pointer group hover:opacity-50 hover:scale-110'
         onMouseEnter={() => setModal({ active: true, index })}
         onMouseLeave={() => setModal({ active: false, index })}
       >
@@ -41,8 +50,10 @@ export const ProjectCard = ({
         >
           {type}
         </p>
-      </div>
+      </motion.div>
       <Separator className='hidden lg:flex' />
+
+      {/* Mobile */}
       <div
         className='flex flex-col lg:hidden w-full px-2 cursor-pointer group gap-y-4
         group'

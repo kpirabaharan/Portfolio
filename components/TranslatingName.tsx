@@ -5,9 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export const TranslatingName = () => {
-  const [textSize, setTextSize] = useState(
-    `${3 + window.innerWidth * 0.006}rem`,
-  );
+  const [textSize, setTextSize] = useState<string>('');
 
   const zeroRef = useRef<HTMLParagraphElement>(null!);
   const firstRef = useRef<HTMLParagraphElement>(null!);
@@ -17,6 +15,7 @@ export const TranslatingName = () => {
   let xPercent = 0;
   let direction = 1;
 
+  // Move Text Faster When Scrolling and Switch Directions on Scroll
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     requestAnimationFrame(translation);
@@ -34,6 +33,12 @@ export const TranslatingName = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const txtSize = 3 + window.innerWidth * 0.006;
+    setTextSize(`${txtSize}rem`);
+  }, []);
+
+  // Adjust Text Size on Resize Window
   useEffect(() => {
     const handleResize = () => {
       const txtSize = 3 + window.innerWidth * 0.006;
@@ -60,7 +65,8 @@ export const TranslatingName = () => {
   return (
     <div
       ref={sliderRef}
-      className='relative flex whitespace-nowrap text-center items-center'
+      className='relative flex whitespace-nowrap text-center items-center 
+      text-muted-foreground'
     >
       <p
         style={{ fontSize: textSize }}

@@ -8,6 +8,7 @@ import MagneticComponent from '@/hoc/MagneticComponent';
 
 const FloatingNav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const { isOpen, onOpen, onClose } = useNavModal();
 
   const floatingNavVariants: Variants = {
@@ -44,6 +45,18 @@ const FloatingNav = () => {
     after:transition after:duration-300 before:top-[5px] after:-top-[5px] \
     content-none';
 
+  const buttonHover: Variants = {
+    initial: { y: '100%' },
+    enter: {
+      y: 0,
+      transition: { duration: 0.3, delay: 0.1 },
+    },
+    exit: {
+      y: '-100%',
+      transition: { ease: [0.11, 0, 0.5, 0], duration: 0.2, delay: 0.1 },
+    },
+  };
+
   return (
     <AnimatePresence>
       {((isScrolled && !isOpen) || isOpen) && (
@@ -59,8 +72,22 @@ const FloatingNav = () => {
             exit='exit'
             whileHover={{ scale: 1.15 }}
             className='w-16 md-height:xl:w-24 h-16 md-height:xl:h-24 bg-white 
-            flex justify-center items-center rounded-full'
+            flex justify-center items-center rounded-full relative overflow-hidden'
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
+            <AnimatePresence>
+              {isHovered && (
+                <motion.div
+                  className='h-full w-full rounded-full bg-teal-600 absolute 
+                top-0 left-0 pointer-events-none'
+                  variants={buttonHover}
+                  initial={'initial'}
+                  animate={'enter'}
+                  exit={'exit'}
+                />
+              )}
+            </AnimatePresence>
             <MagneticComponent
               className='absolute left-0 top-0 w-full h-full rounded-full
               flex items-center justify-center'

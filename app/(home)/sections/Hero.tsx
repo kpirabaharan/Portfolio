@@ -6,16 +6,14 @@ import { heroSubHeading } from '@/constants';
 
 const Hero = () => {
   return (
-    <div
-      className='flex flex-col gap-y-4 justify-center items-center h-[calc(100vh-80px)] 
-      text-muted-foreground'
-    >
+    <>
       <div className='absolute left-0 top-1/4 md:top-1/2 md:-translate-y-1/2'>
         <Location />
       </div>
       <div className='absolute right-4 bottom-24 md:bottom-auto md:top-1/2 md:-translate-y-1/2'>
         <AnimatedText
-          className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-center'
+          className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-center 
+          text-muted-foreground'
           text={heroSubHeading}
         />
       </div>
@@ -25,7 +23,7 @@ const Hero = () => {
       >
         <TranslatingName />
       </div>
-    </div>
+    </>
   );
 };
 

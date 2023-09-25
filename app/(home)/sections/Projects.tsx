@@ -11,6 +11,7 @@ import { ProjectModal } from '@/components/ProjectModal';
 import { Separator } from '@/components/ui/separator';
 
 import { featuredProjects } from '@/constants';
+import { MagneticButton } from '@/components/MagneticButton';
 
 const Projects = () => {
   const [modal, setModal] = useState({ active: false, index: 0 });
@@ -22,8 +23,8 @@ const Projects = () => {
       </motion.h2>
 
       <div
-        className='grid grid-cols-1 sm:grid-cols-2 gap-y-8 lg:flex flex-col lg:justify-center 
-        lg:items-center w-full'
+        className='grid grid-cols-1 sm:grid-cols-2 gap-y-8 lg:gap-y-0 lg:flex 
+        lg:flex-col lg:justify-center lg:items-center w-full'
       >
         <Separator className='hidden lg:flex' />
         {featuredProjects.map((project, index) => {
@@ -41,6 +42,13 @@ const Projects = () => {
           );
         })}
         <ProjectModal modal={modal} projects={featuredProjects} />
+      </div>
+      <div className='w-full flex justify-center mt-4'>
+        <MagneticButton size='wide'>
+          <p className='text-lg lg:text-xl text-primary-foreground'>
+            More Projects
+          </p>
+        </MagneticButton>
       </div>
     </div>
   );

@@ -31,20 +31,20 @@ export const ExperienceCard = ({
         />
       }
     >
-      <h3 className='vertical-timeline-element-title font-bold text-lg'>
+      <h3 className='vertical-timeline-element-title font-bold text-lg lg:text-xl'>
         {title}
       </h3>
-      <h4 className='vertical-timeline-element-subtitle'>
+      <h4 className='vertical-timeline-element-subtitle lg:pt-2'>
         {company_name}
         <span className='pl-4'>|</span>
         <span className='pl-4'>{location}</span>
       </h4>
 
-      <ul className='mt-5 list-disc ml-3 space-y-2'>
+      <ul className='mt-2 list-disc ml-3 space-y-2'>
         {points.map((point, index) => (
           <li
             key={`experience-${index}`}
-            className='text-muted-foreground text-[14px] pl-1 tracking-widers'
+            className='text-muted-foreground text-sm lg:text-base pl-1'
           >
             {point}
           </li>

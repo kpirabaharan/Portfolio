@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
-import { textVariant } from '@/lib/transitions';
+import { fadeIn, textVariant } from '@/lib/transitions';
 import { styles } from '@/lib/styles';
 
 import { western } from '@/assets';
@@ -13,7 +13,8 @@ const Education = () => {
       <motion.h2 variants={textVariant()} className={styles.sectionHead}>
         EDUCATION
       </motion.h2>
-      <div
+      <motion.div
+        variants={fadeIn('', '', 0.1, 1)}
         className='flex flex-row bg-slate-900 p-8 rounded-2xl 
         justify-center items-center'
       >
@@ -38,7 +39,7 @@ const Education = () => {
             2017 - 2022
           </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

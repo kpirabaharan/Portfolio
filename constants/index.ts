@@ -9,6 +9,7 @@ import {
 import { ExperienceType, FeaturedProjectType } from '@/types';
 
 export const heroSubHeading = [
+  2500,
   'Full Stack Developer',
   1000,
   'Mobile App Developer',
@@ -16,7 +17,6 @@ export const heroSubHeading = [
   'Embedded Systems Engineer',
   1000,
   'Mechatronics/Software Engineer',
-  2000,
 ];
 
 export const heroDescription = '';

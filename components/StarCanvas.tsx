@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, Suspense } from 'react';
+import { useRef, useState, useEffect, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial, Preload } from '@react-three/drei';
 import { inSphere } from 'maath/random';
@@ -34,8 +34,17 @@ const Stars = () => {
 };
 
 export const StarsCanvas = () => {
-  const canvas = document.createElement('canvas');
+  const [isMounted, setIsMounted] = useState(false);
 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
+  const canvas = document.createElement('canvas');
   var gl;
   try {
     gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
