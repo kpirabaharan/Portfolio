@@ -31,6 +31,12 @@ export const navLinks = [
   },
 ];
 
+export const socials = [
+  { name: 'LinkedIn', link: 'https://linkedin.com/in/kpirabaharan' },
+  { name: 'Github', link: 'https://github.com/kpirabaharan' },
+  { name: 'Resume', link: './Keeshigan-Pirabaharan-Resume.pdf' },
+];
+
 export const heroSubHeading = [
   2500,
   'Full Stack Developer',

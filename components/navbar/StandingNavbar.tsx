@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 import useNavModal from '@/hooks/useNavModal';
 
@@ -12,6 +12,7 @@ import { navLinks } from '@/constants';
 
 export const StandingNavbar = () => {
   const router = useRouter();
+  const pathname = usePathname();
   const { onOpen } = useNavModal();
 
   return (
@@ -33,21 +34,23 @@ export const StandingNavbar = () => {
       </NavLink>
 
       {/* DesktopNav */}
-
       <div className='flex flex-row gap-x-2'>
-        {navLinks.map(
-          (link, index) =>
+        {navLinks.map((link, index) => {
+          const isPath = pathname === link.href;
+          return (
             link.href !== '/' && (
               <NavLink
                 key={index}
-                className='md:flex hidden cursor-pointer'
+                className='md:flex hidden cursor-pointer p-4'
                 side='bottom'
+                isPath={isPath}
                 onClick={() => router.push(link.href)}
               >
                 <p>{link.title}</p>
               </NavLink>
-            ),
-        )}
+            )
+          );
+        })}
       </div>
     </nav>
   );

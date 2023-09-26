@@ -8,13 +8,13 @@ import MagneticComponent from '@/hoc/MagneticComponent';
 import { Button } from '@/components/ui/button';
 
 interface MagneticButtonProps extends PropsWithChildren {
-  buttonClass?: string;
   size?: 'default' | 'sm' | 'lg' | 'icon' | 'round' | 'filter' | 'wide';
+  onClick: () => void;
 }
 
 export const MagneticButton = ({
-  buttonClass,
   size = 'round',
+  onClick,
   children,
 }: MagneticButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -49,8 +49,8 @@ export const MagneticButton = ({
         )}
       </AnimatePresence>
       <Button
-        // className={`${buttonClass}`}
         size={size}
+        onClick={onClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

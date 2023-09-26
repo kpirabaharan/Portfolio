@@ -1,85 +1,40 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { AnimatePresence, motion, Variants } from 'framer-motion';
+import { useRouter, usePathname } from 'next/navigation';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import useNavModal from '@/hooks/useNavModal';
 import useWindowSize from '@/hooks/useWindowSize';
+import {
+  menuSlide,
+  linkVariants,
+  widthVariants,
+  heightVariants,
+  pathAnimation,
+} from '@/lib/animations';
 
 import MagneticComponent from '@/hoc/MagneticComponent';
 import { NavLink } from '@/components/navbar/NavLink';
-import { Curve } from '@/components/navbar/Curve';
 
 import { Separator } from '@/components/ui/separator';
 
-import { navLinks } from '@/constants';
-
-const socials = [
-  { name: 'LinkedIn', link: 'https://linkedin.com/in/kpirabaharan' },
-  { name: 'Github', link: 'https://github.com/kpirabaharan' },
-  { name: 'Resume', link: './Keeshigan-Pirabaharan-Resume.pdf' },
-];
+import { navLinks, socials } from '@/constants';
 
 export const NavModal = () => {
-  const { isOpen, onClose } = useNavModal();
-  const [width, _] = useWindowSize();
   const router = useRouter();
-
-  const menuSlide: Variants = {
-    initial: { x: 'calc(100% + 200px)' },
-    enter: { x: 0, transition: { duration: 0.8 } },
-    exit: {
-      x: 'calc(100% + 200px)',
-      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
-    },
-  };
+  const pathname = usePathname();
+  const [width, _] = useWindowSize();
+  const { isOpen, onClose } = useNavModal();
 
   const animate = width > 1280 ? 'xl' : width > 1024 ? 'lg' : 'base';
-  const fontS = width > 1280 ? '4rem' : width > 1024 ? '3rem' : '2rem';
 
-  const widthVariants: Variants = {
-    xl: {
-      width: 700,
-      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
-    },
-    lg: {
-      width: 500,
-      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
-    },
-    base: {
-      width: 400,
-      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
-    },
-  };
-  const heightVariants: Variants = {
-    xl: {
-      height: '80%',
-      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
-    },
-    lg: {
-      height: '70%',
-      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
-    },
-    base: {
-      height: '50%',
-      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
-    },
-  };
-  const linkVariants: Variants = {
-    initial: { fontSize: fontS },
-    xl: {
-      fontSize: fontS,
-      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
-    },
-    lg: {
-      fontSize: fontS,
-      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
-    },
-    base: {
-      fontSize: fontS,
-      transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
-    },
-  };
+  // Curve
+  const initialPath = `M200 0 L200 ${window.innerHeight} Q-200 ${
+    window.innerHeight / 2
+  } 200 0`;
+  const targetPath = `M200 0 L200 ${window.innerHeight} Q200 ${
+    window.innerHeight / 2
+  } 200 0`;
 
   return (
     <AnimatePresence>
@@ -113,30 +68,39 @@ export const NavModal = () => {
                 </div>
 
                 <div className='flex flex-col gap-y-2'>
-                  {navLinks.map((nav, index) => (
-                    <NavLink
-                      className='cursor-pointer w-fit'
-                      key={index}
-                      index={index}
-                      onClick={
-                        nav.href === '/'
-                          ? () => window.location.assign('/')
-                          : () => router.push(nav.href)
-                      }
-                      size={width > 1024 ? 'large' : 'small'}
-                      side='left'
-                    >
-                      <motion.a
-                        initial='initial'
-                        animate={animate}
-                        variants={linkVariants}
-                        onClick={onClose}
-                        className='text-[2rem] lg-[4rem] xl-[5rem]'
+                  {navLinks.map((link, index) => {
+                    const isPath = pathname === link.href;
+                    return (
+                      <NavLink
+                        className='cursor-pointer w-fit py-2'
+                        key={index}
+                        index={index}
+                        isPath={isPath}
+                        onClick={
+                          link.href === '/'
+                            ? () => {
+                                window.location.assign('/');
+                                onClose();
+                              }
+                            : () => {
+                                router.push(link.href);
+                                onClose();
+                              }
+                        }
+                        size={width > 1024 ? 'large' : 'small'}
+                        side='left'
                       >
-                        {nav.title}
-                      </motion.a>
-                    </NavLink>
-                  ))}
+                        <motion.a
+                          initial='initial'
+                          animate={animate}
+                          variants={linkVariants(width)}
+                          className='text-[2rem] lg-[4rem] xl-[5rem]'
+                        >
+                          {link.title}
+                        </motion.a>
+                      </NavLink>
+                    );
+                  })}
                 </div>
                 <div className='mt-4 flex flex-col gap-y-4'>
                   <p className='uppercase text-xs text-muted-foreground'>
@@ -165,7 +129,18 @@ export const NavModal = () => {
                 </div>
               </motion.div>
             </motion.div>
-            <Curve />
+            {/* Curve */}
+            <svg
+              className='absolute top-0 -left-[199px] w-[200px] h-full 
+              stroke-none fill-slate-900 pointer-events-none'
+            >
+              <motion.path
+                variants={pathAnimation(initialPath, targetPath)}
+                initial='initial'
+                animate='enter'
+                exit='exit'
+              />
+            </svg>
           </motion.div>
         </div>
       )}

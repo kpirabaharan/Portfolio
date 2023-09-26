@@ -1,3 +1,6 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
@@ -10,6 +13,7 @@ import { MagneticButton } from '@/components/MagneticButton';
 
 const About = () => {
   const scroll = new LocomotiveScroll();
+  const router = useRouter();
 
   return (
     <div className='grid grid-cols-5 w-full relative gap-y-4'>
@@ -58,15 +62,16 @@ const About = () => {
         >
           {/* Mobile */}
           <div className='flex md:hidden'>
-            <MagneticButton>
+            <MagneticButton onClick={() => router.push('/about')}>
               <p className='text-lg lg:text-xl text-primary-foreground'>
                 About Me
               </p>
             </MagneticButton>
           </div>
+
           {/* Desktop */}
           <div className='md:flex hidden' data-scroll data-scroll-speed={-0.1}>
-            <MagneticButton>
+            <MagneticButton onClick={() => router.push('/about')}>
               <p className='text-lg lg:text-xl text-primary-foreground'>
                 About Me
               </p>

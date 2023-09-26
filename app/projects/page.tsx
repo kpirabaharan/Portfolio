@@ -31,7 +31,7 @@ const ProjectsPage = () => {
         </h1>
         <div className='flex flex-row gap-x-6 w-full mt-8'>
           {filters.map((cat, index) => (
-            <MagneticButton size={'filter'} key={index}>
+            <MagneticButton size={'filter'} key={index} onClick={() => {}}>
               <p className='text-base lg:text-lg font-normal text-primary-foreground'>
                 {cat.title}
               </p>

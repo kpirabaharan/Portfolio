@@ -1,4 +1,7 @@
+'use client';
+
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
@@ -7,14 +10,15 @@ import { styles } from '@/lib/styles';
 
 import { ProjectCard } from '@/components/ProjectCard';
 import { ProjectModal } from '@/components/ProjectModal';
+import { MagneticButton } from '@/components/MagneticButton';
 
 import { Separator } from '@/components/ui/separator';
 
 import { featuredProjects } from '@/constants';
-import { MagneticButton } from '@/components/MagneticButton';
 
 const Projects = () => {
   const [modal, setModal] = useState({ active: false, index: 0 });
+  const router = useRouter();
 
   return (
     <div className='flex flex-col gap-y-8'>
@@ -47,7 +51,7 @@ const Projects = () => {
         <ProjectModal modal={modal} projects={featuredProjects} />
       </div>
       <div className='w-full flex justify-center mt-4'>
-        <MagneticButton size='wide'>
+        <MagneticButton size='wide' onClick={() => router.push('/projects')}>
           <p className='text-lg lg:text-xl text-primary-foreground'>
             More Projects
           </p>
