@@ -15,7 +15,9 @@ const AboutPage = () => {
       <AnimatePresence>
         {isLoading && <Splash setIsLoading={setIsLoading} />}
       </AnimatePresence>
-      <StandingNavbar />
+      <div className={`h-full w-full ${isLoading && 'hidden'}`}>
+        <StandingNavbar />
+      </div>
     </div>
   );
 };

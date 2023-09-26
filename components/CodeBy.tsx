@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { redirect } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 export const CodeBy = () => {

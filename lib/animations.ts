@@ -1,5 +1,52 @@
 import { Variants } from 'framer-motion';
 
+//Splash
+export const slideUp = (isInitial: boolean) => {
+  return {
+    initial: isInitial
+      ? {
+          y: 0,
+        }
+      : {
+          y: '+100vh',
+        },
+    enter: !isInitial
+      ? {
+          y: 0,
+          transition: { ease: [0.76, 0, 0.24, 1], duration: 0.5 },
+        }
+      : {},
+    exit: {
+      y: '-100vh',
+      transition: { ease: [0.76, 0, 0.24, 1], duration: 0.8 },
+    },
+  };
+};
+
+export const topCurve = (initialPath: string, targetPath: string) => {
+  return {
+    initial: {
+      d: initialPath,
+    },
+    enter: {
+      d: targetPath,
+      transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+    },
+  };
+};
+
+export const bottomCurve = (initialPath: string, targetPath: string) => {
+  return {
+    initial: {
+      d: initialPath,
+    },
+    exit: {
+      d: targetPath,
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.2 },
+    },
+  };
+};
+
 //NavLink
 export const textSlide: Variants = {
   initial: { x: '80px' },
