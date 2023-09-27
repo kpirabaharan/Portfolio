@@ -16,7 +16,7 @@ import { StandingNavbar } from '@/app/components/navbar/StandingNavbar';
 import { StarsCanvas } from '@/components/StarCanvas';
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -29,9 +29,9 @@ const Home = () => {
     requestAnimationFrame(raf);
   }, []);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   return (
     <main>

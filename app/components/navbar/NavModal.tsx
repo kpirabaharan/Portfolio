@@ -115,8 +115,7 @@ export const NavModal = () => {
                           modifier={{ x: 0.3, y: 0.3 }}
                         >
                           <a
-                            className='font-light cursor-pointer hover:underline
-                            underline-offset-8'
+                            className='font-light hover:underline underline-offset-8'
                             href={link}
                             target='_blank'
                           >
