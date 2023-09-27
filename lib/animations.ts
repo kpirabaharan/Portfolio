@@ -8,7 +8,7 @@ export const splashInUp = () => {
     },
     enter: {
       y: 0,
-      transition: { ease: [0.76, 0, 0.24, 1], duration: 0.5 },
+      transition: { ease: [0.76, 0, 0.24, 1], duration: 0.6 },
     },
   };
 };
@@ -20,7 +20,7 @@ export const splashOutUp = () => {
     },
     exit: {
       y: '-100vh',
-      transition: { ease: [0.76, 0, 0.24, 1], duration: 0.5 },
+      transition: { ease: [0.76, 0, 0.24, 1], duration: 0.6 },
     },
   };
 };
@@ -32,7 +32,7 @@ export const topCurve = (initialPath: string, targetPath: string) => {
     },
     enter: {
       d: targetPath,
-      transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+      transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1] },
     },
   };
 };
@@ -44,7 +44,7 @@ export const bottomCurve = (initialPath: string, targetPath: string) => {
     },
     exit: {
       d: targetPath,
-      transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1], delay: 0.2 },
+      transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1], delay: 0.2 },
     },
   };
 };

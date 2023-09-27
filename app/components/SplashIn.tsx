@@ -14,9 +14,8 @@ const SplashIn = () => {
 
   useEffect(() => {
     router.prefetch(url!);
-    console.log('Prefetched');
     setDimension({ width: window.innerWidth, height: window.innerHeight });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const topInitialPath = `M0 300 L${dimension.width} 300 Q${

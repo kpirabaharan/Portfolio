@@ -60,7 +60,7 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
         <>
           <AnimatedText
             className='text-4xl md:text-7xl z-20'
-            text={[title, 500, () => setIsLoading(false)]}
+            text={[title, 100, () => setIsLoading(false)]}
           />
           {/* Bottom Curve */}
           <svg
