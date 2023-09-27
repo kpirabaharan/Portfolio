@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Lenis from '@studio-freight/lenis';
 
-import Splash from '@/app/components/Splash';
+import SplashOut from '@/app/components/SplashOut';
 import Hero from '@/app/(home)/sections/Hero';
 import About from '@/app/(home)/sections/About';
 import Work from '@/app/(home)/sections/Work';
@@ -36,7 +36,7 @@ const Home = () => {
   return (
     <main>
       <AnimatePresence>
-        {isLoading && <Splash setIsLoading={setIsLoading} />}
+        {isLoading && <SplashOut setIsLoading={setIsLoading} />}
       </AnimatePresence>
       <div
         className={`relative ${

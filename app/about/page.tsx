@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
-import Splash from '@/app/components/Splash';
+import SplashOut from '@/app/components/SplashOut';
 
 import { StandingNavbar } from '@/app/components/navbar/StandingNavbar';
 
@@ -13,7 +13,7 @@ const AboutPage = () => {
   return (
     <div className='h-full w-full'>
       <AnimatePresence>
-        {isLoading && <Splash setIsLoading={setIsLoading} />}
+        {isLoading && <SplashOut setIsLoading={setIsLoading} />}
       </AnimatePresence>
       <div className={`h-full w-full ${isLoading && 'hidden'}`}>
         <StandingNavbar />

@@ -1,21 +1,23 @@
 import { Variants } from 'framer-motion';
 
 //Splash
-export const slideUp = (isInitial: boolean) => {
+export const splashInUp = () => {
   return {
-    initial: isInitial
-      ? {
-          y: 0,
-        }
-      : {
-          y: '+100vh',
-        },
-    enter: !isInitial
-      ? {
-          y: 0,
-          transition: { ease: [0.76, 0, 0.24, 1], duration: 0.5 },
-        }
-      : {},
+    initial: {
+      y: '100vh',
+    },
+    enter: {
+      y: 0,
+      transition: { ease: [0.76, 0, 0.24, 1], duration: 0.8 },
+    },
+  };
+};
+
+export const splashOutUp = () => {
+  return {
+    initial: {
+      y: 0,
+    },
     exit: {
       y: '-100vh',
       transition: { ease: [0.76, 0, 0.24, 1], duration: 0.8 },

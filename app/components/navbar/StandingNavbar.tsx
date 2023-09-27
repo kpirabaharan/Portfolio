@@ -1,8 +1,9 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 import useNavModal from '@/hooks/useNavModal';
+import useSplash from '@/hooks/useSplash';
 
 import MagneticComponent from '@/hoc/MagneticComponent';
 import { CodeBy } from '@/components/CodeBy';
@@ -11,9 +12,9 @@ import { NavLink } from '@/app/components/navbar/NavLink';
 import { navLinks } from '@/constants';
 
 export const StandingNavbar = () => {
-  const router = useRouter();
   const pathname = usePathname();
   const { onOpen } = useNavModal();
+  const { startSplash } = useSplash();
 
   return (
     <nav
@@ -37,6 +38,7 @@ export const StandingNavbar = () => {
       <div className='flex flex-row gap-x-2'>
         {navLinks.map((link, index) => {
           const isPath = pathname === link.href;
+          const { title, href } = link;
           return (
             link.href !== '/' && (
               <NavLink
@@ -44,9 +46,9 @@ export const StandingNavbar = () => {
                 className='md:flex hidden cursor-pointer p-4'
                 side='bottom'
                 isPath={isPath}
-                onClick={() => router.push(link.href)}
+                onClick={() => startSplash(href)}
               >
-                <p>{link.title}</p>
+                <p>{title}</p>
               </NavLink>
             )
           );

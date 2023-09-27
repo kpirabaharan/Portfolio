@@ -3,8 +3,9 @@
 import { useRouter, usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import useNavModal from '@/hooks/useNavModal';
 import useWindowSize from '@/hooks/useWindowSize';
+import useNavModal from '@/hooks/useNavModal';
+import useSplash from '@/hooks/useSplash';
 import {
   menuSlide,
   linkVariants,
@@ -25,6 +26,7 @@ export const NavModal = () => {
   const pathname = usePathname();
   const [width, _] = useWindowSize();
   const { isOpen, onClose } = useNavModal();
+  const { startSplash } = useSplash();
 
   const animate = width > 1280 ? 'xl' : width > 1024 ? 'lg' : 'base';
 
@@ -70,34 +72,25 @@ export const NavModal = () => {
                 <div className='flex flex-col gap-y-2'>
                   {navLinks.map((link, index) => {
                     const isPath = pathname === link.href;
+                    const { title, href } = link;
                     return (
                       <NavLink
                         className='cursor-pointer w-fit py-2'
                         key={index}
                         index={index}
                         isPath={isPath}
-                        onClick={
-                          link.href === '/'
-                            ? () => {
-                                window.location.assign('/');
-                                onClose();
-                              }
-                            : () => {
-                                router.push(link.href);
-                                onClose();
-                              }
-                        }
+                        onClick={() => startSplash(href)}
                         size={width > 1024 ? 'large' : 'small'}
                         side='left'
                       >
-                        <motion.a
+                        <motion.p
                           initial='initial'
                           animate={animate}
                           variants={linkVariants(width)}
                           className='text-[2rem] lg-[4rem] xl-[5rem]'
                         >
-                          {link.title}
-                        </motion.a>
+                          {title}
+                        </motion.p>
                       </NavLink>
                     );
                   })}

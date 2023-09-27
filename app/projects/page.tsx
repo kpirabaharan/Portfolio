@@ -5,7 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 
 import { styles } from '@/lib/styles';
 
-import Splash from '@/app/components/Splash';
+import SplashOut from '@/app/components/SplashOut';
 import { StandingNavbar } from '@/app/components/navbar/StandingNavbar';
 import { MagneticButton } from '@/components/MagneticButton';
 
@@ -22,7 +22,7 @@ const ProjectsPage = () => {
   return (
     <div className='h-full w-full'>
       <AnimatePresence>
-        {isLoading && <Splash setIsLoading={setIsLoading} />}
+        {isLoading && <SplashOut setIsLoading={setIsLoading} />}
       </AnimatePresence>
       <div className={`h-full w-full ${isLoading && 'hidden'}`}>
         <StandingNavbar />
