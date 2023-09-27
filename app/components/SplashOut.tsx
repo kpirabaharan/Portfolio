@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 
-import { splashOutUp, topCurve, bottomCurve } from '@/lib/animations';
+import { splashOutUp, bottomCurve } from '@/lib/animations';
 
 import { AnimatedText } from '@/components/AnimatedText';
 import useSplash from '@/hooks/useSplash';
@@ -36,6 +36,7 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
   useEffect(() => {
     closeSplash();
     setDimension({ width: window.innerWidth, height: window.innerHeight });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const bottomInitialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
@@ -49,7 +50,7 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
 
   return (
     <motion.div
-      className='h-screen w-screen cursor-wait fixed top-0 left-0 z-10
+      className='h-screen w-screen cursor-wait fixed top-0 left-0 z-40
       flex justify-center items-center bg-teal-800'
       initial={'initial'}
       exit={'exit'}

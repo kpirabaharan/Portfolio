@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import useWindowSize from '@/hooks/useWindowSize';
@@ -22,7 +22,6 @@ import { Separator } from '@/components/ui/separator';
 import { navLinks, socials } from '@/constants';
 
 export const NavModal = () => {
-  const router = useRouter();
   const pathname = usePathname();
   const [width, _] = useWindowSize();
   const { isOpen, onClose } = useNavModal();
@@ -62,7 +61,8 @@ export const NavModal = () => {
               <motion.div
                 animate={animate}
                 variants={heightVariants}
-                className='flex flex-col justify-around my-auto w-3/4 xl:w-3/5 mx-auto min-h-[500px]'
+                className='flex flex-col justify-around my-auto w-3/4 xl:w-3/5 mx-auto 
+                min-h-[500px]'
               >
                 <div className='uppercase flex flex-col gap-y-4'>
                   <p className='text-xs text-muted-foreground'>Navigation</p>
@@ -79,7 +79,10 @@ export const NavModal = () => {
                         key={index}
                         index={index}
                         isPath={isPath}
-                        onClick={() => startSplash(href)}
+                        onClick={() => {
+                          onClose();
+                          startSplash(href);
+                        }}
                         size={width > 1024 ? 'large' : 'small'}
                         side='left'
                       >

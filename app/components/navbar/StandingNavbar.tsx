@@ -1,6 +1,6 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { redirect, usePathname, useRouter } from 'next/navigation';
 
 import useNavModal from '@/hooks/useNavModal';
 import useSplash from '@/hooks/useSplash';
@@ -13,6 +13,7 @@ import { navLinks } from '@/constants';
 
 export const StandingNavbar = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const { onOpen } = useNavModal();
   const { startSplash } = useSplash();
 
@@ -46,7 +47,11 @@ export const StandingNavbar = () => {
                 className='md:flex hidden cursor-pointer p-4'
                 side='bottom'
                 isPath={isPath}
-                onClick={() => startSplash(href)}
+                onClick={
+                  pathname === href
+                    ? () => window.location.assign(href)
+                    : () => startSplash(href)
+                }
               >
                 <p>{title}</p>
               </NavLink>

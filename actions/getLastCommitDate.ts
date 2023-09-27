@@ -11,7 +11,10 @@ export const getLastCommitDate = async () => {
     repo: 'next-portfolio',
     branch: 'master',
   });
+
   const date = data.commit.commit.committer?.date ?? '2023-09-26T05:05:54Z';
+
+  console.log(date);
 
   return new Date(date);
 };

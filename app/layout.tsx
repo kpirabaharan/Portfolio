@@ -11,6 +11,8 @@ import Footer from '@/app/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
+// export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: "Keeshigan's Portfolio",
   description: "Keeshigan Pirabaharan's Professional Portfolio Website",

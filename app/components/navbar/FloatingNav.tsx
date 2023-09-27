@@ -61,7 +61,7 @@ const FloatingNav = () => {
     <AnimatePresence>
       {((isScrolled && !isOpen) || isOpen) && (
         <MagneticComponent
-          className='fixed right-0 m-6 md-height:m-10 cursor-pointer z-40 rounded-full'
+          className='fixed right-0 m-6 md-height:m-10 cursor-pointer z-30 rounded-full'
           modifier={{ x: 0.4, y: 0.4 }}
         >
           <motion.div
