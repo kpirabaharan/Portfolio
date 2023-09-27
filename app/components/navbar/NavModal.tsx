@@ -14,7 +14,7 @@ import {
 } from '@/lib/animations';
 
 import MagneticComponent from '@/hoc/MagneticComponent';
-import { NavLink } from '@/components/navbar/NavLink';
+import { NavLink } from '@/app/components/navbar/NavLink';
 
 import { Separator } from '@/components/ui/separator';
 

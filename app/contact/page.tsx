@@ -5,7 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 
 import Splash from '@/app/components/Splash';
 
-import { StandingNavbar } from '@/components/navbar/StandingNavbar';
+import { StandingNavbar } from '@/app/components/navbar/StandingNavbar';
 
 const ContactPage = () => {
   const [isLoading, setIsLoading] = useState(true);

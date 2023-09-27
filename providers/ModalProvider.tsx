@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { NavModal } from '@/components/navbar/NavModal';
+import { NavModal } from '@/app/components/navbar/NavModal';
 
 const ModalProvider = () => {
   const [isMounted, setIsMounted] = useState(false);

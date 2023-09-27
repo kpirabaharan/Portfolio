@@ -12,7 +12,7 @@ import Education from '@/app/(home)/sections/Education';
 import Projects from '@/app/(home)/sections/Projects';
 import Contact from '@/app/(home)/sections/Contact';
 
-import { StandingNavbar } from '@/components/navbar/StandingNavbar';
+import { StandingNavbar } from '@/app/components/navbar/StandingNavbar';
 import { StarsCanvas } from '@/components/StarCanvas';
 
 const Home = () => {

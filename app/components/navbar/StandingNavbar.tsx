@@ -6,7 +6,7 @@ import useNavModal from '@/hooks/useNavModal';
 
 import MagneticComponent from '@/hoc/MagneticComponent';
 import { CodeBy } from '@/components/CodeBy';
-import { NavLink } from '@/components/navbar/NavLink';
+import { NavLink } from '@/app/components/navbar/NavLink';
 
 import { navLinks } from '@/constants';
 

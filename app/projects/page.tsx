@@ -6,7 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import { styles } from '@/lib/styles';
 
 import Splash from '@/app/components/Splash';
-import { StandingNavbar } from '@/components/navbar/StandingNavbar';
+import { StandingNavbar } from '@/app/components/navbar/StandingNavbar';
 import { MagneticButton } from '@/components/MagneticButton';
 
 const filters = [
