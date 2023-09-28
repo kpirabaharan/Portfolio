@@ -11,7 +11,8 @@ interface FooterProps {
 const Footer = ({ date }: FooterProps) => {
   return (
     <div
-      className={`w-full flex flex-col-reverse sm:flex-row justify-between px-4 sm:px-16 py-6 sm:py-8`}
+      className={`w-full flex flex-col-reverse sm:flex-row justify-between px-4 
+      sm:px-16 py-6 sm:py-8 mt-auto`}
     >
       <div className='flex flex-row gap-x-12 justify-between sm:justify-start'>
         <div className='flex flex-col gap-y-6'>
