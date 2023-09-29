@@ -7,12 +7,12 @@ import SectionWrapper from '@/hoc/SectionWrapper';
 import { fadeIn, textVariant } from '@/lib/transitions';
 import { styles } from '@/lib/styles';
 
-import LocomotiveScroll from 'locomotive-scroll';
+// import LocomotiveScroll from 'locomotive-scroll';
 
 import { MagneticButton } from '@/components/MagneticButton';
 
 const About = () => {
-  const scroll = new LocomotiveScroll();
+  // const scroll = new LocomotiveScroll();
   const router = useRouter();
 
   return (
@@ -70,13 +70,13 @@ const About = () => {
           </div>
 
           {/* Desktop */}
-          <div className='md:flex hidden' data-scroll data-scroll-speed={-0.1}>
+          {/* <div className='md:flex hidden' data-scroll data-scroll-speed={-0.1}>
             <MagneticButton onClick={() => router.push('/about')}>
               <p className='text-lg lg:text-xl text-primary-foreground'>
                 About Me
               </p>
             </MagneticButton>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

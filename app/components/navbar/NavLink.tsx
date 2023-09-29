@@ -26,7 +26,7 @@ const StatusLight = ({
               ? size === 'large'
                 ? '-left-8 bottom-1/2 translate-y-1/2'
                 : '-left-4 bottom-1/2 translate-y-1/2'
-              : '-bottom-4 left-1/2 -translate-x-1/2'
+              : 'bottom-0 left-1/2 -translate-x-1/2'
           } 
         rounded-full transition duration-300`}
     />
@@ -38,6 +38,7 @@ interface NavLinkProps extends PropsWithChildren {
   index?: number;
   side?: 'left' | 'bottom';
   size?: 'small' | 'large';
+  padding?: string;
   isPath?: boolean;
   onClick: () => void;
 }
@@ -48,6 +49,7 @@ export const NavLink = ({
   index,
   side = 'bottom',
   size = 'small',
+  padding,
   isPath,
   onClick,
 }: NavLinkProps) => {
@@ -62,7 +64,7 @@ export const NavLink = ({
         animate='enter'
         exit='exit'
         onClick={onClick}
-        className='relative'
+        className={`relative ${padding}`}
         onMouseEnter={!isPath ? () => setIsActive(true) : () => {}}
         onMouseLeave={!isPath ? () => setIsActive(false) : () => {}}
       >

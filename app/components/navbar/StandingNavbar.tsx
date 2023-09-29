@@ -28,7 +28,8 @@ export const StandingNavbar = () => {
 
       {/* Mobile Nav */}
       <NavLink
-        className='ml-auto flex md:hidden cursor-pointer p-4'
+        className='ml-auto flex md:hidden cursor-pointer'
+        padding='p-4'
         side='left'
         onClick={onOpen}
       >
@@ -44,8 +45,9 @@ export const StandingNavbar = () => {
             link.href !== '/' && (
               <NavLink
                 key={index}
-                className='md:flex hidden cursor-pointer p-4'
+                className='md:flex hidden cursor-pointer'
                 side='bottom'
+                padding={'p-4'}
                 isPath={isPath}
                 onClick={
                   pathname === href

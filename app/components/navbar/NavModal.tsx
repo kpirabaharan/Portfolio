@@ -42,7 +42,7 @@ export const NavModal = () => {
       {isOpen && (
         <div
           onClick={onClose}
-          className='fixed h-screen z-10 w-full backdrop-blur-sm transition 
+          className='fixed h-screen z-10 w-full transition 
           duration-500 overflow-hidden'
         >
           <motion.div
