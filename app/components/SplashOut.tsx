@@ -34,10 +34,12 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
   }
 
   useEffect(() => {
-    closeSplash();
     setDimension({ width: window.innerWidth, height: window.innerHeight });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    closeSplash();
+  }, [closeSplash]);
 
   const bottomInitialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
     dimension.height

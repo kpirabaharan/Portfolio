@@ -13,10 +13,12 @@ const SplashIn = () => {
   const { url, isSplash } = useSplash();
 
   useEffect(() => {
-    router.prefetch(url!);
     setDimension({ width: window.innerWidth, height: window.innerHeight });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (url) router.prefetch(url);
+  }, [router, url]);
 
   const topInitialPath = `M0 300 L${dimension.width} 300 Q${
     dimension.width / 2
