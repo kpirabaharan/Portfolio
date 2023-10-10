@@ -71,7 +71,7 @@ const About = () => {
           </div>
 
           {/* Desktop */}
-          <div className='md:flex hidden' data-scroll data-scroll-speed='1'>
+          <div className='md:flex hidden' data-scroll data-scroll-speed='-0.1'>
             <MagneticButton onClick={() => router.push('/about')}>
               <p className='text-lg lg:text-xl text-primary-foreground'>
                 About Me

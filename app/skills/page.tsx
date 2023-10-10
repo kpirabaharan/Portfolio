@@ -6,6 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import SplashOut from '@/app/components/SplashOut';
 
 import { StandingNavbar } from '@/app/components/navbar/StandingNavbar';
+import { Skills } from '@/app/components/Skills';
 
 const SkillsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,6 +18,7 @@ const SkillsPage = () => {
       </AnimatePresence>
       <div className={`h-full w-full ${isLoading && 'hidden'}`}>
         <StandingNavbar />
+        <Skills />
       </div>
     </div>
   );

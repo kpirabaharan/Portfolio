@@ -5,11 +5,11 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 
-import { FeaturedProjectType } from '@/types';
+import { ProjectType } from '@/types';
 
 interface ProjectModalProps {
   modal: { active: boolean; index: number };
-  projects: FeaturedProjectType[];
+  projects: ProjectType[];
 }
 
 const scaleAnimation = {
