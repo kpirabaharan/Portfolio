@@ -16,7 +16,7 @@ module.exports = {
       },
     },
     extend: {
-      fontSize: { '10xl': '10rem', '15xl': '15rem' },
+      fontSize: { xxs: '0.5rem', '10xl': '10rem', '15xl': '15rem' },
       rotate: { full: '360deg' },
       backgroundImage: {
         heroWallpaper: "url('/hero-wallpaper.jpg')",

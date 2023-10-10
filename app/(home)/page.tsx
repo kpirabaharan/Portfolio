@@ -5,12 +5,12 @@ import { AnimatePresence } from 'framer-motion';
 import Lenis from '@studio-freight/lenis';
 
 import SplashOut from '@/app/components/SplashOut';
-import Hero from '@/app/(footer)/sections/Hero';
-import About from '@/app/(footer)/sections/About';
-import Work from '@/app/(footer)/sections/Work';
-import Education from '@/app/(footer)/sections/Education';
-import Projects from '@/app/(footer)/sections/Projects';
-import Contact from '@/app/(footer)/sections/Contact';
+import Hero from '@/app/sections/Hero';
+import About from '@/app/sections/About';
+import Work from '@/app/sections/Work';
+import Education from '@/app/sections/Education';
+import Projects from '@/app/sections/Projects';
+import Contact from '@/app/sections/Contact';
 
 import { StandingNavbar } from '@/app/components/navbar/StandingNavbar';
 import { StarsCanvas } from '@/components/StarCanvas';

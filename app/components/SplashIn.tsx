@@ -13,11 +13,8 @@ const SplashIn = () => {
   const { url, isSplash } = useSplash();
 
   useEffect(() => {
-    setDimension({ width: window.innerWidth, height: window.innerHeight });
-  }, []);
-
-  useEffect(() => {
     if (url) router.prefetch(url);
+    setDimension({ width: window.innerWidth, height: window.innerHeight });
   }, [router, url]);
 
   const topInitialPath = `M0 300 L${dimension.width} 300 Q${
