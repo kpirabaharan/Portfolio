@@ -6,7 +6,7 @@ import {
   spotifyClone,
   smartWindows,
 } from '@/assets';
-import { ExperienceType, FeaturedProjectType } from '@/types';
+import { ExperienceType, ProjectType } from '@/types';
 
 export const navLinks = [
   {
@@ -14,13 +14,9 @@ export const navLinks = [
     href: '/',
   },
   {
-    title: 'About',
-    href: '/about',
+    title: 'Skills',
+    href: '/skills',
   },
-  // {
-  //   title: 'Skills',
-  //   href: '/skills',
-  // },
   {
     title: 'Projects',
     href: '/projects',
@@ -79,7 +75,38 @@ export const experiences: ExperienceType[] = [
   },
 ];
 
-export const featuredProjects: FeaturedProjectType[] = [
+export const featuredProjects: ProjectType[] = [
+  {
+    title: 'E-Commerce Store',
+    color: '#47484a',
+    image: ecommerceStore,
+    type: 'Full Stack Project',
+    link: '/projects/ecommerce',
+  },
+  {
+    title: 'Spotify Clone',
+    color: '#0f172a',
+    image: spotifyClone,
+    type: 'Full Stack Project',
+    link: '/projects/spotify',
+  },
+  {
+    title: 'Netflix Clone',
+    color: '#1f2937',
+    image: netflixClone,
+    type: 'Full Stack Project',
+    link: '/projects/netflix',
+  },
+  {
+    title: 'Smart Windows App',
+    color: '#18181b',
+    image: smartWindows,
+    type: 'Mobile + Embedded Systems Project',
+    link: '/projects/smart-windows',
+  },
+];
+
+export const allProjects: ProjectType[] = [
   {
     title: 'E-Commerce Store',
     color: '#47484a',

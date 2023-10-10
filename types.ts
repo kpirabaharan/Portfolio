@@ -9,7 +9,7 @@ export interface ExperienceType {
   date: string;
   points: string[];
 }
-export interface FeaturedProjectType {
+export interface ProjectType {
   title: string;
   type: string;
   image: StaticImageData;

@@ -7,7 +7,7 @@ import SplashOut from '@/app/components/SplashOut';
 
 import { StandingNavbar } from '@/app/components/navbar/StandingNavbar';
 
-const AboutPage = () => {
+const SkillsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
@@ -22,4 +22,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default SkillsPage;

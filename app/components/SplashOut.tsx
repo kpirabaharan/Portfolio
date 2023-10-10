@@ -20,8 +20,8 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
   var title: string;
 
   switch (pathname) {
-    case '/about':
-      title = 'About';
+    case '/skills':
+      title = 'Skills';
       break;
     case '/projects':
       title = 'Projects';
