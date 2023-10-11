@@ -4,6 +4,8 @@ import SectionWrapper from '@/hoc/SectionWrapper';
 import { textVariant } from '@/lib/transitions';
 import { styles } from '@/lib/styles';
 
+import ContactCard from '@/components/ContactCard';
+
 const Contact = () => {
   return (
     <div className='flex flex-col gap-y-8'>
@@ -13,6 +15,7 @@ const Contact = () => {
       >
         Contact
       </motion.h2>
+      <ContactCard />
     </div>
   );
 };

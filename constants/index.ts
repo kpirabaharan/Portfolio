@@ -5,8 +5,44 @@ import {
   netflixClone,
   spotifyClone,
   smartWindows,
+  javascript,
+  typescript,
+  python,
+  c,
+  cpp,
+  csharp,
+  dart,
+  java,
+  kotlin,
+  html,
+  css,
+  reactjs,
+  nextjs,
+  redux,
+  tailwind,
+  nodejs,
+  expressjs,
+  django,
+  firebase,
+  supabase,
+  mongodb,
+  mySQL,
+  postgreSQL,
+  prisma,
+  flutter,
+  android,
+  linux,
+  network,
+  solidworks,
+  arduino,
+  raspberryPi,
+  additivemanufacturing,
+  aws,
+  docker,
+  git,
+  debug,
 } from '@/assets';
-import { ExperienceType, ProjectType } from '@/types';
+import { ExperienceType, ProjectType, Tech } from '@/types';
 
 export const navLinks = [
   {
@@ -135,4 +171,73 @@ export const allProjects: ProjectType[] = [
     type: 'Mobile + Embedded Systems Project',
     link: '/projects/smart-windows',
   },
+];
+
+export const techStack = [
+  {
+    title: 'Frontend',
+    tech: [
+      { name: 'HTML', icon: html },
+      { name: 'CSS 3', icon: css },
+      { name: 'Tailwind CSS', icon: tailwind },
+      { name: 'React.js', icon: reactjs },
+      { name: 'Next.js', icon: nextjs },
+      { name: 'Redux Toolkit', icon: redux },
+    ],
+  },
+  {
+    title: 'Backend',
+    tech: [
+      { name: 'Node.js', icon: nodejs },
+      { name: 'Express.js', icon: expressjs },
+      { name: 'Django', icon: django },
+      { name: 'Firebase', icon: firebase },
+      { name: 'Supabase', icon: supabase },
+    ],
+  },
+  {
+    title: 'Databases',
+    tech: [
+      { name: 'MongoDB', icon: mongodb },
+      { name: 'MySQL', icon: mySQL },
+      { name: 'PostgreSQL', icon: postgreSQL },
+      { name: 'Prisma', icon: prisma },
+    ],
+  },
+  {
+    title: 'Mobile',
+    tech: [
+      { name: 'Flutter', icon: flutter },
+      { name: 'Android', icon: android },
+    ],
+  },
+  {
+    title: 'Embedded Systems',
+    tech: [
+      { name: 'C', icon: c },
+      { name: 'C++', icon: cpp },
+      { name: 'C#', icon: csharp },
+      { name: 'Dart', icon: dart },
+      { name: 'Java', icon: java },
+      { name: 'Kotlin', icon: kotlin },
+    ],
+  },
+  {
+    title: 'Other',
+    tech: [
+      { name: 'AWS', icon: aws },
+      { name: 'Docker', icon: docker },
+      { name: 'Git', icon: git },
+      { name: 'Debugging', icon: debug },
+    ],
+  },
+];
+
+export const frontend: Tech[] = [
+  { name: 'HTML', icon: html },
+  { name: 'CSS 3', icon: css },
+  { name: 'Tailwind CSS', icon: tailwind },
+  { name: 'React.js', icon: reactjs },
+  { name: 'Next.js', icon: nextjs },
+  { name: 'Redux Toolkit', icon: redux },
 ];

@@ -16,3 +16,7 @@ export interface ProjectType {
   color: string;
   link: string;
 }
+export interface Tech {
+  name: string;
+  icon: StaticImageData;
+}

@@ -6,7 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import SplashOut from '@/app/components/SplashOut';
 
 import { StandingNavbar } from '@/app/components/navbar/StandingNavbar';
-import { Skills } from '@/app/components/Skills';
+import Skills from '@/components/Skills';
 
 const SkillsPage = () => {
   const [isLoading, setIsLoading] = useState(true);

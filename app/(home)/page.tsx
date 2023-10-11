@@ -13,7 +13,7 @@ import Projects from '@/app/sections/Projects';
 import Contact from '@/app/sections/Contact';
 
 import { StandingNavbar } from '@/app/components/navbar/StandingNavbar';
-import { StarsCanvas } from '@/components/StarCanvas';
+import { StarsCanvas } from '@/components/canvas/StarCanvas';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
