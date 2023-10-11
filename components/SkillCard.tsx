@@ -1,14 +1,16 @@
 interface SkillCardProps {
   name: string;
+  onClick: () => void;
 }
 
-const SkillCard = ({ name }: SkillCardProps) => {
+const SkillCard = ({ name, onClick }: SkillCardProps) => {
   return (
     <div
-      className=' bg-slate-900 p-8 flex justify-center text-center
-      rounded-lg '
+      className='bg-slate-900 p-8 flex justify-center text-center
+      rounded-lg'
+      onClick={onClick}
     >
-      <h2>{name}</h2>
+      <h2 className='text-lg'>{name}</h2>
     </div>
   );
 };
