@@ -1,12 +1,6 @@
-import { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import {
-  Decal,
-  Float,
-  OrbitControls,
-  Preload,
-  useTexture,
-} from '@react-three/drei';
+import { Suspense, useRef } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { Decal, OrbitControls, Preload, useTexture } from '@react-three/drei';
 
 import CanvasLoader from '@/components/canvas/Loader';
 
@@ -16,27 +10,37 @@ interface BallProps {
 
 const Ball = ({ imageUrl }: BallProps) => {
   const [decal] = useTexture([imageUrl]);
+  const meshRef = useRef<THREE.Mesh>(null);
+
+  useFrame(({ clock }) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.5) * 0.2;
+      meshRef.current.rotation.y = Math.cos(clock.getElapsedTime() * 0.5) * 0.2;
+    }
+  });
 
   return (
-    <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
+    <>
       <ambientLight intensity={0.25} />
-      <directionalLight position={[0, 0, 0.05]} />
-      <mesh castShadow receiveShadow scale={2.5}>
-        <icosahedronGeometry args={[1, 1]} />
+      <directionalLight position={[0, 0.15, 0.05]} intensity={0.5} />
+      <mesh castShadow receiveShadow scale={1} ref={meshRef}>
+        {/* Shape */}
+        <icosahedronGeometry args={[2.5, 1]} />
         <meshStandardMaterial
-          color='#fff8eb'
+          color='white'
           polygonOffset
           polygonOffsetFactor={-5}
           flatShading
         />
+        {/* Display Image on Shape */}
         <Decal
-          position={[0, 0, 1]}
+          position={[0, 0, 2.5]}
           rotation={[2 * Math.PI, 0, 6.25]}
-          scale={1}
+          scale={2.5}
           map={decal}
         />
       </mesh>
-    </Float>
+    </>
   );
 };
 
@@ -46,11 +50,7 @@ interface BallCanvasProps {
 
 const BallCanvas = ({ icon }: BallCanvasProps) => {
   return (
-    <Canvas
-      frameloop='demand'
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
-    >
+    <Canvas frameloop='always' gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
         <Ball imageUrl={icon} />

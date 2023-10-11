@@ -212,7 +212,7 @@ export const techStack = [
     ],
   },
   {
-    title: 'Embedded Systems',
+    title: 'Embedded',
     tech: [
       { name: 'C', icon: c },
       { name: 'C++', icon: cpp },

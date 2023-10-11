@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { styles } from '@/lib/styles';
-import { techStack, frontend } from '@/constants';
+import { techStack } from '@/constants';
 
 import BallCanvas from '@/components/canvas/Ball';
 import SkillCard from '@/components/SkillCard';
@@ -20,11 +20,12 @@ const Skills = () => {
             <SkillCard
               key={index}
               name={tech.title}
+              isActive={techBalls.title === tech.title}
               onClick={() => setTechBalls(tech)}
             />
           ))}
         </div>
-        <div className='w-full flex-grow flex items-center'>
+        <div className='w-full flex-grow flex justify-center items-center'>
           <div className='flex flex-wrap items-center justify-center gap-8'>
             {techBalls.tech.map((skill) => (
               <div
