@@ -41,6 +41,7 @@ import {
   docker,
   git,
   debug,
+  riverpod,
 } from '@/assets';
 import { ExperienceType, ProjectType, Tech } from '@/types';
 
@@ -175,69 +176,74 @@ export const allProjects: ProjectType[] = [
 
 export const techStack = [
   {
+    title: 'Languages',
+    tech: [
+      { name: 'JavaScript', icon: javascript, expertise: true },
+      { name: 'TypeScript', icon: typescript, expertise: true },
+      { name: 'Python', icon: python, expertise: true },
+      { name: 'Java', icon: java, expertise: true },
+      { name: 'C', icon: c, expertise: true },
+      { name: 'C++', icon: cpp, expertise: false },
+      { name: 'Dart', icon: dart, expertise: false },
+      { name: 'Kotlin', icon: kotlin, expertise: false },
+    ],
+  },
+  {
     title: 'Frontend',
     tech: [
-      { name: 'HTML', icon: html },
-      { name: 'CSS 3', icon: css },
-      { name: 'Tailwind CSS', icon: tailwind },
-      { name: 'React.js', icon: reactjs },
-      { name: 'Next.js', icon: nextjs },
-      { name: 'Redux Toolkit', icon: redux },
+      { name: 'HTML', icon: html, expertise: true },
+      { name: 'CSS 3', icon: css, expertise: true },
+      { name: 'Tailwind', icon: tailwind, expertise: true },
+      { name: 'React.js', icon: reactjs, expertise: true },
+      { name: 'Next.js', icon: nextjs, expertise: true },
+      { name: 'Redux', icon: redux, expertise: true },
     ],
   },
   {
     title: 'Backend',
     tech: [
-      { name: 'Node.js', icon: nodejs },
-      { name: 'Express.js', icon: expressjs },
-      { name: 'Django', icon: django },
-      { name: 'Firebase', icon: firebase },
-      { name: 'Supabase', icon: supabase },
+      { name: 'Node.js', icon: nodejs, expertise: true },
+      { name: 'Express.js', icon: expressjs, expertise: true },
+      { name: 'Django', icon: django, expertise: false },
+      { name: 'Firebase', icon: firebase, expertise: false },
+      { name: 'Supabase', icon: supabase, expertise: false },
     ],
   },
   {
     title: 'Databases',
     tech: [
-      { name: 'MongoDB', icon: mongodb },
-      { name: 'MySQL', icon: mySQL },
-      { name: 'PostgreSQL', icon: postgreSQL },
-      { name: 'Prisma', icon: prisma },
+      { name: 'MongoDB', icon: mongodb, expertise: true },
+      { name: 'MySQL', icon: mySQL, expertise: true },
+      { name: 'PostgreSQL', icon: postgreSQL, expertise: true },
+      { name: 'Prisma', icon: prisma, expertise: true },
     ],
   },
   {
     title: 'Mobile',
     tech: [
-      { name: 'Flutter', icon: flutter },
-      { name: 'Android', icon: android },
+      { name: 'Flutter', icon: flutter, expertise: true },
+      { name: 'Riverpod', icon: riverpod, expertise: true },
+      { name: 'Android', icon: android, expertise: false },
     ],
   },
   {
-    title: 'Embedded',
+    title: 'Mechatronics / Embedded',
     tech: [
-      { name: 'C', icon: c },
-      { name: 'C++', icon: cpp },
-      { name: 'C#', icon: csharp },
-      { name: 'Dart', icon: dart },
-      { name: 'Java', icon: java },
-      { name: 'Kotlin', icon: kotlin },
+      { name: 'Linux', icon: linux, expertise: true },
+      { name: 'Raspberry Pi', icon: raspberryPi, expertise: true },
+      { name: 'Arduino', icon: arduino, expertise: true },
+      { name: 'Network Protocols', icon: network, expertise: true },
+      { name: '3D Printing', icon: additivemanufacturing, expertise: true },
+      { name: 'SolidWorks', icon: solidworks },
     ],
   },
   {
     title: 'Other',
     tech: [
-      { name: 'AWS', icon: aws },
-      { name: 'Docker', icon: docker },
-      { name: 'Git', icon: git },
-      { name: 'Debugging', icon: debug },
+      { name: 'Git', icon: git, expertise: true },
+      { name: 'Debugging', icon: debug, expertise: true },
+      { name: 'AWS', icon: aws, expertise: true },
+      { name: 'Docker', icon: docker, expertise: false },
     ],
   },
-];
-
-export const frontend: Tech[] = [
-  { name: 'HTML', icon: html },
-  { name: 'CSS 3', icon: css },
-  { name: 'Tailwind CSS', icon: tailwind },
-  { name: 'React.js', icon: reactjs },
-  { name: 'Next.js', icon: nextjs },
-  { name: 'Redux Toolkit', icon: redux },
 ];

@@ -1,4 +1,4 @@
-import { Suspense, useRef } from 'react';
+import { Suspense, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Decal, OrbitControls, Preload, useTexture } from '@react-three/drei';
 
@@ -11,9 +11,10 @@ interface BallProps {
 const Ball = ({ imageUrl }: BallProps) => {
   const [decal] = useTexture([imageUrl]);
   const meshRef = useRef<THREE.Mesh>(null);
+  const [isTouched, setIsTouched] = useState(false);
 
   useFrame(({ clock }) => {
-    if (meshRef.current) {
+    if (meshRef.current && !isTouched) {
       meshRef.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.5) * 0.2;
       meshRef.current.rotation.y = Math.cos(clock.getElapsedTime() * 0.5) * 0.2;
     }
@@ -23,7 +24,13 @@ const Ball = ({ imageUrl }: BallProps) => {
     <>
       <ambientLight intensity={0.25} />
       <directionalLight position={[0, 0.15, 0.05]} intensity={0.5} />
-      <mesh castShadow receiveShadow scale={1} ref={meshRef}>
+      <mesh
+        castShadow
+        receiveShadow
+        scale={1}
+        ref={meshRef}
+        onClick={() => setIsTouched(true)}
+      >
         {/* Shape */}
         <icosahedronGeometry args={[2.5, 1]} />
         <meshStandardMaterial

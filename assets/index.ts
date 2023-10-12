@@ -44,6 +44,7 @@ import postgreSQL from './tech/postgreSQL.png';
 import prisma from './tech/prisma.png';
 
 import flutter from './tech/flutter.png';
+import riverpod from './tech/riverpod.png'
 import android from './tech/android.png';
 
 import linux from './tech/linux.png';
@@ -98,6 +99,7 @@ export {
   postgreSQL,
   prisma,
   flutter,
+  riverpod,
   android,
   linux,
   network,
