@@ -66,7 +66,7 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
           />
           {/* Bottom Curve */}
           <svg
-            className='absolute top-0 w-full h-[calc(100%+300px)] stroke-none 
+            className='absolute top-0 w-full h-0 sm:h-[calc(100%+300px)] stroke-none 
             fill-teal-800 pointer-events-none'
           >
             <motion.path

@@ -12,7 +12,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import { MagneticButton } from '@/components/MagneticButton';
 
 const About = () => {
-  const scroll = new LocomotiveScroll();
+  // const scroll = new LocomotiveScroll();
   const router = useRouter();
 
   return (
@@ -26,8 +26,8 @@ const About = () => {
         </motion.h2>
         <motion.p
           variants={fadeIn('', '', 0.1, 1)}
-          className='max-w-3xl leading-[30px] text-base sm:text-lg md:text-xl 
-          lg:text-2xl text-muted-foreground'
+          className='max-w-3xl leading-[30px] text-base sm:text-lg md:text-xl
+          text-muted-foreground'
         >
           I&apos;m Keeshigan Pirabaharan, a 24-year-old{' '}
           <span className='text-primary font-bold'>

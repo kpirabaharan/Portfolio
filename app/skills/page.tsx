@@ -24,11 +24,9 @@ const SkillsPage = () => {
       <div
         className={`h-full w-full ${isLoading && 'hidden'} mx-auto ${
           styles.padding
-        } flex flex-col`}
+        } flex flex-col text-center sm:text-start`}
       >
-        <h1 className='text-4xl md:text-5xl lg:text-6xl xl:text-7xl'>
-          Technology Stack
-        </h1>
+        <h1 className={`${styles.pageHead} uppercase`}>Skills</h1>
         <Skills />
       </div>
     </div>
