@@ -30,7 +30,7 @@ const ContactCard = () => {
         <MailIcon size={24} />
         <a
           href='mailto:kpirabaharan3@gmail.com'
-          className='text-xl group-hover:underline underline-offset-8'
+          className='text-base md:text-xl group-hover:underline underline-offset-8'
         >
           kpirabaharan3@gmail.com
         </a>
@@ -40,7 +40,7 @@ const ContactCard = () => {
         <PhoneIcon size={24} />
         <a
           href='tel:4166173498'
-          className='text-xl group-hover:underline underline-offset-8'
+          className='text-base md:text-xl group-hover:underline underline-offset-8'
         >
           (416)-617-3498
         </a>
@@ -50,7 +50,7 @@ const ContactCard = () => {
         <LinkedinIcon size={24} />
         <a
           href='https://www.linkedin.com/in/kpirabaharan/'
-          className='text-xl group-hover:underline underline-offset-8'
+          className='text-base md:text-xl group-hover:underline underline-offset-8'
           target='_blank'
         >
           kpirabaharan
@@ -61,7 +61,7 @@ const ContactCard = () => {
         <GithubIcon size={24} />
         <a
           href='https://github.com/kpirabaharan'
-          className='text-xl group-hover:underline underline-offset-8'
+          className='text-base md:text-xl group-hover:underline underline-offset-8'
           target='_blank'
         >
           kpirabaharan
@@ -72,7 +72,7 @@ const ContactCard = () => {
         <FileTextIcon size={24} />
         <a
           href='./Keeshigan-Pirabaharan-Resume.pdf'
-          className='text-xl group-hover:underline underline-offset-8'
+          className='text-base md:text-xl group-hover:underline underline-offset-8'
           target='_blank'
         >
           Resume
@@ -81,7 +81,7 @@ const ContactCard = () => {
 
       <ContactLink>
         <MapPinIcon size={24} />
-        <p className='text-xl'>Toronto, ON</p>
+        <p className='text-base md:text-xl'>Toronto, ON</p>
       </ContactLink>
     </div>
   );

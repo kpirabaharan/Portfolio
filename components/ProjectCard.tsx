@@ -45,7 +45,7 @@ export const ProjectCard = ({
           {title}
         </h2>
         <p
-          className='text-sm lg:text-base xl:text-lg font-light transition duration-500 
+          className='text-base xl:text-lg font-light transition duration-500 
           group-hover:translate-x-4'
         >
           {type}
@@ -78,7 +78,7 @@ export const ProjectCard = ({
         </div>
         <h2 className='text-3xl sm:text-2xl mt-4'>{title}</h2>
         <Separator />
-        <p className='text-sm font-light'>{type}</p>
+        <p className='text-base font-light'>{type}</p>
       </div>
     </>
   );

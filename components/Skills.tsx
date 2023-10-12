@@ -10,9 +10,6 @@ const Skills = () => {
 
   return (
     <div className='h-full flex flex-col'>
-      <h1 className='text-4xl md:text-5xl lg:text-6xl xl:text-7xl'>
-        Technology Stack
-      </h1>
       <div className='flex md:flex-row flex-col gap-x-4 h-full mt-8 md:mt-0'>
         <div className='hidden md:flex flex-col gap-y-8 h-full justify-evenly'>
           {techStack.map(
@@ -28,8 +25,8 @@ const Skills = () => {
           )}
         </div>
         <div
-          className='md:hidden grid grid-cols-2 sm:grid-cols-3 h-full w-full
-          items-center justify-items-center gap-y-4'
+          className='md:hidden grid grid-cols-3 h-full w-full
+          items-center justify-items-center gap-y-8'
         >
           {techStack.map((tech, index) => (
             <SkillCard
