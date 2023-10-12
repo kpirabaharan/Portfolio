@@ -9,8 +9,8 @@ const SkillCard = ({ name, isActive, onClick }: SkillCardProps) => {
     <div
       className={`${
         isActive ? 'bg-slate-600' : 'bg-slate-900'
-      } p-8 flex justify-center text-center
-      rounded-lg`}
+      } h-[100px] w-[150px] flex justify-center items-center text-center
+      rounded-lg cursor-pointer`}
       onClick={onClick}
     >
       <h2 className='text-lg'>{name}</h2>

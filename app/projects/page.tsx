@@ -6,7 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import { styles } from '@/lib/styles';
 
 import SplashOut from '@/app/components/SplashOut';
-import { StandingNavbar } from '@/app/components/navbar/StandingNavbar';
+import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 import { MagneticButton } from '@/components/MagneticButton';
 import { Separator } from '@/components/ui/separator';
 

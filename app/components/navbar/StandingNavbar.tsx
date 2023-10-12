@@ -1,19 +1,19 @@
 'use client';
 
-import { redirect, usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 import useNavModal from '@/hooks/useNavModal';
 import useSplash from '@/hooks/useSplash';
 
 import MagneticComponent from '@/hoc/MagneticComponent';
-import { CodeBy } from '@/components/CodeBy';
+
 import { NavLink } from '@/app/components/navbar/NavLink';
+import { CodeBy } from '@/components/CodeBy';
 
 import { navLinks } from '@/constants';
 
-export const StandingNavbar = () => {
+const StandingNavbar = () => {
   const pathname = usePathname();
-  const router = useRouter();
   const { onOpen } = useNavModal();
   const { startSplash } = useSplash();
 
@@ -64,3 +64,5 @@ export const StandingNavbar = () => {
     </nav>
   );
 };
+
+export default StandingNavbar;

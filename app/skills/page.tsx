@@ -3,21 +3,29 @@
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
-import SplashOut from '@/app/components/SplashOut';
+import { styles } from '@/lib/styles';
 
-import { StandingNavbar } from '@/app/components/navbar/StandingNavbar';
+import SplashOut from '@/app/components/SplashOut';
+import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 import Skills from '@/components/Skills';
 
 const SkillsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className='h-full w-full'>
+    <div
+      className='min-h-[calc(100vh-128px)] md:h-[calc(100vh-128px)] w-full 
+      relative'
+    >
       <AnimatePresence>
         {isLoading && <SplashOut setIsLoading={setIsLoading} />}
       </AnimatePresence>
-      <div className={`h-full w-full ${isLoading && 'hidden'}`}>
-        <StandingNavbar />
+      <StandingNavbar />
+      <div
+        className={`h-full w-full ${isLoading && 'hidden'} mx-auto ${
+          styles.padding
+        }`}
+      >
         <Skills />
       </div>
     </div>
