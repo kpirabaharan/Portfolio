@@ -112,66 +112,17 @@ export const experiences: ExperienceType[] = [
   },
 ];
 
-export const featuredProjects: ProjectType[] = [
-  {
-    title: 'E-Commerce Store',
-    color: '#47484a',
-    image: ecommerceStore,
-    type: 'Full Stack Project',
-    link: '/projects/ecommerce',
-  },
-  {
-    title: 'Spotify Clone',
-    color: '#0f172a',
-    image: spotifyClone,
-    type: 'Full Stack Project',
-    link: '/projects/spotify',
-  },
-  {
-    title: 'Netflix Clone',
-    color: '#1f2937',
-    image: netflixClone,
-    type: 'Full Stack Project',
-    link: '/projects/netflix',
-  },
-  {
-    title: 'Smart Windows App',
-    color: '#18181b',
-    image: smartWindows,
-    type: 'Mobile + Embedded Systems Project',
-    link: '/projects/smart-windows',
-  },
-];
+export const featuredSkillsText = `I am a full-stack developer with a passion for building beautiful
+websites and applications. I have experience creating production grade
+software with a wide range of javascript frameworks including React.js,
+Next.js, Node.js, Express.js. I am enthusiatic to learn new technologies
+if it means I can build better products without cutting corners.`;
 
-export const allProjects: ProjectType[] = [
-  {
-    title: 'E-Commerce Store',
-    color: '#47484a',
-    image: ecommerceStore,
-    type: 'Full Stack Project',
-    link: '/projects/ecommerce',
-  },
-  {
-    title: 'Spotify Clone',
-    color: '#0f172a',
-    image: spotifyClone,
-    type: 'Full Stack Project',
-    link: '/projects/spotify',
-  },
-  {
-    title: 'Netflix Clone',
-    color: '#1f2937',
-    image: netflixClone,
-    type: 'Full Stack Project',
-    link: '/projects/netflix',
-  },
-  {
-    title: 'Smart Windows App',
-    color: '#18181b',
-    image: smartWindows,
-    type: 'Mobile + Embedded Systems Project',
-    link: '/projects/smart-windows',
-  },
+export const featuredTech = [
+  { name: 'React.js', icon: reactjs, expertise: true },
+  { name: 'Next.js', icon: nextjs, expertise: true },
+  { name: 'Node.js', icon: nodejs, expertise: true },
+  { name: 'Express.js', icon: expressjs, expertise: true },
 ];
 
 export const techStack = [
@@ -245,5 +196,67 @@ export const techStack = [
       { name: 'AWS', icon: aws, expertise: true },
       { name: 'Docker', icon: docker, expertise: false },
     ],
+  },
+];
+
+export const featuredProjects: ProjectType[] = [
+  {
+    title: 'E-Commerce Store',
+    color: '#47484a',
+    image: ecommerceStore,
+    type: 'Full Stack Project',
+    link: '/projects/ecommerce',
+  },
+  {
+    title: 'Spotify Clone',
+    color: '#0f172a',
+    image: spotifyClone,
+    type: 'Full Stack Project',
+    link: '/projects/spotify',
+  },
+  {
+    title: 'Netflix Clone',
+    color: '#1f2937',
+    image: netflixClone,
+    type: 'Full Stack Project',
+    link: '/projects/netflix',
+  },
+  {
+    title: 'Smart Windows App',
+    color: '#18181b',
+    image: smartWindows,
+    type: 'Mobile + Embedded Systems Project',
+    link: '/projects/smart-windows',
+  },
+];
+
+export const allProjects: ProjectType[] = [
+  {
+    title: 'E-Commerce Store',
+    color: '#47484a',
+    image: ecommerceStore,
+    type: 'Full Stack Project',
+    link: '/projects/ecommerce',
+  },
+  {
+    title: 'Spotify Clone',
+    color: '#0f172a',
+    image: spotifyClone,
+    type: 'Full Stack Project',
+    link: '/projects/spotify',
+  },
+  {
+    title: 'Netflix Clone',
+    color: '#1f2937',
+    image: netflixClone,
+    type: 'Full Stack Project',
+    link: '/projects/netflix',
+  },
+  {
+    title: 'Smart Windows App',
+    color: '#18181b',
+    image: smartWindows,
+    type: 'Mobile + Embedded Systems Project',
+    link: '/projects/smart-windows',
   },
 ];

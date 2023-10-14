@@ -9,11 +9,12 @@ import Hero from '@/app/sections/Hero';
 import About from '@/app/sections/About';
 import Work from '@/app/sections/Work';
 import Education from '@/app/sections/Education';
+import Skills from '@/app/sections/Skills';
 import Projects from '@/app/sections/Projects';
 import Contact from '@/app/sections/Contact';
 
 import StandingNavbar from '@/app/components/navbar/StandingNavbar';
-import { StarsCanvas } from '@/components/canvas/StarCanvas';
+import StarsCanvas from '@/components/canvas/StarCanvas';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -52,6 +53,7 @@ const Home = () => {
           <About />
           <Work />
           <Education />
+          <Skills />
           <Projects />
           <Contact />
         </>

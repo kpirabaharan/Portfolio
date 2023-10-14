@@ -33,7 +33,7 @@ const Stars = () => {
   );
 };
 
-export const StarsCanvas = () => {
+const StarsCanvas = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -63,3 +63,5 @@ export const StarsCanvas = () => {
     )
   );
 };
+
+export default StarsCanvas;

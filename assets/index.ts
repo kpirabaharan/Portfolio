@@ -44,7 +44,7 @@ import postgreSQL from './tech/postgreSQL.png';
 import prisma from './tech/prisma.png';
 
 import flutter from './tech/flutter.png';
-import riverpod from './tech/riverpod.png'
+import riverpod from './tech/riverpod.png';
 import android from './tech/android.png';
 
 import linux from './tech/linux.png';
@@ -58,6 +58,8 @@ import aws from './tech/aws.png';
 import docker from './tech/docker.png';
 import git from './tech/git.png';
 import debug from './tech/debug.png';
+
+import me from './me.jpeg';
 
 export {
   cw,
@@ -111,4 +113,5 @@ export {
   docker,
   git,
   debug,
+  me,
 };
