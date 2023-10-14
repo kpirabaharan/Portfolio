@@ -2,22 +2,20 @@
 
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { AiFillStar } from 'react-icons/ai';
 
 import { styles } from '@/lib/styles';
 
 import SplashOut from '@/app/components/SplashOut';
 import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 import Skills from '@/components/Skills';
-import { AiFillStar } from 'react-icons/ai';
+import NewSkills from '@/components/NewSkills';
 
 const SkillsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div
-      className='min-h-[calc(100vh-205px)] lg:h-[calc(100vh-128px)] w-full 
-      relative'
-    >
+    <div className='h-full w-full relative'>
       <AnimatePresence>
         {isLoading && <SplashOut setIsLoading={setIsLoading} />}
       </AnimatePresence>
@@ -34,7 +32,7 @@ const SkillsPage = () => {
             <p>Indicates atleast 3 years of experience</p>
           </div>
         </div>
-        <Skills />
+        <NewSkills />
       </div>
     </div>
   );

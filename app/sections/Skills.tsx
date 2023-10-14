@@ -11,20 +11,6 @@ import BallCanvas from '@/components/canvas/Ball';
 import { featuredSkillsText, featuredTech } from '@/constants';
 
 const Skills = () => {
-  // const variants = (delay: number): Variants => {
-  //   return {
-  //     initial: { x: -1 * (ref.current?.clientWidth || 1) },
-  //     animate: {
-  //       x: 0,
-  //       transition: { duration: 0.7, delay, ease: [0.76, 0, 0.24, 1] },
-  //     },
-  //     exit: {
-  //       x: ref.current?.clientWidth || 1,
-  //       transition: { duration: 0.7, delay, ease: [0.76, 0, 0.24, 1] },
-  //     },
-  //   };
-  // };
-
   return (
     <div className='flex flex-col gap-y-8'>
       <motion.h2

@@ -128,6 +128,9 @@ export const featuredTech = [
 export const techStack = [
   {
     title: 'Languages',
+    description: `I am a highly adaptable software developer with the ability to 
+    learn and use multiple programming languages and frameworks to create software
+    solutions. These are the languages I have developed applications with:`,
     tech: [
       { name: 'JavaScript', icon: javascript, expertise: true },
       { name: 'TypeScript', icon: typescript, expertise: true },
@@ -141,6 +144,9 @@ export const techStack = [
   },
   {
     title: 'Frontend',
+    description: `I am a highly adaptable software developer with the ability to 
+    learn and use multiple programming languages and frameworks to create software
+    solutions. These are the languages I have developed applications with:`,
     tech: [
       { name: 'HTML', icon: html, expertise: true },
       { name: 'CSS 3', icon: css, expertise: true },
@@ -152,6 +158,9 @@ export const techStack = [
   },
   {
     title: 'Backend',
+    description: `I am a highly adaptable software developer with the ability to 
+    learn and use multiple programming languages and frameworks to create software
+    solutions. These are the languages I have developed applications with:`,
     tech: [
       { name: 'Node.js', icon: nodejs, expertise: true },
       { name: 'Express.js', icon: expressjs, expertise: true },
@@ -162,6 +171,9 @@ export const techStack = [
   },
   {
     title: 'Databases',
+    description: `I am a highly adaptable software developer with the ability to 
+    learn and use multiple programming languages and frameworks to create software
+    solutions. These are the languages I have developed applications with:`,
     tech: [
       { name: 'MongoDB', icon: mongodb, expertise: true },
       { name: 'MySQL', icon: mySQL, expertise: true },
@@ -171,6 +183,9 @@ export const techStack = [
   },
   {
     title: 'Mobile',
+    description: `I am a highly adaptable software developer with the ability to 
+    learn and use multiple programming languages and frameworks to create software
+    solutions. These are the languages I have developed applications with:`,
     tech: [
       { name: 'Flutter', icon: flutter, expertise: true },
       { name: 'Riverpod', icon: riverpod, expertise: true },
@@ -179,6 +194,9 @@ export const techStack = [
   },
   {
     title: 'Mechatronics / Embedded',
+    description: `I am a highly adaptable software developer with the ability to 
+    learn and use multiple programming languages and frameworks to create software
+    solutions. These are the languages I have developed applications with:`,
     tech: [
       { name: 'Linux', icon: linux, expertise: true },
       { name: 'Raspberry Pi', icon: raspberryPi, expertise: true },
@@ -190,6 +208,9 @@ export const techStack = [
   },
   {
     title: 'Other',
+    description: `I am a highly adaptable software developer with the ability to 
+    learn and use multiple programming languages and frameworks to create software
+    solutions. These are the languages I have developed applications with:`,
     tech: [
       { name: 'Git', icon: git, expertise: true },
       { name: 'Debugging', icon: debug, expertise: true },

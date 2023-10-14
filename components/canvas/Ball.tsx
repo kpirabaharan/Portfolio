@@ -15,8 +15,7 @@ const Ball = ({ imageUrl }: BallProps) => {
 
   useFrame(({ clock }) => {
     if (meshRef.current && !isTouched) {
-      meshRef.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.5) * 0.2;
-      meshRef.current.rotation.y = Math.cos(clock.getElapsedTime() * 0.5) * 0.2;
+      meshRef.current.rotation.y = Math.tan(clock.getElapsedTime() * 0.5) / 20;
     }
   });
 
@@ -29,7 +28,8 @@ const Ball = ({ imageUrl }: BallProps) => {
         receiveShadow
         scale={1}
         ref={meshRef}
-        onClick={() => setIsTouched(true)}
+        onPointerDown={() => setIsTouched(true)}
+        // onClick={() => setIsTouched(true)}
       >
         {/* Shape */}
         <icosahedronGeometry args={[2.5, 1]} />
