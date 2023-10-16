@@ -47,6 +47,7 @@ import prisma from './tech/prisma.png';
 import flutter from './tech/flutter.png';
 import riverpod from './tech/riverpod.png';
 import android from './tech/android.png';
+import jetpack from './tech/jetpack-compose.png';
 
 import linux from './tech/linux.png';
 import network from './tech/network.png';
@@ -105,6 +106,7 @@ export {
   flutter,
   riverpod,
   android,
+  jetpack,
   linux,
   network,
   solidworks,

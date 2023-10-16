@@ -31,6 +31,7 @@ import {
   prisma,
   flutter,
   android,
+  jetpack,
   linux,
   network,
   solidworks,
@@ -147,9 +148,7 @@ export const techStack = [
     title: 'Frontend',
     description: `With a solid grasp of the latest frontend technologies, I have
     effectively built intuitive and visually appealing front-end interfaces that 
-    seamlessly integrate with complex back-end functionalities. I stay updated 
-    with the latest technology trends to ensure the development of cutting-edge 
-    and innovative products.`,
+    seamlessly integrate with complex back-end functionalities.`,
     tech: [
       { name: 'HTML', icon: html, expertise: true },
       { name: 'CSS 3', icon: css, expertise: true },
@@ -176,9 +175,9 @@ export const techStack = [
   },
   {
     title: 'Databases',
-    description: `I am a highly adaptable software developer with the ability to 
-    learn and use multiple programming languages and frameworks to create software
-    solutions. These are the languages I have developed applications with:`,
+    description: `I am proficient in working with various databases, including MongoDB,
+    MySQL, and PostgreSQL. Leveraging Prisma as an ORM, I ensure efficient data
+    management and seamless integration for diverse software applications.`,
     tech: [
       { name: 'MongoDB', icon: mongodb, expertise: true },
       { name: 'MySQL', icon: mySQL, expertise: true },
@@ -195,6 +194,7 @@ export const techStack = [
       { name: 'Flutter', icon: flutter, expertise: true },
       { name: 'Riverpod', icon: riverpod, expertise: true },
       { name: 'Android', icon: android, expertise: false },
+      { name: 'Jetpack Compose', icon: jetpack, expertise: false },
     ],
   },
   {
