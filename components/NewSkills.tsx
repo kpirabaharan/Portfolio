@@ -48,42 +48,39 @@ const NewSkills = () => {
 
   return (
     <div className='h-full mt-8 text-center flex flex-col gap-y-8'>
-      {gl
-        ? techStack.map((stack, index) => (
-            <div className='flex flex-col gap-y-8 items-center' key={index}>
-              <h2>{stack.title}</h2>
-              <p className='max-w-3xl'>{stack.description}</p>
-              <div
-                className='w-full flex flex-row flex-wrap gap-x-8 items-center 
+      {techStack.map((stack, index) => (
+        <div className='flex flex-col gap-y-8 items-center' key={index}>
+          <h2>{stack.title}</h2>
+          <p className='max-w-3xl'>{stack.description}</p>
+          <div
+            className='w-full flex flex-row flex-wrap gap-4 items-center 
                 justify-items-center justify-center'
+          >
+            {stack.tech.map((skill, index) => (
+              <div
+                key={index}
+                className='w-24 h-24 lg:w-32 lg:h-36 flex flex-col items-center'
               >
-                {stack.tech.map((skill, index) => (
-                  <div key={index} className='w-24 h-24 lg:h-32 lg:w-32'>
+                <div className='w-full h-[80%] flex items-center justify-center'>
+                  {gl ? (
                     <BallCanvas icon={skill.icon.src} />
-                  </div>
-                ))}
+                  ) : (
+                    <div className='w-[75%] h-[80%] relative'>
+                      <Image
+                        className='object-contain'
+                        src={skill.icon.src}
+                        alt={skill.name}
+                        fill
+                      />
+                    </div>
+                  )}
+                </div>
+                <p className='text-lg h-[20%] leading-5'>{skill.name}</p>
               </div>
-            </div>
-          ))
-        : techStack.map((stack, index) => (
-            <div className='flex flex-col gap-y-8 items-center' key={index}>
-              <h2>{stack.title}</h2>
-              <p className='max-w-3xl'>{stack.description}</p>
-              <div
-                className='w-full flex flex-row flex-wrap gap-x-8 items-center 
-                justify-items-center justify-center'
-              >
-                {stack.tech.map((skill, index) => (
-                  <div
-                    key={index}
-                    className='w-24 h-24 lg:h-32 lg:w-32 relative'
-                  >
-                    <Image src={skill.icon.src} alt={skill.name} fill />
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

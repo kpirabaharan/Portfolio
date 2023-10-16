@@ -31,6 +31,7 @@ import reactjs from './tech/reactjs.png';
 import nextjs from './tech/nextjs.png';
 import redux from './tech/redux.png';
 import tailwind from './tech/tailwind.png';
+import material from './tech/material_ui.png';
 
 import nodejs from './tech/nodejs.png';
 import expressjs from './tech/expressjs.png';
@@ -91,6 +92,7 @@ export {
   nextjs,
   redux,
   tailwind,
+  material,
   nodejs,
   expressjs,
   django,

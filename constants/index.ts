@@ -42,6 +42,7 @@ import {
   git,
   debug,
   riverpod,
+  material,
 } from '@/assets';
 import { ExperienceType, ProjectType, Tech } from '@/types';
 
@@ -129,8 +130,8 @@ export const techStack = [
   {
     title: 'Languages',
     description: `I am a highly adaptable software developer with the ability to 
-    learn and use multiple programming languages and frameworks to create software
-    solutions. These are the languages I have developed applications with:`,
+    learn and use multiple programming languages and frameworks to create a variety
+    of software as a service.`,
     tech: [
       { name: 'JavaScript', icon: javascript, expertise: true },
       { name: 'TypeScript', icon: typescript, expertise: true },
@@ -144,13 +145,16 @@ export const techStack = [
   },
   {
     title: 'Frontend',
-    description: `I am a highly adaptable software developer with the ability to 
-    learn and use multiple programming languages and frameworks to create software
-    solutions. These are the languages I have developed applications with:`,
+    description: `With a solid grasp of the latest frontend technologies, I have
+    effectively built intuitive and visually appealing front-end interfaces that 
+    seamlessly integrate with complex back-end functionalities. I stay updated 
+    with the latest technology trends to ensure the development of cutting-edge 
+    and innovative products.`,
     tech: [
       { name: 'HTML', icon: html, expertise: true },
       { name: 'CSS 3', icon: css, expertise: true },
       { name: 'Tailwind', icon: tailwind, expertise: true },
+      { name: 'Material UI', icon: material, expertise: true },
       { name: 'React.js', icon: reactjs, expertise: true },
       { name: 'Next.js', icon: nextjs, expertise: true },
       { name: 'Redux', icon: redux, expertise: true },
@@ -158,9 +162,10 @@ export const techStack = [
   },
   {
     title: 'Backend',
-    description: `I am a highly adaptable software developer with the ability to 
-    learn and use multiple programming languages and frameworks to create software
-    solutions. These are the languages I have developed applications with:`,
+    description: `Proficient in Node.js and Express.js, I've crafted robust back-end 
+    solutions, showcasing a keen grasp of server-side operations. Familiar with Django, 
+    Firebase, and Supabase, I'm poised to seamlessly integrate these technologies 
+    into complex projects.`,
     tech: [
       { name: 'Node.js', icon: nodejs, expertise: true },
       { name: 'Express.js', icon: expressjs, expertise: true },
