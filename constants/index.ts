@@ -152,11 +152,11 @@ export const techStack = [
     tech: [
       { name: 'HTML', icon: html, expertise: true },
       { name: 'CSS 3', icon: css, expertise: true },
-      { name: 'Tailwind', icon: tailwind, expertise: true },
-      { name: 'Material UI', icon: material, expertise: true },
       { name: 'React.js', icon: reactjs, expertise: true },
       { name: 'Next.js', icon: nextjs, expertise: true },
       { name: 'Redux', icon: redux, expertise: true },
+      { name: 'Tailwind', icon: tailwind, expertise: true },
+      { name: 'Material UI', icon: material, expertise: false },
     ],
   },
   {
@@ -187,21 +187,23 @@ export const techStack = [
   },
   {
     title: 'Mobile',
-    description: `I am a highly adaptable software developer with the ability to 
-    learn and use multiple programming languages and frameworks to create software
-    solutions. These are the languages I have developed applications with:`,
+    description: `I possess strong skills in Flutter and Riverpod, utilizing these
+    tools to create robust and cross-platform mobile applications. While I am 
+    currently exploring Android and Jetpack Compose, I am eager to apply them to 
+    future development projects.`,
     tech: [
       { name: 'Flutter', icon: flutter, expertise: true },
-      { name: 'Riverpod', icon: riverpod, expertise: true },
+      { name: 'Riverpod', icon: riverpod, expertise: false },
       { name: 'Android', icon: android, expertise: false },
       { name: 'Jetpack Compose', icon: jetpack, expertise: false },
     ],
   },
   {
     title: 'Mechatronics / Embedded',
-    description: `I am a highly adaptable software developer with the ability to 
-    learn and use multiple programming languages and frameworks to create software
-    solutions. These are the languages I have developed applications with:`,
+    description: `I hold a degree in Mechatronics and have substantial experience 
+    as an Embedded Software Developer, specializing in Linux and switch software 
+    development. Leveraging my expertise in various technologies, I adeptly design 
+    innovative solutions in the realm of mechatronics and embedded systems.`,
     tech: [
       { name: 'Linux', icon: linux, expertise: true },
       { name: 'Raspberry Pi', icon: raspberryPi, expertise: true },
@@ -213,9 +215,11 @@ export const techStack = [
   },
   {
     title: 'Other',
-    description: `I am a highly adaptable software developer with the ability to 
-    learn and use multiple programming languages and frameworks to create software
-    solutions. These are the languages I have developed applications with:`,
+    description: `I am proficient in Git and Debugging, utilizing these tools for 
+    effective version control and software troubleshooting. With a strong grasp 
+    of AWS, I ensure seamless cloud computing solutions. While I am currently 
+    exploring Docker, I am eager to incorporate it into future projects for 
+    streamlined development processes.`,
     tech: [
       { name: 'Git', icon: git, expertise: true },
       { name: 'Debugging', icon: debug, expertise: true },

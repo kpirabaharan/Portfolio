@@ -8,8 +8,8 @@ import { styles } from '@/lib/styles';
 
 import SplashOut from '@/app/components/SplashOut';
 import StandingNavbar from '@/app/components/navbar/StandingNavbar';
+
 import Skills from '@/components/Skills';
-import NewSkills from '@/components/NewSkills';
 
 const SkillsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,7 +32,7 @@ const SkillsPage = () => {
             <p>Indicates atleast 3 years of experience</p>
           </div>
         </div>
-        <NewSkills />
+        <Skills />
       </div>
     </div>
   );
