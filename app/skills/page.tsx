@@ -23,10 +23,12 @@ const SkillsPage = () => {
       <div
         className={`h-full w-full ${isLoading && 'hidden'} mx-auto ${
           styles.padding
-        } flex flex-col text-center`}
+        } flex flex-col`}
       >
         <div className='flex flex-col gap-y-4 justify-center items-center'>
-          <h1 className={`${styles.pageHead} uppercase`}>Skills</h1>
+          <h1 className='text-4xl md:text-5xl lg:text-6xl xl:text-7xl'>
+            Skills
+          </h1>
           <div className='flex flex-row gap-x-2 items-center'>
             <AiFillStar />
             <p>Indicates atleast 3 years of experience</p>
