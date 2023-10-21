@@ -15,15 +15,22 @@ import CanvasLoader from '@/components/canvas/Loader';
 
 interface BallProps {
   imageUrl: string;
+  index: number;
 }
 
-const Ball = ({ imageUrl }: BallProps) => {
+const Ball = ({ imageUrl, index }: BallProps) => {
   const [decal] = useTexture([imageUrl]);
   const meshRef = useRef<THREE.Mesh>(null);
 
   useFrame(({ clock }) => {
     if (meshRef.current) {
-      meshRef.current.position.setY(Math.sin(clock.getElapsedTime() * 0.5));
+      if (index % 2 == 0) {
+        meshRef.current.position.setY(Math.sin(clock.getElapsedTime() * 0.5));
+      } else {
+        meshRef.current.position.setY(
+          Math.sin(clock.getElapsedTime() * 0.5 + Math.PI),
+        );
+      }
     }
   });
 
@@ -58,16 +65,17 @@ const Ball = ({ imageUrl }: BallProps) => {
 
 interface BallSingleProps {
   icon: string;
+  index: number;
 }
 
-const BallSingle = ({ icon }: BallSingleProps) => {
+const BallSingle = ({ icon, index }: BallSingleProps) => {
   return (
     <Canvas frameloop='always' gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
         <directionalLight position={[0, 10, 15]} intensity={0.5} />
-        <PerspectiveCamera makeDefault>
-          <Ball imageUrl={icon} />
+        <PerspectiveCamera makeDefault position={[10, 10, 0]}>
+          <Ball index={index} imageUrl={icon} />
         </PerspectiveCamera>
       </Suspense>
       <Preload all />

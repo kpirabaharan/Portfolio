@@ -199,7 +199,7 @@ export const techStack = [
     ],
   },
   {
-    title: 'Mechatronics / Embedded',
+    title: 'Mechatronics',
     description: `I hold a degree in Mechatronics and have substantial experience 
     as an Embedded Software Developer, specializing in Linux and switch software 
     development. Leveraging my expertise in various technologies, I adeptly design 
