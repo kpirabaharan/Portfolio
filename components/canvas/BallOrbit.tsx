@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useRef, useEffect } from 'react';
+import { Suspense, useRef } from 'react';
 import { StaticImageData } from 'next/image';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import {
@@ -13,8 +13,6 @@ import {
   Text,
   useTexture,
 } from '@react-three/drei';
-
-import useWindowSize from '@/hooks/useWindowSize';
 
 import CanvasLoader from '@/components/canvas/Loader';
 
@@ -64,11 +62,7 @@ const Ball = ({ width, total, index, item }: BallProps) => {
     >
       <icosahedronGeometry args={[1, 12]} />
       <meshStandardMaterial color='white' flatShading />
-      <Decal
-        position={[0, 0, 1]}
-        rotation={[2 * Math.PI, 0, 6.25]}
-        scale={1.15}
-      >
+      <Decal position={[0, 0, 1.2]} rotation={[2 * Math.PI, 0, 0]} scale={1.15}>
         <meshBasicMaterial
           transparent
           polygonOffset
@@ -79,7 +73,7 @@ const Ball = ({ width, total, index, item }: BallProps) => {
       <Text
         font={'/Inter_Regular.json'}
         position={[0, -0.75, 1]}
-        fontSize={0.33}
+        fontSize={0.30}
       >
         {item.name}
       </Text>
