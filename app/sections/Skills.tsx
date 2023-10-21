@@ -2,13 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
 import { styles } from '@/lib/styles';
 import { textVariant } from '@/lib/transitions';
 
-import BallCanvas from '@/components/canvas/Ball';
+import BallSingle from '@/components/canvas/BallSingle';
 
 import { featuredSkillsText, featuredTech } from '@/constants';
 
@@ -44,28 +44,32 @@ const Skills = () => {
       <p className='max-w-3xl leading-8 text-base sm:text-lg md:text-xl'>
         {featuredSkillsText}
       </p>
-      <div className='flex flex-row gap-x-8'>
-        {featuredTech.map((skill, index) => (
-          <div
-            key={index}
-            className='w-24 h-24 lg:w-32 lg:h-36 flex flex-col items-center'
-          >
-            <div className='w-full h-[80%] flex items-center justify-center'>
-              {gl ? (
-                <BallCanvas icon={skill.icon.src} />
-              ) : (
-                <div className='w-[75%] h-[80%] relative'>
-                  <Image
-                    className='object-contain'
-                    src={skill.icon.src}
-                    alt={skill.name}
-                    fill
-                  />
-                </div>
-              )}
+      <div className='flex flex-row flex-wrap gap-8'>
+        {featuredTech.map((skill, index) =>
+          gl ? (
+            <div
+              key={index}
+              className='w-32 h-32 lg:w-48 lg:h-48 flex items-center justify-center'
+            >
+              <BallSingle icon={skill.icon.src} />
             </div>
-          </div>
-        ))}
+          ) : (
+            <div
+              key={index}
+              className='w-20 h-20 lg:w-28 lg:h-28 flex items-center justify-center 
+              bg-slate-800 rounded-full'
+            >
+              <div className='w-[70%] h-[70%] relative'>
+                <Image
+                  className='object-contain'
+                  src={skill.icon.src}
+                  alt={skill.name}
+                  fill
+                />
+              </div>
+            </div>
+          ),
+        )}
       </div>
     </div>
   );

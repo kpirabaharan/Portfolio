@@ -2,7 +2,14 @@
 
 import { Suspense, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Decal, OrbitControls, Preload, useTexture } from '@react-three/drei';
+import {
+  Decal,
+  OrbitControls,
+  OrthographicCamera,
+  PerspectiveCamera,
+  Preload,
+  useTexture,
+} from '@react-three/drei';
 
 import CanvasLoader from '@/components/canvas/Loader';
 
@@ -13,28 +20,24 @@ interface BallProps {
 const Ball = ({ imageUrl }: BallProps) => {
   const [decal] = useTexture([imageUrl]);
   const meshRef = useRef<THREE.Mesh>(null);
-  const [isTouched, setIsTouched] = useState(false);
 
   useFrame(({ clock }) => {
-    if (meshRef.current && !isTouched) {
-      meshRef.current.rotation.y = Math.tan(clock.getElapsedTime() * 0.5) / 20;
+    if (meshRef.current) {
+      meshRef.current.position.setY(Math.sin(clock.getElapsedTime() * 0.5));
     }
   });
 
   return (
     <>
-      <ambientLight intensity={0.25} />
-      <directionalLight position={[0, 0.15, 0.05]} intensity={0.5} />
       <mesh
         castShadow
         receiveShadow
-        scale={1}
+        scale={0.95}
         ref={meshRef}
-        onPointerDown={() => setIsTouched(true)}
-        // onClick={() => setIsTouched(true)}
+        position={[0, 0, -8]}
       >
         {/* Shape */}
-        <icosahedronGeometry args={[2.5, 1]} />
+        <icosahedronGeometry args={[2.5, 6]} />
         <meshStandardMaterial
           color='white'
           polygonOffset
@@ -53,20 +56,23 @@ const Ball = ({ imageUrl }: BallProps) => {
   );
 };
 
-interface BallCanvasProps {
+interface BallSingleProps {
   icon: string;
 }
 
-const BallCanvas = ({ icon }: BallCanvasProps) => {
+const BallSingle = ({ icon }: BallSingleProps) => {
   return (
     <Canvas frameloop='always' gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
-        <Ball imageUrl={icon} />
+        <directionalLight position={[0, 10, 15]} intensity={0.5} />
+        <PerspectiveCamera makeDefault>
+          <Ball imageUrl={icon} />
+        </PerspectiveCamera>
       </Suspense>
       <Preload all />
     </Canvas>
   );
 };
 
-export default BallCanvas;
+export default BallSingle;

@@ -210,7 +210,7 @@ export const techStack = [
       { name: 'Arduino', icon: arduino, expertise: true },
       { name: 'Network Protocols', icon: network, expertise: true },
       { name: '3D Printing', icon: additivemanufacturing, expertise: true },
-      { name: 'SolidWorks', icon: solidworks },
+      { name: 'SolidWorks', icon: solidworks, expertise: false },
     ],
   },
   {
