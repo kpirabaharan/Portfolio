@@ -50,16 +50,7 @@ const Ball = ({ width, total, index, item }: BallProps) => {
   });
 
   return (
-    <mesh
-      ref={ref}
-      castShadow
-      receiveShadow
-      scale={[
-        2.8 + 0.00075 * width,
-        2.0 + 0.000467 * width,
-        2.0 + 0.000467 * width,
-      ]}
-    >
+    <mesh ref={ref} castShadow receiveShadow scale={2.0 + 0.000467 * width}>
       <icosahedronGeometry args={[1, 12]} />
       <meshStandardMaterial color='white' flatShading />
       <Decal position={[0, 0, 1.2]} rotation={[2 * Math.PI, 0, 0]} scale={1.15}>
@@ -73,7 +64,7 @@ const Ball = ({ width, total, index, item }: BallProps) => {
       <Text
         font={'/Inter_Regular.json'}
         position={[0, -0.75, 1]}
-        fontSize={0.30}
+        fontSize={0.3}
       >
         {item.name}
       </Text>

@@ -9,6 +9,7 @@ import SplashOut from '@/app/components/SplashOut';
 import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 import { MagneticButton } from '@/components/MagneticButton';
 import { Separator } from '@/components/ui/separator';
+import Projects from '@/components/Projects';
 
 const filters = [
   { title: 'All', value: 'all' },
@@ -27,12 +28,14 @@ const ProjectsPage = () => {
       </AnimatePresence>
       <div className={`h-full w-full ${isLoading && 'hidden'}`}>
         <StandingNavbar />
-        <div className={`w-full max-w-8xl mx-auto ${styles.padding}`}>
+        <div
+          className={`w-full max-w-8xl mx-auto ${styles.padding} flex flex-col gap-y-6`}
+        >
           <h1 className='mt-8 text-4xl md:text-5xl lg:text-6xl xl:text-7xl'>
             A showcase of my projects
           </h1>
-          <Separator className='my-6 h-[2px]' />
-          <div className='flex flex-row gap-x-6 w-full'>
+          <Separator className='h-[2px]' />
+          <div className='flex flex-row flex-wrap gap-6 w-full'>
             {filters.map((cat, index) => (
               <MagneticButton size={'filter'} key={index} onClick={() => {}}>
                 <p className='text-base lg:text-lg font-normal text-primary-foreground'>
@@ -41,6 +44,7 @@ const ProjectsPage = () => {
               </MagneticButton>
             ))}
           </div>
+          <Projects />
         </div>
       </div>
     </div>

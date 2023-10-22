@@ -8,7 +8,7 @@ import SectionWrapper from '@/hoc/SectionWrapper';
 import { textVariant } from '@/lib/transitions';
 import { styles } from '@/lib/styles';
 
-import { ProjectCard } from '@/components/ProjectCard';
+import ProjectTile from '@/components/ProjectTile';
 import { ProjectModal } from '@/components/ProjectModal';
 import { MagneticButton } from '@/components/MagneticButton';
 
@@ -37,7 +37,7 @@ const Projects = () => {
         {featuredProjects.map((project, index) => {
           const { title, type, image, color } = project;
           return (
-            <ProjectCard
+            <ProjectTile
               key={index}
               index={index}
               title={title}

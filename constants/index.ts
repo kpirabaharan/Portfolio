@@ -45,7 +45,7 @@ import {
   riverpod,
   material,
 } from '@/assets';
-import { ExperienceType, ProjectType, Tech } from '@/types';
+import { ExperienceType, ProjectType, FeaturedProjectType } from '@/types';
 
 export const navLinks = [
   {
@@ -229,7 +229,7 @@ export const techStack = [
   },
 ];
 
-export const featuredProjects: ProjectType[] = [
+export const featuredProjects: FeaturedProjectType[] = [
   {
     title: 'E-Commerce Store',
     color: '#47484a',
@@ -263,6 +263,9 @@ export const featuredProjects: ProjectType[] = [
 export const allProjects: ProjectType[] = [
   {
     title: 'E-Commerce Store',
+    description: `Built a robust e-commerce admin dashboard and store website, 
+    leveraging Next.js, Shadcn, Tailwind CSS, AWS RDS, and S3 for seamless and 
+    efficient store management.`,
     color: '#47484a',
     image: ecommerceStore,
     type: 'Full Stack Project',
@@ -270,6 +273,8 @@ export const allProjects: ProjectType[] = [
   },
   {
     title: 'Spotify Clone',
+    description: `Full-stack Spotify clone built with Next.js, replicating the core 
+    features of the popular music streaming platform.`,
     color: '#0f172a',
     image: spotifyClone,
     type: 'Full Stack Project',
@@ -277,6 +282,8 @@ export const allProjects: ProjectType[] = [
   },
   {
     title: 'Netflix Clone',
+    description: `Full-stack Netflix clone built with Next.js, replicating the core 
+    features of the popular movie streaming platform.`,
     color: '#1f2937',
     image: netflixClone,
     type: 'Full Stack Project',
@@ -284,6 +291,9 @@ export const allProjects: ProjectType[] = [
   },
   {
     title: 'Smart Windows App',
+    description: `Collaborated on the Smart Windows Raspberry Pi Project, optimizing 
+    window control through embedded systems, sensors, and an Android app, featuring Manual, 
+    Smart, and Automatic modes, plus geofencing for efficiency.`,
     color: '#18181b',
     image: smartWindows,
     type: 'Mobile + Embedded Systems Project',
