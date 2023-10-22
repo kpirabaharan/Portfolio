@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
 import { textVariant } from '@/lib/transitions';
 import { styles } from '@/lib/styles';
+import useSplash from '@/hooks/useSplash';
 
 import ProjectTile from '@/components/ProjectTile';
 import { ProjectModal } from '@/components/ProjectModal';
@@ -18,7 +18,7 @@ import { featuredProjects } from '@/constants';
 
 const Projects = () => {
   const [modal, setModal] = useState({ active: false, index: 0 });
-  const router = useRouter();
+  const { startSplash } = useSplash();
 
   return (
     <div className='flex flex-col gap-y-8'>
@@ -51,7 +51,7 @@ const Projects = () => {
         <ProjectModal modal={modal} projects={featuredProjects} />
       </div>
       <div className='w-full flex justify-center mt-4'>
-        <MagneticButton size='wide' onClick={() => router.push('/projects')}>
+        <MagneticButton size='wide' onClick={() => startSplash('/projects')}>
           <p className='text-lg lg:text-xl text-primary-foreground'>
             More Projects
           </p>

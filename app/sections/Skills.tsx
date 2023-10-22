@@ -7,15 +7,16 @@ import { motion } from 'framer-motion';
 import SectionWrapper from '@/hoc/SectionWrapper';
 import { styles } from '@/lib/styles';
 import { textVariant } from '@/lib/transitions';
+import useSplash from '@/hooks/useSplash';
 
 import BallSingle from '@/components/canvas/BallSingle';
+import { MagneticButton } from '@/components/MagneticButton';
 
 import { featuredSkillsText, featuredTech } from '@/constants';
-import { Button } from '@/components/ui/button';
-import { MagneticButton } from '@/components/MagneticButton';
 
 const Skills = () => {
   const [isMounted, setIsMounted] = useState(false);
+  const { startSplash } = useSplash();
 
   useEffect(() => {
     setIsMounted(true);
@@ -50,7 +51,10 @@ const Skills = () => {
           </p>
           <div className='lg:flex hidden w-full justify-center flex-1'>
             <div>
-              <MagneticButton size='wide' onClick={() => {}}>
+              <MagneticButton
+                size='wide'
+                onClick={() => startSplash('/skills')}
+              >
                 <p className='text-lg lg:text-xl text-primary-foreground'>
                   More Skills
                 </p>
@@ -86,7 +90,7 @@ const Skills = () => {
           )}
         </div>
         <div className='w-full flex lg:hidden justify-center'>
-          <MagneticButton size='wide' onClick={() => {}}>
+          <MagneticButton size='wide' onClick={() => startSplash('/skills')}>
             <p className='text-lg lg:text-xl text-primary-foreground'>
               More Skills
             </p>

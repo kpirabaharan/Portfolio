@@ -73,6 +73,7 @@ const BallSingle = ({ icon, index }: BallSingleProps) => {
     <Canvas frameloop='always' gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
+        <ambientLight intensity={0.1} />
         <directionalLight position={[0, 10, 15]} intensity={0.5} />
         <PerspectiveCamera makeDefault position={[10, 10, 0]}>
           <Ball index={index} imageUrl={icon} />
