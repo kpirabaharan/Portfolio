@@ -242,21 +242,21 @@ export const featuredProjects: FeaturedProjectType[] = [
     color: '#47484a',
     image: ecommerceStore,
     type: 'Full Stack Project',
-    link: '/projects/ecommerce',
+    link: '/projects/e-commerce',
   },
   {
     title: 'Netflix Clone',
     color: '#1f2937',
     image: netflixClone,
     type: 'Full Stack Project',
-    link: '/projects/netflix',
+    link: '/projects/netflix-clone',
   },
   {
     title: 'Spotify Clone',
     color: '#0f172a',
     image: spotifyClone,
     type: 'Full Stack Project',
-    link: '/projects/spotify',
+    link: '/projects/spotify-clone',
   },
   {
     title: 'Smart Windows App',
@@ -277,7 +277,7 @@ export const allProjects: ProjectType[] = [
     type: ['Full Stack'],
     github: 'https://github.com/kpirabaharan/E-Commerce-Admin-Dashboard',
     website: 'https://e-commerce-admin-dashboard-kpirabaharan.vercel.app/',
-    link: '/projects/ecommerce',
+    link: '/projects/e-commerce',
   },
   {
     title: 'E-Commerce Admin Dashboard',
@@ -287,7 +287,7 @@ export const allProjects: ProjectType[] = [
     type: ['Full Stack'],
     github: 'https://github.com/kpirabaharan/E-Commerce-Admin-Dashboard',
     website: 'https://e-commerce-admin-dashboard-kpirabaharan.vercel.app/',
-    link: '/projects/ecommerce',
+    link: '/projects/e-commerce',
   },
   {
     title: 'Netflix Clone',
@@ -297,7 +297,7 @@ export const allProjects: ProjectType[] = [
     type: ['Full Stack'],
     github: 'https://github.com/kpirabaharan/Netflix-Clone',
     website: 'https://netflix-clone-kpirabaharan.vercel.app',
-    link: '/projects/netflix',
+    link: '/projects/netflix-clone',
   },
   {
     title: 'Spotify Clone',
@@ -307,7 +307,7 @@ export const allProjects: ProjectType[] = [
     type: ['Full Stack'],
     github: 'https://github.com/kpirabaharan/Spotify-Clone',
     website: 'https://spotify-clone-kpirabaharan.vercel.app',
-    link: '/projects/spotify',
+    link: '/projects/spotify-clone',
   },
   {
     title: 'Smart Windows App',

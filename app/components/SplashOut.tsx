@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
+import { startCase } from 'lodash';
 
 import { splashOutUp, bottomCurve } from '@/lib/animations';
 
@@ -19,7 +20,9 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
 
   const { closeSplash } = useSplash();
 
-  const title = pathname;
+  const pathArray = pathname.split('/');
+
+  const title = startCase(pathArray[pathArray.length - 1]);
 
   useEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
