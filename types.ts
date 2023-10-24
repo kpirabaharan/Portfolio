@@ -20,10 +20,11 @@ export interface FeaturedProjectType {
 export interface ProjectType {
   title: string;
   description: string;
-  type: string;
+  type: string[];
   image: StaticImageData;
-  color: string;
-  link: string;
+  github?: string;
+  website?: string;
+  link?: string;
 }
 export interface Tech {
   name: string;

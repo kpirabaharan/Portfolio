@@ -44,6 +44,13 @@ import {
   debug,
   riverpod,
   material,
+  ecommerceAdmin,
+  fourDoFRobot,
+  velocityvoyage,
+  ecommerce,
+  sociopedia,
+  partCollectingRobot,
+  pathFollowingRobot,
 } from '@/assets';
 import { ExperienceType, ProjectType, FeaturedProjectType } from '@/types';
 
@@ -238,18 +245,18 @@ export const featuredProjects: FeaturedProjectType[] = [
     link: '/projects/ecommerce',
   },
   {
-    title: 'Spotify Clone',
-    color: '#0f172a',
-    image: spotifyClone,
-    type: 'Full Stack Project',
-    link: '/projects/spotify',
-  },
-  {
     title: 'Netflix Clone',
     color: '#1f2937',
     image: netflixClone,
     type: 'Full Stack Project',
     link: '/projects/netflix',
+  },
+  {
+    title: 'Spotify Clone',
+    color: '#0f172a',
+    image: spotifyClone,
+    type: 'Full Stack Project',
+    link: '/projects/spotify',
   },
   {
     title: 'Smart Windows App',
@@ -266,37 +273,100 @@ export const allProjects: ProjectType[] = [
     description: `Built a robust e-commerce admin dashboard and store website, 
     leveraging Next.js, Shadcn, Tailwind CSS, AWS RDS, and S3 for seamless and 
     efficient store management.`,
-    color: '#47484a',
     image: ecommerceStore,
-    type: 'Full Stack Project',
+    type: ['Full Stack'],
+    github: 'https://github.com/kpirabaharan/E-Commerce-Admin-Dashboard',
+    website: 'https://e-commerce-admin-dashboard-kpirabaharan.vercel.app/',
     link: '/projects/ecommerce',
   },
   {
-    title: 'Spotify Clone',
-    description: `Full-stack Spotify clone built with Next.js, replicating the core 
-    features of the popular music streaming platform.`,
-    color: '#0f172a',
-    image: spotifyClone,
-    type: 'Full Stack Project',
-    link: '/projects/spotify',
+    title: 'E-Commerce Admin Dashboard',
+    description: `Built a robust e-commerce admin dashboard site, leveraging Next.js, 
+    Shadcn, Tailwind CSS, AWS RDS, and S3 for seamless and efficient store management.`,
+    image: ecommerceAdmin,
+    type: ['Full Stack'],
+    github: 'https://github.com/kpirabaharan/E-Commerce-Admin-Dashboard',
+    website: 'https://e-commerce-admin-dashboard-kpirabaharan.vercel.app/',
+    link: '/projects/ecommerce',
   },
   {
     title: 'Netflix Clone',
     description: `Full-stack Netflix clone built with Next.js, replicating the core 
     features of the popular movie streaming platform.`,
-    color: '#1f2937',
     image: netflixClone,
-    type: 'Full Stack Project',
+    type: ['Full Stack'],
+    github: 'https://github.com/kpirabaharan/Netflix-Clone',
+    website: 'https://netflix-clone-kpirabaharan.vercel.app',
     link: '/projects/netflix',
+  },
+  {
+    title: 'Spotify Clone',
+    description: `Full-stack Spotify clone built with Next.js, replicating the core 
+    features of the popular music streaming platform.`,
+    image: spotifyClone,
+    type: ['Full Stack'],
+    github: 'https://github.com/kpirabaharan/Spotify-Clone',
+    website: 'https://spotify-clone-kpirabaharan.vercel.app',
+    link: '/projects/spotify',
   },
   {
     title: 'Smart Windows App',
     description: `Collaborated on the Smart Windows Raspberry Pi Project, optimizing 
     window control through embedded systems, sensors, and an Android app, featuring Manual, 
-    Smart, and Automatic modes, plus geofencing for efficiency.`,
-    color: '#18181b',
+    Smart, and Automatic modes.`,
     image: smartWindows,
-    type: 'Mobile + Embedded Systems Project',
+    type: ['Mobile', 'Embedded'],
+    github: 'https://github.com/kpirabaharan/Smart-Windows-App',
+    website: 'https://www.youtube.com/watch?v=4RYRujc7fvM',
     link: '/projects/smart-windows',
+  },
+  {
+    title: '4 DOF Robot',
+    description: `Built and programmed a 4-DoF robotic arm as a mechatronic project, 
+      capable of precise and coordinated movements for various applications.`,
+    image: fourDoFRobot,
+    type: ['Mechatronics'],
+    github: 'https://github.com/kpirabaharan/Four-DOF-Robot',
+  },
+  {
+    title: 'Velocity Voyage',
+    description: `The endless runner video game, created with Unity, offers players an exciting 
+      and challenging experience as they run and dodge obstacles for as long as possible.`,
+    image: velocityvoyage,
+    type: ['Game'],
+    github: 'https://github.com/kpirabaharan/Velocity-Voyage',
+  },
+  {
+    title: 'Tech Trendz',
+    description: `This Web/Mobile application utilizes Stripe API to provide a secure online 
+      shopping experience for users to purchase technology products with confidence.`,
+    image: ecommerce,
+    type: ['Full Stack Project', 'Mobile'],
+    github: 'https://github.com/kpirabaharan/E-Commerce',
+  },
+  {
+    title: 'Sociopedia',
+    description: `The full-stack social media app provides users with a comprehensive 
+      platform to connect, communicate, and share content with others in a seamless and 
+      engaging manner.`,
+    image: sociopedia,
+    type: ['Full Stack', 'Mobile'],
+    github: 'https://github.com/kpirabaharan/Social-Media-App',
+  },
+  {
+    title: 'Part Collecting Robot',
+    description: `Autonomous part collecting robot navigating dynamic environments, 
+    avoiding obstacles, and efficiently collecting objects for streamlined operations.`,
+    image: partCollectingRobot,
+    type: ['Mechatronics'],
+    github: 'https://github.com/kpirabaharan/Autonomous-Part-Collecting-Robot',
+  },
+  {
+    title: 'Path Following Robot',
+    description: `Autonomous line-following robot project designed to deliver 
+    objects to a specific destination by accurately following a predefined path.`,
+    image: pathFollowingRobot,
+    type: ['Mechatronics'],
+    website: 'https://www.youtube.com/watch?v=JBqL7PEfFzk',
   },
 ];

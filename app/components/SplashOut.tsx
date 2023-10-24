@@ -16,22 +16,10 @@ interface SplashOutProps {
 const SplashOut = ({ setIsLoading }: SplashOutProps) => {
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
   const pathname = usePathname();
-  const { closeSplash } = useSplash();
-  var title: string;
 
-  switch (pathname) {
-    case '/skills':
-      title = 'Skills';
-      break;
-    case '/projects':
-      title = 'Projects';
-      break;
-    case '/contact':
-      title = 'Contact';
-      break;
-    default:
-      title = "Keeshigan's Portfolio";
-  }
+  const { closeSplash } = useSplash();
+
+  const title = pathname;
 
   useEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
