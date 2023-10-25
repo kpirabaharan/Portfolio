@@ -114,7 +114,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               )}
               {project.link ? (
                 <p
-                  className='underline'
+                  className='underline cursor-pointer'
                   onClick={() => {
                     startSplash(project.link!);
                   }}

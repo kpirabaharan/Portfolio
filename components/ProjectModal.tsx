@@ -119,7 +119,7 @@ export const ProjectModal = ({ modal, projects }: ProjectModalProps) => {
         variants={scaleAnimation}
         initial={'initial'}
         animate={active ? 'open' : 'closed'}
-        className='h-20 w-20 bg-blue-700 rounded-full absolute 
+        className='h-20 w-20 bg-teal-700 rounded-full absolute 
         pointer-events-none flex items-center justify-center'
       />
       <motion.div

@@ -52,7 +52,7 @@ const Skills = () => {
           <div className='lg:flex hidden w-full justify-center flex-1'>
             <div>
               <MagneticButton
-                size='wide'
+                size={'round'}
                 onClick={() => startSplash('/skills')}
               >
                 <p className='text-lg lg:text-xl text-primary-foreground'>

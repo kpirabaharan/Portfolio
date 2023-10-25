@@ -80,7 +80,7 @@ const FloatingNav = () => {
               {isHovered && (
                 <motion.div
                   className='h-full w-full rounded-full bg-teal-600 absolute 
-                top-0 left-0 pointer-events-none'
+                  top-0 left-0 pointer-events-none'
                   variants={buttonHover}
                   initial={'initial'}
                   animate={'enter'}

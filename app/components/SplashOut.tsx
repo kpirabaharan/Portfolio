@@ -9,6 +9,7 @@ import { splashOutUp, bottomCurve } from '@/lib/animations';
 
 import { AnimatedText } from '@/components/AnimatedText';
 import useSplash from '@/hooks/useSplash';
+import path from 'path';
 
 interface SplashOutProps {
   setIsLoading: (val: boolean) => void;
@@ -17,12 +18,15 @@ interface SplashOutProps {
 const SplashOut = ({ setIsLoading }: SplashOutProps) => {
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
   const pathname = usePathname();
-
   const { closeSplash } = useSplash();
 
-  const pathArray = pathname.split('/');
-
-  const title = startCase(pathArray[pathArray.length - 1]);
+  var title = '';
+  if (pathname === '/') {
+    title = "Keeshigan's Portfolio";
+  } else {
+    const pathArray = pathname.split('/');
+    title = startCase(pathArray[pathArray.length - 1]);
+  }
 
   useEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
