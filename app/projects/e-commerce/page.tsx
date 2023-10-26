@@ -8,26 +8,33 @@ import { ExternalLinkIcon } from 'lucide-react';
 
 import { styles } from '@/lib/styles';
 
+import ProjectHeader from '../components/ProjectHeader';
 import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 import SplashOut from '@/app/components/SplashOut';
+import StarsCanvas from '@/components/canvas/StarCanvas';
 import { MagneticButton } from '@/components/MagneticButton';
-import { Separator } from '@/components/ui/separator';
-import ProjectHeader from '../components/ProjectHeader';
 
-import { ecommerceAdmin } from '@/assets';
+import { ecommerceStore } from '@/assets';
 import { eCommerce } from '@/constants';
 
 const ECommercePage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
+  //! Put Max-W-8xl on the parent div
+
   return (
-    <div className='h-full w-full'>
+    <main>
       <AnimatePresence>
         {isLoading && <SplashOut setIsLoading={setIsLoading} />}
       </AnimatePresence>
-      <StandingNavbar />
-      <div className={`h-full w-full ${isLoading && 'hidden'}`}>
-        <div className={'w-full max-w-8xl mx-auto relative pb-36'}>
+      <div
+        className={`relative ${
+          isLoading ? 'h-screen' : ''
+        } overflow-hidden w-full max-w-8xl mx-auto`}
+      >
+        {!isLoading && <StarsCanvas />}
+        <StandingNavbar />
+        <div className={'w-full mt-36 md:mt-44 relative pb-36'}>
           <ProjectHeader
             title={eCommerce.title}
             date={eCommerce.date}
@@ -62,17 +69,37 @@ const ECommercePage = () => {
           </div>
         </div>
         <div className='w-full md:px-16'>
-          <div className='max-w-8xl mx-auto aspect-video relative border'>
+          <div
+            className='w-full aspect-video relative border 
+            bg-white'
+          >
             <Image
-              className='object-cover'
-              src={ecommerceAdmin}
+              className='object-contain'
+              src={ecommerceStore}
               alt='Title'
               fill
             />
           </div>
         </div>
+        <div className={`mt-40 ${styles.padding}`}>
+          <h2 className='text-5xl'>Part 1: Admin Dashboard</h2>
+        </div>
+        <div className={`mt-40 ${styles.padding}`}>
+          <h2 className='text-5xl'>Part 2: Online Store</h2>
+        </div>
+        <div className={`mt-40 ${styles.padding}`}>
+          <h2 className='text-5xl'>Part 3: Mobile Application</h2>
+        </div>
+        {/* <div className='mt-48 w-full aspect-video relative'>
+          <Image
+            className='object-contain'
+            src={studioDisplay.src}
+            alt='Frame'
+            fill
+          />
+        </div> */}
       </div>
-    </div>
+    </main>
   );
 };
 

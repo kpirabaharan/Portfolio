@@ -1,3 +1,5 @@
+import studioDisplay from './studio-display.png';
+
 import cw from './company/cw.png';
 import opg from './company/opg.png';
 
@@ -64,6 +66,7 @@ import debug from './tech/debug.png';
 import me from './me.jpeg';
 
 export {
+  studioDisplay,
   cw,
   opg,
   western,

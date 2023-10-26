@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import Lenis from '@studio-freight/lenis';
 
 import SplashOut from '@/app/components/SplashOut';
 import Hero from '@/app/sections/Hero';
@@ -18,17 +17,6 @@ import StarsCanvas from '@/components/canvas/StarCanvas';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const lenis = new Lenis();
-
-    const raf = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-
-    requestAnimationFrame(raf);
-  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);

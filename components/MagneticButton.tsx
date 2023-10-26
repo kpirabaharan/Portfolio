@@ -33,7 +33,7 @@ export const MagneticButton = ({
 
   return (
     <MagneticComponent
-      className='inline-block rounded-full'
+      className='inline-block rounded-full shadow-2xl'
       modifier={{ x: 0.4, y: 0.4 }}
     >
       <Button

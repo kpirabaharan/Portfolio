@@ -18,10 +18,10 @@ const ProjectHeader = ({
   date,
 }: ProjectHeaderProps) => {
   return (
-    <div className={`w-full mx-auto ${styles.projectPaddingX}`}>
-      <h1 className='mt-36 md:mt-44 text-4xl md:text-5xl lg:text-7xl xl:text-8xl'>
-        {title}
-      </h1>
+    <div
+      className={`mx-auto max-w-7xl ${styles.projectPaddingX}`}
+    >
+      <h1 className='text-4xl md:text-5xl lg:text-7xl xl:text-8xl'>{title}</h1>
       <div className='mt-12 md:mt-36 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8'>
         <div className='flex flex-col gap-y-6 md:gap-y-8'>
           <p className='text-xs md:text-sm text-muted-foreground'>Category</p>

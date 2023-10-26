@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 
 import { getLastCommitDate } from '@/actions/getLastCommitDate';
 import ModalProvider from '@/providers/ModalProvider';
+import SmoothScrollProvider from '@/providers/SmoothScrollProvider';
 import { cn } from '@/lib/utils';
 
 import FloatingNav from '@/app/components/navbar/FloatingNav';
@@ -26,6 +27,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
       <body className={cn(inter.className, 'flex flex-col min-h-screen')}>
         <FloatingNav />
         <ModalProvider />
+        <SmoothScrollProvider />
         {children}
         <Footer date={commitDate} />
       </body>
