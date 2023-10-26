@@ -1,9 +1,7 @@
 import React from 'react';
-import { GithubIcon } from 'lucide-react';
 
 import { styles } from '@/lib/styles';
 
-import { MagneticButton } from '@/components/MagneticButton';
 import { Separator } from '@/components/ui/separator';
 
 interface ProjectHeaderProps {
@@ -31,16 +29,16 @@ const ProjectHeader = ({
           <p className='text-base md:text-lg'>{category.join(' + ')}</p>
         </div>
         <div className='flex flex-col gap-y-6 md:gap-y-8'>
-          <p className='text-xs md:text-sm text-muted-foreground'>Date</p>
-          <Separator />
-          <p className='text-base md:text-lg'>{date}</p>
-        </div>
-        <div className='flex flex-col gap-y-6 md:gap-y-8'>
           <p className='text-xs md:text-sm text-muted-foreground'>
             Key Technologies
           </p>
           <Separator />
           <p className='text-base md:text-lg'>{keyTech.join(', ')}</p>
+        </div>
+        <div className='flex flex-col gap-y-6 md:gap-y-8'>
+          <p className='text-xs md:text-sm text-muted-foreground'>Date</p>
+          <Separator />
+          <p className='text-base md:text-lg'>{date}</p>
         </div>
       </div>
     </div>

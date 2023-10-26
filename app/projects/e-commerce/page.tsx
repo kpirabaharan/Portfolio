@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import { AnimatePresence } from 'framer-motion';
 import { ExternalLinkIcon } from 'lucide-react';
 
@@ -35,15 +35,30 @@ const ECommercePage = () => {
             keyTech={eCommerce.key_tech}
           />
           <div
+            className='absolute bottom-[26rem] md:bottom-0 translate-y-1/2 
+            right-0 -translate-x-1/2 md:-translate-x-[200%] z-20 md:mx-16'
+          >
+            <Link href={eCommerce.store_site_1} target='_blank'>
+              <MagneticButton onClick={() => {}}>
+                <div className='flex items-end gap-x-2'>
+                  <p className='text-lg leading-5'>Demo #1</p>
+                  <ExternalLinkIcon />
+                </div>
+              </MagneticButton>
+            </Link>
+          </div>
+          <div
             className='absolute bottom-40 md:bottom-0 translate-y-1/2 
             right-0 -translate-x-1/2 z-20 md:mx-16'
           >
-            <MagneticButton onClick={() => {}}>
-              <div className='flex items-end gap-x-2'>
-                <p className='text-lg leading-5'>Live Site</p>
-                <ExternalLinkIcon />
-              </div>
-            </MagneticButton>
+            <Link href={eCommerce.store_site_2} target='_blank'>
+              <MagneticButton onClick={() => {}}>
+                <div className='flex items-end gap-x-2'>
+                  <p className='text-lg leading-5'>Demo #2</p>
+                  <ExternalLinkIcon />
+                </div>
+              </MagneticButton>
+            </Link>
           </div>
         </div>
         <div className='w-full md:px-16'>
