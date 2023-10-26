@@ -275,8 +275,8 @@ export const allProjects: ProjectType[] = [
     efficient store management.`,
     image: ecommerceStore,
     type: ['Full Stack'],
-    github: 'https://github.com/kpirabaharan/E-Commerce-Admin-Dashboard',
-    website: 'https://e-commerce-admin-dashboard-kpirabaharan.vercel.app/',
+    github: 'https://github.com/kpirabaharan/E-Commerce-Store',
+    website: 'https://e-commerce-store-clothes-kpirabaharan.vercel.app/',
     link: '/projects/e-commerce',
   },
   {
@@ -370,3 +370,19 @@ export const allProjects: ProjectType[] = [
     website: 'https://www.youtube.com/watch?v=JBqL7PEfFzk',
   },
 ];
+
+export const eCommerce = {
+  title: 'E-Commerce Store',
+  date: 'August - October 2023',
+  description: `Built a robust e-commerce admin dashboard and store website, 
+  leveraging Next.js, Shadcn, Tailwind CSS, AWS RDS, and S3 for seamless and 
+  efficient store management.`,
+  category: ['Full Stack', 'Mobile'],
+  key_tech: ['AWS S3', 'AWS RDS', 'Stripe'],
+  store_image: ecommerceStore,
+  dashboard_image: ecommerceAdmin,
+  github: 'https://github.com/kpirabaharan/E-Commerce-Admin-Dashboard',
+  dashboard_site: 'https://e-commerce-admin-dashboard-kpirabaharan.vercel.app/',
+  store_site_1: 'https://e-commerce-store-clothes-kpirabaharan.vercel.app/',
+  store_site_2: 'https://e-commerce-store-shoes-kpirabaharan.vercel.app/',
+};
