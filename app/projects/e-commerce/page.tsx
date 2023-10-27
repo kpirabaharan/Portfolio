@@ -20,19 +20,13 @@ import { eCommerce } from '@/constants';
 const ECommercePage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  //! Put Max-W-8xl on the parent div
-
   return (
     <main>
       <AnimatePresence>
         {isLoading && <SplashOut setIsLoading={setIsLoading} />}
       </AnimatePresence>
-      <div
-        className={`relative ${
-          isLoading ? 'h-screen' : ''
-        } overflow-hidden w-full max-w-8xl mx-auto`}
-      >
-        {!isLoading && <StarsCanvas />}
+      {!isLoading && <StarsCanvas />}
+      <div className={`relative ${isLoading ? 'h-screen' : ''} w-full`}>
         <StandingNavbar />
         <div className={'w-full mt-36 md:mt-44 relative pb-36'}>
           <ProjectHeader
@@ -68,7 +62,7 @@ const ECommercePage = () => {
             </Link>
           </div>
         </div>
-        <div className='w-full md:px-16'>
+        <div className='w-full md:px-16 max-w-[110rem] mx-auto'>
           <div
             className='w-full aspect-video relative border 
             bg-white'
@@ -81,14 +75,16 @@ const ECommercePage = () => {
             />
           </div>
         </div>
-        <div className={`mt-40 ${styles.padding}`}>
-          <h2 className='text-5xl'>Part 1: Admin Dashboard</h2>
-        </div>
-        <div className={`mt-40 ${styles.padding}`}>
-          <h2 className='text-5xl'>Part 2: Online Store</h2>
-        </div>
-        <div className={`mt-40 ${styles.padding}`}>
-          <h2 className='text-5xl'>Part 3: Mobile Application</h2>
+        <div className='max-w-8xl mx-auto'>
+          <div className={`mt-40 ${styles.padding}`}>
+            <h2 className='text-5xl'>Part 1: Admin Dashboard</h2>
+          </div>
+          <div className={`mt-40 ${styles.padding}`}>
+            <h2 className='text-5xl'>Part 2: Online Store</h2>
+          </div>
+          <div className={`mt-40 ${styles.padding}`}>
+            <h2 className='text-5xl'>Part 3: Mobile Application</h2>
+          </div>
         </div>
         {/* <div className='mt-48 w-full aspect-video relative'>
           <Image

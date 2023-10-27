@@ -27,12 +27,12 @@ const Home = () => {
       <AnimatePresence>
         {isLoading && <SplashOut setIsLoading={setIsLoading} />}
       </AnimatePresence>
+      {!isLoading && <StarsCanvas />}
       <div
         className={`relative ${
           isLoading ? 'h-screen' : ''
         } overflow-hidden w-full`}
       >
-        {!isLoading && <StarsCanvas />}
         <div className='h-screen bg-heroWallpaper bg-no-repeat bg-cover bg-center relative'>
           <StandingNavbar />
           <Hero />

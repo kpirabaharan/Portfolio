@@ -386,3 +386,15 @@ export const eCommerce = {
   store_site_1: 'https://e-commerce-store-clothes-kpirabaharan.vercel.app/',
   store_site_2: 'https://e-commerce-store-shoes-kpirabaharan.vercel.app/',
 };
+
+export const netflix = {
+  title: 'Netflix Clone',
+  date: 'June - July 2023',
+  description: `Full-stack Netflix clone built with Next.js, replicating the core
+  features of the popular movie streaming platform.`,
+  category: ['Full Stack'],
+  key_tech: ['AWS S3', 'MongoDB', 'NextAuth'],
+  website_image: netflixClone,
+  github: 'https://github.com/kpirabaharan/Neflix-Clone',
+  website: 'https://netflix-clone-kpirabaharan.vercel.app',
+};
