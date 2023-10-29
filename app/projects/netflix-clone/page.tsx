@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ExternalLinkIcon } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 
@@ -11,6 +12,7 @@ import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 import StarsCanvas from '@/components/canvas/StarCanvas';
 import { MagneticButton } from '@/components/MagneticButton';
 import { netflix } from '@/constants';
+import { netflixClone } from '@/assets';
 
 const NetflixPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -46,6 +48,19 @@ const NetflixPage = () => {
                 </div>
               </MagneticButton>
             </Link>
+          </div>
+        </div>
+        <div className='w-full md:px-16 max-w-[110rem] mx-auto'>
+          <div
+            className='w-full aspect-video relative border 
+            bg-black'
+          >
+            <Image
+              className='object-contain'
+              src={netflixClone}
+              alt='Title'
+              fill
+            />
           </div>
         </div>
       </div>
