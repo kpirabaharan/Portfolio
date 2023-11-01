@@ -53,7 +53,7 @@ const NetflixPage = () => {
         <div className='w-full md:px-16 max-w-[110rem] mx-auto'>
           <div
             className='w-full aspect-video relative border 
-            bg-black'
+            bg-[#141316]'
           >
             <Image
               className='object-contain'

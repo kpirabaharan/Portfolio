@@ -398,3 +398,15 @@ export const netflix = {
   github: 'https://github.com/kpirabaharan/Neflix-Clone',
   website: 'https://netflix-clone-kpirabaharan.vercel.app',
 };
+
+export const spotify = {
+  title: 'Spotify Clone',
+  date: 'April - May 2023',
+  description: `Full-stack Spotify clone built with Next.js, replicating the core
+  features of the popular music streaming platform.`,
+  category: ['Full Stack'],
+  key_tech: ['Supabase', 'Stripe', 'React Player'],
+  website_image: spotifyClone,
+  github: 'https://github.com/kpirabaharan/Spotfiy-Clone',
+  website: 'https://spotify-clone-kpirabaharan.vercel.app',
+};
