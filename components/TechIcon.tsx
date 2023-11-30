@@ -11,7 +11,7 @@ interface TechIconProps {
 
 const TechIcon = ({ skill }: TechIconProps) => {
   return (
-    <div className='w-[65%] h-[65%] relative'>
+    <div className='relative h-[65%] w-[65%]'>
       <Image
         className='object-contain'
         src={skill.icon.src}

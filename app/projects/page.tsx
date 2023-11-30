@@ -29,16 +29,16 @@ const ProjectsPage = () => {
       <div className={`h-full w-full ${isLoading && 'hidden'}`}>
         <StandingNavbar />
         <div
-          className={`w-full max-w-8xl mx-auto ${styles.padding} flex flex-col gap-y-6`}
+          className={`mx-auto w-full max-w-8xl ${styles.padding} flex flex-col gap-y-6`}
         >
           <h1 className='mt-8 text-4xl md:text-5xl lg:text-6xl xl:text-7xl'>
             A showcase of my projects
           </h1>
           <Separator className='h-[2px]' />
-          <div className='flex flex-row flex-wrap gap-6 w-full'>
+          <div className='flex w-full flex-row flex-wrap gap-6'>
             {filters.map((cat, index) => (
               <MagneticButton size={'filter'} key={index} onClick={() => {}}>
-                <p className='text-base lg:text-lg font-normal text-primary-foreground'>
+                <p className='text-base font-normal text-primary-foreground lg:text-lg'>
                   {cat.title}
                 </p>
               </MagneticButton>

@@ -31,37 +31,37 @@ const Skills = () => {
     gl = null;
   }
   return (
-    <div className='h-full mt-8 text-center flex flex-col gap-y-8'>
+    <div className='mt-8 flex h-full flex-col gap-y-8 text-center'>
       {gl
         ? techStack.map((stack, index) => (
-            <div className='flex flex-col gap-y-4 items-center' key={index}>
+            <div className='flex flex-col items-center gap-y-4' key={index}>
               <p className='max-w-3xl'>{stack.description}</p>
               <BallOrbit techStack={stack} />
             </div>
           ))
         : techStack.map((stack, index) => (
-            <div className='flex flex-col gap-y-4 items-center' key={index}>
+            <div className='flex flex-col items-center gap-y-4' key={index}>
               <h2 className={styles.skillsHead}>{stack.title}</h2>
               <p className='max-w-3xl'>{stack.description}</p>
               <div
-                className='w-full flex flex-row flex-wrap gap-4 items-center 
-                justify-items-center justify-center'
+                className='flex w-full flex-row flex-wrap items-center justify-center 
+                justify-items-center gap-4'
               >
                 {stack.tech.map((skill, index) => (
                   <div
                     key={index}
-                    className='w-24 h-24 lg:w-32 lg:h-36 flex flex-col items-center 
-                relative'
+                    className='relative flex h-24 w-24 flex-col items-center lg:h-36 
+                lg:w-32'
                   >
-                    <div className='w-full h-[80%] flex items-center justify-center'>
+                    <div className='flex h-[80%] w-full items-center justify-center'>
                       <TechIcon skill={skill} />
                     </div>
                     {skill.expertise && (
-                      <div className='absolute top-0 right-0'>
+                      <div className='absolute right-0 top-0'>
                         <AiFillStar className='h-6 w-6 text-yellow-500' />
                       </div>
                     )}
-                    <p className='text-lg h-[20%] leading-5'>{skill.name}</p>
+                    <p className='h-[20%] text-lg leading-5'>{skill.name}</p>
                   </div>
                 ))}
               </div>

@@ -33,20 +33,20 @@ const ProjectTile = ({
           Math.floor(index / 2) * 0.4 + 0.2,
           0.8,
         )}
-        className='hidden lg:flex justify-between items-center w-full h-full py-12
-        xl:py-16 px-6 xl:px-12 cursor-pointer group hover:opacity-50 hover:scale-110'
+        className='group hidden h-full w-full cursor-pointer items-center justify-between
+        px-6 py-12 hover:scale-110 hover:opacity-50 lg:flex xl:px-12 xl:py-16'
         onMouseEnter={() => setModal({ active: true, index })}
         onMouseLeave={() => setModal({ active: false, index })}
       >
         <h2
-          className='text-3xl lg:text-5xl xl:text-6xl font-normal transition duration-500 
-          group-hover:-translate-x-4'
+          className='text-3xl font-normal transition duration-500 group-hover:-translate-x-4 lg:text-5xl 
+          xl:text-6xl'
         >
           {title}
         </h2>
         <p
-          className='text-base xl:text-lg font-light transition duration-500 
-          group-hover:translate-x-4'
+          className='text-base font-light transition duration-500 group-hover:translate-x-4 
+          xl:text-lg'
         >
           {type}
         </p>
@@ -55,28 +55,28 @@ const ProjectTile = ({
 
       {/* Mobile */}
       <div
-        className='flex flex-col lg:hidden w-full px-2 cursor-pointer group gap-y-4
-        group'
+        className='group group flex w-full cursor-pointer flex-col gap-y-4 px-2
+        lg:hidden'
         onMouseEnter={() => setModal({ active: true, index })}
         onMouseLeave={() => setModal({ active: false, index })}
       >
         <div
           style={{ backgroundColor: color }}
-          className='w-full aspect-square flex justify-center items-center'
+          className='flex aspect-square w-full items-center justify-center'
         >
           <div
-            className='h-[55%] w-[85%] group-hover:scale-105 transition duration-500
-            relative'
+            className='relative h-[55%] w-[85%] transition duration-500
+            group-hover:scale-105'
           >
             <Image
-              className='object-cover rounded-md'
+              className='rounded-md object-cover'
               src={image}
               alt={title}
               fill
             />
           </div>
         </div>
-        <h2 className='text-3xl sm:text-2xl mt-4'>{title}</h2>
+        <h2 className='mt-4 text-3xl sm:text-2xl'>{title}</h2>
         <Separator />
         <p className='text-base font-light'>{type}</p>
       </div>

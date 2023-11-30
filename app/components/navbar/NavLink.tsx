@@ -19,9 +19,9 @@ const StatusLight = ({
   return (
     <div
       className={`${isActive ? 'opacity-100' : 'opacity-0'} ${
-        size === 'large' ? 'w-3 h-3' : 'w-2 h-2'
-      } bg-white 
-          absolute ${
+        size === 'large' ? 'h-3 w-3' : 'h-2 w-2'
+      } absolute 
+          bg-white ${
             side === 'left'
               ? size === 'large'
                 ? '-left-8 bottom-1/2 translate-y-1/2'

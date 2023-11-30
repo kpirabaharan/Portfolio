@@ -19,8 +19,8 @@ const StandingNavbar = () => {
 
   return (
     <nav
-      className='flex flex-row gap-x-2 justify-between items-center w-full z-20
-      h-[80px] px-2 md:px-8'
+      className='z-20 flex h-[80px] w-full flex-row items-center justify-between
+      gap-x-2 px-2 md:px-8'
     >
       <MagneticComponent modifier={{ x: 0.25, y: 0.5 }}>
         <CodeBy />
@@ -28,7 +28,7 @@ const StandingNavbar = () => {
 
       {/* Mobile Nav */}
       <NavLink
-        className='ml-auto flex md:hidden cursor-pointer'
+        className='ml-auto flex cursor-pointer md:hidden'
         padding='p-4'
         side='left'
         onClick={onOpen}
@@ -45,7 +45,7 @@ const StandingNavbar = () => {
             link.href !== '/' && (
               <NavLink
                 key={index}
-                className='md:flex hidden cursor-pointer'
+                className='hidden cursor-pointer md:flex'
                 side='bottom'
                 padding={'p-4'}
                 isPath={isPath}

@@ -45,17 +45,17 @@ const Skills = () => {
         Leading Skills
       </motion.h2>
       <div className='flex flex-col gap-y-8'>
-        <div className='flex flex-row gap-x-8 justify-between items-center'>
-          <p className='max-w-3xl leading-8 text-base sm:text-lg md:text-xl flex-[3]'>
+        <div className='flex flex-row items-center justify-between gap-x-8'>
+          <p className='max-w-3xl flex-[3] text-base leading-8 sm:text-lg md:text-xl'>
             {featuredSkillsText}
           </p>
-          <div className='lg:flex hidden w-full justify-center flex-1'>
+          <div className='hidden w-full flex-1 justify-center lg:flex'>
             <div>
               <MagneticButton
                 size={'round'}
                 onClick={() => startSplash('/skills')}
               >
-                <p className='text-lg lg:text-xl text-primary-foreground'>
+                <p className='text-lg text-primary-foreground lg:text-xl'>
                   More Skills
                 </p>
               </MagneticButton>
@@ -67,17 +67,17 @@ const Skills = () => {
             gl ? (
               <div
                 key={index}
-                className='w-32 h-32 lg:w-48 lg:h-48 flex items-center justify-center'
+                className='flex h-32 w-32 items-center justify-center lg:h-48 lg:w-48'
               >
                 <BallSingle index={index} icon={skill.icon.src} />
               </div>
             ) : (
               <div
                 key={index}
-                className='w-20 h-20 lg:w-28 lg:h-28 flex items-center justify-center 
-                bg-slate-800 rounded-full'
+                className='flex h-20 w-20 items-center justify-center rounded-full bg-slate-800 
+                lg:h-28 lg:w-28'
               >
-                <div className='w-[70%] h-[70%] relative'>
+                <div className='relative h-[70%] w-[70%]'>
                   <Image
                     className='object-contain'
                     src={skill.icon.src}
@@ -89,9 +89,9 @@ const Skills = () => {
             ),
           )}
         </div>
-        <div className='w-full flex lg:hidden justify-center'>
+        <div className='flex w-full justify-center lg:hidden'>
           <MagneticButton size='wide' onClick={() => startSplash('/skills')}>
-            <p className='text-lg lg:text-xl text-primary-foreground'>
+            <p className='text-lg text-primary-foreground lg:text-xl'>
               More Skills
             </p>
           </MagneticButton>

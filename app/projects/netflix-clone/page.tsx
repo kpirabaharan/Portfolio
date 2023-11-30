@@ -26,10 +26,10 @@ const NetflixPage = () => {
       <div
         className={`relative ${
           isLoading ? 'h-screen' : ''
-        } w-full max-w-8xl mx-auto`}
+        } mx-auto w-full max-w-8xl`}
       >
         <StandingNavbar />
-        <div className={'w-full mt-36 md:mt-44 relative pb-36'}>
+        <div className={'relative mt-36 w-full pb-36 md:mt-44'}>
           <ProjectHeader
             title={netflix.title}
             date={netflix.date}
@@ -37,8 +37,8 @@ const NetflixPage = () => {
             keyTech={netflix.key_tech}
           />
           <div
-            className='absolute bottom-40 md:bottom-0 translate-y-1/2 
-            right-0 -translate-x-1/2 z-20 md:mx-16'
+            className='absolute bottom-40 right-0 z-20 
+            -translate-x-1/2 translate-y-1/2 md:bottom-0 md:mx-16'
           >
             <Link href={netflix.website} target='_blank'>
               <MagneticButton onClick={() => {}}>
@@ -50,9 +50,9 @@ const NetflixPage = () => {
             </Link>
           </div>
         </div>
-        <div className='w-full md:px-16 max-w-[110rem] mx-auto'>
+        <div className='mx-auto w-full max-w-[110rem] md:px-16'>
           <div
-            className='w-full aspect-video relative border 
+            className='relative aspect-video w-full border 
             bg-[#141316]'
           >
             <Image

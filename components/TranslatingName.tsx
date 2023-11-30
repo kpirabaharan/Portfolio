@@ -27,7 +27,7 @@ export const TranslatingName = () => {
         end: window.innerHeight,
         scrub: 0.25,
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        onUpdate: (e) => (direction = e.direction * -1),
+        onUpdate: e => (direction = e.direction * -1),
       },
       x: '-=300px',
     });
@@ -58,20 +58,20 @@ export const TranslatingName = () => {
     gsap.set(zeroRef.current, { xPercent: xPercent });
     gsap.set(firstRef.current, { xPercent: xPercent });
     gsap.set(secondRef.current, { xPercent: xPercent });
-    xPercent += 0.1 * direction;
+    xPercent += 0.05 * direction;
     requestAnimationFrame(translation);
   };
 
   return (
     <div
       ref={sliderRef}
-      className='relative flex whitespace-nowrap text-center items-center 
+      className='relative flex items-center whitespace-nowrap text-center 
       text-muted-foreground'
     >
       <p
         style={{ fontSize: textSize }}
         ref={zeroRef}
-        className='m-0 font-bold uppercase leading-none absolute -left-full'
+        className='absolute -left-full m-0 font-bold uppercase leading-none'
       >
         &nbsp;Keeshigan Pirabaharan -
       </p>
@@ -85,7 +85,7 @@ export const TranslatingName = () => {
       <p
         style={{ fontSize: textSize }}
         ref={secondRef}
-        className='m-0 font-bold absolute left-full uppercase leading-none'
+        className='absolute left-full m-0 font-bold uppercase leading-none'
       >
         &nbsp;Keeshigan Pirabaharan -
       </p>

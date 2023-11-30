@@ -31,9 +31,9 @@ const Home = () => {
       <div
         className={`relative ${
           isLoading ? 'h-screen' : ''
-        } overflow-hidden w-full`}
+        } w-full overflow-hidden`}
       >
-        <div className='h-screen bg-heroWallpaper bg-no-repeat bg-cover bg-center relative'>
+        <div className='relative h-screen bg-heroWallpaper bg-cover bg-center bg-no-repeat'>
           <StandingNavbar />
           <Hero />
         </div>

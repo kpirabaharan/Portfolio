@@ -82,15 +82,15 @@ export const ProjectModal = ({ modal, projects }: ProjectModalProps) => {
         variants={scaleAnimation}
         initial={'initial'}
         animate={active ? 'open' : 'closed'}
-        className='h-[400px] w-[400px] xl:h-[450px] xl:w-[450px] absolute bg-white overflow-hidden
-        pointer-events-none lg:flex justify-center items-center hidden'
+        className='pointer-events-none absolute hidden h-[400px] w-[400px] items-center justify-center
+        overflow-hidden bg-white lg:flex xl:h-[450px] xl:w-[450px]'
       >
         <div
           style={{
             top: index * -100 + '%',
             transition: 'top 0.5s cubic-bezier(0.76, 0, 0.24, 1)',
           }}
-          className='h-full w-full absolute'
+          className='absolute h-full w-full'
         >
           {projects.map((project, index) => {
             const { title, image, color } = project;
@@ -98,11 +98,11 @@ export const ProjectModal = ({ modal, projects }: ProjectModalProps) => {
               <div
                 key={index}
                 style={{ backgroundColor: color }}
-                className='h-full flex justify-center items-center'
+                className='flex h-full items-center justify-center'
               >
-                <div className='h-[75%] w-[80%] relative'>
+                <div className='relative h-[75%] w-[80%]'>
                   <Image
-                    className='object-cover rounded-lg'
+                    className='rounded-lg object-cover'
                     src={image}
                     alt={title}
                     fill
@@ -119,11 +119,11 @@ export const ProjectModal = ({ modal, projects }: ProjectModalProps) => {
         variants={scaleAnimation}
         initial={'initial'}
         animate={active ? 'open' : 'closed'}
-        className='h-20 w-20 bg-teal-700 rounded-full absolute 
-        pointer-events-none flex items-center justify-center'
+        className='pointer-events-none absolute flex h-20 w-20 
+        items-center justify-center rounded-full bg-teal-700'
       />
       <motion.div
-        className='absolute pointer-events-none flex items-center justify-center'
+        className='pointer-events-none absolute flex items-center justify-center'
         ref={cursorLabelRef}
         variants={scaleAnimation}
         initial={'initial'}

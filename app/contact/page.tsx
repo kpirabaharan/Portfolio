@@ -20,8 +20,8 @@ const ContactPage = () => {
       </AnimatePresence>
       <div className={`h-full w-full ${isLoading && 'hidden'}`}>
         <StandingNavbar />
-        <div className={`w-full max-w-8xl mx-auto ${styles.padding}`}>
-          <h1 className='mt-0 md:mt-8 text-4xl md:text-5xl lg:text-6xl xl:text-7xl'>
+        <div className={`mx-auto w-full max-w-8xl ${styles.padding}`}>
+          <h1 className='mt-0 text-4xl md:mt-8 md:text-5xl lg:text-6xl xl:text-7xl'>
             Get In Touch
           </h1>
           <Separator className='my-6 h-[2px]' />

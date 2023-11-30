@@ -20,7 +20,7 @@ const SectionWrapper = (Component: React.FC, id: string, className?: string) =>
         initial='hidden'
         whileInView='show'
         viewport={{ once: true, amount: 0.15 }}
-        className={cn(`${styles.padding} mx-auto max-w-8xl w-full`, className)}
+        className={cn(`${styles.padding} mx-auto w-full max-w-8xl`, className)}
       >
         <Component />
       </motion.section>

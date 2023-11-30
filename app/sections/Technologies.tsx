@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Technologies = () => {
   return (
-    <motion.div className='w-full sm:px-16 px-6 sm:py-16 py-6'>
+    <motion.div className='w-full px-6 py-6 sm:px-16 sm:py-16'>
       <motion.h2
         className='text-xl md:text-2xl lg:text-3xl'
         initial={{ x: '-100%' }}
@@ -11,8 +11,8 @@ const Technologies = () => {
       >
         EDUCATION
       </motion.h2>
-      <div className='mt-4 flex flex-row bg-slate-900 p-8 rounded-2xl justify-center items-center'>
-        <div className='w-[100px] h-[100px] relative'>
+      <div className='mt-4 flex flex-row items-center justify-center rounded-2xl bg-slate-900 p-8'>
+        <div className='relative h-[100px] w-[100px]'>
           {/* <Image
             className='w-full h-full object-contain'
             src={src}
@@ -20,16 +20,16 @@ const Technologies = () => {
             alt='Western'
           /> */}
         </div>
-        <div className='ml-8 w-full flex flex-col'>
+        <div className='ml-8 flex w-full flex-col'>
           <div className='flex flex-row '>
-            <p className='md:text-2xl sm:text-lg text-[14px] font-semibold'>
+            <p className='text-[14px] font-semibold sm:text-lg md:text-2xl'>
               Western University - <span> London, ON</span>
             </p>
           </div>
-          <p className='md:text-2xl sm:text-lg text-[14px] font-semibold'>
+          <p className='text-[14px] font-semibold sm:text-lg md:text-2xl'>
             B.E.Sc Mechatronics Engineering with distinction
           </p>
-          <p className='md:text-2xl sm:text-lg text-[14px] font-semibold'>
+          <p className='text-[14px] font-semibold sm:text-lg md:text-2xl'>
             2017 - 2022
           </p>
         </div>

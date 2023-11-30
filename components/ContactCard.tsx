@@ -15,7 +15,7 @@ interface ContactLinkProps extends PropsWithChildren {}
 const ContactLink = ({ children }: ContactLinkProps) => {
   return (
     <MagneticComponent
-      className='flex gap-x-4 items-center w-fit group'
+      className='group flex w-fit items-center gap-x-4'
       modifier={{ x: 0.25, y: 0.5 }}
     >
       {children}
@@ -25,12 +25,12 @@ const ContactLink = ({ children }: ContactLinkProps) => {
 
 const ContactCard = () => {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-y-8 '>
+    <div className='grid grid-cols-1 gap-y-8 md:grid-cols-2 '>
       <ContactLink>
         <MailIcon size={24} />
         <a
           href='mailto:kpirabaharan3@gmail.com'
-          className='text-base md:text-xl group-hover:underline underline-offset-8'
+          className='text-base underline-offset-8 group-hover:underline md:text-xl'
         >
           kpirabaharan3@gmail.com
         </a>
@@ -40,7 +40,7 @@ const ContactCard = () => {
         <PhoneIcon size={24} />
         <a
           href='tel:4166173498'
-          className='text-base md:text-xl group-hover:underline underline-offset-8'
+          className='text-base underline-offset-8 group-hover:underline md:text-xl'
         >
           (416)-617-3498
         </a>
@@ -50,7 +50,7 @@ const ContactCard = () => {
         <LinkedinIcon size={24} />
         <a
           href='https://www.linkedin.com/in/kpirabaharan/'
-          className='text-base md:text-xl group-hover:underline underline-offset-8'
+          className='text-base underline-offset-8 group-hover:underline md:text-xl'
           target='_blank'
         >
           kpirabaharan
@@ -61,7 +61,7 @@ const ContactCard = () => {
         <GithubIcon size={24} />
         <a
           href='https://github.com/kpirabaharan'
-          className='text-base md:text-xl group-hover:underline underline-offset-8'
+          className='text-base underline-offset-8 group-hover:underline md:text-xl'
           target='_blank'
         >
           kpirabaharan
@@ -72,7 +72,7 @@ const ContactCard = () => {
         <FileTextIcon size={24} />
         <a
           href='./Keeshigan-Pirabaharan-Resume.pdf'
-          className='text-base md:text-xl group-hover:underline underline-offset-8'
+          className='text-base underline-offset-8 group-hover:underline md:text-xl'
           target='_blank'
         >
           Resume

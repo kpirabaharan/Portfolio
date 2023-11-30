@@ -61,7 +61,7 @@ const FloatingNav = () => {
     <AnimatePresence>
       {((isScrolled && !isOpen) || isOpen) && (
         <MagneticComponent
-          className='fixed right-0 m-6 md-height:m-10 cursor-pointer z-30 rounded-full'
+          className='fixed right-0 z-30 m-6 cursor-pointer rounded-full md-height:m-10'
           modifier={{ x: 0.4, y: 0.4 }}
         >
           <motion.div
@@ -71,16 +71,16 @@ const FloatingNav = () => {
             animate='enter'
             exit='exit'
             whileHover={{ scale: 1.15 }}
-            className='w-16 md-height:xl:w-24 h-16 md-height:xl:h-24 bg-white 
-            flex justify-center items-center rounded-full relative overflow-hidden'
+            className='relative flex h-16 w-16 items-center 
+            justify-center overflow-hidden rounded-full bg-white md-height:xl:h-24 md-height:xl:w-24'
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
             <AnimatePresence>
               {isHovered && (
                 <motion.div
-                  className='h-full w-full rounded-full bg-teal-600 absolute 
-                  top-0 left-0 pointer-events-none'
+                  className='pointer-events-none absolute left-0 top-0 h-full 
+                  w-full rounded-full bg-teal-600'
                   variants={buttonHover}
                   initial={'initial'}
                   animate={'enter'}
@@ -89,14 +89,14 @@ const FloatingNav = () => {
               )}
             </AnimatePresence>
             <MagneticComponent
-              className='absolute left-0 top-0 w-full h-full rounded-full
-              flex items-center justify-center'
+              className='absolute left-0 top-0 flex h-full w-full
+              items-center justify-center rounded-full'
               modifier={{ x: 0.3, y: 0.3 }}
             >
               <div
                 className={`w-full ${css} ${
                   isOpen &&
-                  'before:top-px after:-top-px before:-rotate-45 after:rotate-45'
+                  'before:top-px before:-rotate-45 after:-top-px after:rotate-45'
                 }`}
               />
             </MagneticComponent>

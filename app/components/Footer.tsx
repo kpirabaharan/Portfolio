@@ -12,31 +12,31 @@ interface FooterProps {
 const Footer = ({ date }: FooterProps) => {
   return (
     <div
-      className={`w-full flex flex-col-reverse md:flex-row justify-between px-4 
-      sm:px-16 py-6 sm:py-8 mt-auto`}
+      className={`mt-auto flex w-full flex-col-reverse justify-between px-4 
+      py-6 sm:px-16 sm:py-8 md:flex-row`}
     >
-      <div className='flex flex-row gap-x-12 justify-between md:justify-start'>
+      <div className='flex flex-row justify-between gap-x-12 md:justify-start'>
         <div className='flex flex-col gap-y-4 md:gap-y-6'>
-          <p className='uppercase text-xs text-muted-foreground'>
+          <p className='text-xs uppercase text-muted-foreground'>
             Last Modified
           </p>
           <p className='text-sm'>{format(date, 'MMMM do, yyyy')}</p>
         </div>
         <div className='flex flex-col gap-y-4 md:gap-y-6'>
-          <p className='uppercase text-xs text-muted-foreground'>Local Time</p>
+          <p className='text-xs uppercase text-muted-foreground'>Local Time</p>
           <p className='text-sm'>{format(new Date(), 'hh:mm a O')}</p>
         </div>
       </div>
       <Separator className='my-6 md:hidden' />
       <div className='flex flex-col gap-y-4 md:gap-y-6'>
-        <p className='uppercase text-xs text-muted-foreground'>Socials</p>
+        <p className='text-xs uppercase text-muted-foreground'>Socials</p>
         <div className='flex flex-row gap-x-12'>
           {socials.map((item, index) => {
             const { name, link } = item;
             return (
               <MagneticComponent key={index} modifier={{ x: 0.3, y: 0.3 }}>
                 <a
-                  className='font-light hover:underline underline-offset-8'
+                  className='font-light underline-offset-8 hover:underline'
                   href={link}
                   target='_blank'
                 >

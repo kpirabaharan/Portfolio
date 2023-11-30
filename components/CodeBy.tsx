@@ -15,12 +15,12 @@ export const CodeBy = () => {
 
   return (
     <div
-      className='flex gap-x-1 group cursor-pointer p-3'
+      className='group flex cursor-pointer gap-x-1 p-3'
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => window.location.assign('/')}
     >
-      <p className='font-light group-hover:rotate-full text-lg transition duration-700'>
+      <p className='text-lg font-light transition duration-700 group-hover:rotate-full'>
         &copy;{' '}
       </p>
       <motion.div
@@ -31,7 +31,7 @@ export const CodeBy = () => {
           closed: { width: '129px' },
         }}
         transition={transition}
-        className='overflow-hidden text-clip whitespace-nowrap relative'
+        className='relative overflow-hidden text-clip whitespace-nowrap'
       >
         <motion.p
           initial='closed'

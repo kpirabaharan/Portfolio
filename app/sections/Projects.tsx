@@ -30,8 +30,8 @@ const Projects = () => {
       </motion.h2>
 
       <div
-        className='grid grid-cols-1 sm:grid-cols-2 gap-y-8 lg:gap-y-0 lg:flex 
-        lg:flex-col lg:justify-center lg:items-center w-full'
+        className='grid w-full grid-cols-1 gap-y-8 sm:grid-cols-2 lg:flex 
+        lg:flex-col lg:items-center lg:justify-center lg:gap-y-0'
       >
         <Separator className='hidden lg:flex' />
         {featuredProjects.map((project, index) => {
@@ -50,9 +50,9 @@ const Projects = () => {
         })}
         <ProjectModal modal={modal} projects={featuredProjects} />
       </div>
-      <div className='w-full flex justify-center mt-4'>
+      <div className='mt-4 flex w-full justify-center'>
         <MagneticButton size='wide' onClick={() => startSplash('/projects')}>
-          <p className='text-lg lg:text-xl text-primary-foreground'>
+          <p className='text-lg text-primary-foreground lg:text-xl'>
             More Projects
           </p>
         </MagneticButton>

@@ -46,8 +46,8 @@ export const MagneticButton = ({
         <AnimatePresence>
           {isHovered && (
             <motion.div
-              className='h-full w-full rounded-full bg-teal-600 absolute top-0 
-              left-0 pointer-events-none'
+              className='pointer-events-none absolute left-0 top-0 h-full w-full 
+              rounded-full bg-teal-600'
               variants={buttonHover}
               initial={'initial'}
               animate={'enter'}
@@ -56,8 +56,8 @@ export const MagneticButton = ({
           )}
         </AnimatePresence>
         <MagneticComponent
-          className='absolute left-0 top-0 w-full h-full rounded-full
-          flex items-center justify-center'
+          className='absolute left-0 top-0 flex h-full w-full
+          items-center justify-center rounded-full'
           modifier={{ x: 0.3, y: 0.3 }}
         >
           {children}

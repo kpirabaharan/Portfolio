@@ -52,7 +52,7 @@ export const bottomCurve = (initialPath: string, targetPath: string) => {
 //NavLink
 export const textSlide: Variants = {
   initial: { x: '80px' },
-  enter: (i) => ({
+  enter: i => ({
     x: 0,
     transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.1 * i },
   }),

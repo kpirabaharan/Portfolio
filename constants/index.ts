@@ -315,7 +315,7 @@ export const allProjects: ProjectType[] = [
     window control through embedded systems, sensors, and an Android app, featuring Manual, 
     Smart, and Automatic modes.`,
     image: smartWindows,
-    type: ['Mobile', 'Embedded'],
+    type: ['Mechatronics', 'Mobile'],
     github: 'https://github.com/kpirabaharan/Smart-Windows-App',
     website: 'https://www.youtube.com/watch?v=4RYRujc7fvM',
     link: '/projects/smart-windows',

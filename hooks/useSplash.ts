@@ -7,7 +7,7 @@ interface SplashStoreInterface {
   closeSplash: () => void;
 }
 
-const useSplash = create<SplashStoreInterface>((set) => ({
+const useSplash = create<SplashStoreInterface>(set => ({
   isSplash: false,
   url: undefined,
   startSplash: (url: string) => set({ isSplash: true, url }),

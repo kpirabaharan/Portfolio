@@ -50,7 +50,12 @@ const Ball = ({ width, total, index, item }: BallProps) => {
   });
 
   return (
-    <mesh ref={ref} castShadow receiveShadow scale={2.0 + 0.000467 * width}>
+    <mesh
+      ref={ref}
+      castShadow
+      receiveShadow
+      scale={[2 + 0.000467 * width, 2 + 0.000467 * width, 1 + 0.000233 * width]}
+    >
       <icosahedronGeometry args={[1, 12]} />
       <meshStandardMaterial color='white' flatShading />
       <Decal position={[0, 0, 1.2]} rotation={[2 * Math.PI, 0, 0]} scale={1.15}>
@@ -81,7 +86,7 @@ interface OrbitProps {
 }
 
 const Orbit = ({ techStack }: OrbitProps) => {
-  const { width } = useThree((state) => state.size);
+  const { width } = useThree(state => state.size);
 
   return (
     <group position={[0, 0, -25]}>
@@ -95,7 +100,7 @@ const Orbit = ({ techStack }: OrbitProps) => {
         />
       ))}
 
-      <Center onCentered={(props) => {}}>
+      <Center onCentered={props => {}}>
         <Text3D
           font={'/Inter_Bold.json'}
           size={2 + 0.00133 * width}
@@ -119,7 +124,7 @@ interface BallOrbitProps {
 
 const BallOrbit = ({ techStack }: BallOrbitProps) => {
   return (
-    <div className='h-[150px] md:h-[200px] w-full'>
+    <div className='h-[150px] w-full md:h-[200px]'>
       <Canvas
         className='!touch-auto'
         frameloop='always'

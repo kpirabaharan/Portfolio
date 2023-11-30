@@ -27,8 +27,8 @@ const SplashIn = () => {
   return (
     isSplash && (
       <motion.div
-        className='h-screen w-screen cursor-wait fixed top-0 left-0 z-40
-        flex justify-center items-center bg-teal-800'
+        className='fixed left-0 top-0 z-40 flex h-screen w-screen
+        cursor-wait items-center justify-center bg-teal-800'
         initial={'initial'}
         animate={'enter'}
         variants={splashInUp()}
@@ -38,8 +38,8 @@ const SplashIn = () => {
           <>
             {/* Top Curve */}
             <svg
-              className='absolute -top-[299px] w-full h-0 sm:h-[300px] stroke-none 
-               fill-teal-800 pointer-events-none'
+              className='pointer-events-none absolute -top-[299px] h-0 w-full fill-teal-800 
+               stroke-none sm:h-[300px]'
             >
               <motion.path
                 variants={topCurve(topInitialPath, topTargetPath)}

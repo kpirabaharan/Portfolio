@@ -28,7 +28,7 @@ const ECommercePage = () => {
       {!isLoading && <StarsCanvas />}
       <div className={`relative ${isLoading ? 'h-screen' : ''} w-full`}>
         <StandingNavbar />
-        <div className={'w-full mt-36 md:mt-44 relative pb-36'}>
+        <div className={'relative mt-36 w-full pb-36 md:mt-44'}>
           <ProjectHeader
             title={eCommerce.title}
             date={eCommerce.date}
@@ -36,8 +36,8 @@ const ECommercePage = () => {
             keyTech={eCommerce.key_tech}
           />
           <div
-            className='absolute bottom-[26rem] md:bottom-0 translate-y-1/2 
-            right-0 -translate-x-1/2 md:-translate-x-[200%] z-20 md:mx-16'
+            className='absolute bottom-[26rem] right-0 z-20 
+            -translate-x-1/2 translate-y-1/2 md:bottom-0 md:mx-16 md:-translate-x-[200%]'
           >
             <Link href={eCommerce.store_site_1} target='_blank'>
               <MagneticButton onClick={() => {}}>
@@ -49,8 +49,8 @@ const ECommercePage = () => {
             </Link>
           </div>
           <div
-            className='absolute bottom-40 md:bottom-0 translate-y-1/2 
-            right-0 -translate-x-1/2 z-20 md:mx-16'
+            className='absolute bottom-40 right-0 z-20 
+            -translate-x-1/2 translate-y-1/2 md:bottom-0 md:mx-16'
           >
             <Link href={eCommerce.store_site_2} target='_blank'>
               <MagneticButton onClick={() => {}}>
@@ -62,9 +62,9 @@ const ECommercePage = () => {
             </Link>
           </div>
         </div>
-        <div className='w-full md:px-16 max-w-[110rem] mx-auto'>
+        <div className='mx-auto w-full max-w-[110rem] md:px-16'>
           <div
-            className='w-full aspect-video relative border 
+            className='relative aspect-video w-full border 
             bg-white'
           >
             <Image
@@ -75,15 +75,27 @@ const ECommercePage = () => {
             />
           </div>
         </div>
-        <div className='max-w-8xl mx-auto'>
-          <div className={`mt-40 ${styles.padding}`}>
-            <h2 className='text-5xl'>Part 1: Admin Dashboard</h2>
+        <div className='mx-auto max-w-8xl'>
+          <div className={`mt-40 ${styles.padding} flex flex-col gap-y-4`}>
+            <h2 className='text-5xl font-medium'>Admin Dashboard</h2>
+            <p className='text-xl'>
+              The admin dashboard allows the user to manage multiple online
+              stores from a centralized CMS.
+            </p>
           </div>
-          <div className={`mt-40 ${styles.padding}`}>
-            <h2 className='text-5xl'>Part 2: Online Store</h2>
+          <div className={`mt-40 ${styles.padding} flex flex-col gap-y-4`}>
+            <h2 className='text-5xl font-medium'>Online Store</h2>
+            <p className='text-xl'>
+              A responsive online store that allows users to browse and purchase
+              products with stripe integration.
+            </p>
           </div>
-          <div className={`mt-40 ${styles.padding}`}>
-            <h2 className='text-5xl'>Part 3: Mobile Application</h2>
+          <div className={`mt-40 ${styles.padding} flex flex-col gap-y-4`}>
+            <h2 className='text-5xl font-medium'>Mobile Application</h2>
+            <p className='text-xl'>
+              Multi-platform mobile application that allows users to browse and
+              purchase products with stripe integration.
+            </p>
           </div>
         </div>
         {/* <div className='mt-48 w-full aspect-video relative'>

@@ -15,27 +15,27 @@ const Education = () => {
       </motion.h2>
       <motion.div
         variants={fadeIn('', '', 0.1, 1)}
-        className='flex flex-row bg-slate-900 p-8 rounded-2xl 
-        justify-center items-center'
+        className='flex flex-row items-center justify-center rounded-2xl 
+        bg-slate-900 p-8'
       >
-        <div className='w-[100px] h-[100px] relative'>
+        <div className='relative h-[100px] w-[100px]'>
           <Image
-            className='w-full h-full object-contain'
+            className='h-full w-full object-contain'
             src={western}
             fill
             alt='Western'
           />
         </div>
-        <div className='ml-8 w-full flex flex-col'>
+        <div className='ml-8 flex w-full flex-col'>
           <div className='flex flex-row '>
-            <p className='md:text-2xl sm:text-lg text-[14px] font-semibold'>
+            <p className='text-[14px] font-semibold sm:text-lg md:text-2xl'>
               Western University - <span> London, ON</span>
             </p>
           </div>
-          <p className='md:text-2xl sm:text-lg text-[14px] font-semibold'>
+          <p className='text-[14px] font-semibold sm:text-lg md:text-2xl'>
             B.E.Sc Mechatronics Engineering with distinction
           </p>
-          <p className='md:text-2xl sm:text-lg text-[14px] font-semibold'>
+          <p className='text-[14px] font-semibold sm:text-lg md:text-2xl'>
             2017 - 2022
           </p>
         </div>

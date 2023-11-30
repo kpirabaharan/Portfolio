@@ -15,7 +15,7 @@ const SkillsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className='h-full w-full relative'>
+    <div className='relative h-full w-full'>
       <AnimatePresence>
         {isLoading && <SplashOut setIsLoading={setIsLoading} />}
       </AnimatePresence>
@@ -25,11 +25,11 @@ const SkillsPage = () => {
           styles.padding
         } flex flex-col`}
       >
-        <div className='flex flex-col gap-y-4 justify-center items-center'>
+        <div className='flex flex-col items-center justify-center gap-y-4'>
           <h1 className='text-4xl md:text-5xl lg:text-6xl xl:text-7xl'>
             Skills
           </h1>
-          <div className='flex flex-row gap-x-2 items-center'>
+          <div className='flex flex-row items-center gap-x-2'>
             <AiFillStar />
             <p>Indicates atleast 3 years of experience</p>
           </div>

@@ -47,8 +47,8 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
 
   return (
     <motion.div
-      className='h-screen w-screen cursor-wait fixed top-0 left-0 z-40
-      flex justify-center items-center bg-teal-800'
+      className='fixed left-0 top-0 z-40 flex h-screen w-screen
+      cursor-wait items-center justify-center bg-teal-800'
       initial={'initial'}
       exit={'exit'}
       variants={splashOutUp()}
@@ -56,13 +56,13 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
       {dimension.width > 0 && (
         <>
           <AnimatedText
-            className='text-4xl md:text-7xl z-20'
+            className='z-20 text-4xl md:text-7xl'
             text={[title, 100, () => setIsLoading(false)]}
           />
           {/* Bottom Curve */}
           <svg
-            className='absolute top-0 w-full h-0 sm:h-[calc(100%+300px)] stroke-none 
-            fill-teal-800 pointer-events-none'
+            className='pointer-events-none absolute top-0 h-0 w-full fill-teal-800 
+            stroke-none sm:h-[calc(100%+300px)]'
           >
             <motion.path
               variants={bottomCurve(bottomInitialPath, bottomTargetPath)}

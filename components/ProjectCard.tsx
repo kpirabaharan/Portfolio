@@ -44,12 +44,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <div
-      className='bg-slate-900 w-full sm:w-[350px] aspect-[8/6] sm:aspect-square 
-      rounded-xl flex flex-col justify-between p-4 relative overflow-hidden'
+      className='relative flex aspect-[8/6] w-full flex-col 
+      justify-between overflow-hidden rounded-xl bg-slate-900 p-4 sm:aspect-square sm:w-[350px]'
       onMouseEnter={isSmallScreen ? () => setIsHovered(true) : () => {}}
       onMouseLeave={isSmallScreen ? () => setIsHovered(false) : () => {}}
     >
-      <div className='relative flex-1 w-full mx-auto'>
+      <div className='relative mx-auto w-full flex-1'>
         <Image
           className='object-cover'
           src={project.image.src}
@@ -58,10 +58,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         />
       </div>
 
-      <div className='flex flex-row justify-between items-center pt-4'>
-        <h2 className='text-white text-xl'>{project.title}</h2>
+      <div className='flex flex-row items-center justify-between pt-4'>
+        <h2 className='text-xl text-white'>{project.title}</h2>
         <Button
-          className='flex sm:hidden cursor-pointer pointer-events-auto'
+          className='pointer-events-auto flex cursor-pointer sm:hidden'
           size={'icon'}
           onClick={() => setIsHovered(true)}
         >
@@ -76,28 +76,28 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             initial={'initial'}
             animate={'enter'}
             exit={'exit'}
-            className='h-full w-full bg-teal-700/90 absolute top-0 left-0
-            rounded-xl p-4 flex flex-col items-center text-center justify-between'
+            className='absolute left-0 top-0 flex h-full w-full
+            flex-col items-center justify-between rounded-xl bg-teal-700/90 p-4 text-center'
           >
             <Button
-              className='flex sm:hidden absolute top-4 right-4'
+              className='absolute right-4 top-4 flex sm:hidden'
               size={'icon'}
               onClick={() => setIsHovered(false)}
             >
               <XIcon />
             </Button>
 
-            <h2 className='text-lg font-bold px-10 py-2'>
+            <h2 className='px-10 py-2 text-lg font-bold'>
               {project.type.join(' + ')}
             </h2>
 
-            <p className='text-base sm:text-lg my-auto  sm:pt-0'>
+            <p className='my-auto text-base sm:pt-0  sm:text-lg'>
               {project.description}
             </p>
 
             <div
-              className='bg-teal-900 rounded-2xl py-2 px-4 sm:p-4
-              flex items-center justify-between w-full'
+              className='flex w-full items-center justify-between rounded-2xl
+              bg-teal-900 px-4 py-2 sm:p-4'
             >
               {project.github ? (
                 <Link
@@ -114,7 +114,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               )}
               {project.link ? (
                 <p
-                  className='underline cursor-pointer'
+                  className='cursor-pointer underline'
                   onClick={() => {
                     startSplash(project.link!);
                   }}

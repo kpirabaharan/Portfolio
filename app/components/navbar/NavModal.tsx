@@ -42,29 +42,29 @@ export const NavModal = () => {
       {isOpen && (
         <div
           onClick={onClose}
-          className='fixed h-screen z-10 w-full transition 
-          duration-500 overflow-hidden'
+          className='fixed z-10 h-screen w-full overflow-hidden 
+          transition duration-500'
         >
           <motion.div
-            onClick={(e) => e.stopPropagation()}
+            onClick={e => e.stopPropagation()}
             variants={menuSlide}
             initial='initial'
             animate='enter'
             exit='exit'
-            className='fixed h-screen z-20 top-0 right-0'
+            className='fixed right-0 top-0 z-20 h-screen'
           >
             <motion.div
               animate={animate}
               variants={widthVariants}
-              className='box-border h-full bg-slate-900 flex flex-col justify-around'
+              className='box-border flex h-full flex-col justify-around bg-slate-900'
             >
               <motion.div
                 animate={animate}
                 variants={heightVariants}
-                className='flex flex-col justify-around my-auto w-3/4 xl:w-3/5 mx-auto 
-                min-h-[500px]'
+                className='mx-auto my-auto flex min-h-[500px] w-3/4 flex-col justify-around 
+                xl:w-3/5'
               >
-                <div className='uppercase flex flex-col gap-y-4'>
+                <div className='flex flex-col gap-y-4 uppercase'>
                   <p className='text-xs text-muted-foreground'>Navigation</p>
                   <Separator className='bg-muted-foreground' />
                 </div>
@@ -75,7 +75,7 @@ export const NavModal = () => {
                     const { title, href } = link;
                     return (
                       <NavLink
-                        className='cursor-pointer w-fit py-2'
+                        className='w-fit cursor-pointer py-2'
                         key={index}
                         index={index}
                         isPath={isPath}
@@ -90,7 +90,7 @@ export const NavModal = () => {
                           initial='initial'
                           animate={animate}
                           variants={linkVariants(width)}
-                          className='text-[2rem] lg-[4rem] xl-[5rem]'
+                          className='lg-[4rem] xl-[5rem] text-[2rem]'
                         >
                           {title}
                         </motion.p>
@@ -99,7 +99,7 @@ export const NavModal = () => {
                   })}
                 </div>
                 <div className='mt-4 flex flex-col gap-y-4'>
-                  <p className='uppercase text-xs text-muted-foreground'>
+                  <p className='text-xs uppercase text-muted-foreground'>
                     Socials
                   </p>
                   <div className='flex flex-row gap-x-4 xl:gap-x-8'>
@@ -111,7 +111,7 @@ export const NavModal = () => {
                           modifier={{ x: 0.3, y: 0.3 }}
                         >
                           <a
-                            className='font-light hover:underline underline-offset-8'
+                            className='font-light underline-offset-8 hover:underline'
                             href={link}
                             target='_blank'
                           >
@@ -126,8 +126,8 @@ export const NavModal = () => {
             </motion.div>
             {/* Curve */}
             <svg
-              className='absolute top-0 -left-[199px] w-[200px] h-full 
-              stroke-none fill-slate-900 pointer-events-none'
+              className='pointer-events-none absolute -left-[199px] top-0 h-full 
+              w-[200px] fill-slate-900 stroke-none'
             >
               <motion.path
                 variants={pathAnimation(initialPath, targetPath)}
