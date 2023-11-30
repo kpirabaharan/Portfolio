@@ -12,7 +12,7 @@ import Footer from '@/app/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Keeshigan's Portfolio",

@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import { utcToZonedTime } from 'date-fns-tz';
 
 import MagneticComponent from '@/hoc/MagneticComponent';
 
@@ -10,6 +11,9 @@ interface FooterProps {
 }
 
 const Footer = ({ date }: FooterProps) => {
+  const torontoTimeZone = 'America/Toronto';
+  const torontoDate = utcToZonedTime(new Date(), torontoTimeZone);
+
   return (
     <div
       className={`mt-auto flex w-full flex-col-reverse justify-between px-4 
@@ -24,7 +28,7 @@ const Footer = ({ date }: FooterProps) => {
         </div>
         <div className='flex flex-col gap-y-4 md:gap-y-6'>
           <p className='text-xs uppercase text-muted-foreground'>Local Time</p>
-          <p className='text-sm'>{format(new Date(), 'hh:mm a O')}</p>
+          <p className='text-sm'>{format(torontoDate, 'hh:mm a z')}</p>
         </div>
       </div>
       <Separator className='my-6 md:hidden' />
