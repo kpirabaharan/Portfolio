@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 import { utcToZonedTime } from 'date-fns-tz';
 
@@ -14,7 +15,16 @@ interface FooterProps {
 
 const Footer = ({ date }: FooterProps) => {
   const torontoTimeZone = 'America/Toronto';
-  const torontoDate = utcToZonedTime(new Date(), torontoTimeZone);
+  const [torontoDate, setTorontoDate] = useState<Date>(
+    utcToZonedTime(new Date(), torontoTimeZone),
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTorontoDate(utcToZonedTime(new Date(), torontoTimeZone));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div
