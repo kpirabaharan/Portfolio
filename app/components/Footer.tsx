@@ -14,10 +14,15 @@ interface FooterProps {
 }
 
 const Footer = ({ date }: FooterProps) => {
+  const [isMounted, setIsMounted] = useState(false);
   const torontoTimeZone = 'America/Toronto';
   const [torontoDate, setTorontoDate] = useState<Date>(
     utcToZonedTime(new Date(), torontoTimeZone),
   );
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,6 +30,10 @@ const Footer = ({ date }: FooterProps) => {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div

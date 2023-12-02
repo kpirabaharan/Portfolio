@@ -13,8 +13,9 @@ import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 import SplashOut from '@/app/components/SplashOut';
 import StarsCanvas from '@/components/canvas/StarCanvas';
 import { MagneticButton } from '@/components/MagneticButton';
+import DisplayPicture from '@/components/DisplayPicture';
 
-import { ecommerceStore } from '@/assets';
+import { ecommerceAdmin, ecommerceStore } from '@/assets';
 import { eCommerce } from '@/constants';
 
 const ECommercePage = () => {
@@ -75,37 +76,37 @@ const ECommercePage = () => {
             />
           </div>
         </div>
-        <div className='mx-auto max-w-8xl'>
-          <div className={`mt-40 ${styles.padding} flex flex-col gap-y-4`}>
+        <div className='mx-auto mt-32 flex max-w-8xl flex-col text-center'>
+          <div
+            className={`${styles.padding} flex h-screen flex-col justify-center gap-y-4`}
+          >
             <h2 className='text-5xl font-medium'>Admin Dashboard</h2>
-            <p className='text-xl'>
+            <p className='text-lg'>
               The admin dashboard allows the user to manage multiple online
               stores from a centralized CMS.
             </p>
+            <DisplayPicture src={'/project-vids/e-commerce-admin-video.mp4'} />
           </div>
-          <div className={`mt-40 ${styles.padding} flex flex-col gap-y-4`}>
+          <div
+            className={`${styles.padding} flex h-screen flex-col justify-center gap-y-4`}
+          >
             <h2 className='text-5xl font-medium'>Online Store</h2>
-            <p className='text-xl'>
+            <p className='text-lg'>
               A responsive online store that allows users to browse and purchase
               products with stripe integration.
             </p>
+            <DisplayPicture src={ecommerceStore} />
           </div>
-          <div className={`mt-40 ${styles.padding} flex flex-col gap-y-4`}>
+          <div
+            className={`${styles.padding} flex h-screen flex-col justify-center gap-y-4`}
+          >
             <h2 className='text-5xl font-medium'>Mobile Application</h2>
-            <p className='text-xl'>
+            <p className='text-lg'>
               Multi-platform mobile application that allows users to browse and
               purchase products with stripe integration.
             </p>
           </div>
         </div>
-        {/* <div className='mt-48 w-full aspect-video relative'>
-          <Image
-            className='object-contain'
-            src={studioDisplay.src}
-            alt='Frame'
-            fill
-          />
-        </div> */}
       </div>
     </main>
   );
