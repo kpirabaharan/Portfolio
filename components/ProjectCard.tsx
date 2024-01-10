@@ -112,7 +112,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               ) : (
                 <div className='h-10 w-10'></div>
               )}
-              {project.link ? (
+              {/* {project.link ? (
                 <p
                   className='cursor-pointer underline'
                   onClick={() => {
@@ -121,9 +121,9 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 >
                   {project.title}
                 </p>
-              ) : (
-                <p>{project.title}</p>
-              )}
+              ) : ( */}
+              <p>{project.title}</p>
+              {/* )} */}
               {project.website ? (
                 <Link
                   href={project.website}

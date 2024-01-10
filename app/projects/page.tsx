@@ -35,7 +35,7 @@ const ProjectsPage = () => {
             A showcase of my projects
           </h1>
           <Separator className='h-[2px]' />
-          <div className='flex w-full flex-row flex-wrap gap-6'>
+          {/* <div className='flex w-full flex-row flex-wrap gap-6'>
             {filters.map((cat, index) => (
               <MagneticButton size={'filter'} key={index} onClick={() => {}}>
                 <p className='text-base font-normal text-primary-foreground lg:text-lg'>
@@ -43,7 +43,7 @@ const ProjectsPage = () => {
                 </p>
               </MagneticButton>
             ))}
-          </div>
+          </div> */}
           <Projects />
         </div>
       </div>
