@@ -35,7 +35,7 @@ const Projects = () => {
       >
         <Separator className='hidden lg:flex' />
         {featuredProjects.map((project, index) => {
-          const { title, type, image, color } = project;
+          const { title, type, image, color, link } = project;
           return (
             <ProjectTile
               key={index}
@@ -44,6 +44,7 @@ const Projects = () => {
               image={image}
               color={color}
               type={type}
+              link={link}
               setModal={setModal}
             />
           );

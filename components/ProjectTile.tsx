@@ -12,6 +12,7 @@ interface ProjectTileProps {
   image: StaticImageData;
   color: string;
   type: string;
+  link: string;
   setModal: ({ active, index }: { active: boolean; index: number }) => void;
 }
 
@@ -21,6 +22,7 @@ const ProjectTile = ({
   image,
   color,
   type,
+  link,
   setModal,
 }: ProjectTileProps) => {
   return (
@@ -35,6 +37,7 @@ const ProjectTile = ({
         )}
         className='group hidden h-full w-full cursor-pointer items-center justify-between
         px-6 py-12 hover:scale-110 hover:opacity-50 lg:flex xl:px-12 xl:py-16'
+        onClick={() => window.open(link, '_blank')}
         onMouseEnter={() => setModal({ active: true, index })}
         onMouseLeave={() => setModal({ active: false, index })}
       >

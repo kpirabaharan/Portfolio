@@ -242,28 +242,28 @@ export const featuredProjects: FeaturedProjectType[] = [
     color: '#47484a',
     image: ecommerceStore,
     type: 'Full Stack Project',
-    link: '/projects/e-commerce',
+    link: 'https://e-commerce-store-clothes-kpirabaharan.vercel.app/',
   },
   {
     title: 'Netflix Clone',
     color: '#1f2937',
     image: netflixClone,
     type: 'Full Stack Project',
-    link: '/projects/netflix-clone',
+    link: 'https://netflix-clone-kpirabaharan.vercel.app/',
   },
   {
     title: 'Spotify Clone',
     color: '#0f172a',
     image: spotifyClone,
     type: 'Full Stack Project',
-    link: '/projects/spotify-clone',
+    link: 'https://spotify-clone-kpirabaharan.vercel.app/',
   },
   {
     title: 'Smart Windows App',
     color: '#18181b',
     image: smartWindows,
     type: 'Mobile + Embedded Systems Project',
-    link: '/projects/smart-windows',
+    link: 'https://github.com/kpirabaharan/Smart-Windows-App/',
   },
 ];
 
