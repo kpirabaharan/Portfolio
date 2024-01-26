@@ -60,6 +60,7 @@ const ProjectTile = ({
       <div
         className='group group flex w-full cursor-pointer flex-col gap-y-4 px-2
         lg:hidden'
+        onClick={() => window.open(link, '_blank')}
         onMouseEnter={() => setModal({ active: true, index })}
         onMouseLeave={() => setModal({ active: false, index })}
       >
