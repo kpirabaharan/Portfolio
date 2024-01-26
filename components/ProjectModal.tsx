@@ -83,7 +83,7 @@ export const ProjectModal = ({ modal, projects }: ProjectModalProps) => {
         initial={'initial'}
         animate={active ? 'open' : 'closed'}
         className='pointer-events-none absolute hidden h-[400px] w-[400px] items-center justify-center
-        overflow-hidden bg-white lg:flex xl:h-[450px] xl:w-[450px]'
+        overflow-hidden bg-white lg:flex xl:h-[450px] xl:w-[450px] z-20'
       >
         <div
           style={{
