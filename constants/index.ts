@@ -52,6 +52,7 @@ import {
   partCollectingRobot,
   pathFollowingRobot,
   aisaas,
+  ecommerceFlutter,
 } from '@/assets';
 import { ExperienceType, ProjectType, FeaturedProjectType } from '@/types';
 
@@ -263,7 +264,7 @@ export const featuredProjects: FeaturedProjectType[] = [
     title: 'Smart Windows App',
     color: '#18181b',
     image: smartWindows,
-    type: 'Mobile + Embedded Systems Project',
+    type: 'Mobile + Mechatronic Systems Project',
     link: 'https://github.com/kpirabaharan/Smart-Windows-App/',
   },
 ];
@@ -287,6 +288,16 @@ export const allProjects: ProjectType[] = [
     type: ['Full Stack', 'AI'],
     github: 'https://github.com/kpirabaharan/AI-SaaS',
     link: '/projects/ai-saas',
+  },
+  {
+    title: 'E-Commerce Flutter App',
+    description: `Built a robust e-commerce mobile app, leveraging Flutter,
+    Riverpod, Tailwind CSS, Stripe SDK and an existing node backend for seamless
+    and efficient store management.`,
+    image: ecommerceFlutter,
+    type: ['Mobile'],
+    github: 'https://github.com/kpirabaharan/E-Commerce-Flutter-App',
+    link: '/projects/e-commerce',
   },
   {
     title: 'E-Commerce Store',

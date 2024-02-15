@@ -6,6 +6,7 @@ import opg from './company/opg.png';
 import western from './western.png';
 
 import aisaas from './projects/ai-saas.png';
+import ecommerceFlutter from './projects/e-commerce-flutter.png';
 import ecommerceStore from './projects/e-commerce-store.png';
 import ecommerceAdmin from './projects/e-commerce-admin.png';
 import netflixClone from './projects/netflix-clone.png';
@@ -72,6 +73,7 @@ export {
   opg,
   western,
   aisaas,
+  ecommerceFlutter,
   ecommerceStore,
   ecommerceAdmin,
   netflixClone,

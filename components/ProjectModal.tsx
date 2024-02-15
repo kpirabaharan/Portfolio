@@ -82,8 +82,9 @@ export const ProjectModal = ({ modal, projects }: ProjectModalProps) => {
         variants={scaleAnimation}
         initial={'initial'}
         animate={active ? 'open' : 'closed'}
-        className='pointer-events-none absolute hidden h-[400px] w-[400px] items-center justify-center
-        overflow-hidden bg-white lg:flex xl:h-[450px] xl:w-[450px] z-20'
+        className='pointer-events-none absolute z-20 hidden h-[400px] w-[400px] 
+        items-center justify-center overflow-hidden bg-white 
+        lg:flex xl:h-[450px] xl:w-[450px]'
       >
         <div
           style={{
@@ -119,11 +120,12 @@ export const ProjectModal = ({ modal, projects }: ProjectModalProps) => {
         variants={scaleAnimation}
         initial={'initial'}
         animate={active ? 'open' : 'closed'}
-        className='pointer-events-none absolute flex h-20 w-20 
+        className='pointer-events-none absolute z-20 flex h-20 w-20 
         items-center justify-center rounded-full bg-teal-700'
       />
       <motion.div
-        className='pointer-events-none absolute flex items-center justify-center'
+        className='pointer-events-none absolute z-20 flex items-center 
+        justify-center'
         ref={cursorLabelRef}
         variants={scaleAnimation}
         initial={'initial'}
