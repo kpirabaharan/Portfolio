@@ -51,6 +51,7 @@ import {
   sociopedia,
   partCollectingRobot,
   pathFollowingRobot,
+  aisaas,
 } from '@/assets';
 import { ExperienceType, ProjectType, FeaturedProjectType } from '@/types';
 
@@ -268,6 +269,25 @@ export const featuredProjects: FeaturedProjectType[] = [
 ];
 
 export const allProjects: ProjectType[] = [
+  // {
+  //   title: 'Twitch Clone',
+  //   description: `Full-stack Twitch clone built with Next.js, replicating the core
+  //   features of the popular live streaming platform.`,
+  //   image: ,
+  //   type: ['Full Stack'],
+  //   github: 'https://github.com/kpirabaharan/Twitch-Clone',
+  //   link: '/projects/twitch-clone',
+  // },
+  {
+    title: 'AI SaaS Platform',
+    description: `Developed a robust AI SaaS platform, leveraging Next.js,
+    Tailwind CSS, AWS S3 and OpenAI API to provide users with a seamless and
+    efficient AI service.`,
+    image: aisaas,
+    type: ['Full Stack', 'AI'],
+    github: 'https://github.com/kpirabaharan/AI-SaaS',
+    link: '/projects/ai-saas',
+  },
   {
     title: 'E-Commerce Store',
     description: `Built a robust e-commerce admin dashboard and store website, 
