@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio Website
+
+Welcome to my Software Portfolio Website! This platform showcases my projects, skills, and experience in the field of software development. With a modern design and cutting-edge technologies, it provides a visually appealing and interactive experience for visitors.
+
+## Key Features
+
+### Project Showcase
+
+- **Portfolio Gallery**: Explore a collection of my projects, including web applications, mobile apps, and other software projects.
+- **Project Details**: View detailed information about each project, including technologies used, features, and contributions.
+
+### Skills and Expertise
+
+- **Skill Showcase**: Highlight my expertise in various programming languages, frameworks, and technologies.
+- **Experience**: Provide an overview of my professional experience, including work history, certifications, and achievements.
+
+### Interactive Design
+
+- **Next.js**: Utilize Next.js for server-side rendering and seamless navigation between pages, enhancing performance and user experience.
+- **Framer Motion**: Implement smooth animations and transitions throughout the website with Framer Motion, creating an engaging and interactive interface.
+- **GSAP**: Integrate GSAP (GreenSock Animation Platform) for advanced animation effects, adding depth and dynamism to the design.
+- **Parallax Scrolling**: Incorporate parallax scrolling effects to create a sense of depth and immersion, enhancing the visual appeal of the website.
+
+### Modern Design
+
+- **Sleek UI**: Employ a sleek and minimalist design approach to create a clean and professional interface.
+- **Responsive Layout**: Ensure compatibility with various devices and screen sizes, providing a seamless experience across desktop, tablet, and mobile platforms.
+- **Typography and Color Scheme**: Optimize typography and color choices to maintain readability and visual coherence, enhancing the overall aesthetic appeal.
 
 ## Getting Started
 
-First, run the development server:
+To explore my Software Portfolio Website, simply visit the live website at [keeshigan.com](https://www.keeshigan.com). You can navigate through the various sections to view my projects, skills, and experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Technologies Used
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js**: A React framework for building server-side rendered web applications.
+- **Framer Motion**: A motion library for React that makes it easy to create animations and transitions.
+- **GSAP**: The GreenSock Animation Platform, a JavaScript library for creating high-performance animations.
+- **Parallax Scrolling**: A technique where background images move slower than foreground content, creating a sense of depth and immersion.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contact
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+If you have any questions or feedback, feel free to reach out:
 
-## Learn More
+- Email: kpirabaharan3@gmail.com
+- Website: [www.keeshigan.com](https://www.keeshigan.com)
+- Github: [github.com/kpirabaharan](https://github.com/kpirabaharan)
+- LinkedIn: [linkedin.com/in/kpirabaharan](https://linkedin.com/in/kpirabaharan)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
