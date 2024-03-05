@@ -2,6 +2,7 @@ import studioDisplay from './studio-display.png';
 
 import cw from './company/cw.png';
 import opg from './company/opg.png';
+import ms from './company/ms.png';
 
 import western from './western.png';
 
@@ -71,6 +72,7 @@ export {
   studioDisplay,
   cw,
   opg,
+  ms,
   western,
   aisaas,
   ecommerceFlutter,

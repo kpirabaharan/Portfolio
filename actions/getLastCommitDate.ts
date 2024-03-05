@@ -7,7 +7,7 @@ export const getLastCommitDate = async () => {
     branch: 'production',
   });
 
-  const date = data.commit.commit.committer?.date ?? '2023-09-26T05:05:54Z';
+  const date = data.commit.commit.committer?.date ?? '2024-02-23T05:05:54Z';
 
   return new Date(date);
 };
