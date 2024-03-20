@@ -122,19 +122,6 @@ export const experiences: ExperienceType[] = [
       `Collaborated with maintenance teams to develop software-based solutions for optimizing outage schedules and reducing downtime`,
     ],
   },
-  {
-    title: 'Software Engineer (Internship)',
-    company_name: 'Microsoft',
-    location: 'Vancouver, BC',
-    icon: ms,
-    iconBg: '#FFFFFF',
-    date: 'May 2019 - August 2019',
-    points: [
-      `Developed new features for Azure products using C# and .NET framework`,
-      `Documented new features developed for Azure products and created user guides for internal and external use`,
-      `Participated in code reviews, debugging sessions, and software testing to ensure the quality and functionality of applications`,
-    ],
-  },
 ];
 
 export const featuredSkillsText = `I am a full-stack developer with a passion for building beautiful
