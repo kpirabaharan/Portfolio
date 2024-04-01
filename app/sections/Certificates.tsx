@@ -1,43 +1,54 @@
-import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { FiExternalLink } from 'react-icons/fi';
+import Image from 'next/image';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
 import { fadeIn, textVariant } from '@/lib/transitions';
 import { styles } from '@/lib/styles';
+import { aws } from '@/assets';
+import Link from 'next/link';
 
-import { western } from '@/assets';
-
-const Education = () => {
+const Certificates = () => {
   return (
     <div className='flex flex-col gap-y-8'>
       <motion.h2 variants={textVariant()} className={styles.sectionHead}>
-        EDUCATION
+        CERTIFICATION
       </motion.h2>
       <motion.div
         variants={fadeIn('', '', 0.1, 1)}
         className='flex flex-row items-center justify-center rounded-2xl 
-        bg-slate-900 p-8'
+      bg-slate-900 p-8'
       >
         <div className='relative h-[100px] w-[100px]'>
           <Image
             className='h-full w-full object-contain'
-            src={western}
+            src={aws}
             fill
-            alt='Western'
+            alt='aws'
           />
         </div>
         <div className='ml-8 flex w-full flex-col'>
           <p className='text-base font-semibold sm:text-lg md:text-2xl'>
-            Western University - <span> London, ON</span>
+            AWS Certified Cloud Practitioner
           </p>
           <p className='text-sm font-semibold sm:text-base md:text-lg'>
-            B.E.Sc Mechatronics Engineering with distinction
+            Amazon Web Services (AWS)
           </p>
-          <p className='text-sm sm:text-base md:text-lg'>2017 - 2022</p>
+          <p className='text-sm sm:text-base md:text-lg'>
+            Valid Until March 2027
+          </p>
         </div>
+        <Link
+          href={
+            'https://cp.certmetrics.com/amazon/en/public/verify/credential/09032e021b234f7a991de2bfb3b63080'
+          }
+          target='_blank'
+        >
+          <FiExternalLink className='h-8 w-8 text-white' />
+        </Link>
       </motion.div>
     </div>
   );
 };
 
-export default SectionWrapper(Education, 'education');
+export default SectionWrapper(Certificates, 'certficates');
