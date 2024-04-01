@@ -35,7 +35,7 @@ const Certificates = () => {
             Amazon Web Services (AWS)
           </p>
           <p className='text-sm sm:text-base md:text-lg'>
-            Valid Until March 2027
+            March 2024 • March 2027
           </p>
         </div>
         <Link
