@@ -95,17 +95,30 @@ export const heroSubHeading = [
 
 export const experiences: ExperienceType[] = [
   {
-    title: 'Associate Software Developer',
+    title: 'Software Development Engineer II',
     company_name: 'Curtiss-Wright',
     location: 'Ottawa, ON',
     icon: cw,
     iconBg: '#e51938',
-    date: 'June 2022 - Present',
+    date: 'June 2023 - Present',
+    points: [
+      `Seamlessly integrated data plane and control plane ports to optimize network performance and functionality for a new 100G switch platform`,
+      `Developed an automated software testing framework for a new 100G switch platform with multiple variants using Python, Tcl, and Spirent`,
+      `Debugged and resolved critical hardware issues causing CPU core failures, halting production and sales of numerous units`,
+      `Created a Web GUI platform using React.js and Hiawatha to allow users to make switch configuration adjustments along with existing CLI platform`,
+    ],
+  },
+  {
+    title: 'Software Development Engineer I',
+    company_name: 'Curtiss-Wright',
+    location: 'Ottawa, ON',
+    icon: cw,
+    iconBg: '#e51938',
+    date: 'June 2022 - June 2023',
     points: [
       `Developed automated C and Bash test software for qualification testing on a hybrid vehicle management / network switch device`,
-      `Created a Web GUI platform using React.js and Hiawatha to allow users to make switch configuration adjustments along with existing CLI platform`,
+      `Performed maintenance software releases for switch software, resolving critical customer-facing bugs and enhanced documentation for improved clarity`,
       `Utilized Docker to streamline cross-compilation toolchain setup for ARM SBCs`,
-      `Seamlessly integrated data plane and control plane ports to optimize network performance and functionality for a new 100G switch platform`,
     ],
   },
   {
