@@ -29,7 +29,7 @@ const About = () => {
             <span className='font-bold text-primary'>
               Keeshigan Pirabaharan,{' '}
             </span>
-            a 24-year-old{' '}
+            a{' '}
             <span className='font-bold text-primary'>
               Mechatronics/Software Engineer
             </span>{' '}
