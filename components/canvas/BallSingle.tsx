@@ -9,6 +9,7 @@ import {
 } from '@react-three/drei';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Suspense, useRef } from 'react';
+import * as THREE from 'three';
 
 import CanvasLoader from '@/components/canvas/Loader';
 

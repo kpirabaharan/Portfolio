@@ -13,6 +13,7 @@ import {
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { StaticImageData } from 'next/image';
 import { Suspense, useRef } from 'react';
+import * as THREE from 'three';
 
 import CanvasLoader from '@/components/canvas/Loader';
 
@@ -29,6 +30,7 @@ interface BallProps {
 
 const Ball = ({ width, total, index, item }: BallProps) => {
   const decal = useTexture(item.icon.src);
+
   const ref = useRef<THREE.Mesh>(null!);
 
   useFrame(({ clock }) => {
