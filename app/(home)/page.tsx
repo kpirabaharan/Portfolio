@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 import SplashOut from '@/app/components/SplashOut';
+import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 import About from '@/app/sections/About';
 import Certificates from '@/app/sections/Certificates';
 import Contact from '@/app/sections/Contact';
@@ -13,7 +14,7 @@ import Projects from '@/app/sections/Projects';
 import Skills from '@/app/sections/Skills';
 import Work from '@/app/sections/Work';
 
-import StandingNavbar from '@/app/components/navbar/StandingNavbar';
+import StarsCanvas from '@/components/canvas/StarCanvas';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +28,7 @@ const Home = () => {
       <AnimatePresence>
         {isLoading && <SplashOut setIsLoading={setIsLoading} />}
       </AnimatePresence>
-      {/* {!isLoading && <StarsCanvas />} */}
+      {!isLoading && <StarsCanvas />}
       <div
         className={`relative ${
           isLoading ? 'h-screen' : ''
