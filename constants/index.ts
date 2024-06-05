@@ -292,6 +292,14 @@ export const allProjects: ProjectType[] = [
   //   link: '/projects/twitch-clone',
   // },
   {
+    title: 'Part Collecting Robot',
+    description: `Autonomous part collecting robot navigating dynamic environments, 
+    avoiding obstacles, and efficiently collecting objects for streamlined operations.`,
+    image: partCollectingRobot,
+    type: ['Mechatronics'],
+    github: 'https://github.com/kpirabaharan/Autonomous-Part-Collecting-Robot',
+  },
+  {
     title: 'AI SaaS Platform',
     description: `Developed a robust AI SaaS platform, leveraging Next.js,
     Tailwind CSS, AWS S3 and OpenAI API to provide users with a seamless and
@@ -300,16 +308,6 @@ export const allProjects: ProjectType[] = [
     type: ['Full Stack', 'AI'],
     github: 'https://github.com/kpirabaharan/AI-SaaS',
     link: '/projects/ai-saas',
-  },
-  {
-    title: 'E-Commerce Flutter App',
-    description: `Built a robust e-commerce mobile app, leveraging Flutter,
-    Riverpod, Tailwind CSS, Stripe SDK and an existing node backend for seamless
-    and efficient store management.`,
-    image: ecommerceFlutter,
-    type: ['Mobile'],
-    github: 'https://github.com/kpirabaharan/E-Commerce-Flutter-App',
-    link: '/projects/e-commerce',
   },
   {
     title: 'E-Commerce Store',
@@ -333,6 +331,24 @@ export const allProjects: ProjectType[] = [
     link: '/projects/e-commerce',
   },
   {
+    title: 'Tech Trendz',
+    description: `This Web/Mobile application utilizes Stripe API to provide a secure online 
+      shopping experience for users to purchase technology products with confidence.`,
+    image: ecommerce,
+    type: ['Full Stack Project', 'Mobile'],
+    github: 'https://github.com/kpirabaharan/E-Commerce',
+  },
+  {
+    title: 'E-Commerce Flutter App',
+    description: `Built a robust e-commerce mobile app, leveraging Flutter,
+    Riverpod, Tailwind CSS, Stripe SDK and an existing node backend for seamless
+    and efficient store management.`,
+    image: ecommerceFlutter,
+    type: ['Mobile'],
+    github: 'https://github.com/kpirabaharan/E-Commerce-Flutter-App',
+    link: '/projects/e-commerce',
+  },
+  {
     title: 'Netflix Clone',
     description: `Full-stack Netflix clone built with Next.js, replicating the core 
     features of the popular movie streaming platform.`,
@@ -351,6 +367,15 @@ export const allProjects: ProjectType[] = [
     github: 'https://github.com/kpirabaharan/Spotify-Clone',
     website: 'https://spotify-clone-kpirabaharan.vercel.app',
     link: '/projects/spotify-clone',
+  },
+  {
+    title: 'Sociopedia',
+    description: `The full-stack social media app provides users with a comprehensive 
+      platform to connect, communicate, and share content with others in a seamless and 
+      engaging manner.`,
+    image: sociopedia,
+    type: ['Full Stack', 'Mobile'],
+    github: 'https://github.com/kpirabaharan/Social-Media-App',
   },
   {
     title: 'Smart Windows App',
@@ -372,45 +397,20 @@ export const allProjects: ProjectType[] = [
     github: 'https://github.com/kpirabaharan/Four-DOF-Robot',
   },
   {
+    title: 'Path Following Robot',
+    description: `Autonomous line-following robot project designed to deliver 
+    objects to a specific destination by accurately following a predefined path.`,
+    image: pathFollowingRobot,
+    type: ['Mechatronics'],
+    github: 'https://www.youtube.com/watch?v=JBqL7PEfFzk',
+  },
+  {
     title: 'Velocity Voyage',
     description: `The endless runner video game, created with Unity, offers players an exciting 
       and challenging experience as they run and dodge obstacles for as long as possible.`,
     image: velocityvoyage,
     type: ['Game'],
     github: 'https://github.com/kpirabaharan/Velocity-Voyage',
-  },
-  {
-    title: 'Tech Trendz',
-    description: `This Web/Mobile application utilizes Stripe API to provide a secure online 
-      shopping experience for users to purchase technology products with confidence.`,
-    image: ecommerce,
-    type: ['Full Stack Project', 'Mobile'],
-    github: 'https://github.com/kpirabaharan/E-Commerce',
-  },
-  {
-    title: 'Sociopedia',
-    description: `The full-stack social media app provides users with a comprehensive 
-      platform to connect, communicate, and share content with others in a seamless and 
-      engaging manner.`,
-    image: sociopedia,
-    type: ['Full Stack', 'Mobile'],
-    github: 'https://github.com/kpirabaharan/Social-Media-App',
-  },
-  {
-    title: 'Part Collecting Robot',
-    description: `Autonomous part collecting robot navigating dynamic environments, 
-    avoiding obstacles, and efficiently collecting objects for streamlined operations.`,
-    image: partCollectingRobot,
-    type: ['Mechatronics'],
-    github: 'https://github.com/kpirabaharan/Autonomous-Part-Collecting-Robot',
-  },
-  {
-    title: 'Path Following Robot',
-    description: `Autonomous line-following robot project designed to deliver 
-    objects to a specific destination by accurately following a predefined path.`,
-    image: pathFollowingRobot,
-    type: ['Mechatronics'],
-    website: 'https://www.youtube.com/watch?v=JBqL7PEfFzk',
   },
 ];
 

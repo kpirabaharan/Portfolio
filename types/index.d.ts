@@ -22,7 +22,7 @@ export interface ProjectType {
   description: string;
   type: string[];
   image: StaticImageData;
-  github?: string;
+  github: string;
   website?: string;
   link?: string;
 }
