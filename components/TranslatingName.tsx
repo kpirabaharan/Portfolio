@@ -58,7 +58,7 @@ export const TranslatingName = () => {
     gsap.set(zeroRef.current, { xPercent: xPercent });
     gsap.set(firstRef.current, { xPercent: xPercent });
     gsap.set(secondRef.current, { xPercent: xPercent });
-    xPercent += 0.05 * direction;
+    xPercent += 0.03 * direction;
     requestAnimationFrame(translation);
   };
 

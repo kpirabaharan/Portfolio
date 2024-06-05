@@ -7,10 +7,9 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import useMediaQuery from '@/hooks/useMediaQuery';
-import useSplash from '@/hooks/useSplash';
 import { ProjectType } from '@/types';
 
 import { Button } from '@/components/ui/button';
@@ -21,8 +20,57 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
   const isSmallScreen = useMediaQuery('(min-width: 640px)');
-  const { startSplash } = useSplash();
+
+  const [xDirection, setXDirection] = useState<'-100%' | '0%' | '100%'>(
+    '-100%',
+  );
+  const [yDirection, setYDirection] = useState<'-100%' | '0%' | '100%'>('0%');
+
+  const handleMouseEnter = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
+    if (!ref.current) return;
+
+    setIsHovered(true);
+
+    const direction = getDirection(event, ref.current);
+    console.log('direction', direction);
+    switch (direction) {
+      case 0:
+        setXDirection('0%');
+        setYDirection('-100%');
+        break;
+      case 1:
+        setXDirection('100%');
+        setYDirection('0%');
+        break;
+      case 2:
+        setXDirection('0%');
+        setYDirection('100%');
+        break;
+      case 3:
+        setXDirection('-100%');
+        setYDirection('0%');
+        break;
+      default:
+        setXDirection('0%');
+        setYDirection('-100%');
+        break;
+    }
+  };
+
+  const getDirection = (
+    ev: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    obj: HTMLElement,
+  ) => {
+    const { width: w, height: h, left, top } = obj.getBoundingClientRect();
+    const x = ev.clientX - left - (w / 2) * (w > h ? h / w : 1);
+    const y = ev.clientY - top - (h / 2) * (h > w ? w / h : 1);
+    const d = Math.round(Math.atan2(y, x) / 1.57079633 + 5) % 4;
+    return d;
+  };
 
   useEffect(() => {
     if (isSmallScreen) {
@@ -31,21 +79,34 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   }, [isSmallScreen]);
 
   const buttonHover: Variants = {
-    initial: { y: '100%' },
+    initial: { x: xDirection, y: yDirection },
     enter: {
+      x: 0,
       y: 0,
       transition: { ease: [0.76, 0, 0.24, 1], duration: 0.5, delay: 0.1 },
     },
     exit: {
-      y: '-100%',
+      x:
+        xDirection === '100%'
+          ? '-100%'
+          : xDirection === '-100%'
+            ? '100%'
+            : '0%',
+      y:
+        yDirection === '100%'
+          ? '-100%'
+          : yDirection === '-100%'
+            ? '100%'
+            : '0%',
       transition: { ease: [0.76, 0, 0.24, 1], duration: 0.5, delay: 0.1 },
     },
   };
 
   return (
     <div
+      ref={ref}
       className='relative flex aspect-[8/6] w-full flex-col justify-between overflow-hidden rounded-xl bg-slate-900 p-4 sm:aspect-square sm:w-[350px]'
-      onMouseEnter={isSmallScreen ? () => setIsHovered(true) : () => {}}
+      onMouseEnter={isSmallScreen ? handleMouseEnter : () => {}}
       onMouseLeave={isSmallScreen ? () => setIsHovered(false) : () => {}}
     >
       <div className='relative mx-auto w-full flex-1'>
