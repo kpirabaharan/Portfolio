@@ -25,7 +25,7 @@ const ContactLink = ({ children }: ContactLinkProps) => {
 
 const ContactCard = () => {
   return (
-    <div className='grid grid-cols-1 gap-y-8 md:grid-cols-2'>
+    <div className='my-12 grid grid-cols-1 gap-y-8 md:grid-cols-2'>
       <ContactLink>
         <MailIcon size={24} />
         <a
