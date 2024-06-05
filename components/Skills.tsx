@@ -1,14 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { AiFillStar } from 'react-icons/ai';
 
 import { styles } from '@/lib/styles';
 
 import TechIcon from '@/components/TechIcon';
 
-import { techStack } from '@/constants';
 import BallOrbit from '@/components/canvas/BallOrbit';
+import { techStack } from '@/constants';
 
 const Skills = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -43,15 +43,11 @@ const Skills = () => {
             <div className='flex flex-col items-center gap-y-4' key={index}>
               <h2 className={styles.skillsHead}>{stack.title}</h2>
               <p className='max-w-3xl'>{stack.description}</p>
-              <div
-                className='flex w-full flex-row flex-wrap items-center justify-center 
-                justify-items-center gap-4'
-              >
+              <div className='flex w-full flex-row flex-wrap items-center justify-center justify-items-center gap-4'>
                 {stack.tech.map((skill, index) => (
                   <div
                     key={index}
-                    className='relative flex h-24 w-24 flex-col items-center lg:h-36 
-                lg:w-32'
+                    className='relative flex h-24 w-24 flex-col items-center lg:h-36 lg:w-32'
                   >
                     <div className='flex h-[80%] w-full items-center justify-center'>
                       <TechIcon skill={skill} />

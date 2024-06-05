@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 const Technologies = () => {
   return (
@@ -21,7 +20,7 @@ const Technologies = () => {
           /> */}
         </div>
         <div className='ml-8 flex w-full flex-col'>
-          <div className='flex flex-row '>
+          <div className='flex flex-row'>
             <p className='text-[14px] font-semibold sm:text-lg md:text-2xl'>
               Western University - <span> London, ON</span>
             </p>

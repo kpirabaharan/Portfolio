@@ -1,22 +1,19 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 import SplashOut from '@/app/components/SplashOut';
-import Hero from '@/app/sections/Hero';
 import About from '@/app/sections/About';
-import Work from '@/app/sections/Work';
-import Education from '@/app/sections/Education';
 import Certificates from '@/app/sections/Certificates';
-import Skills from '@/app/sections/Skills';
-import Projects from '@/app/sections/Projects';
 import Contact from '@/app/sections/Contact';
-
+import Education from '@/app/sections/Education';
+import Hero from '@/app/sections/Hero';
+import Projects from '@/app/sections/Projects';
+import Skills from '@/app/sections/Skills';
+import Work from '@/app/sections/Work';
 
 import StandingNavbar from '@/app/components/navbar/StandingNavbar';
-import StarsCanvas from '@/components/canvas/StarCanvas';
-
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,7 +27,7 @@ const Home = () => {
       <AnimatePresence>
         {isLoading && <SplashOut setIsLoading={setIsLoading} />}
       </AnimatePresence>
-      {!isLoading && <StarsCanvas />}
+      {/* {!isLoading && <StarsCanvas />} */}
       <div
         className={`relative ${
           isLoading ? 'h-screen' : ''

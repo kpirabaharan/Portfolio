@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
-import { utcToZonedTime } from 'date-fns-tz';
+import { toZonedTime } from 'date-fns-tz';
+import { useEffect, useState } from 'react';
 
 import MagneticComponent from '@/hoc/MagneticComponent';
 
-import { socials } from '@/constants';
 import { Separator } from '@/components/ui/separator';
+import { socials } from '@/constants';
 
 interface FooterProps {
   date: Date;
@@ -17,7 +17,7 @@ const Footer = ({ date }: FooterProps) => {
   const [isMounted, setIsMounted] = useState(false);
   const torontoTimeZone = 'America/Toronto';
   const [torontoDate, setTorontoDate] = useState<Date>(
-    utcToZonedTime(new Date(), torontoTimeZone),
+    toZonedTime(new Date(), torontoTimeZone),
   );
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const Footer = ({ date }: FooterProps) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTorontoDate(utcToZonedTime(new Date(), torontoTimeZone));
+      setTorontoDate(toZonedTime(new Date(), torontoTimeZone));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -37,8 +37,7 @@ const Footer = ({ date }: FooterProps) => {
 
   return (
     <div
-      className={`mt-auto flex w-full flex-col-reverse justify-between px-4 
-      py-6 sm:px-16 sm:py-8 md:flex-row`}
+      className={`mt-auto flex w-full flex-col-reverse justify-between px-4 py-6 sm:px-16 sm:py-8 md:flex-row`}
     >
       <div className='flex flex-row justify-between gap-x-12 md:justify-start'>
         <div className='flex flex-col gap-y-4 md:gap-y-6'>

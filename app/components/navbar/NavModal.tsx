@@ -1,21 +1,21 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
-import useWindowSize from '@/hooks/useWindowSize';
 import useNavModal from '@/hooks/useNavModal';
 import useSplash from '@/hooks/useSplash';
+import useWindowSize from '@/hooks/useWindowSize';
 import {
-  menuSlide,
-  linkVariants,
-  widthVariants,
   heightVariants,
+  linkVariants,
+  menuSlide,
   pathAnimation,
+  widthVariants,
 } from '@/lib/animations';
 
-import MagneticComponent from '@/hoc/MagneticComponent';
 import { NavLink } from '@/app/components/navbar/NavLink';
+import MagneticComponent from '@/hoc/MagneticComponent';
 
 import { Separator } from '@/components/ui/separator';
 
@@ -42,8 +42,7 @@ export const NavModal = () => {
       {isOpen && (
         <div
           onClick={onClose}
-          className='fixed z-10 h-screen w-full overflow-hidden 
-          transition duration-500'
+          className='fixed z-10 h-screen w-full overflow-hidden transition duration-500'
         >
           <motion.div
             onClick={e => e.stopPropagation()}
@@ -61,8 +60,7 @@ export const NavModal = () => {
               <motion.div
                 animate={animate}
                 variants={heightVariants}
-                className='mx-auto my-auto flex min-h-[500px] w-3/4 flex-col justify-around 
-                xl:w-3/5'
+                className='mx-auto my-auto flex min-h-[500px] w-3/4 flex-col justify-around xl:w-3/5'
               >
                 <div className='flex flex-col gap-y-4 uppercase'>
                   <p className='text-xs text-muted-foreground'>Navigation</p>
@@ -125,10 +123,7 @@ export const NavModal = () => {
               </motion.div>
             </motion.div>
             {/* Curve */}
-            <svg
-              className='pointer-events-none absolute -left-[199px] top-0 h-full 
-              w-[200px] fill-slate-900 stroke-none'
-            >
+            <svg className='pointer-events-none absolute -left-[199px] top-0 h-full w-[200px] fill-slate-900 stroke-none'>
               <motion.path
                 variants={pathAnimation(initialPath, targetPath)}
                 initial='initial'

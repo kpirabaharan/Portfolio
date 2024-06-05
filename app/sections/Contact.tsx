@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
-import { textVariant } from '@/lib/transitions';
 import { styles } from '@/lib/styles';
+import { textVariant } from '@/lib/transitions';
 
 import ContactCard from '@/components/ContactCard';
 

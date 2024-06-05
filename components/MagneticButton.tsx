@@ -1,7 +1,7 @@
 'use client';
 
+import { AnimatePresence, Variants, motion } from 'framer-motion';
 import { PropsWithChildren, useState } from 'react';
-import { AnimatePresence, motion, Variants } from 'framer-motion';
 
 import MagneticComponent from '@/hoc/MagneticComponent';
 
@@ -46,8 +46,7 @@ export const MagneticButton = ({
         <AnimatePresence>
           {isHovered && (
             <motion.div
-              className='pointer-events-none absolute left-0 top-0 h-full w-full 
-              rounded-full bg-teal-600'
+              className='pointer-events-none absolute left-0 top-0 h-full w-full rounded-full bg-teal-600'
               variants={buttonHover}
               initial={'initial'}
               animate={'enter'}
@@ -56,8 +55,7 @@ export const MagneticButton = ({
           )}
         </AnimatePresence>
         <MagneticComponent
-          className='absolute left-0 top-0 flex h-full w-full
-          items-center justify-center rounded-full'
+          className='absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-full'
           modifier={{ x: 0.3, y: 0.3 }}
         >
           {children}

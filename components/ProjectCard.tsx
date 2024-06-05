@@ -1,17 +1,17 @@
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { AnimatePresence, motion, Variants } from 'framer-motion';
+import { AnimatePresence, Variants, motion } from 'framer-motion';
 import {
-  GithubIcon,
   ExternalLinkIcon,
+  GithubIcon,
   MoreVerticalIcon,
   XIcon,
 } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
-import { ProjectType } from '@/types';
-import useSplash from '@/hooks/useSplash';
 import useMediaQuery from '@/hooks/useMediaQuery';
+import useSplash from '@/hooks/useSplash';
+import { ProjectType } from '@/types';
 
 import { Button } from '@/components/ui/button';
 
@@ -44,8 +44,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <div
-      className='relative flex aspect-[8/6] w-full flex-col 
-      justify-between overflow-hidden rounded-xl bg-slate-900 p-4 sm:aspect-square sm:w-[350px]'
+      className='relative flex aspect-[8/6] w-full flex-col justify-between overflow-hidden rounded-xl bg-slate-900 p-4 sm:aspect-square sm:w-[350px]'
       onMouseEnter={isSmallScreen ? () => setIsHovered(true) : () => {}}
       onMouseLeave={isSmallScreen ? () => setIsHovered(false) : () => {}}
     >
@@ -76,8 +75,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             initial={'initial'}
             animate={'enter'}
             exit={'exit'}
-            className='absolute left-0 top-0 flex h-full w-full
-            flex-col items-center justify-between rounded-xl bg-teal-700/90 p-4 text-center'
+            className='absolute left-0 top-0 flex h-full w-full flex-col items-center justify-between rounded-xl bg-teal-700/90 p-4 text-center'
           >
             <Button
               className='absolute right-4 top-4 flex sm:hidden'
@@ -91,14 +89,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               {project.type.join(' + ')}
             </h2>
 
-            <p className='my-auto text-base sm:pt-0  sm:text-lg'>
+            <p className='my-auto text-base sm:pt-0 sm:text-lg'>
               {project.description}
             </p>
 
-            <div
-              className='flex w-full items-center justify-between rounded-2xl
-              bg-teal-900 px-4 py-2 sm:p-4'
-            >
+            <div className='flex w-full items-center justify-between rounded-2xl bg-teal-900 px-4 py-2 sm:p-4'>
               {project.github ? (
                 <Link
                   href={project.github}

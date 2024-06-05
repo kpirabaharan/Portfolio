@@ -1,9 +1,9 @@
 'use client';
 
-import { useRef, useState, useEffect, Suspense } from 'react';
+import { PointMaterial, Points, Preload } from '@react-three/drei';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, PointMaterial, Preload } from '@react-three/drei';
 import { inSphere } from 'maath/random';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { Points as P } from 'three';
 
 const Stars = () => {

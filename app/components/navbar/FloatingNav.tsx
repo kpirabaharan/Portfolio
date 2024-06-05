@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { AnimatePresence, Variants, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
-import useNavModal from '@/hooks/useNavModal';
 import MagneticComponent from '@/hoc/MagneticComponent';
+import useNavModal from '@/hooks/useNavModal';
 
 const FloatingNav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -71,16 +71,14 @@ const FloatingNav = () => {
             animate='enter'
             exit='exit'
             whileHover={{ scale: 1.15 }}
-            className='relative flex h-16 w-16 items-center 
-            justify-center overflow-hidden rounded-full bg-white md-height:xl:h-24 md-height:xl:w-24'
+            className='relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-white md-height:xl:h-24 md-height:xl:w-24'
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
             <AnimatePresence>
               {isHovered && (
                 <motion.div
-                  className='pointer-events-none absolute left-0 top-0 h-full 
-                  w-full rounded-full bg-teal-600'
+                  className='pointer-events-none absolute left-0 top-0 h-full w-full rounded-full bg-teal-600'
                   variants={buttonHover}
                   initial={'initial'}
                   animate={'enter'}
@@ -89,8 +87,7 @@ const FloatingNav = () => {
               )}
             </AnimatePresence>
             <MagneticComponent
-              className='absolute left-0 top-0 flex h-full w-full
-              items-center justify-center rounded-full'
+              className='absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-full'
               modifier={{ x: 0.3, y: 0.3 }}
             >
               <div

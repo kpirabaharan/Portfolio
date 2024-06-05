@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
+import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 
 import { FeaturedProjectType } from '@/types';
 
@@ -82,9 +82,7 @@ export const ProjectModal = ({ modal, projects }: ProjectModalProps) => {
         variants={scaleAnimation}
         initial={'initial'}
         animate={active ? 'open' : 'closed'}
-        className='pointer-events-none absolute z-20 hidden h-[400px] w-[400px] 
-        items-center justify-center overflow-hidden bg-white 
-        lg:flex xl:h-[450px] xl:w-[450px]'
+        className='pointer-events-none absolute z-20 hidden h-[400px] w-[400px] items-center justify-center overflow-hidden bg-white lg:flex xl:h-[450px] xl:w-[450px]'
       >
         <div
           style={{
@@ -120,12 +118,10 @@ export const ProjectModal = ({ modal, projects }: ProjectModalProps) => {
         variants={scaleAnimation}
         initial={'initial'}
         animate={active ? 'open' : 'closed'}
-        className='pointer-events-none absolute z-20 flex h-20 w-20 
-        items-center justify-center rounded-full bg-teal-700'
+        className='pointer-events-none absolute z-20 flex h-20 w-20 items-center justify-center rounded-full bg-teal-700'
       />
       <motion.div
-        className='pointer-events-none absolute z-20 flex items-center 
-        justify-center'
+        className='pointer-events-none absolute z-20 flex items-center justify-center'
         ref={cursorLabelRef}
         variants={scaleAnimation}
         initial={'initial'}

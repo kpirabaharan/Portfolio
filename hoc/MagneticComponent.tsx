@@ -1,7 +1,7 @@
 'use client';
 
-import { useRef, useState, PropsWithChildren, MouseEvent } from 'react';
 import { motion } from 'framer-motion';
+import { MouseEvent, PropsWithChildren, useRef, useState } from 'react';
 
 interface MagneticComponentProps extends PropsWithChildren {
   className?: string;

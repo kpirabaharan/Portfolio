@@ -1,21 +1,21 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import { AnimatePresence } from 'framer-motion';
 import { ExternalLinkIcon } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
 import { styles } from '@/lib/styles';
 
-import ProjectHeader from '../components/ProjectHeader';
-import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 import SplashOut from '@/app/components/SplashOut';
-import StarsCanvas from '@/components/canvas/StarCanvas';
-import { MagneticButton } from '@/components/MagneticButton';
+import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 import DisplayPicture from '@/components/DisplayPicture';
+import { MagneticButton } from '@/components/MagneticButton';
+import StarsCanvas from '@/components/canvas/StarCanvas';
+import ProjectHeader from '../components/ProjectHeader';
 
-import { ecommerceAdmin, ecommerceStore } from '@/assets';
+import { ecommerceStore } from '@/assets';
 import { eCommerce } from '@/constants';
 
 const ECommercePage = () => {
@@ -36,10 +36,7 @@ const ECommercePage = () => {
             category={eCommerce.category}
             keyTech={eCommerce.key_tech}
           />
-          <div
-            className='absolute bottom-[26rem] right-0 z-20 
-            -translate-x-1/2 translate-y-1/2 md:bottom-0 md:mx-16 md:-translate-x-[200%]'
-          >
+          <div className='absolute bottom-[26rem] right-0 z-20 -translate-x-1/2 translate-y-1/2 md:bottom-0 md:mx-16 md:-translate-x-[200%]'>
             <Link href={eCommerce.store_site_1} target='_blank'>
               <MagneticButton onClick={() => {}}>
                 <div className='flex items-end gap-x-2'>
@@ -49,10 +46,7 @@ const ECommercePage = () => {
               </MagneticButton>
             </Link>
           </div>
-          <div
-            className='absolute bottom-40 right-0 z-20 
-            -translate-x-1/2 translate-y-1/2 md:bottom-0 md:mx-16'
-          >
+          <div className='absolute bottom-40 right-0 z-20 -translate-x-1/2 translate-y-1/2 md:bottom-0 md:mx-16'>
             <Link href={eCommerce.store_site_2} target='_blank'>
               <MagneticButton onClick={() => {}}>
                 <div className='flex items-end gap-x-2'>
@@ -64,10 +58,7 @@ const ECommercePage = () => {
           </div>
         </div>
         <div className='mx-auto w-full max-w-[110rem] md:px-16'>
-          <div
-            className='relative aspect-video w-full border 
-            bg-white'
-          >
+          <div className='relative aspect-video w-full border bg-white'>
             <Image
               className='object-contain'
               src={ecommerceStore}

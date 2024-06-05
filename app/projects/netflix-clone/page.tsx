@@ -1,18 +1,18 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { ExternalLinkIcon } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
+import { ExternalLinkIcon } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
-import ProjectHeader from '../components/ProjectHeader';
 import SplashOut from '@/app/components/SplashOut';
 import StandingNavbar from '@/app/components/navbar/StandingNavbar';
-import StarsCanvas from '@/components/canvas/StarCanvas';
-import { MagneticButton } from '@/components/MagneticButton';
-import { netflix } from '@/constants';
 import { netflixClone } from '@/assets';
+import { MagneticButton } from '@/components/MagneticButton';
+import StarsCanvas from '@/components/canvas/StarCanvas';
+import { netflix } from '@/constants';
+import ProjectHeader from '../components/ProjectHeader';
 
 const NetflixPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,10 +36,7 @@ const NetflixPage = () => {
             category={netflix.category}
             keyTech={netflix.key_tech}
           />
-          <div
-            className='absolute bottom-40 right-0 z-20 
-            -translate-x-1/2 translate-y-1/2 md:bottom-0 md:mx-16'
-          >
+          <div className='absolute bottom-40 right-0 z-20 -translate-x-1/2 translate-y-1/2 md:bottom-0 md:mx-16'>
             <Link href={netflix.website} target='_blank'>
               <MagneticButton onClick={() => {}}>
                 <div className='flex items-end gap-x-2'>
@@ -51,10 +48,7 @@ const NetflixPage = () => {
           </div>
         </div>
         <div className='mx-auto w-full max-w-[110rem] md:px-16'>
-          <div
-            className='relative aspect-video w-full border 
-            bg-[#141316]'
-          >
+          <div className='relative aspect-video w-full border bg-[#141316]'>
             <Image
               className='object-contain'
               src={netflixClone}

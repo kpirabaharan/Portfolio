@@ -1,18 +1,18 @@
 'use client';
 
-import { Suspense, useRef } from 'react';
-import { StaticImageData } from 'next/image';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import {
   Center,
   Decal,
   OrbitControls,
   PerspectiveCamera,
   Preload,
-  Text3D,
   Text,
+  Text3D,
   useTexture,
 } from '@react-three/drei';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { StaticImageData } from 'next/image';
+import { Suspense, useRef } from 'react';
 
 import CanvasLoader from '@/components/canvas/Loader';
 

@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 import { AiFillStar } from 'react-icons/ai';
 
 import { styles } from '@/lib/styles';

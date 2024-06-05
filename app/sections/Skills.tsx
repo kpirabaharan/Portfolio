@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
+import useSplash from '@/hooks/useSplash';
 import { styles } from '@/lib/styles';
 import { textVariant } from '@/lib/transitions';
-import useSplash from '@/hooks/useSplash';
 
 import BallSingle from '@/components/canvas/BallSingle';
 import { MagneticButton } from '@/components/MagneticButton';
@@ -74,8 +74,7 @@ const Skills = () => {
             ) : (
               <div
                 key={index}
-                className='flex h-20 w-20 items-center justify-center rounded-full bg-slate-800 
-                lg:h-28 lg:w-28'
+                className='flex h-20 w-20 items-center justify-center rounded-full bg-slate-800 lg:h-28 lg:w-28'
               >
                 <div className='relative h-[70%] w-[70%]'>
                   <Image

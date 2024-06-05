@@ -1,16 +1,16 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
-import { textVariant } from '@/lib/transitions';
-import { styles } from '@/lib/styles';
 import useSplash from '@/hooks/useSplash';
+import { styles } from '@/lib/styles';
+import { textVariant } from '@/lib/transitions';
 
-import ProjectTile from '@/components/ProjectTile';
-import { ProjectModal } from '@/components/ProjectModal';
 import { MagneticButton } from '@/components/MagneticButton';
+import { ProjectModal } from '@/components/ProjectModal';
+import ProjectTile from '@/components/ProjectTile';
 
 import { Separator } from '@/components/ui/separator';
 
@@ -29,10 +29,7 @@ const Projects = () => {
         Featured Projects
       </motion.h2>
 
-      <div
-        className='grid w-full grid-cols-1 gap-y-8 sm:grid-cols-2 lg:flex 
-        lg:flex-col lg:items-center lg:justify-center lg:gap-y-0'
-      >
+      <div className='grid w-full grid-cols-1 gap-y-8 sm:grid-cols-2 lg:flex lg:flex-col lg:items-center lg:justify-center lg:gap-y-0'>
         <Separator className='hidden lg:flex' />
         {featuredProjects.map((project, index) => {
           const { title, type, image, color, link } = project;

@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Lenis from '@studio-freight/lenis';
+import Lenis from 'lenis';
+import { useEffect, useState } from 'react';
 
 const SmoothScrollProvider = () => {
   const [isMounted, setIsMounted] = useState(false);

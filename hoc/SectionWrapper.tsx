@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
-import { cn } from '@/lib/utils';
 import { styles } from '@/lib/styles';
+import { cn } from '@/lib/utils';
 
 const SectionWrapper = (Component: React.FC, id: string, className?: string) =>
   function HOC() {

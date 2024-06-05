@@ -1,14 +1,14 @@
-import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import './globals.css';
 
 import { getLastCommitDate } from '@/actions/getLastCommitDate';
+import { cn } from '@/lib/utils';
 import ModalProvider from '@/providers/ModalProvider';
 import SmoothScrollProvider from '@/providers/SmoothScrollProvider';
-import { cn } from '@/lib/utils';
 
-import FloatingNav from '@/app/components/navbar/FloatingNav';
 import Footer from '@/app/components/Footer';
+import FloatingNav from '@/app/components/navbar/FloatingNav';
 
 const inter = Inter({ subsets: ['latin'] });
 

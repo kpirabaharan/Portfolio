@@ -1,6 +1,6 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 import useNavModal from '@/hooks/useNavModal';
 import useSplash from '@/hooks/useSplash';
@@ -18,10 +18,7 @@ const StandingNavbar = () => {
   const { startSplash } = useSplash();
 
   return (
-    <nav
-      className='z-20 flex h-[80px] w-full flex-row items-center justify-between
-      gap-x-2 px-2 md:px-8'
-    >
+    <nav className='z-20 flex h-[80px] w-full flex-row items-center justify-between gap-x-2 px-2 md:px-8'>
       <MagneticComponent modifier={{ x: 0.25, y: 0.5 }}>
         <CodeBy />
       </MagneticComponent>

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { styles } from '@/lib/styles';
 
 import { Separator } from '@/components/ui/separator';

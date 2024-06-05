@@ -1,14 +1,14 @@
 'use client';
 
-import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 
 import SplashOut from '@/app/components/SplashOut';
 
 import StandingNavbar from '@/app/components/navbar/StandingNavbar';
-import { styles } from '@/lib/styles';
-import { Separator } from '@/components/ui/separator';
 import ContactCard from '@/components/ContactCard';
+import { Separator } from '@/components/ui/separator';
+import { styles } from '@/lib/styles';
 
 const ContactPage = () => {
   const [isLoading, setIsLoading] = useState(true);

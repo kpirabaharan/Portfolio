@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 export const CodeBy = () => {
   const [isHovered, setIsHovered] = useState(false);

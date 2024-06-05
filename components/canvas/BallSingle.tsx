@@ -1,15 +1,14 @@
 'use client';
 
-import { Suspense, useRef, useState } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
 import {
   Decal,
   OrbitControls,
-  OrthographicCamera,
   PerspectiveCamera,
   Preload,
   useTexture,
 } from '@react-three/drei';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { Suspense, useRef } from 'react';
 
 import CanvasLoader from '@/components/canvas/Loader';
 

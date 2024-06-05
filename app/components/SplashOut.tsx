@@ -1,15 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { startCase } from 'lodash';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
-import { splashOutUp, bottomCurve } from '@/lib/animations';
+import { bottomCurve, splashOutUp } from '@/lib/animations';
 
 import { AnimatedText } from '@/components/AnimatedText';
 import useSplash from '@/hooks/useSplash';
-import path from 'path';
 
 interface SplashOutProps {
   setIsLoading: (val: boolean) => void;
@@ -47,8 +46,7 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
 
   return (
     <motion.div
-      className='fixed left-0 top-0 z-40 flex h-screen w-screen
-      cursor-wait items-center justify-center bg-teal-800'
+      className='fixed left-0 top-0 z-40 flex h-screen w-screen cursor-wait items-center justify-center bg-teal-800'
       initial={'initial'}
       exit={'exit'}
       variants={splashOutUp()}
@@ -60,10 +58,7 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
             text={[title, 100, () => setIsLoading(false)]}
           />
           {/* Bottom Curve */}
-          <svg
-            className='pointer-events-none absolute top-0 h-0 w-full fill-teal-800 
-            stroke-none sm:h-[calc(100%+300px)]'
-          >
+          <svg className='pointer-events-none absolute top-0 h-0 w-full fill-teal-800 stroke-none sm:h-[calc(100%+300px)]'>
             <motion.path
               variants={bottomCurve(bottomInitialPath, bottomTargetPath)}
               initial='initial'

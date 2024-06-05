@@ -1,9 +1,9 @@
-import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
-import { fadeIn, textVariant } from '@/lib/transitions';
 import { styles } from '@/lib/styles';
+import { fadeIn, textVariant } from '@/lib/transitions';
 
 import { western } from '@/assets';
 
@@ -15,8 +15,7 @@ const Education = () => {
       </motion.h2>
       <motion.div
         variants={fadeIn('', '', 0.1, 1)}
-        className='flex flex-row items-center justify-center rounded-2xl 
-        bg-slate-900 p-8'
+        className='flex flex-row items-center justify-center rounded-2xl bg-slate-900 p-8'
       >
         <div className='relative h-[100px] w-[100px]'>
           <Image

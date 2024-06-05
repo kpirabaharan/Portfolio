@@ -1,15 +1,14 @@
 'use client';
 
-import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 
 import { styles } from '@/lib/styles';
 
 import SplashOut from '@/app/components/SplashOut';
 import StandingNavbar from '@/app/components/navbar/StandingNavbar';
-import { MagneticButton } from '@/components/MagneticButton';
-import { Separator } from '@/components/ui/separator';
 import Projects from '@/components/Projects';
+import { Separator } from '@/components/ui/separator';
 
 const filters = [
   { title: 'All', value: 'all' },

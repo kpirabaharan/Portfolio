@@ -1,12 +1,12 @@
-import { PropsWithChildren } from 'react';
 import {
-  MailIcon,
-  PhoneIcon,
   FileTextIcon,
-  LinkedinIcon,
   GithubIcon,
+  LinkedinIcon,
+  MailIcon,
   MapPinIcon,
+  PhoneIcon,
 } from 'lucide-react';
+import { PropsWithChildren } from 'react';
 
 import MagneticComponent from '@/hoc/MagneticComponent';
 
@@ -25,7 +25,7 @@ const ContactLink = ({ children }: ContactLinkProps) => {
 
 const ContactCard = () => {
   return (
-    <div className='grid grid-cols-1 gap-y-8 md:grid-cols-2 '>
+    <div className='grid grid-cols-1 gap-y-8 md:grid-cols-2'>
       <ContactLink>
         <MailIcon size={24} />
         <a

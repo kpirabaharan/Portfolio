@@ -1,8 +1,8 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef, useState } from 'react';
 
 export const TranslatingName = () => {
   const [textSize, setTextSize] = useState<string>('');
@@ -65,8 +65,7 @@ export const TranslatingName = () => {
   return (
     <div
       ref={sliderRef}
-      className='relative flex items-center whitespace-nowrap text-center 
-      text-muted-foreground'
+      className='relative flex items-center whitespace-nowrap text-center text-muted-foreground'
     >
       <p
         style={{ fontSize: textSize }}
