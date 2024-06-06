@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { PropsWithChildren, useState } from 'react';
+import { useState, type PropsWithChildren } from 'react';
 
 import { textSlide } from '@/lib/animations';
 
@@ -63,8 +63,20 @@ export const NavLink = ({
         exit='exit'
         onClick={onClick}
         className={`relative ${padding}`}
-        onMouseEnter={!isPath ? () => setIsActive(true) : () => {}}
-        onMouseLeave={!isPath ? () => setIsActive(false) : () => {}}
+        onMouseEnter={
+          !isPath
+            ? () => {
+                setIsActive(true);
+              }
+            : () => {}
+        }
+        onMouseLeave={
+          !isPath
+            ? () => {
+                setIsActive(false);
+              }
+            : () => {}
+        }
       >
         {children}
         <StatusLight isActive={isActive ?? false} size={size} side={side} />

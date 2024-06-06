@@ -26,7 +26,6 @@ export const TranslatingName = () => {
         start: 0,
         end: window.innerHeight,
         scrub: 0.25,
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         onUpdate: e => (direction = e.direction * -1),
       },
       x: '-=300px',
@@ -55,9 +54,9 @@ export const TranslatingName = () => {
   const translation = () => {
     if (xPercent <= -100) xPercent = 0;
     if (xPercent > 0) xPercent = -100;
-    gsap.set(zeroRef.current, { xPercent: xPercent });
-    gsap.set(firstRef.current, { xPercent: xPercent });
-    gsap.set(secondRef.current, { xPercent: xPercent });
+    gsap.set(zeroRef.current, { xPercent });
+    gsap.set(firstRef.current, { xPercent });
+    gsap.set(secondRef.current, { xPercent });
     xPercent += 0.03 * direction;
     requestAnimationFrame(translation);
   };

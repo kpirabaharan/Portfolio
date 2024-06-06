@@ -1,7 +1,7 @@
 'use client';
 
-import { AnimatePresence, Variants, motion } from 'framer-motion';
-import { PropsWithChildren, useState } from 'react';
+import { AnimatePresence, motion, type Variants } from 'framer-motion';
+import { useState, type PropsWithChildren } from 'react';
 
 import MagneticComponent from '@/hoc/MagneticComponent';
 
@@ -40,8 +40,12 @@ export const MagneticButton = ({
         className='relative overflow-hidden'
         size={size}
         onClick={onClick}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={() => {
+          setIsHovered(true);
+        }}
+        onMouseLeave={() => {
+          setIsHovered(false);
+        }}
       >
         <AnimatePresence>
           {isHovered && (

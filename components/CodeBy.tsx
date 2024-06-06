@@ -16,9 +16,15 @@ export const CodeBy = () => {
   return (
     <div
       className='group flex cursor-pointer gap-x-1 p-3'
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={() => window.location.assign('/')}
+      onMouseEnter={() => {
+        setIsHovered(true);
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+      }}
+      onClick={() => {
+        window.location.assign('/');
+      }}
     >
       <motion.div
         initial='closed'

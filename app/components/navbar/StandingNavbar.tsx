@@ -48,8 +48,12 @@ const StandingNavbar = () => {
                 isPath={isPath}
                 onClick={
                   pathname === href
-                    ? () => window.location.assign(href)
-                    : () => startSplash(href)
+                    ? () => {
+                        window.location.assign(href);
+                      }
+                    : () => {
+                        startSplash(href);
+                      }
                 }
               >
                 <p>{title}</p>

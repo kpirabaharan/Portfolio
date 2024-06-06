@@ -1,7 +1,7 @@
-import { Variants } from 'framer-motion';
+import { type Variants } from 'framer-motion';
 
-//Splash
-export const splashInUp = () => {
+// Splash
+export const splashInUp = (): Variants => {
   return {
     initial: {
       y: '100vh',
@@ -13,7 +13,7 @@ export const splashInUp = () => {
   };
 };
 
-export const splashOutUp = () => {
+export const splashOutUp = (): Variants => {
   return {
     initial: {
       y: 0,
@@ -25,7 +25,7 @@ export const splashOutUp = () => {
   };
 };
 
-export const topCurve = (initialPath: string, targetPath: string) => {
+export const topCurve = (initialPath: string, targetPath: string): Variants => {
   return {
     initial: {
       d: initialPath,
@@ -37,7 +37,10 @@ export const topCurve = (initialPath: string, targetPath: string) => {
   };
 };
 
-export const bottomCurve = (initialPath: string, targetPath: string) => {
+export const bottomCurve = (
+  initialPath: string,
+  targetPath: string,
+): Variants => {
   return {
     initial: {
       d: initialPath,
@@ -49,7 +52,7 @@ export const bottomCurve = (initialPath: string, targetPath: string) => {
   };
 };
 
-//NavLink
+// NavLink
 export const textSlide: Variants = {
   initial: { x: '80px' },
   enter: i => ({
@@ -63,7 +66,10 @@ export const textSlide: Variants = {
 };
 
 // NavModal Variants
-export const pathAnimation = (initialPath: string, targetPath: string) => {
+export const pathAnimation = (
+  initialPath: string,
+  targetPath: string,
+): Variants => {
   return {
     initial: { d: initialPath },
     enter: {
@@ -78,10 +84,10 @@ export const pathAnimation = (initialPath: string, targetPath: string) => {
 };
 
 export const menuSlide: Variants = {
-  initial: { x: 'calc(100% + 200px)' },
+  initial: { x: 'calc(100% + 200px): Variants' },
   enter: { x: 0, transition: { ease: [0.76, 0, 0.24, 1], duration: 0.8 } },
   exit: {
-    x: 'calc(100% + 200px)',
+    x: 'calc(100% + 200px): Variants',
     transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
   },
 };
@@ -116,7 +122,7 @@ export const heightVariants: Variants = {
   },
 };
 
-export const linkVariants = (width: number) => {
+export const linkVariants = (width: number): Variants => {
   const fontS = width > 1280 ? '4rem' : width > 1024 ? '3rem' : '2rem';
 
   return {

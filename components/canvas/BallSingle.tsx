@@ -9,7 +9,7 @@ import {
 } from '@react-three/drei';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Suspense, useRef } from 'react';
-import * as THREE from 'three';
+import type * as THREE from 'three';
 
 import CanvasLoader from '@/components/canvas/Loader';
 
@@ -24,7 +24,7 @@ const Ball = ({ imageUrl, index }: BallProps) => {
 
   useFrame(({ clock }) => {
     if (meshRef.current) {
-      if (index % 2 == 0) {
+      if (index % 2 === 0) {
         meshRef.current.position.setY(Math.sin(clock.getElapsedTime() * 0.5));
       } else {
         meshRef.current.position.setY(

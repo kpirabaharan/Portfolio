@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 
-import { FeaturedProjectType } from '@/types';
+import { type FeaturedProjectType } from '@/types';
 
 interface ProjectModalProps {
   modal: { active: boolean; index: number };

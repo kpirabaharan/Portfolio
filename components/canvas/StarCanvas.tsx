@@ -4,7 +4,7 @@ import { PointMaterial, Points, Preload } from '@react-three/drei';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { inSphere } from 'maath/random';
 import { Suspense, useEffect, useRef, useState } from 'react';
-import { Points as P } from 'three';
+import { type Points as P } from 'three';
 
 const Stars = () => {
   const pointsRef = useRef<P>(null!);
@@ -47,7 +47,7 @@ const StarsCanvas = () => {
   const canvas = document.createElement('canvas');
   let gl;
   try {
-    gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    gl = canvas.getContext('webgl') ?? canvas.getContext('experimental-webgl');
   } catch (err) {}
 
   return (

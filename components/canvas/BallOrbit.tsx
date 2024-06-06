@@ -11,9 +11,9 @@ import {
   useTexture,
 } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { StaticImageData } from 'next/image';
+import { type StaticImageData } from 'next/image';
 import { Suspense, useRef } from 'react';
-import * as THREE from 'three';
+import type * as THREE from 'three';
 
 import CanvasLoader from '@/components/canvas/Loader';
 
@@ -83,7 +83,7 @@ interface OrbitProps {
   techStack: {
     title: string;
     description: string;
-    tech: { name: string; icon: StaticImageData; expertise: boolean }[];
+    tech: Array<{ name: string; icon: StaticImageData; expertise: boolean }>;
   };
 }
 
@@ -120,7 +120,7 @@ interface BallOrbitProps {
   techStack: {
     title: string;
     description: string;
-    tech: { name: string; icon: StaticImageData; expertise: boolean }[];
+    tech: Array<{ name: string; icon: StaticImageData; expertise: boolean }>;
   };
 }
 

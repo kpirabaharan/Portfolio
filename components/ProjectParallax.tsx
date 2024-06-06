@@ -1,12 +1,12 @@
 'use client';
 
-import { ProjectType } from '@/types';
+import { type ProjectType } from '@/types';
 import {
-  MotionValue,
   motion,
   useScroll,
   useSpring,
   useTransform,
+  type MotionValue,
 } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';

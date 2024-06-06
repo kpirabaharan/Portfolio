@@ -2,7 +2,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 interface AnimatedTextProps {
   className?: string;
-  text: (string | number | (() => void))[];
+  text: Array<string | number | (() => void)>;
 }
 
 export const AnimatedText = ({ className, text }: AnimatedTextProps) => {

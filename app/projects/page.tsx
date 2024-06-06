@@ -8,12 +8,12 @@ import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 import { ProjectParallax } from '@/components/ProjectParallax';
 import { allProjects } from '@/constants';
 
-const filters = [
-  { title: 'All', value: 'all' },
-  { title: 'Full Stack', value: 'full-stack' },
-  { title: 'Mobile', value: 'mobile-app' },
-  { title: 'Embedded', value: 'embedded-systems' },
-];
+// const filters = [
+//   { title: 'All', value: 'all' },
+//   { title: 'Full Stack', value: 'full-stack' },
+//   { title: 'Mobile', value: 'mobile-app' },
+//   { title: 'Embedded', value: 'embedded-systems' },
+// ];
 
 const ProjectsPage = () => {
   const [isLoading, setIsLoading] = useState(true);

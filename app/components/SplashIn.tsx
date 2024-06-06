@@ -31,7 +31,9 @@ const SplashIn = () => {
         initial={'initial'}
         animate={'enter'}
         variants={splashInUp()}
-        onAnimationComplete={() => router.push(url!)}
+        onAnimationComplete={() => {
+          router.push(url!);
+        }}
       >
         {dimension.width > 0 && (
           <>

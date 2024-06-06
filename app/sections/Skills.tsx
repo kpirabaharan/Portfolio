@@ -53,7 +53,9 @@ const Skills = () => {
             <div>
               <MagneticButton
                 size={'round'}
-                onClick={() => startSplash('/skills')}
+                onClick={() => {
+                  startSplash('/skills');
+                }}
               >
                 <p className='text-lg text-primary-foreground lg:text-xl'>
                   More Skills
@@ -89,7 +91,12 @@ const Skills = () => {
           )}
         </div>
         <div className='flex w-full justify-center lg:hidden'>
-          <MagneticButton size='wide' onClick={() => startSplash('/skills')}>
+          <MagneticButton
+            size='wide'
+            onClick={() => {
+              startSplash('/skills');
+            }}
+          >
             <p className='text-lg text-primary-foreground lg:text-xl'>
               More Skills
             </p>

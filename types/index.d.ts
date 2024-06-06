@@ -2,7 +2,7 @@ import { StaticImageData } from 'next/image';
 
 export interface ExperienceType {
   title: string;
-  company_name: string;
+  companyName: string;
   location: string;
   icon: StaticImageData;
   iconBg: string;

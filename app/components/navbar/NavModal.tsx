@@ -23,7 +23,7 @@ import { navLinks, socials } from '@/constants';
 
 export const NavModal = () => {
   const pathname = usePathname();
-  const [width, _] = useWindowSize();
+  const [width] = useWindowSize();
   const { isOpen, onClose } = useNavModal();
   const { startSplash } = useSplash();
 
@@ -45,7 +45,9 @@ export const NavModal = () => {
           className='fixed z-10 h-screen w-full overflow-hidden transition duration-500'
         >
           <motion.div
-            onClick={e => e.stopPropagation()}
+            onClick={e => {
+              e.stopPropagation();
+            }}
             variants={menuSlide}
             initial='initial'
             animate='enter'

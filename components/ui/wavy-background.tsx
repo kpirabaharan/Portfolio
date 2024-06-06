@@ -37,7 +37,7 @@ export const WavyBackground = ({
     ctx: any,
     canvas: any;
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const getSpeed = () => {
+  const getSpeed = (): number => {
     switch (speed) {
       case 'slow':
         return 0.001;
@@ -50,7 +50,7 @@ export const WavyBackground = ({
     }
   };
 
-  const init = () => {
+  const init = (): void => {
     canvas = canvasRef.current;
     ctx = canvas.getContext('2d');
     w = ctx.canvas.width = window.innerWidth;
@@ -72,11 +72,11 @@ export const WavyBackground = ({
     '#e879f9',
     '#22d3ee',
   ];
-  const drawWave = (n: number) => {
+  const drawWave = (n: number): void => {
     nt += getSpeed();
     for (i = 0; i < n; i++) {
       ctx.beginPath();
-      ctx.lineWidth = waveWidth || 50;
+      ctx.lineWidth = waveWidth ?? 50;
       ctx.strokeStyle = waveColors[i % waveColors.length];
       for (x = 0; x < w; x += 5) {
         const y = noise(x / 800, 0.3 * i, nt) * 100;
@@ -88,9 +88,9 @@ export const WavyBackground = ({
   };
 
   let animationId: number;
-  const render = () => {
-    ctx.fillStyle = backgroundFill || 'hsl(223deg 81% 5%)';
-    ctx.globalAlpha = waveOpacity || 0.5;
+  const render = (): void => {
+    ctx.fillStyle = backgroundFill ?? 'hsl(223deg 81% 5%)';
+    ctx.globalAlpha = waveOpacity ?? 0.5;
     ctx.fillRect(0, 0, w, h);
     drawWave(5);
     animationId = requestAnimationFrame(render);

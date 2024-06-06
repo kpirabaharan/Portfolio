@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image, { StaticImageData } from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 
 import { Separator } from '@/components/ui/separator';
 import { slideIn } from '@/lib/transitions';
@@ -37,8 +37,12 @@ const ProjectTile = ({
         )}
         className='group hidden h-full w-full cursor-pointer items-center justify-between px-6 py-12 hover:scale-110 hover:opacity-50 lg:flex xl:px-12 xl:py-16'
         onClick={() => window.open(link, '_blank')}
-        onMouseEnter={() => setModal({ active: true, index })}
-        onMouseLeave={() => setModal({ active: false, index })}
+        onMouseEnter={() => {
+          setModal({ active: true, index });
+        }}
+        onMouseLeave={() => {
+          setModal({ active: false, index });
+        }}
       >
         <h2 className='text-3xl font-normal transition duration-500 group-hover:-translate-x-4 lg:text-5xl xl:text-6xl'>
           {title}
@@ -53,8 +57,12 @@ const ProjectTile = ({
       <div
         className='group flex w-full cursor-pointer flex-col gap-y-4 px-2 lg:hidden'
         onClick={() => window.open(link, '_blank')}
-        onMouseEnter={() => setModal({ active: true, index })}
-        onMouseLeave={() => setModal({ active: false, index })}
+        onMouseEnter={() => {
+          setModal({ active: true, index });
+        }}
+        onMouseLeave={() => {
+          setModal({ active: false, index });
+        }}
       >
         <div
           style={{ backgroundColor: color }}

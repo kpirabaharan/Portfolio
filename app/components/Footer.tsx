@@ -28,7 +28,9 @@ const Footer = ({ date }: FooterProps) => {
     const interval = setInterval(() => {
       setTorontoDate(toZonedTime(new Date(), torontoTimeZone));
     }, 1000);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   if (!isMounted) {

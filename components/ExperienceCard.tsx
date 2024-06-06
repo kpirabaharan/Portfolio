@@ -3,11 +3,11 @@ import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 
 import 'react-vertical-timeline-component/style.min.css';
 
-import { ExperienceType } from '@/types';
+import { type ExperienceType } from '@/types';
 
 export const ExperienceCard = ({
   title,
-  company_name,
+  companyName,
   location,
   icon,
   iconBg,
@@ -35,7 +35,7 @@ export const ExperienceCard = ({
         {title}
       </h3>
       <h4 className='vertical-timeline-element-subtitle lg:pt-2'>
-        {company_name}
+        {companyName}
         <span className='pl-4'>|</span>
         <span className='pl-4'>{location}</span>
       </h4>

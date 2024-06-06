@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence, Variants, motion } from 'framer-motion';
+import { AnimatePresence, motion, type Variants } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 import MagneticComponent from '@/hoc/MagneticComponent';
@@ -35,15 +35,16 @@ const FloatingNav = () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
-  const css =
-    'before:block before:h-[2px] before:w-2/5 before:m-auto before:bg-slate-900 \
-    before:relative before:transition before:duration-300 after:block \
-    after:h-[2px] after:w-2/5 after:m-auto after:bg-slate-900 after:relative \
-    after:transition after:duration-300 before:top-[5px] after:-top-[5px] \
-    content-none';
+  const css = `before:block before:h-[2px] before:w-2/5 before:m-auto before:bg-slate-900 
+    before:relative before:transition before:duration-300 after:block 
+    after:h-[2px] after:w-2/5 after:m-auto after:bg-slate-900 after:relative 
+    after:transition after:duration-300 before:top-[5px] after:-top-[5px] 
+    content-none`;
 
   const buttonHover: Variants = {
     initial: { y: '100%' },
@@ -72,8 +73,12 @@ const FloatingNav = () => {
             exit='exit'
             whileHover={{ scale: 1.15 }}
             className='relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-white md-height:xl:h-24 md-height:xl:w-24'
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onMouseEnter={() => {
+              setIsHovered(true);
+            }}
+            onMouseLeave={() => {
+              setIsHovered(false);
+            }}
           >
             <AnimatePresence>
               {isHovered && (

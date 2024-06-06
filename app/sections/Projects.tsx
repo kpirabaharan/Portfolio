@@ -49,7 +49,12 @@ const Projects = () => {
         <ProjectModal modal={modal} projects={featuredProjects} />
       </div>
       <div className='mt-4 flex w-full justify-center'>
-        <MagneticButton size='wide' onClick={() => startSplash('/projects')}>
+        <MagneticButton
+          size='wide'
+          onClick={() => {
+            startSplash('/projects');
+          }}
+        >
           <p className='text-lg text-primary-foreground lg:text-xl'>
             More Projects
           </p>

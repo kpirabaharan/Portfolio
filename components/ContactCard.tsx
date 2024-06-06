@@ -6,7 +6,7 @@ import {
   MapPinIcon,
   PhoneIcon,
 } from 'lucide-react';
-import { PropsWithChildren } from 'react';
+import { type PropsWithChildren } from 'react';
 
 import MagneticComponent from '@/hoc/MagneticComponent';
 

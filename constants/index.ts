@@ -96,7 +96,7 @@ export const heroSubHeading = [
 export const experiences: ExperienceType[] = [
   {
     title: 'Software Development Engineer II',
-    company_name: 'Curtiss-Wright',
+    companyName: 'Curtiss-Wright',
     location: 'Ottawa, ON',
     icon: cw,
     iconBg: '#e51938',
@@ -110,7 +110,7 @@ export const experiences: ExperienceType[] = [
   },
   {
     title: 'Software Development Engineer I',
-    company_name: 'Curtiss-Wright',
+    companyName: 'Curtiss-Wright',
     location: 'Ottawa, ON',
     icon: cw,
     iconBg: '#e51938',
@@ -123,7 +123,7 @@ export const experiences: ExperienceType[] = [
   },
   {
     title: 'Software Technical Engineer (PEY)',
-    company_name: 'Ontario Power Generation',
+    companyName: 'Ontario Power Generation',
     location: 'Pickering, ON',
     icon: opg,
     iconBg: '#FFFFFF',
