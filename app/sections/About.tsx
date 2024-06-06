@@ -22,7 +22,7 @@ const About = () => {
         <div className='flex-[4] space-y-8 xl:flex-[3]'>
           <motion.p
             variants={fadeIn('', '', 0.1, 1)}
-            className='max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg md:text-xl'
+            className='max-w-3xl text-base md:leading-8 text-muted-foreground sm:text-lg md:text-xl'
           >
             I&apos;m{' '}
             <span className='font-bold text-primary'>

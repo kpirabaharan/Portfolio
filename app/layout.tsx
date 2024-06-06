@@ -6,6 +6,7 @@ import { getLastCommitDate } from '@/actions/getLastCommitDate';
 import { cn } from '@/lib/utils';
 import ModalProvider from '@/providers/ModalProvider';
 import SmoothScrollProvider from '@/providers/SmoothScrollProvider';
+import { ThemeProvider } from '@/providers/ThemeProvider';
 
 import Footer from '@/app/components/Footer';
 import FloatingNav from '@/app/components/navbar/FloatingNav';
@@ -27,11 +28,18 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
       <body
         className={cn(inter.className, 'relative flex min-h-screen flex-col')}
       >
-        <FloatingNav />
-        <ModalProvider />
-        <SmoothScrollProvider />
-        {children}
-        <Footer date={commitDate} />
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='dark'
+          enableSystem
+          disableTransitionOnChange
+        >
+          <FloatingNav />
+          <ModalProvider />
+          <SmoothScrollProvider />
+          {children}
+          <Footer date={commitDate} />
+        </ThemeProvider>
       </body>
     </html>
   );

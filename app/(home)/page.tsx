@@ -15,6 +15,7 @@ import Skills from '@/app/sections/Skills';
 import Work from '@/app/sections/Work';
 
 import StarsCanvas from '@/components/canvas/StarCanvas';
+import { WavyBackground } from '@/components/ui/wavy-background';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,10 +35,10 @@ const Home = () => {
           isLoading ? 'h-screen' : ''
         } w-full overflow-hidden`}
       >
-        <div className='relative h-screen bg-heroWallpaper bg-cover bg-center bg-no-repeat'>
+        <WavyBackground className='relative h-screen w-full'>
           <StandingNavbar />
           <Hero />
-        </div>
+        </WavyBackground>
         <>
           <About />
           <Work />

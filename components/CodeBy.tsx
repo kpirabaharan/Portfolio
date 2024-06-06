@@ -20,7 +20,10 @@ export const CodeBy = () => {
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => window.location.assign('/')}
     >
-      <p className='text-lg font-light transition duration-700 group-hover:rotate-full'>
+      <p
+        className='text-lg font-light text-white transition duration-700 group-hover:rotate-full'
+        style={{ color: 'white' }}
+      >
         &copy;{' '}
       </p>
       <motion.div

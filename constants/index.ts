@@ -82,13 +82,15 @@ export const socials = [
 
 export const heroSubHeading = [
   2500,
-  'Full Stack Developer',
+  'I am a Full Stack Developer',
   1000,
-  'Mobile App Developer',
+  'I am a Mobile App Developer',
   1000,
-  'Embedded Systems Engineer',
+  'I am a Embedded Systems Engineer',
   1000,
-  'Mechatronics/Software Engineer',
+  'I am a Software Engineer',
+  1000,
+  'I am a Mechatronics Engineer',
 ];
 
 export const experiences: ExperienceType[] = [
@@ -292,13 +294,14 @@ export const allProjects: ProjectType[] = [
   //   link: '/projects/twitch-clone',
   // },
   {
-    title: 'Part Collecting Robot',
-    description: `Autonomous part collecting robot navigating dynamic environments, 
-    avoiding obstacles, and efficiently collecting objects for streamlined operations.`,
-    image: partCollectingRobot,
-    type: ['Mechatronics'],
-    github: 'https://github.com/kpirabaharan/Autonomous-Part-Collecting-Robot',
+    title: 'Velocity Voyage',
+    description: `The endless runner video game, created with Unity, offers players an exciting 
+      and challenging experience as they run and dodge obstacles for as long as possible.`,
+    image: velocityvoyage,
+    type: ['Game'],
+    github: 'https://github.com/kpirabaharan/Velocity-Voyage',
   },
+
   {
     title: 'AI SaaS Platform',
     description: `Developed a robust AI SaaS platform, leveraging Next.js,
@@ -336,7 +339,7 @@ export const allProjects: ProjectType[] = [
       shopping experience for users to purchase technology products with confidence.`,
     image: ecommerce,
     type: ['Full Stack Project', 'Mobile'],
-    github: 'https://github.com/kpirabaharan/E-Commerce',
+    github: 'https://github.com/kpirabaharan/Tech-Trendz',
   },
   {
     title: 'E-Commerce Flutter App',
@@ -405,12 +408,12 @@ export const allProjects: ProjectType[] = [
     github: 'https://www.youtube.com/watch?v=JBqL7PEfFzk',
   },
   {
-    title: 'Velocity Voyage',
-    description: `The endless runner video game, created with Unity, offers players an exciting 
-      and challenging experience as they run and dodge obstacles for as long as possible.`,
-    image: velocityvoyage,
-    type: ['Game'],
-    github: 'https://github.com/kpirabaharan/Velocity-Voyage',
+    title: 'Part Collecting Robot',
+    description: `Autonomous part collecting robot navigating dynamic environments, 
+    avoiding obstacles, and efficiently collecting objects for streamlined operations.`,
+    image: partCollectingRobot,
+    type: ['Mechatronics'],
+    github: 'https://github.com/kpirabaharan/Autonomous-Part-Collecting-Robot',
   },
 ];
 
