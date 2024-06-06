@@ -35,7 +35,7 @@ const Home = () => {
           isLoading ? 'h-screen' : ''
         } w-full overflow-hidden`}
       >
-        <WavyBackground className='relative h-screen w-full'>
+        <WavyBackground speed='fast' className='relative h-screen w-full'>
           <StandingNavbar />
           <Hero />
         </WavyBackground>

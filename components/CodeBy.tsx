@@ -20,18 +20,12 @@ export const CodeBy = () => {
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => window.location.assign('/')}
     >
-      <p
-        className='text-lg font-light text-white transition duration-700 group-hover:rotate-full'
-        style={{ color: 'white' }}
-      >
-        &copy;{' '}
-      </p>
       <motion.div
         initial='closed'
         animate={animate}
         variants={{
           open: { width: '205px' },
-          closed: { width: '129px' },
+          closed: { width: '151px' },
         }}
         transition={transition}
         className='relative overflow-hidden text-clip whitespace-nowrap'
@@ -41,12 +35,12 @@ export const CodeBy = () => {
           className='text-lg'
           animate={animate}
           variants={{
-            open: { x: -74 },
+            open: { x: -95 },
             closed: { x: 0 },
           }}
           transition={transition}
         >
-          Code by Keeshigan Pirabaharan
+          &copy; Code by Keeshigan Pirabaharan
         </motion.p>
       </motion.div>
     </div>

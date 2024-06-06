@@ -22,7 +22,7 @@ export const WavyBackground = ({
   waveWidth?: number;
   backgroundFill?: string;
   blur?: number;
-  speed?: 'slow' | 'fast';
+  speed?: 'slow' | 'fast' | 'vfast';
   waveOpacity?: number;
   [key: string]: any;
 }) => {
@@ -41,6 +41,8 @@ export const WavyBackground = ({
         return 0.001;
       case 'fast':
         return 0.002;
+      case 'vfast':
+        return 0.005;
       default:
         return 0.001;
     }
