@@ -14,7 +14,7 @@ import Projects from '@/app/sections/Projects';
 import Skills from '@/app/sections/Skills';
 import Work from '@/app/sections/Work';
 
-// import StarsCanvas from '@/components/canvas/StarCanvas';
+import StarsCanvas from '@/components/canvas/StarCanvas';
 import { WavyBackground } from '@/components/ui/wavy-background';
 
 const Home = () => {
@@ -29,7 +29,7 @@ const Home = () => {
       <AnimatePresence>
         {isLoading && <SplashOut setIsLoading={setIsLoading} />}
       </AnimatePresence>
-      {/* {!isLoading && <StarsCanvas />} */}
+      {!isLoading && <StarsCanvas />}
       <div
         className={`relative ${
           isLoading ? 'h-screen' : ''
