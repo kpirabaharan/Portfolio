@@ -52,6 +52,7 @@ const ContactCard = () => {
           href='https://www.linkedin.com/in/kpirabaharan/'
           className='text-base underline-offset-8 group-hover:underline md:text-xl'
           target='_blank'
+          rel='noreferrer'
         >
           kpirabaharan
         </a>
@@ -63,6 +64,7 @@ const ContactCard = () => {
           href='https://github.com/kpirabaharan'
           className='text-base underline-offset-8 group-hover:underline md:text-xl'
           target='_blank'
+          rel='noreferrer'
         >
           kpirabaharan
         </a>

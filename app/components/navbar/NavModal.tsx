@@ -112,6 +112,7 @@ export const NavModal = () => {
                             className='font-light underline-offset-8 hover:underline'
                             href={link}
                             target='_blank'
+                            rel='noreferrer'
                           >
                             {name}
                           </a>

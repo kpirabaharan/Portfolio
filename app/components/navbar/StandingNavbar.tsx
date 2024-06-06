@@ -18,7 +18,7 @@ const StandingNavbar = () => {
   const { startSplash } = useSplash();
 
   return (
-    <nav className='z-20 flex h-[80px] w-full flex-row items-center justify-between gap-x-2 px-2 md:px-8 text-white'>
+    <nav className='z-20 flex h-[80px] w-full flex-row items-center justify-between gap-x-2 px-2 text-white md:px-8'>
       <MagneticComponent modifier={{ x: 0.25, y: 0.5 }}>
         <CodeBy />
       </MagneticComponent>

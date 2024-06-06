@@ -63,6 +63,7 @@ const Footer = ({ date }: FooterProps) => {
                   className='font-light underline-offset-8 hover:underline'
                   href={link}
                   target='_blank'
+                  rel='noreferrer'
                 >
                   {name}
                 </a>

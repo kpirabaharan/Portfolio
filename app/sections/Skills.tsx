@@ -46,7 +46,7 @@ const Skills = () => {
       </motion.h2>
       <div className='flex flex-col gap-y-8'>
         <div className='flex flex-row items-center justify-between gap-x-8'>
-          <p className='max-w-3xl flex-[3] text-base md:leading-8 sm:text-lg md:text-xl'>
+          <p className='max-w-3xl flex-[3] text-base sm:text-lg md:text-xl md:leading-8'>
             {featuredSkillsText}
           </p>
           <div className='hidden w-full flex-1 justify-center lg:flex'>

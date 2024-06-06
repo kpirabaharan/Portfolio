@@ -45,7 +45,7 @@ const StarsCanvas = () => {
   }
 
   const canvas = document.createElement('canvas');
-  var gl;
+  let gl;
   try {
     gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
   } catch (err) {}

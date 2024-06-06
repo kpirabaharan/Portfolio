@@ -19,7 +19,7 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
   const pathname = usePathname();
   const { closeSplash } = useSplash();
 
-  var title = '';
+  let title = '';
   if (pathname === '/') {
     title = "Keeshigan's Portfolio";
   } else {
