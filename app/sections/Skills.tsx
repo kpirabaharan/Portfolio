@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
@@ -9,10 +8,9 @@ import useSplash from '@/hooks/useSplash';
 import { styles } from '@/lib/styles';
 import { textVariant } from '@/lib/transitions';
 
-import BallSingle from '@/components/canvas/BallSingle';
 import { MagneticButton } from '@/components/MagneticButton';
 
-import { featuredSkillsText, featuredTech } from '@/constants';
+import { featuredSkillsText } from '@/constants';
 
 const Skills = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -65,30 +63,9 @@ const Skills = () => {
           </div>
         </div>
         <div className='flex flex-row flex-wrap gap-8'>
-          {featuredTech.map((skill, index) =>
-            gl ? (
-              <div
-                key={index}
-                className='flex h-32 w-32 items-center justify-center lg:h-48 lg:w-48'
-              >
-                <BallSingle index={index} icon={skill.icon.src} />
-              </div>
-            ) : (
-              <div
-                key={index}
-                className='flex h-20 w-20 items-center justify-center rounded-full bg-slate-800 lg:h-28 lg:w-28'
-              >
-                <div className='relative h-[70%] w-[70%]'>
-                  <Image
-                    className='object-contain'
-                    src={skill.icon.src}
-                    alt={skill.name}
-                    fill
-                  />
-                </div>
-              </div>
-            ),
-          )}
+          {Array(6).map((_, i) => (
+            <div key={i}>PPP</div>
+          ))}
         </div>
         <div className='flex w-full justify-center lg:hidden'>
           <MagneticButton

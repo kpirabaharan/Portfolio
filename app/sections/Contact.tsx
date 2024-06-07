@@ -8,7 +8,7 @@ import ContactCard from '@/components/ContactCard';
 
 const Contact = () => {
   return (
-    <div className='flex flex-col gap-y-8'>
+    <div className='relative flex flex-col gap-y-8'>
       <motion.h2
         variants={textVariant()}
         className={`${styles.sectionHead} uppercase`}
