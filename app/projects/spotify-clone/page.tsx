@@ -9,7 +9,7 @@ import { useState } from 'react';
 import SplashOut from '@/app/components/SplashOut';
 import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 import { MagneticButton } from '@/components/MagneticButton';
-import StarsCanvas from '@/components/canvas/StarCanvas';
+
 import ProjectHeader from '../components/ProjectHeader';
 
 import { spotifyClone } from '@/assets';
@@ -23,7 +23,7 @@ const SpotifyPage = () => {
       <AnimatePresence>
         {isLoading && <SplashOut setIsLoading={setIsLoading} />}
       </AnimatePresence>
-      {!isLoading && <StarsCanvas />}
+
       <div
         className={`relative ${
           isLoading ? 'h-screen' : ''

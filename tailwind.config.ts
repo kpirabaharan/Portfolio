@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      scale: {
+        '-1': '-1',
+      },
       fontSize: { xxs: '0.5rem', '10xl': '10rem', '15xl': '15rem' },
       rotate: { full: '360deg' },
       backgroundImage: {

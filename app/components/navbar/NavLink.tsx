@@ -54,7 +54,7 @@ export const NavLink = ({
   const [isActive, setIsActive] = useState(isPath);
 
   return (
-    <MagneticComponent className={className} modifier={{ x: 0.3, y: 0.3 }}>
+    <MagneticComponent className={className} modifier={{ x: 0.5, y: 0.5 }}>
       <motion.div
         custom={index}
         variants={textSlide}

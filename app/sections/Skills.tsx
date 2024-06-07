@@ -63,11 +63,13 @@ const Skills = () => {
             </div>
           </div>
         </div>
-       {gl && <div className='flex flex-auto flex-wrap'>
-          {featuredTech.map(({ name, icon }, i) => (
-            <SkillCard name={name} icon={icon} key={i} />
-          ))}
-        </div>}
+        {gl && (
+          <div className='flex flex-auto flex-wrap'>
+            {featuredTech.map(({ name, icon }, i) => (
+              <SkillCard name={name} icon={icon} key={i} />
+            ))}
+          </div>
+        )}
         <div className='flex w-full justify-center lg:hidden'>
           <MagneticButton
             size='wide'

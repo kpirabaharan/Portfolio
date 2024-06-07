@@ -10,7 +10,7 @@ import SplashOut from '@/app/components/SplashOut';
 import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 import { netflixClone } from '@/assets';
 import { MagneticButton } from '@/components/MagneticButton';
-import StarsCanvas from '@/components/canvas/StarCanvas';
+
 import { netflix } from '@/constants';
 import ProjectHeader from '../components/ProjectHeader';
 
@@ -22,7 +22,7 @@ const NetflixPage = () => {
       <AnimatePresence>
         {isLoading && <SplashOut setIsLoading={setIsLoading} />}
       </AnimatePresence>
-      {!isLoading && <StarsCanvas />}
+
       <div
         className={`relative ${
           isLoading ? 'h-screen' : ''

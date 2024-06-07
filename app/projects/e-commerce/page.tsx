@@ -12,7 +12,7 @@ import SplashOut from '@/app/components/SplashOut';
 import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 import DisplayPicture from '@/components/DisplayPicture';
 import { MagneticButton } from '@/components/MagneticButton';
-import StarsCanvas from '@/components/canvas/StarCanvas';
+
 import ProjectHeader from '../components/ProjectHeader';
 
 import { ecommerceStore } from '@/assets';
@@ -26,7 +26,7 @@ const ECommercePage = () => {
       <AnimatePresence>
         {isLoading && <SplashOut setIsLoading={setIsLoading} />}
       </AnimatePresence>
-      {!isLoading && <StarsCanvas />}
+
       <div className={`relative ${isLoading ? 'h-screen' : ''} w-full`}>
         <StandingNavbar />
         <div className={'relative mt-36 w-full pb-36 md:mt-44'}>

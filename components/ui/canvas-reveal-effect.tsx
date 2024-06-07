@@ -224,7 +224,7 @@ const ShaderMaterial = ({
           break;
         case 'uniform3f':
           preparedUniforms[uniformName] = {
-            value: new THREE.Vector3().fromArray(uniform.value),
+            value: new THREE.Vector3().fromArray(uniform.value as number[]),
             type: '3f',
           };
           break;
@@ -241,7 +241,7 @@ const ShaderMaterial = ({
           break;
         case 'uniform2f':
           preparedUniforms[uniformName] = {
-            value: new THREE.Vector2().fromArray(uniform.value),
+            value: new THREE.Vector2().fromArray(uniform.value as number[]),
             type: '2f',
           };
           break;

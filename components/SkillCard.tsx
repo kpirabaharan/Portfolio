@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence, Variants, motion } from 'framer-motion';
+import { AnimatePresence, motion, type Variants } from 'framer-motion';
 import { useState } from 'react';
 
 import Image from 'next/image';
@@ -23,17 +23,23 @@ const SkillCard = ({ name, icon }: SkillCardProps) => {
       translateX: '-50%',
       translateY: '-50%',
       scale: 1,
+      transition: { ease: [0.76, 0, 0.24, 1], delay: 0.05 },
     },
     active: {
       translateY: '-75%',
       scale: 1.1,
+      transition: { ease: [0.76, 0, 0.24, 1] },
     },
   };
 
   return (
     <div
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => {
+        setIsHovered(true);
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+      }}
       className='relative mx-auto h-36 w-1/2 overflow-hidden border border-slate-800 bg-background sm:w-1/3 xl:w-1/6'
     >
       <motion.div
