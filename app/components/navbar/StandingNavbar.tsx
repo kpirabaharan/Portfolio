@@ -19,7 +19,7 @@ const StandingNavbar = () => {
 
   return (
     <nav className='z-20 flex h-[80px] w-full flex-row items-center justify-between gap-x-2 px-2 text-white md:px-8'>
-      <MagneticComponent modifier={{ x: 0.75, y: 0.75 }}>
+      <MagneticComponent modifier={{ x: 0.25, y: 0.5 }}>
         <CodeBy />
       </MagneticComponent>
 
@@ -34,7 +34,7 @@ const StandingNavbar = () => {
       </NavLink>
 
       {/* DesktopNav */}
-      <div className='flex flex-row gap-x-2'>
+      <div className='flex flex-row gap-x-8'>
         {navLinks.map((link, index) => {
           const isPath = pathname === link.href;
           const { title, href } = link;

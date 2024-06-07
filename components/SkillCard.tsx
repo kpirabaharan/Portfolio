@@ -23,10 +23,12 @@ const SkillCard = ({ name, icon }: SkillCardProps) => {
       translateX: '-50%',
       translateY: '-50%',
       scale: 1,
+      transition: { ease: [0.76, 0, 0.24, 1], delay: 0.05 },
     },
     active: {
       translateY: '-75%',
       scale: 1.1,
+      transition: { ease: [0.76, 0, 0.24, 1] },
     },
   };
 
