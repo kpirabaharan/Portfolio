@@ -26,6 +26,7 @@ import {
   javascript,
   jetpack,
   kotlin,
+  kubernetes,
   linux,
   material,
   mongodb,
@@ -137,17 +138,19 @@ export const experiences: ExperienceType[] = [
   },
 ];
 
-export const featuredSkillsText = `I am a full-stack developer with a passion for building beautiful
+export const featuredSkillsText = `I am a software developer with a passion for building beautiful
 websites and applications. I have experience creating production grade
 software with a wide range of javascript frameworks including React.js,
 Next.js, Node.js, Express.js. I am enthusiatic to learn new technologies
 if it means I can build better products without cutting corners.`;
 
 export const featuredTech = [
-  { name: 'React.js', icon: reactjs, expertise: true },
-  { name: 'Next.js', icon: nextjs, expertise: true },
-  { name: 'Node.js', icon: nodejs, expertise: true },
-  { name: 'Express.js', icon: expressjs, expertise: true },
+  { name: 'React.js', icon: reactjs },
+  { name: 'Next.js', icon: nextjs },
+  { name: 'Linux', icon: linux },
+  { name: 'AWS', icon: aws },
+  { name: 'Docker', icon: docker },
+  { name: 'Kubernetes', icon: kubernetes },
 ];
 
 export const techStack = [
@@ -248,6 +251,7 @@ export const techStack = [
       { name: 'Debugging', icon: debug, expertise: true },
       { name: 'AWS', icon: aws, expertise: true },
       { name: 'Docker', icon: docker, expertise: false },
+      { name: 'Kubernetes', icon: kubernetes, expertise: false },
     ],
   },
 ];

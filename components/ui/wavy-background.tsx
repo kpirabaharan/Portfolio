@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { createNoise3D } from 'simplex-noise';
 
 import { cn } from '@/lib/utils';
@@ -12,7 +12,7 @@ export const WavyBackground = ({
   colors,
   waveWidth,
   backgroundFill,
-  blur = 10,
+  blur = 0,
   speed = 'fast',
   waveOpacity = 0.5,
   ...props
@@ -24,7 +24,7 @@ export const WavyBackground = ({
   waveWidth?: number;
   backgroundFill?: string;
   blur?: number;
-  speed?: 'slow' | 'fast' | 'vfast';
+  speed?: 'slow' | 'fast';
   waveOpacity?: number;
   [key: string]: any;
 }) => {
@@ -43,8 +43,6 @@ export const WavyBackground = ({
         return 0.001;
       case 'fast':
         return 0.002;
-      case 'vfast':
-        return 0.005;
       default:
         return 0.001;
     }
@@ -55,12 +53,10 @@ export const WavyBackground = ({
     ctx = canvas.getContext('2d');
     w = ctx.canvas.width = window.innerWidth;
     h = ctx.canvas.height = window.innerHeight;
-    ctx.filter = `blur(${blur}px)`;
     nt = 0;
     window.onresize = function () {
       w = ctx.canvas.width = window.innerWidth;
       h = ctx.canvas.height = window.innerHeight;
-      ctx.filter = `blur(${blur}px)`;
     };
     render();
   };
@@ -103,16 +99,6 @@ export const WavyBackground = ({
     };
   }, []);
 
-  const [isSafari, setIsSafari] = useState(false);
-  useEffect(() => {
-    // I'm sorry but i have got to support it on safari.
-    setIsSafari(
-      typeof window !== 'undefined' &&
-        navigator.userAgent.includes('Safari') &&
-        !navigator.userAgent.includes('Chrome'),
-    );
-  }, []);
-
   return (
     <div
       className={cn(
@@ -124,9 +110,6 @@ export const WavyBackground = ({
         className='absolute inset-0 z-0'
         ref={canvasRef}
         id='canvas'
-        style={{
-          ...(isSafari ? { filter: `blur(${blur}px)` } : {}),
-        }}
       ></canvas>
       <div
         className={cn('relative z-10 dark:bg-grid-white/[0.05]', className)}

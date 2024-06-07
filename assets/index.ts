@@ -65,6 +65,7 @@ import aws from './tech/aws.png';
 import debug from './tech/debug.png';
 import docker from './tech/docker.png';
 import git from './tech/git.png';
+import kubernetes from './tech/kubernetes.png';
 
 import me from './me.jpeg';
 
@@ -97,6 +98,7 @@ export {
   javascript,
   jetpack,
   kotlin,
+  kubernetes,
   linux,
   material,
   me,
