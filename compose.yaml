@@ -1,0 +1,22 @@
+services:
+  web:
+    build:
+      context: .
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3000:3000
+    user: node
+    develop:
+      watch:
+        - path: ./package.json
+          action: rebuild
+        - path: ./package-lock.json
+          action: rebuild
+        - path: ./next.config.js
+          action: rebuild
+        - path: ./tailwind.config.ts
+          action: rebuild
+        - path: .
+          target: /usr/src/app
+          action: sync
