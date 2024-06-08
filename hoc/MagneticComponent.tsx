@@ -3,11 +3,11 @@
 import { motion } from 'framer-motion';
 import { throttle } from 'lodash';
 import {
-  MouseEvent,
-  PropsWithChildren,
   useCallback,
   useRef,
   useState,
+  type MouseEvent,
+  type PropsWithChildren,
 } from 'react';
 
 interface MagneticComponentProps extends PropsWithChildren {
@@ -31,13 +31,25 @@ const MagneticComponent = ({
       const x = (clientX - (left + width / 2)) * modifier.x;
       const y = (clientY - (top + height / 2)) * modifier.y;
       setPosition({ x, y });
-    }, 100),
+    }, 50),
 
     [modifier],
   ); // Adjust throttle limit as needed
 
   const mouseLeave = () => {
     setPosition({ x: 0, y: 0 });
+    setTimeout(() => {
+      setPosition({ x: 0, y: 0 });
+    }, 100); // Adjust delay as needed to prevent flickering
+    setTimeout(() => {
+      setPosition({ x: 0, y: 0 });
+    }, 200); // Adjust delay as needed to prevent flickering
+    setTimeout(() => {
+      setPosition({ x: 0, y: 0 });
+    }, 300); // Adjust delay as needed to prevent flickering
+    setTimeout(() => {
+      setPosition({ x: 0, y: 0 });
+    }, 500); // Adjust delay as needed to prevent flickering
   };
 
   const { x, y } = position;
@@ -49,7 +61,7 @@ const MagneticComponent = ({
       onMouseMove={mouseMove}
       onMouseLeave={mouseLeave}
       animate={{ x, y }}
-      transition={{ type: 'spring', stiffness: 150, damping: 8, mass: 1 }}
+      transition={{ type: 'spring', stiffness: 150, damping: 10, mass: 1 }}
     >
       {children}
     </motion.div>

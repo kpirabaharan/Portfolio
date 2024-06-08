@@ -34,7 +34,7 @@ export const MagneticButton = ({
   return (
     <MagneticComponent
       className='inline-block rounded-full shadow-2xl'
-      modifier={{ x: 0.4, y: 0.4 }}
+      modifier={{ x: 0.2, y: 0.2 }}
     >
       <Button
         className='relative overflow-hidden'
@@ -60,7 +60,7 @@ export const MagneticButton = ({
         </AnimatePresence>
         <MagneticComponent
           className='absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-full'
-          modifier={{ x: 0.3, y: 0.3 }}
+          modifier={{ x: 0.25, y: 0.25 }}
         >
           {children}
         </MagneticComponent>
