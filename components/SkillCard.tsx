@@ -84,7 +84,7 @@ const SkillCard = ({ name, icon }: SkillCardProps) => {
         )}
       </AnimatePresence>
       {/* Radial gradient for the cute fade */}
-      <div className='absolute inset-0 bg-black/50 [mask-image:radial-gradient(200px_at_center,white,transparent)] dark:bg-black/90' />
+      <div className='absolute inset-0 bg-black/50 [mask-image:radial-gradient(75px_at_center,white,transparent)] dark:bg-black/90' />
     </div>
   );
 };

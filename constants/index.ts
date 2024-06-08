@@ -138,11 +138,7 @@ export const experiences: ExperienceType[] = [
   },
 ];
 
-export const featuredSkillsText = `I am a software developer with a passion for building beautiful
-websites and applications. I have experience creating production grade
-software with a wide range of javascript frameworks including React.js,
-Next.js, Node.js, Express.js. I am enthusiatic to learn new technologies
-if it means I can build better products without cutting corners.`;
+export const featuredSkillsText = `With expertise in React.js and Next.js for building dynamic web applications, proficiency in Linux and AWS for efficient deployment and management, and adept at using Docker and Kubernetes for containerization and orchestration, I bring a robust and versatile skill set to tackle modern software development challenges.`;
 
 export const featuredTech = [
   { name: 'React.js', icon: reactjs },

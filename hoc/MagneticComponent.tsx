@@ -1,7 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MouseEvent, PropsWithChildren, useRef, useState } from 'react';
+import { throttle } from 'lodash';
+import {
+  MouseEvent,
+  PropsWithChildren,
+  useCallback,
+  useRef,
+  useState,
+} from 'react';
 
 interface MagneticComponentProps extends PropsWithChildren {
   className?: string;
@@ -16,13 +23,18 @@ const MagneticComponent = ({
   const ref = useRef<HTMLDivElement>(null!);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const mouseMove = (e: MouseEvent) => {
-    const { clientX, clientY } = e;
-    const { width, height, left, top } = ref.current.getBoundingClientRect();
-    const x = (clientX - (left + width / 2)) * modifier.x;
-    const y = (clientY - (top + height / 2)) * modifier.y;
-    setPosition({ x, y });
-  };
+  // Use useCallback to memoize the throttled version of mouseMove
+  const mouseMove = useCallback(
+    throttle((e: MouseEvent) => {
+      const { clientX, clientY } = e;
+      const { width, height, left, top } = ref.current.getBoundingClientRect();
+      const x = (clientX - (left + width / 2)) * modifier.x;
+      const y = (clientY - (top + height / 2)) * modifier.y;
+      setPosition({ x, y });
+    }, 100),
+
+    [modifier],
+  ); // Adjust throttle limit as needed
 
   const mouseLeave = () => {
     setPosition({ x: 0, y: 0 });
