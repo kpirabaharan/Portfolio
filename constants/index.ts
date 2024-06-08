@@ -54,7 +54,7 @@ import {
   typescript,
   velocityvoyage,
 } from '@/assets';
-import { ExperienceType, FeaturedProjectType, ProjectType } from '@/types';
+import type { ExperienceType, FeaturedProjectType, ProjectType } from '@/types';
 
 export const navLinks = [
   {
