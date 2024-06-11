@@ -246,8 +246,8 @@ export const techStack = [
       { name: 'Git', icon: git, expertise: true },
       { name: 'Debugging', icon: debug, expertise: true },
       { name: 'AWS', icon: aws, expertise: true },
-      { name: 'Docker', icon: docker, expertise: false },
-      { name: 'Kubernetes', icon: kubernetes, expertise: false },
+      { name: 'Docker', icon: docker, expertise: true },
+      { name: 'Kubernetes', icon: kubernetes, expertise: true },
     ],
   },
 ];
