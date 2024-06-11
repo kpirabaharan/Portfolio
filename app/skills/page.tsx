@@ -4,12 +4,10 @@ import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { AiFillStar } from 'react-icons/ai';
 
-import { styles } from '@/lib/styles';
-
 import SplashOut from '@/app/components/SplashOut';
 import StandingNavbar from '@/app/components/navbar/StandingNavbar';
-
 import Skills from '@/components/Skills';
+import { styles } from '@/lib/styles';
 
 const SkillsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +21,7 @@ const SkillsPage = () => {
       <div
         className={`h-full w-full ${isLoading && 'hidden'} mx-auto ${
           styles.padding
-        } flex flex-col`}
+        } relative flex flex-col`}
       >
         <div className='flex flex-col items-center justify-center gap-y-4'>
           <h1 className='text-4xl md:text-5xl lg:text-6xl xl:text-7xl'>
@@ -31,7 +29,7 @@ const SkillsPage = () => {
           </h1>
           <div className='flex flex-row items-center gap-x-2'>
             <AiFillStar />
-            <p>Indicates atleast 3 years of experience</p>
+            <p>Skills I am proficient in</p>
           </div>
         </div>
         <Skills />

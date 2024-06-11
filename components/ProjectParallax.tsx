@@ -1,6 +1,5 @@
 'use client';
 
-import { type ProjectType } from '@/types';
 import {
   motion,
   useScroll,
@@ -11,6 +10,8 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+
+import { type ProjectType } from '@/types';
 
 export const ProjectParallax = ({ projects }: { projects: ProjectType[] }) => {
   const firstRow = projects.slice(0, 4);
@@ -127,28 +128,6 @@ export const ProjectCard = ({
       key={project.title}
       className='group/project relative h-96 w-[30rem] flex-shrink-0 cursor-pointer'
     >
-      {/* {project.link ? (
-        <Link
-          href={project.link}
-          className='block group-hover/project:shadow-2xl'
-        >
-          <Image
-            src={project.image}
-            height='600'
-            width='600'
-            className='absolute inset-0 h-full w-full object-cover object-center'
-            alt={project.title}
-          />
-        </Link>
-      ) : (
-        <Image
-          src={project.image}
-          height='600'
-          width='600'
-          className='absolute inset-0 h-full w-full object-cover object-center'
-          alt={project.title}
-        />
-      )} */}
       <Link
         href={project.github}
         className='block group-hover/project:shadow-2xl'
@@ -170,18 +149,6 @@ export const ProjectCard = ({
           {project.type.join(' + ')}
         </h2>
       </div>
-      {/* {project.website && (
-        <Link
-          className='absolute bottom-6 right-6 opacity-0 group-hover/project:opacity-80'
-          href={project.website}
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Button size={'icon'}>
-            <ExternalLinkIcon />
-          </Button>
-        </Link>
-      )} */}
     </motion.div>
   );
 };
