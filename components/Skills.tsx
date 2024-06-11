@@ -1,27 +1,25 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { AiFillStar } from 'react-icons/ai';
 
 import { techStack } from '@/constants';
 import { styles } from '@/lib/styles';
+import { fadeIn } from '@/lib/transitions';
 import TechIcon from './TechIcon';
 
 const Skills = () => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
-
   return (
     <div className='mt-8 flex h-full flex-col gap-y-8 text-center'>
       {techStack.map((stack, index) => (
-        <div className='flex flex-col items-center gap-y-4' key={index}>
+        <motion.div
+          initial='hidden'
+          whileInView='show'
+          viewport={{ once: true, amount: 0.15 }}
+          variants={fadeIn('', '', 0.1, 1)}
+          className='flex flex-col items-center gap-y-4'
+          key={index}
+        >
           <h2 className={styles.skillsHead}>{stack.title}</h2>
           <p className='max-w-3xl'>{stack.description}</p>
           <div className='flex w-full flex-row flex-wrap items-center justify-center justify-items-center gap-4'>
@@ -42,7 +40,7 @@ const Skills = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
