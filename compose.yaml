@@ -1,7 +1,8 @@
 services:
-  web:
+  dev:
     build:
       context: .
+      dockerfile: Dockerfile
     environment:
       NODE_ENV: development
     ports:

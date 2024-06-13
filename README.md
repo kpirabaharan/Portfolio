@@ -38,6 +38,20 @@ To explore my Software Portfolio Website, simply visit the live website at [kees
 - **GSAP**: The GreenSock Animation Platform, a JavaScript library for creating high-performance animations.
 - **Parallax Scrolling**: A technique where background images move slower than foreground content, creating a sense of depth and immersion.
 
+## Run Locally
+
+### Development
+
+With docker installed run:
+1. docker compose up -w
+
+### Production
+
+With docker installed run:
+1. docker build . -t portfolio -f ./Dockerfile.prod
+2. docker run --name portfolio-app -p 3000:3000 portfolio:latest
+3. Access website on http://localhost:3000
+
 ## Contact
 
 If you have any questions or feedback, feel free to reach out:
