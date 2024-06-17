@@ -6,5 +6,5 @@ export const styles = {
   projectPaddingX: 'px-4 sm:px-20 lg:px-32',
 
   sectionHead: 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-teal-700',
-  skillsHead: 'text-xl sm:text-2xl md:text-3xl lg:text-4xl text-teal-700',
+  skillsHead: 'text-2xl md:text-3xl lg:text-4xl text-teal-700',
 };

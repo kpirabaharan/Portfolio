@@ -21,7 +21,7 @@ const Skills = () => {
           key={index}
         >
           <h2 className={styles.skillsHead}>{stack.title}</h2>
-          <p className='max-w-3xl'>{stack.description}</p>
+          <p className='max-w-3xl text-sm sm:text-base lg:text-lg'>{stack.description}</p>
           <div className='flex w-full flex-row flex-wrap items-center justify-center justify-items-center gap-4'>
             {stack.tech.map((skill, index) => (
               <div
@@ -36,7 +36,7 @@ const Skills = () => {
                     <AiFillStar className='h-6 w-6 text-yellow-500' />
                   </div>
                 )}
-                <p className='h-[20%] text-lg leading-5'>{skill.name}</p>
+                <p className='h-[20%] text-sm sm:text-base lg:text-lg leading-5'>{skill.name}</p>
               </div>
             ))}
           </div>
