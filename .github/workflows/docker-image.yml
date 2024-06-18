@@ -25,3 +25,4 @@ jobs:
           file: ./Dockerfile.prod
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
+          platforms: linux/amd64,linux/arm64
