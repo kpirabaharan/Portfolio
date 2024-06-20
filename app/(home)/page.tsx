@@ -74,10 +74,6 @@ const Home = () => {
               fill='teal'
             />
             <Spotlight className='left-[90%] top-10 h-[80vh]' fill='purple' />
-            <Spotlight
-              className='left-[10%] top-[90%] h-[80vh]'
-              fill='purple'
-            />
             <StandingNavbar />
             <Hero />
           </div>
