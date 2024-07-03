@@ -258,21 +258,21 @@ export const featuredProjects: FeaturedProjectType[] = [
     color: '#47484a',
     image: ecommerceStore,
     type: 'Full Stack Project',
-    link: 'https://e-commerce-store-clothes-kpirabaharan.vercel.app/',
+    link: 'https://e-commerce-store-clothes-keeshigan.vercel.app/',
   },
   {
     title: 'Netflix Clone',
     color: '#1f2937',
     image: netflixClone,
     type: 'Full Stack Project',
-    link: 'https://netflix-clone-kpirabaharan.vercel.app/',
+    link: 'https://netflix-clone-keeshigan.vercel.app/',
   },
   {
     title: 'Spotify Clone',
     color: '#0f172a',
     image: spotifyClone,
     type: 'Full Stack Project',
-    link: 'https://spotify-clone-kpirabaharan.vercel.app/',
+    link: 'https://spotify-clone-keeshigan.vercel.app/',
   },
   {
     title: 'Smart Windows App',
@@ -320,7 +320,7 @@ export const allProjects: ProjectType[] = [
     image: ecommerceStore,
     type: ['Full Stack'],
     github: 'https://github.com/kpirabaharan/E-Commerce-Store',
-    website: 'https://e-commerce-store-clothes-kpirabaharan.vercel.app/',
+    website: 'https://e-commerce-store-clothes-keeshigan.vercel.app/',
     link: '/projects/e-commerce',
   },
   {
@@ -330,7 +330,7 @@ export const allProjects: ProjectType[] = [
     image: ecommerceAdmin,
     type: ['Full Stack'],
     github: 'https://github.com/kpirabaharan/E-Commerce-Admin-Dashboard',
-    website: 'https://e-commerce-admin-dashboard-kpirabaharan.vercel.app/',
+    website: 'https://e-commerce-admin-dashboard-keeshigan.vercel.app/',
     link: '/projects/e-commerce',
   },
   {
@@ -358,7 +358,7 @@ export const allProjects: ProjectType[] = [
     image: netflixClone,
     type: ['Full Stack'],
     github: 'https://github.com/kpirabaharan/Netflix-Clone',
-    website: 'https://netflix-clone-kpirabaharan.vercel.app',
+    website: 'https://netflix-clone-keeshigan.vercel.app',
     link: '/projects/netflix-clone',
   },
   {
@@ -368,7 +368,7 @@ export const allProjects: ProjectType[] = [
     image: spotifyClone,
     type: ['Full Stack'],
     github: 'https://github.com/kpirabaharan/Spotify-Clone',
-    website: 'https://spotify-clone-kpirabaharan.vercel.app',
+    website: 'https://spotify-clone-keeshigan.vercel.app',
     link: '/projects/spotify-clone',
   },
   {
@@ -428,9 +428,9 @@ export const eCommerce = {
   store_image: ecommerceStore,
   dashboard_image: ecommerceAdmin,
   github: 'https://github.com/kpirabaharan/E-Commerce-Admin-Dashboard',
-  dashboard_site: 'https://e-commerce-admin-dashboard-kpirabaharan.vercel.app/',
-  store_site_1: 'https://e-commerce-store-clothes-kpirabaharan.vercel.app/',
-  store_site_2: 'https://e-commerce-store-shoes-kpirabaharan.vercel.app/',
+  dashboard_site: 'https://e-commerce-admin-dashboard-keeshigan.vercel.app/',
+  store_site_1: 'https://e-commerce-store-clothes-keeshigan.vercel.app/',
+  store_site_2: 'https://e-commerce-store-shoes-keeshigan.vercel.app/',
 };
 
 export const netflix = {
@@ -442,7 +442,7 @@ export const netflix = {
   key_tech: ['AWS S3', 'MongoDB', 'NextAuth'],
   website_image: netflixClone,
   github: 'https://github.com/kpirabaharan/Neflix-Clone',
-  website: 'https://netflix-clone-kpirabaharan.vercel.app',
+  website: 'https://netflix-clone-keeshigan.vercel.app',
 };
 
 export const spotify = {
@@ -454,5 +454,5 @@ export const spotify = {
   key_tech: ['Supabase', 'Stripe', 'React Player'],
   website_image: spotifyClone,
   github: 'https://github.com/kpirabaharan/Spotfiy-Clone',
-  website: 'https://spotify-clone-kpirabaharan.vercel.app',
+  website: 'https://spotify-clone-keeshigan.vercel.app',
 };
