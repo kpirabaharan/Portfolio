@@ -62,6 +62,7 @@ import raspberryPi from './tech/raspberry-pi.png';
 import solidworks from './tech/solidworks.png';
 
 import aws from './tech/aws.png';
+import azure from './tech/azure.png';
 import debug from './tech/debug.png';
 import docker from './tech/docker.png';
 import git from './tech/git.png';
@@ -75,6 +76,7 @@ export {
   android,
   arduino,
   aws,
+  azure,
   c,
   cpp,
   csharp,

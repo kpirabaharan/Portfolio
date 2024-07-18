@@ -4,6 +4,7 @@ import {
   android,
   arduino,
   aws,
+  azure,
   c,
   cpp,
   css,
@@ -414,6 +415,23 @@ export const allProjects: ProjectType[] = [
     image: partCollectingRobot,
     type: ['Mechatronics'],
     github: 'https://github.com/kpirabaharan/Autonomous-Part-Collecting-Robot',
+  },
+];
+
+export const certificates = [
+  {
+    title: 'Azure Fundamentals',
+    issuer: 'Microsoft',
+    date: 'Issued July 2024',
+    image: azure,
+    link: 'https://learn.microsoft.com/api/credentials/share/en-us/KeeshiganPirabaharan-3406/DBB67C603F62FF52?sharingId=7C0D1C6FAAD2724D',
+  },
+  {
+    title: 'AWS Certified Cloud Practitioner',
+    issuer: 'Amazon Web Services (AWS)',
+    date: 'Issued March 2024 • Expires March 2027',
+    image: aws,
+    link: 'https://cp.certmetrics.com/amazon/en/public/verify/credential/09032e021b234f7a991de2bfb3b63080',
   },
 ];
 
