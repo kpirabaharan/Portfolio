@@ -54,7 +54,11 @@ const Home = () => {
         } w-full overflow-hidden`}
       >
         {gl ? (
-          <WavyBackground speed='slow' className='relative h-screen w-full'>
+          <WavyBackground
+            speed='slow'
+            className='relative h-screen w-full'
+            blur={10}
+          >
             <StandingNavbar />
             <Hero />
           </WavyBackground>
