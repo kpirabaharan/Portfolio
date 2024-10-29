@@ -104,10 +104,10 @@ export const experiences: ExperienceType[] = [
     iconBg: '#e51938',
     date: 'June 2023 - Present',
     points: [
-      `Seamlessly integrated data plane and control plane ports to optimize network performance and functionality for a new 100G switch platform`,
-      `Developed an automated software testing framework for a new 100G switch platform with multiple variants using Python, Tcl, and Spirent`,
-      `Debugged and resolved critical hardware issues causing CPU core failures, halting production and sales of numerous units`,
-      `Created a Web GUI platform using React.js and Hiawatha to allow users to make switch configuration adjustments along with existing CLI platform`,
+      `Spearheaded the development of an automated software testing framework for a 100G switch platform using Python, PowerShell, and Spirent`,
+      `Designed and deployed a React-based Web GUI integrated with a Hiawatha backend, allowing dynamic switch configuration through both web and CLI interfaces`,
+      `Integrated Jenkins to automate testing pipelines and code deployment for hardware-software integration efforts, reducing test cycles by 20%`,
+      `Implemented backend logic in Node.js to interface with internal APIs for monitoring hardware health and alerts`,
     ],
   },
   {
@@ -118,9 +118,10 @@ export const experiences: ExperienceType[] = [
     iconBg: '#e51938',
     date: 'June 2022 - June 2023',
     points: [
-      `Developed automated C and Bash test software for qualification testing on a hybrid vehicle management / network switch device`,
-      `Performed maintenance software releases for switch software, resolving critical customer-facing bugs and enhanced documentation for improved clarity`,
-      `Utilized Docker to streamline cross-compilation toolchain setup for ARM SBCs`,
+      `Developed automated test software in C and Bash for qualification testing of hybrid network switch and vehicle management systems`,
+      `Led the migration of legacy scripts to Python, enhancing readability and reducing runtime errors by 15%`,
+      `Participated in agile ceremonies, code reviews, and collaborative development, ensuring alignment with software quality standards`,
+      `Deployed containerized applications using Docker to test software compatibility across multiple hardware environments`,
     ],
   },
   {
@@ -131,10 +132,9 @@ export const experiences: ExperienceType[] = [
     iconBg: '#FFFFFF',
     date: 'May 2020 - August 2021',
     points: [
-      `Enhanced plant control software to optimize efficiency and safety of nuclear power plant operations by utilizing MATLAB for simulation and validation`,
-      `Engaged closely with regulatory bodies such as the Canadian Nuclear Safety Commission (CNSC) to ensure compliance with regulatory requirements`,
-      `Proactively monitored changes in regulatory standards and guidelines, implementing necessary updates to software systems to maintain compliance`,
-      `Collaborated with maintenance teams to develop software-based solutions for optimizing outage schedules and reducing downtime`,
+      `Performed simulations using MATLAB to optimize efficiency and safety in nuclear plant operations, meeting Canadian Nuclear Safety Commission (CNSC) standards`,
+      `Collaborated with a multidisciplinary team of engineers to adjust system and software requirements, ensuring compliance with regulatory metrics and performance benchmarks`,
+      `Assisted in automating internal workflows using Python scripts, cutting down manual reporting time by 30%`,
     ],
   },
 ];
