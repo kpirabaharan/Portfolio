@@ -104,10 +104,9 @@ export const experiences: ExperienceType[] = [
     iconBg: '#e51938',
     date: 'June 2023 - Present',
     points: [
-      `Spearheaded the development of an automated software testing framework for a 100G switch platform using Python, PowerShell, and Spirent`,
-      `Designed and deployed a React-based Web GUI integrated with a Hiawatha backend, allowing dynamic switch configuration through both web and CLI interfaces`,
-      `Integrated Jenkins to automate testing pipelines and code deployment for hardware-software integration efforts, reducing test cycles by 20%`,
-      `Implemented backend logic in Node.js to interface with internal APIs for monitoring hardware health and alerts`,
+      `Designed and developed a user-friendly Web GUI using TypeScript and NextJS, providing an alternative to the CLI interface and improving usability by 20%`,
+      `Led the development of an automated testing framework for a 100G switch platform using Python, Pytest, and PowerShell, reducing testing time by 35%`,
+      `Implemented backend logic in NodeJS to interface with internal APIs for monitoring hardware health and alerts`,
     ],
   },
   {
@@ -118,10 +117,9 @@ export const experiences: ExperienceType[] = [
     iconBg: '#e51938',
     date: 'June 2022 - June 2023',
     points: [
-      `Developed automated test software in C and Bash for qualification testing of hybrid network switch and vehicle management systems`,
-      `Led the migration of legacy scripts to Python, enhancing readability and reducing runtime errors by 15%`,
+      `Developed a robust automated testing framework in C and Bash for qualification testing of a hybrid network switch and vehicle management system`,
       `Participated in agile ceremonies, code reviews, and collaborative development, ensuring alignment with software quality standards`,
-      `Deployed containerized applications using Docker to test software compatibility across multiple hardware environments`,
+      `Optimized development workflows by containerizing applications with Docker, reducing environment setup complexities and cutting development time by 10%`,
     ],
   },
   {

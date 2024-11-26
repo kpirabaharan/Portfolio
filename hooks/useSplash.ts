@@ -10,8 +10,12 @@ interface SplashStoreInterface {
 const useSplash = create<SplashStoreInterface>(set => ({
   isSplash: false,
   url: undefined,
-  startSplash: (url: string) => set({ isSplash: true, url }),
-  closeSplash: () => set({ isSplash: false, url: undefined }),
+  startSplash: (url: string) => {
+    set({ isSplash: true, url });
+  },
+  closeSplash: () => {
+    set({ isSplash: false, url: undefined });
+  },
 }));
 
 export default useSplash;

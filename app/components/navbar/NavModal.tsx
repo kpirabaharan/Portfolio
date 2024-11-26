@@ -81,7 +81,11 @@ export const NavModal = () => {
                         isPath={isPath}
                         onClick={() => {
                           onClose();
-                          startSplash(href);
+                          if (pathname === href) {
+                            window.location.assign(href);
+                          } else {
+                            startSplash(href);
+                          }
                         }}
                         size={width > 1024 ? 'large' : 'small'}
                         side='left'
