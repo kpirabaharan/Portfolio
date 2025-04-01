@@ -9,7 +9,6 @@ import {
   cpp,
   css,
   cw,
-  dart,
   debug,
   django,
   docker,
@@ -18,7 +17,6 @@ import {
   ecommerceFlutter,
   ecommerceStore,
   expressjs,
-  firebase,
   flutter,
   fourDoFRobot,
   git,
@@ -26,7 +24,6 @@ import {
   java,
   javascript,
   jetpack,
-  kotlin,
   kubernetes,
   linux,
   material,
@@ -50,7 +47,7 @@ import {
   sociopedia,
   solidworks,
   spotifyClone,
-  supabase,
+  springboot,
   tailwind,
   typescript,
   velocityvoyage,
@@ -86,10 +83,6 @@ export const heroSubHeading = [
   2500,
   'I am a Full Stack Developer',
   1000,
-  'I am a Mobile App Developer',
-  1000,
-  'I am a Embedded Systems Engineer',
-  1000,
   'I am a Software Engineer',
   1000,
   'I am a Mechatronics Engineer',
@@ -104,9 +97,9 @@ export const experiences: ExperienceType[] = [
     iconBg: '#e51938',
     date: 'June 2023 - Present',
     points: [
-      `Designed and developed a user-friendly Web GUI using TypeScript and NextJS, providing an alternative to the CLI interface and improving usability by 20%`,
-      `Led the development of an automated testing framework for a 100G switch platform using Python, Pytest, and PowerShell, reducing testing time by 35%`,
-      `Implemented backend logic in NodeJS to interface with internal APIs for monitoring hardware health and alerts`,
+      `Developed and deployed production ready full-stack applications using React, Redux, React Queries and Spring Boot, improving system performance and reducing load times by 20%`,
+      `Designed clean, readable and testable REST APIs in Java (Spring Boot) with parallel processing, reducing backend error rates by 15% and improving response times`,
+      `Mentored junior developers on best practices for clean, maintainable code, improving overall code quality and reducing PR review time by 20%`,
     ],
   },
   {
@@ -117,9 +110,9 @@ export const experiences: ExperienceType[] = [
     iconBg: '#e51938',
     date: 'June 2022 - June 2023',
     points: [
-      `Developed a robust automated testing framework in C and Bash for qualification testing of a hybrid network switch and vehicle management system`,
+      `Implemented CI/CD pipelines with Jenkins and containerized deployments with Docker and Kubernetes, reducing manual deployment time from 1 hour to 10 minutes`,
       `Participated in agile ceremonies, code reviews, and collaborative development, ensuring alignment with software quality standards`,
-      `Optimized development workflows by containerizing applications with Docker, reducing environment setup complexities and cutting development time by 10%`,
+      `Built scalable microservices with Spring Boot, leveraging Azure for automated scaling and monitoring, improving system resilience and reducing downtime by 30%`,
     ],
   },
   {
@@ -131,13 +124,13 @@ export const experiences: ExperienceType[] = [
     date: 'May 2020 - August 2021',
     points: [
       `Performed simulations using MATLAB to optimize efficiency and safety in nuclear plant operations, meeting Canadian Nuclear Safety Commission (CNSC) standards`,
-      `Collaborated with a multidisciplinary team of engineers to adjust system and software requirements, ensuring compliance with regulatory metrics and performance benchmarks`,
+      `Created Power BI dashboards to visualize key operational metrics and trends`,
       `Assisted in automating internal workflows using Python scripts, cutting down manual reporting time by 30%`,
     ],
   },
 ];
 
-export const featuredSkillsText = `With expertise in React.js and Next.js for building dynamic web applications, proficiency in Linux and AWS for efficient deployment and management, and adept at using Docker and Kubernetes for containerization and orchestration, I bring a robust and versatile skill set to tackle modern software development challenges.`;
+export const featuredSkillsText = `With expertise in React.js and Next.js for building dynamic and responsive web applications, combined with proficiency in Spring Boot for developing scalable and high-performance backend services, I bring a comprehensive full-stack skill set. My experience extends to cloud deployment and management using AWS and Linux, along with leveraging Docker and Kubernetes for containerization and orchestration. This enables me to build, deploy, and maintain modern, scalable, and resilient software solutions.`;
 
 export const featuredTech = [
   { name: 'React.js', icon: reactjs },
@@ -161,8 +154,8 @@ export const techStack = [
       { name: 'Java', icon: java, expertise: true },
       { name: 'C', icon: c, expertise: true },
       { name: 'C++', icon: cpp, expertise: false },
-      { name: 'Dart', icon: dart, expertise: false },
-      { name: 'Kotlin', icon: kotlin, expertise: false },
+      // { name: 'Dart', icon: dart, expertise: false },
+      // { name: 'Kotlin', icon: kotlin, expertise: false },
     ],
   },
   {
@@ -189,9 +182,10 @@ export const techStack = [
     tech: [
       { name: 'Node.js', icon: nodejs, expertise: true },
       { name: 'Express.js', icon: expressjs, expertise: true },
+      { name: 'Spring Boot', icon: springboot, expertise: true },
       { name: 'Django', icon: django, expertise: false },
-      { name: 'Firebase', icon: firebase, expertise: false },
-      { name: 'Supabase', icon: supabase, expertise: false },
+      // { name: 'Firebase', icon: firebase, expertise: false },
+      // { name: 'Supabase', icon: supabase, expertise: false },
     ],
   },
   {
@@ -213,7 +207,7 @@ export const techStack = [
     currently exploring Android and Jetpack Compose, I am eager to apply them to 
     future development projects.`,
     tech: [
-      { name: 'Flutter', icon: flutter, expertise: true },
+      { name: 'Flutter', icon: flutter, expertise: false },
       { name: 'Riverpod', icon: riverpod, expertise: false },
       { name: 'Android', icon: android, expertise: false },
       { name: 'Jetpack Compose', icon: jetpack, expertise: false },
@@ -264,7 +258,7 @@ export const featuredProjects: FeaturedProjectType[] = [
     color: '#1f2937',
     image: netflixClone,
     type: 'Full Stack Project',
-    link: 'https://netflix-clone.keeshigan.com/',
+    link: 'https://github.com/kpirabaharan/Netflix-Clone',
   },
   {
     title: 'Spotify Clone',

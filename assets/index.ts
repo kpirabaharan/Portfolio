@@ -42,6 +42,7 @@ import django from './tech/django.png';
 import expressjs from './tech/expressjs.png';
 import firebase from './tech/firebase.png';
 import nodejs from './tech/nodejs.png';
+import springboot from './tech/spring-boot.png';
 import supabase from './tech/supabase.png';
 
 import mongodb from './tech/mongodb.png';
@@ -125,10 +126,12 @@ export {
   sociopedia,
   solidworks,
   spotifyClone,
+  springboot,
   studioDisplay,
   supabase,
   tailwind,
   typescript,
   velocityvoyage,
-  western,
+  western
 };
+
