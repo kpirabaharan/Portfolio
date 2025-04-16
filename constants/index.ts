@@ -6,7 +6,6 @@ import {
   aws,
   azure,
   c,
-  cpp,
   css,
   cw,
   debug,
@@ -97,9 +96,12 @@ export const experiences: ExperienceType[] = [
     iconBg: '#e51938',
     date: 'June 2023 - Present',
     points: [
-      `Developed and deployed production ready full-stack applications using React, Redux, React Queries and Spring Boot, improving system performance and reducing load times by 20%`,
-      `Designed clean, readable and testable REST APIs in Java (Spring Boot) with parallel processing, reducing backend error rates by 15% and improving response times`,
-      `Mentored junior developers on best practices for clean, maintainable code, improving overall code quality and reducing PR review time by 20%`,
+      `Developed and deployed production ready full-stack applications using React, Redux, React
+      Query and Nest.js, improving system performance and reducing load times by 20%`,
+      `Designed secure and testable REST APIs in Node.js, integrating NoSQL and SQL databases
+      to reduce backend error rates by 15% and improve response times`,
+      `Mentored junior developers on best practices for clean, maintainable code, improving overall
+      code quality and reducing PR review time by 20%`,
     ],
   },
   {
@@ -110,9 +112,12 @@ export const experiences: ExperienceType[] = [
     iconBg: '#e51938',
     date: 'June 2022 - June 2023',
     points: [
-      `Implemented CI/CD pipelines with Jenkins and containerized deployments with Docker and Kubernetes, reducing manual deployment time from 1 hour to 10 minutes`,
-      `Participated in agile ceremonies, code reviews, and collaborative development, ensuring alignment with software quality standards`,
-      `Built scalable microservices with Spring Boot, leveraging Azure for automated scaling and monitoring, improving system resilience and reducing downtime by 30%`,
+      `Implemented CI/CD pipelines with Jenkins and containerized deployments with Docker and
+      Kubernetes, reducing manual deployment time from 1 hour to 10 minutes`,
+      `Participated in agile ceremonies, code reviews, and collaborative development, ensuring
+      alignment with software quality standards`,
+      `Developed efficient and scalable backend services using PostgreSQL and Redis, optimizing
+      data retrieval and caching to enhance performance and reduce latency`,
     ],
   },
   {
@@ -130,11 +135,11 @@ export const experiences: ExperienceType[] = [
   },
 ];
 
-export const featuredSkillsText = `With expertise in React.js and Next.js for building dynamic and responsive web applications, combined with proficiency in Spring Boot for developing scalable and high-performance backend services, I bring a comprehensive full-stack skill set. My experience extends to cloud deployment and management using AWS and Linux, along with leveraging Docker and Kubernetes for containerization and orchestration. This enables me to build, deploy, and maintain modern, scalable, and resilient software solutions.`;
+export const featuredSkillsText = `With expertise in ReactJS and NextJS for building dynamic and responsive web applications, combined with proficiency in NodeJS and ExpressJS for developing scalable and high-performance backend services, I bring a comprehensive full-stack skill set. My experience extends to cloud deployment and management using AWS and Linux, along with leveraging Docker and Kubernetes for containerization and orchestration. This enables me to build, deploy, and maintain modern, scalable, and resilient software solutions.`;
 
 export const featuredTech = [
-  { name: 'React.js', icon: reactjs },
-  { name: 'Next.js', icon: nextjs },
+  { name: 'ReactJS', icon: reactjs },
+  { name: 'NextJS', icon: nextjs },
   { name: 'Linux', icon: linux },
   { name: 'AWS', icon: aws },
   { name: 'Docker', icon: docker },
@@ -153,7 +158,7 @@ export const techStack = [
       { name: 'Python', icon: python, expertise: true },
       { name: 'Java', icon: java, expertise: true },
       { name: 'C', icon: c, expertise: true },
-      { name: 'C++', icon: cpp, expertise: false },
+      // { name: 'C++', icon: cpp, expertise: false },
       // { name: 'Dart', icon: dart, expertise: false },
       // { name: 'Kotlin', icon: kotlin, expertise: false },
     ],
@@ -166,8 +171,8 @@ export const techStack = [
     tech: [
       { name: 'HTML', icon: html, expertise: true },
       { name: 'CSS 3', icon: css, expertise: true },
-      { name: 'React.js', icon: reactjs, expertise: true },
-      { name: 'Next.js', icon: nextjs, expertise: true },
+      { name: 'ReactJS', icon: reactjs, expertise: true },
+      { name: 'NextJS', icon: nextjs, expertise: true },
       { name: 'Redux', icon: redux, expertise: true },
       { name: 'Tailwind', icon: tailwind, expertise: true },
       { name: 'Material UI', icon: material, expertise: false },
@@ -175,13 +180,13 @@ export const techStack = [
   },
   {
     title: 'Backend',
-    description: `Proficient in Node.js and Express.js, I've crafted robust back-end 
+    description: `Proficient in NodeJS and ExpressJS, I've crafted robust back-end 
     solutions, showcasing a keen grasp of server-side operations. Familiar with Django, 
     Firebase, and Supabase, I'm poised to seamlessly integrate these technologies 
     into complex projects.`,
     tech: [
-      { name: 'Node.js', icon: nodejs, expertise: true },
-      { name: 'Express.js', icon: expressjs, expertise: true },
+      { name: 'NodeJS', icon: nodejs, expertise: true },
+      { name: 'ExpressJS', icon: expressjs, expertise: true },
       { name: 'Spring Boot', icon: springboot, expertise: true },
       { name: 'Django', icon: django, expertise: false },
       // { name: 'Firebase', icon: firebase, expertise: false },
@@ -279,7 +284,7 @@ export const featuredProjects: FeaturedProjectType[] = [
 export const allProjects: ProjectType[] = [
   // {
   //   title: 'Twitch Clone',
-  //   description: `Full-stack Twitch clone built with Next.js, replicating the core
+  //   description: `Full-stack Twitch clone built with NextJS, replicating the core
   //   features of the popular live streaming platform.`,
   //   image: ,
   //   type: ['Full Stack'],
@@ -297,7 +302,7 @@ export const allProjects: ProjectType[] = [
 
   {
     title: 'AI SaaS Platform',
-    description: `Developed a robust AI SaaS platform, leveraging Next.js,
+    description: `Developed a robust AI SaaS platform, leveraging NextJS,
     Tailwind CSS, AWS S3 and OpenAI API to provide users with a seamless and
     efficient AI service.`,
     image: aisaas,
@@ -308,7 +313,7 @@ export const allProjects: ProjectType[] = [
   {
     title: 'E-Commerce Store',
     description: `Built a robust e-commerce admin dashboard and store website, 
-    leveraging Next.js, Shadcn, Tailwind CSS, AWS RDS, and S3 for seamless and 
+    leveraging NextJS, Shadcn, Tailwind CSS, AWS RDS, and S3 for seamless and 
     efficient store management.`,
     image: ecommerceStore,
     type: ['Full Stack'],
@@ -318,7 +323,7 @@ export const allProjects: ProjectType[] = [
   },
   {
     title: 'E-Commerce Admin Dashboard',
-    description: `Built a robust e-commerce admin dashboard site, leveraging Next.js, 
+    description: `Built a robust e-commerce admin dashboard site, leveraging NextJS, 
     Shadcn, Tailwind CSS, AWS RDS, and S3 for seamless and efficient store management.`,
     image: ecommerceAdmin,
     type: ['Full Stack'],
@@ -346,7 +351,7 @@ export const allProjects: ProjectType[] = [
   },
   {
     title: 'Netflix Clone',
-    description: `Full-stack Netflix clone built with Next.js, replicating the core 
+    description: `Full-stack Netflix clone built with NextJS, replicating the core 
     features of the popular movie streaming platform.`,
     image: netflixClone,
     type: ['Full Stack'],
@@ -356,7 +361,7 @@ export const allProjects: ProjectType[] = [
   },
   {
     title: 'Spotify Clone',
-    description: `Full-stack Spotify clone built with Next.js, replicating the core 
+    description: `Full-stack Spotify clone built with NextJS, replicating the core 
     features of the popular music streaming platform.`,
     image: spotifyClone,
     type: ['Full Stack'],
@@ -431,7 +436,7 @@ export const eCommerce = {
   title: 'E-Commerce Store',
   date: 'August - October 2023',
   description: `Built a robust e-commerce admin dashboard and store website, 
-  leveraging Next.js, Shadcn, Tailwind CSS, AWS RDS, and S3 for seamless and 
+  leveraging NextJS, Shadcn, Tailwind CSS, AWS RDS, and S3 for seamless and 
   efficient store management.`,
   category: ['Full Stack', 'Mobile'],
   key_tech: ['AWS S3', 'AWS RDS', 'Stripe'],
@@ -446,7 +451,7 @@ export const eCommerce = {
 export const netflix = {
   title: 'Netflix Clone',
   date: 'June - July 2023',
-  description: `Full-stack Netflix clone built with Next.js, replicating the core
+  description: `Full-stack Netflix clone built with NextJS, replicating the core
   features of the popular movie streaming platform.`,
   category: ['Full Stack'],
   key_tech: ['AWS S3', 'MongoDB', 'NextAuth'],
@@ -458,7 +463,7 @@ export const netflix = {
 export const spotify = {
   title: 'Spotify Clone',
   date: 'April - May 2023',
-  description: `Full-stack Spotify clone built with Next.js, replicating the core
+  description: `Full-stack Spotify clone built with NextJS, replicating the core
   features of the popular music streaming platform.`,
   category: ['Full Stack'],
   key_tech: ['Supabase', 'Stripe', 'React Player'],
