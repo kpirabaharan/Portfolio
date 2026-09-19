@@ -1,7 +1,18 @@
-import Image from 'next/image';
-import { VerticalTimelineElement } from 'react-vertical-timeline-component';
+'use client';
 
-import 'react-vertical-timeline-component/style.min.css';
+import { motion } from 'motion/react';
+import Image from 'next/image';
+
+import { fadeIn } from '@/lib/transitions';
+
+import { Badge } from '@/components/ui/badge';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
 import { type ExperienceType } from '@/types';
 
@@ -15,41 +26,52 @@ export const ExperienceCard = ({
   points,
 }: ExperienceType) => {
   return (
-    <VerticalTimelineElement
-      className={'vertical-timeline-element--work'}
-      visible
-      date={date}
-      contentStyle={{ background: 'hsl(217.2 32.6% 17.5%)', color: '#fff' }}
-      contentArrowStyle={{ borderRight: '7px solid hsl(217.2 32.6% 15.5%)' }}
-      iconStyle={{ background: iconBg }}
-      icon={
-        <Image
-          src={icon}
-          alt={title}
-          fill
-          className={'h-[80%] w-[80%] rounded-full object-contain'}
-        />
-      }
+    <motion.li
+      variants={fadeIn('up', '', 0.1, 0.6)}
+      className='relative pb-8 pl-10 last:pb-0 md:pl-14'
     >
-      <h3 className='vertical-timeline-element-title text-lg font-bold lg:text-xl'>
-        {title}
-      </h3>
-      <h4 className='vertical-timeline-element-subtitle lg:pt-2'>
-        {companyName}
-        <span className='pl-4'>|</span>
-        <span className='pl-4'>{location}</span>
-      </h4>
+      {/* Timeline node */}
+      <span className='absolute top-7 -left-[5px] size-2.5 rounded-full bg-primary shadow-[0_0_12px] ring-4 shadow-primary ring-background' />
 
-      <ul className='ml-3 mt-2 list-disc space-y-2'>
-        {points.map((point, index) => (
-          <li
-            key={`experience-${index}`}
-            className='pl-1 text-sm text-gray-200 lg:text-base'
+      <Card className='transition-colors hover:ring-primary/30'>
+        <CardHeader className='flex flex-col gap-4 sm:flex-row sm:items-start'>
+          <div
+            className='relative size-12 shrink-0 overflow-hidden rounded-lg'
+            style={{ background: iconBg }}
           >
-            {point}
-          </li>
-        ))}
-      </ul>
-    </VerticalTimelineElement>
+            <Image
+              src={icon}
+              alt={companyName}
+              fill
+              sizes='48px'
+              className='object-contain p-1.5'
+            />
+          </div>
+          <div className='flex flex-1 flex-col gap-1'>
+            <CardTitle className='text-lg font-semibold lg:text-xl'>
+              {title}
+            </CardTitle>
+            <CardDescription className='text-sm lg:text-base'>
+              {companyName} · {location}
+            </CardDescription>
+          </div>
+          <Badge variant='outline' className='font-mono text-muted-foreground'>
+            {date}
+          </Badge>
+        </CardHeader>
+        <CardContent>
+          <ul className='ml-4 list-disc space-y-2 marker:text-primary'>
+            {points.map((point, index) => (
+              <li
+                key={index}
+                className='pl-1 text-sm leading-relaxed text-muted-foreground lg:text-base'
+              >
+                {point}
+              </li>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
+    </motion.li>
   );
 };

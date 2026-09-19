@@ -1,21 +1,23 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { startCase } from 'lodash';
+import { motion } from 'motion/react';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { bottomCurve, splashOutUp } from '@/lib/animations';
 
 import { AnimatedText } from '@/components/AnimatedText';
 import useSplash from '@/hooks/useSplash';
+import useWindowSize from '@/hooks/useWindowSize';
 
 interface SplashOutProps {
   setIsLoading: (val: boolean) => void;
 }
 
 const SplashOut = ({ setIsLoading }: SplashOutProps) => {
-  const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const [width, height] = useWindowSize();
+  const dimension = { width, height };
   const pathname = usePathname();
   const { closeSplash } = useSplash();
 
@@ -26,10 +28,6 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
     const pathArray = pathname.split('/');
     title = startCase(pathArray[pathArray.length - 1]);
   }
-
-  useEffect(() => {
-    setDimension({ width: window.innerWidth, height: window.innerHeight });
-  }, []);
 
   useEffect(() => {
     closeSplash();
@@ -46,7 +44,7 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
 
   return (
     <motion.div
-      className='fixed left-0 top-0 z-40 flex h-screen w-screen cursor-wait items-center justify-center bg-teal-800'
+      className='fixed top-0 left-0 z-40 flex h-screen w-screen cursor-wait items-center justify-center bg-brand'
       initial={'initial'}
       exit={'exit'}
       variants={splashOutUp()}
@@ -54,7 +52,7 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
       {dimension.width > 0 && (
         <>
           <AnimatedText
-            className='z-20 text-4xl md:text-7xl'
+            className='z-20 text-4xl font-medium tracking-tight text-brand-foreground md:text-7xl'
             text={[
               title,
               100,
@@ -64,7 +62,7 @@ const SplashOut = ({ setIsLoading }: SplashOutProps) => {
             ]}
           />
           {/* Bottom Curve */}
-          <svg className='pointer-events-none absolute top-0 h-0 w-full fill-teal-800 stroke-none sm:h-[calc(100%+300px)]'>
+          <svg className='pointer-events-none absolute top-0 h-0 w-full fill-brand stroke-none sm:h-[calc(100%+300px)]'>
             <motion.path
               variants={bottomCurve(bottomInitialPath, bottomTargetPath)}
               initial='initial'

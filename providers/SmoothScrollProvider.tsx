@@ -1,31 +1,15 @@
 'use client';
 
 import Lenis from 'lenis';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 const SmoothScrollProvider = () => {
-  const [isMounted, setIsMounted] = useState(false);
-
   useEffect(() => {
-    setIsMounted(true);
+    const lenis = new Lenis({ autoRaf: true });
+    return () => lenis.destroy();
   }, []);
 
-  useEffect(() => {
-    const lenis = new Lenis();
-
-    const raf = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-
-    requestAnimationFrame(raf);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
-
-  return <></>;
+  return null;
 };
 
 export default SmoothScrollProvider;

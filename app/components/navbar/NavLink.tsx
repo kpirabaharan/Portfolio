@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { useState, type PropsWithChildren } from 'react';
 
 import { textSlide } from '@/lib/animations';
@@ -20,11 +20,11 @@ const StatusLight = ({
     <div
       className={`${isActive ? 'opacity-100' : 'opacity-0'} ${
         size === 'large' ? 'h-3 w-3' : 'h-2 w-2'
-      } absolute bg-white ${
+      } absolute bg-primary ${
         side === 'left'
           ? size === 'large'
-            ? '-left-8 bottom-1/2 translate-y-1/2'
-            : '-left-4 bottom-1/2 translate-y-1/2'
+            ? 'bottom-1/2 -left-8 translate-y-1/2'
+            : 'bottom-1/2 -left-4 translate-y-1/2'
           : 'bottom-0 left-1/2 -translate-x-1/2'
       } rounded-full transition duration-300`}
     />

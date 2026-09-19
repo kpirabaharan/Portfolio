@@ -1,7 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import gsap from 'gsap';
+import { motion, type Variants } from 'motion/react';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 
@@ -12,7 +12,7 @@ interface ProjectModalProps {
   projects: FeaturedProjectType[];
 }
 
-const scaleAnimation = {
+const scaleAnimation: Variants = {
   initial: { scale: 0, x: '-50%', y: '-50%' },
   open: {
     scale: 1,
@@ -28,104 +28,86 @@ const scaleAnimation = {
   },
 };
 
+// Desktop-only preview that trails the cursor over the featured project list.
 export const ProjectModal = ({ modal, projects }: ProjectModalProps) => {
-  const containerRef = useRef<HTMLDivElement>(null!);
-  const cursorRef = useRef<HTMLDivElement>(null!);
-  const cursorLabelRef = useRef<HTMLDivElement>(null!);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const cursorLabelRef = useRef<HTMLDivElement>(null);
   const { active, index } = modal;
 
   useEffect(() => {
-    const moveContainerX = gsap.quickTo(containerRef.current, 'left', {
-      duration: 0.8,
-      ease: 'power3',
+    const follow = (el: HTMLElement | null, duration: number) => ({
+      x: gsap.quickTo(el, 'left', { duration, ease: 'power3' }),
+      y: gsap.quickTo(el, 'top', { duration, ease: 'power3' }),
     });
-    const moveContainerY = gsap.quickTo(containerRef.current, 'top', {
-      duration: 0.8,
-      ease: 'power3',
-    });
-
-    const moveCursorDivX = gsap.quickTo(cursorRef.current, 'left', {
-      duration: 0.5,
-      ease: 'power3',
-    });
-    const moveCursorDivY = gsap.quickTo(cursorRef.current, 'top', {
-      duration: 0.5,
-      ease: 'power3',
-    });
-
-    const moveCursorX = gsap.quickTo(cursorLabelRef.current, 'left', {
-      duration: 0.45,
-      ease: 'power3',
-    });
-    const moveCursorY = gsap.quickTo(cursorLabelRef.current, 'top', {
-      duration: 0.45,
-      ease: 'power3',
-    });
+    const targets = [
+      follow(containerRef.current, 0.8),
+      follow(cursorRef.current, 0.5),
+      follow(cursorLabelRef.current, 0.45),
+    ];
 
     const moveMouse = (e: MouseEvent) => {
-      const { pageX, pageY } = e;
-      moveContainerX(pageX);
-      moveContainerY(pageY);
-      moveCursorDivX(pageX);
-      moveCursorDivY(pageY);
-      moveCursorX(pageX);
-      moveCursorY(pageY);
+      targets.forEach(({ x, y }) => {
+        x(e.pageX);
+        y(e.pageY);
+      });
     };
 
     window.addEventListener('mousemove', moveMouse);
+    return () => window.removeEventListener('mousemove', moveMouse);
   }, []);
+
+  const state = active ? 'open' : 'closed';
 
   return (
     <>
       <motion.div
         ref={containerRef}
         variants={scaleAnimation}
-        initial={'initial'}
-        animate={active ? 'open' : 'closed'}
-        className='pointer-events-none absolute z-20 hidden h-[400px] w-[400px] items-center justify-center overflow-hidden bg-white lg:flex xl:h-[450px] xl:w-[450px]'
+        initial='initial'
+        animate={state}
+        className='pointer-events-none absolute z-20 hidden size-[400px] items-center justify-center overflow-hidden rounded-xl lg:flex xl:size-[450px]'
       >
         <div
           style={{
             top: index * -100 + '%',
             transition: 'top 0.5s cubic-bezier(0.76, 0, 0.24, 1)',
           }}
-          className='absolute h-full w-full'
+          className='absolute size-full'
         >
-          {projects.map((project, index) => {
-            const { title, image, color } = project;
-            return (
-              <div
-                key={index}
-                style={{ backgroundColor: color }}
-                className='flex h-full items-center justify-center'
-              >
-                <div className='relative h-[75%] w-[80%]'>
-                  <Image
-                    className='rounded-lg object-cover'
-                    src={image}
-                    alt={title}
-                    fill
-                  />
-                </div>
+          {projects.map(({ title, image, color }) => (
+            <div
+              key={title}
+              style={{ backgroundColor: color }}
+              className='flex h-full items-center justify-center'
+            >
+              <div className='relative h-[75%] w-[80%]'>
+                <Image
+                  className='rounded-lg object-cover'
+                  src={image}
+                  alt={title}
+                  fill
+                  sizes='360px'
+                />
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </motion.div>
 
       <motion.div
         ref={cursorRef}
         variants={scaleAnimation}
-        initial={'initial'}
-        animate={active ? 'open' : 'closed'}
-        className='pointer-events-none absolute z-20 flex h-20 w-20 items-center justify-center rounded-full bg-teal-700'
+        initial='initial'
+        animate={state}
+        className='pointer-events-none absolute z-20 hidden size-20 rounded-full bg-brand lg:flex'
       />
       <motion.div
-        className='pointer-events-none absolute z-20 flex items-center justify-center'
         ref={cursorLabelRef}
         variants={scaleAnimation}
-        initial={'initial'}
-        animate={active ? 'open' : 'closed'}
+        initial='initial'
+        animate={state}
+        className='pointer-events-none absolute z-20 hidden text-sm font-medium text-brand-foreground lg:flex'
       >
         View
       </motion.div>

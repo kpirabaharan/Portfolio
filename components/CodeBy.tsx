@@ -1,10 +1,16 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+
+import useSplash from '@/hooks/useSplash';
 
 export const CodeBy = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const pathname = usePathname();
+  const { startSplash } = useSplash();
 
   const animate = isHovered ? 'open' : 'closed';
 
@@ -14,24 +20,28 @@ export const CodeBy = () => {
   };
 
   return (
-    <div
+    <Link
+      href='/'
       className='group flex cursor-pointer gap-x-1 p-3'
+      onClick={e => {
+        e.preventDefault();
+        // Same transitions as the navbar: reload on home, splash elsewhere.
+        if (pathname === '/') window.location.reload();
+        else startSplash('/');
+      }}
       onMouseEnter={() => {
         setIsHovered(true);
       }}
       onMouseLeave={() => {
         setIsHovered(false);
       }}
-      onClick={() => {
-        window.location.assign('/');
-      }}
     >
       <motion.div
         initial='closed'
         animate={animate}
         variants={{
-          open: { width: '205px' },
-          closed: { width: '151px' },
+          open: { width: '220px' },
+          closed: { width: '141px' },
         }}
         transition={transition}
         className='relative overflow-hidden text-clip whitespace-nowrap'
@@ -41,7 +51,7 @@ export const CodeBy = () => {
           className='text-lg'
           animate={animate}
           variants={{
-            open: { x: -95 },
+            open: { x: -88 },
             closed: { x: 0 },
           }}
           transition={transition}
@@ -49,6 +59,6 @@ export const CodeBy = () => {
           &copy; Code by Keeshigan Pirabaharan
         </motion.p>
       </motion.div>
-    </div>
+    </Link>
   );
 };

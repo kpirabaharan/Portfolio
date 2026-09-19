@@ -17,9 +17,9 @@ Welcome to my Software Portfolio Website! This platform showcases my projects, s
 ### Interactive Design
 
 - **Next.js**: Utilize Next.js for server-side rendering and seamless navigation between pages, enhancing performance and user experience.
-- **Framer Motion**: Implement smooth animations and transitions throughout the website with Framer Motion, creating an engaging and interactive interface.
+- **Motion**: Implement smooth animations and transitions throughout the website with Motion, creating an engaging and interactive interface.
 - **GSAP**: Integrate GSAP (GreenSock Animation Platform) for advanced animation effects, adding depth and dynamism to the design.
-- **Parallax Scrolling**: Incorporate parallax scrolling effects to create a sense of depth and immersion, enhancing the visual appeal of the website.
+- **3D Centerpiece**: A single interactive three.js object that follows the cursor, pauses when off-screen, and respects reduced-motion preferences.
 
 ### Modern Design
 
@@ -33,10 +33,12 @@ To explore my Software Portfolio Website, simply visit the live website at [kees
 
 ## Technologies Used
 
-- **Next.js**: A React framework for building server-side rendered web applications.
-- **Framer Motion**: A motion library for React that makes it easy to create animations and transitions.
+- **Next.js 16 / React 19**: A React framework for building server-side rendered web applications.
+- **Tailwind CSS 4 + shadcn/ui**: Utility-first styling with a single token-based theme (`app/globals.css`) and accessible Radix-based components.
+- **React Three Fiber + Drei**: The 3D gyroscope in the hero and on the contact page (`components/three`).
+- **Motion**: A motion library for React that makes it easy to create animations and transitions.
 - **GSAP**: The GreenSock Animation Platform, a JavaScript library for creating high-performance animations.
-- **Parallax Scrolling**: A technique where background images move slower than foreground content, creating a sense of depth and immersion.
+- **Lenis**: Smooth scrolling.
 
 ## Run Locally
 

@@ -1,29 +1,20 @@
-import { motion } from 'framer-motion';
-import { VerticalTimeline } from 'react-vertical-timeline-component';
-
 import SectionWrapper from '@/hoc/SectionWrapper';
-import { styles } from '@/lib/styles';
-import { textVariant } from '@/lib/transitions';
 
 import { ExperienceCard } from '@/components/ExperienceCard';
+import { SectionHeading } from '@/components/SectionHeading';
 
 import { experiences } from '@/constants';
 
 const Work = () => {
   return (
-    <div className='flex flex-col gap-y-8'>
-      <motion.h2
-        variants={textVariant()}
-        className={`uppercase ${styles.sectionHead}`}
-      >
-        Work Experience
-      </motion.h2>
-      <VerticalTimeline animate={false}>
+    <>
+      <SectionHeading index='02' title='Work Experience' />
+      <ol className='relative mt-10 ml-1 border-l border-border'>
         {experiences.map((experience, index) => (
           <ExperienceCard key={index} {...experience} />
         ))}
-      </VerticalTimeline>
-    </div>
+      </ol>
+    </>
   );
 };
 

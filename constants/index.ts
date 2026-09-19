@@ -75,7 +75,7 @@ export const navLinks = [
 export const socials = [
   { name: 'LinkedIn', link: 'https://linkedin.com/in/kpirabaharan' },
   { name: 'Github', link: 'https://github.com/kpirabaharan' },
-  { name: 'Resume', link: './Keeshigan-Pirabaharan-Resume.pdf' },
+  { name: 'Resume', link: '/Keeshigan-Pirabaharan-Resume.pdf' },
 ];
 
 export const heroSubHeading = [
@@ -308,7 +308,6 @@ export const allProjects: ProjectType[] = [
     image: aisaas,
     type: ['Full Stack', 'AI'],
     github: 'https://github.com/kpirabaharan/AI-SaaS',
-    link: '/projects/ai-saas',
   },
   {
     title: 'E-Commerce Store',
@@ -336,7 +335,7 @@ export const allProjects: ProjectType[] = [
     description: `This Web/Mobile application utilizes Stripe API to provide a secure online 
       shopping experience for users to purchase technology products with confidence.`,
     image: ecommerce,
-    type: ['Full Stack Project', 'Mobile'],
+    type: ['Full Stack', 'Mobile'],
     github: 'https://github.com/kpirabaharan/Tech-Trendz',
   },
   {
@@ -387,7 +386,6 @@ export const allProjects: ProjectType[] = [
     type: ['Mechatronics', 'Mobile'],
     github: 'https://github.com/kpirabaharan/Smart-Windows-App',
     website: 'https://www.youtube.com/watch?v=4RYRujc7fvM',
-    link: '/projects/smart-windows',
   },
   {
     title: '4 DOF Robot',

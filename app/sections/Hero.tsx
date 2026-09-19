@@ -1,21 +1,40 @@
 import { AnimatedText } from '@/components/AnimatedText';
+import { BackgroundGrid } from '@/components/BackgroundGrid';
+import { SceneObject } from '@/components/three/SceneObject';
 import { TranslatingName } from '@/components/TranslatingName';
+import { styles } from '@/lib/styles';
+import { cn } from '@/lib/utils';
+
+import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 
 import { heroSubHeading } from '@/constants';
 
 const Hero = () => {
   return (
-    <>
-      <div className='absolute left-4 top-24 md:top-48'>
-        <AnimatedText
-          className='text-center text-2xl font-light text-muted-foreground md:text-4xl lg:text-5xl xl:text-6xl'
-          text={heroSubHeading}
-        />
+    <section className='relative h-svh min-h-[560px] w-full overflow-hidden'>
+      <BackgroundGrid />
+      <SceneObject variant='hero' className='absolute inset-0' />
+
+      <div className='relative z-10 flex h-full flex-col'>
+        <StandingNavbar />
+
+        <div className={cn(styles.container, 'mt-[10vh] md:mt-[16vh]')}>
+          <h1 className='sr-only'>Keeshigan Pirabaharan — Software Engineer</h1>
+          <p className='flex items-center gap-3 font-mono text-xs tracking-[0.25em] text-primary uppercase'>
+            <span className='size-1.5 rounded-full bg-primary shadow-[0_0_12px] shadow-primary' />
+            Toronto, ON
+          </p>
+          <AnimatedText
+            className='mt-6 block min-h-[2.4em] max-w-xl text-4xl font-medium tracking-tight text-balance md:text-5xl xl:text-6xl'
+            text={heroSubHeading}
+          />
+        </div>
+
+        <div className='mt-auto pb-4'>
+          <TranslatingName />
+        </div>
       </div>
-      <div className='absolute left-0 top-0 -translate-y-[50%] -rotate-45 md:bottom-4 md:top-auto md:translate-y-0 md:rotate-0'>
-        <TranslatingName />
-      </div>
-    </>
+    </section>
   );
 };
 

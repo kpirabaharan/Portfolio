@@ -1,45 +1,72 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { AiFillStar } from 'react-icons/ai';
+import { StarIcon } from 'lucide-react';
+import { motion } from 'motion/react';
+import Image from 'next/image';
+
+import { fadeIn } from '@/lib/transitions';
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
 import { techStack } from '@/constants';
-import { styles } from '@/lib/styles';
-import { fadeIn } from '@/lib/transitions';
-import TechIcon from './TechIcon';
 
 const Skills = () => {
   return (
-    <div className='mt-8 flex h-full flex-col gap-y-8 text-center'>
+    <div className='grid gap-6 lg:grid-cols-2'>
       {techStack.map((stack, index) => (
         <motion.div
+          key={stack.title}
           initial='hidden'
           whileInView='show'
           viewport={{ once: true, amount: 0.15 }}
-          variants={fadeIn('', '', 0.1, 1)}
-          className='flex flex-col items-center gap-y-4'
-          key={index}
+          variants={fadeIn('up', '', 0.05 * (index % 2), 0.6)}
         >
-          <h2 className={styles.skillsHead}>{stack.title}</h2>
-          <p className='max-w-3xl text-sm sm:text-base lg:text-lg'>{stack.description}</p>
-          <div className='flex w-full flex-row flex-wrap items-center justify-center justify-items-center gap-4'>
-            {stack.tech.map((skill, index) => (
-              <div
-                key={index}
-                className='relative flex h-24 w-24 flex-col items-center lg:h-36 lg:w-32'
-              >
-                <div className='flex h-[80%] w-full items-center justify-center'>
-                  <TechIcon skill={skill} />
-                </div>
-                {skill.expertise && (
-                  <div className='absolute right-0 top-0'>
-                    <AiFillStar className='h-6 w-6 text-yellow-500' />
-                  </div>
-                )}
-                <p className='h-[20%] text-sm sm:text-base lg:text-lg leading-5'>{skill.name}</p>
-              </div>
-            ))}
-          </div>
+          <Card className='h-full transition-colors hover:ring-primary/30'>
+            <CardHeader className='gap-3'>
+              <CardTitle className='flex items-center gap-3 text-xl font-semibold md:text-2xl'>
+                <span className='font-mono text-xs text-primary'>
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                {stack.title}
+              </CardTitle>
+              <CardDescription className='leading-relaxed md:text-base'>
+                {stack.description}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className='flex flex-wrap gap-2'>
+                {stack.tech.map(skill => (
+                  <li
+                    key={skill.name}
+                    className='flex items-center gap-2 rounded-lg bg-background/60 px-3 py-2 ring-1 ring-border'
+                  >
+                    <span className='relative size-5'>
+                      <Image
+                        src={skill.icon}
+                        alt=''
+                        fill
+                        sizes='20px'
+                        className='object-contain'
+                      />
+                    </span>
+                    <span className='text-sm'>{skill.name}</span>
+                    {skill.expertise && (
+                      <StarIcon
+                        aria-label='Proficient'
+                        className='size-3.5 fill-primary text-primary'
+                      />
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
         </motion.div>
       ))}
     </div>

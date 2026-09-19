@@ -1,41 +1,84 @@
-import { styles } from '@/lib/styles';
+import { ArrowUpRightIcon } from 'lucide-react';
 
-import { Separator } from '@/components/ui/separator';
+import { styles } from '@/lib/styles';
+import { cn } from '@/lib/utils';
+
+import { MagneticButton } from '@/components/MagneticButton';
+import { Badge } from '@/components/ui/badge';
 
 interface ProjectHeaderProps {
   title: string;
   category: string[];
   keyTech: string[];
   date: string;
+  links: { label: string; href: string }[];
 }
+
+const Meta = ({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) => (
+  <div className='flex flex-col gap-4 border-t pt-5'>
+    <p className='font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase'>
+      {label}
+    </p>
+    {children}
+  </div>
+);
 
 const ProjectHeader = ({
   title,
   category,
   keyTech,
   date,
+  links,
 }: ProjectHeaderProps) => {
   return (
-    <div className={`mx-auto max-w-7xl ${styles.projectPaddingX}`}>
-      <h1 className='text-4xl md:text-5xl lg:text-7xl xl:text-8xl'>{title}</h1>
-      <div className='mt-12 grid grid-cols-1 gap-10 md:mt-36 md:grid-cols-3 md:gap-8'>
-        <div className='flex flex-col gap-y-6 md:gap-y-8'>
-          <p className='text-xs text-muted-foreground md:text-sm'>Category</p>
-          <Separator />
-          <p className='text-base md:text-lg'>{category.join(' + ')}</p>
-        </div>
-        <div className='flex flex-col gap-y-6 md:gap-y-8'>
-          <p className='text-xs text-muted-foreground md:text-sm'>
-            Key Technologies
-          </p>
-          <Separator />
-          <p className='text-base md:text-lg'>{keyTech.join(', ')}</p>
-        </div>
-        <div className='flex flex-col gap-y-6 md:gap-y-8'>
-          <p className='text-xs text-muted-foreground md:text-sm'>Date</p>
-          <Separator />
+    <div className={cn(styles.container, 'relative pt-16 pb-24 md:pt-28')}>
+      <p className='flex items-center gap-3 font-mono text-xs tracking-[0.25em] text-primary uppercase'>
+        <span className='h-px w-10 bg-primary/50' />
+        Case Study
+      </p>
+      <h1 className='mt-4 text-4xl font-semibold tracking-tight md:text-6xl xl:text-8xl'>
+        {title}
+      </h1>
+      <div className='mt-12 grid grid-cols-1 gap-8 md:mt-24 md:grid-cols-3'>
+        <Meta label='Category'>
+          <div className='flex flex-wrap gap-2'>
+            {category.map(c => (
+              <Badge key={c} variant='secondary' className='font-mono'>
+                {c}
+              </Badge>
+            ))}
+          </div>
+        </Meta>
+        <Meta label='Key Technologies'>
+          <div className='flex flex-wrap gap-2'>
+            {keyTech.map(t => (
+              <Badge key={t} variant='outline'>
+                {t}
+              </Badge>
+            ))}
+          </div>
+        </Meta>
+        <Meta label='Date'>
           <p className='text-base md:text-lg'>{date}</p>
-        </div>
+        </Meta>
+      </div>
+
+      {/* The magnetic circles overlap the top edge of the hero image below. */}
+      <div className='relative z-20 mt-12 flex gap-4 md:absolute md:right-16 md:bottom-0 md:mt-0 md:translate-y-1/2'>
+        {links.map(({ label, href }) => (
+          <div key={href}>
+            <MagneticButton href={href} className='text-base lg:text-lg'>
+              {label}
+              <ArrowUpRightIcon className='size-5' />
+            </MagneticButton>
+          </div>
+        ))}
       </div>
     </div>
   );

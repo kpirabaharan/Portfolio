@@ -1,27 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
 import { NavModal } from '@/app/components/navbar/NavModal';
 import SplashIn from '@/app/components/SplashIn';
 
-const ModalProvider = () => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
-
-  return (
-    <>
-      <NavModal />
-      <SplashIn />
-    </>
-  );
-};
+// Both render nothing until opened, so they're safe to server-render.
+const ModalProvider = () => (
+  <>
+    <NavModal />
+    <SplashIn />
+  </>
+);
 
 export default ModalProvider;
