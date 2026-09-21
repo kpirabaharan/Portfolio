@@ -15,6 +15,8 @@ export interface FeaturedProjectType {
   image: StaticImageData;
   color: string;
   link: string;
+  /** Case-study page on this site; the tile links here instead of `link`. */
+  caseStudy?: string;
 }
 
 export interface ProjectType {

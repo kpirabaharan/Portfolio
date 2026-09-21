@@ -1,10 +1,13 @@
 'use client';
 
-import { ArrowUpRightIcon } from 'lucide-react';
+import { ArrowRightIcon, ArrowUpRightIcon } from 'lucide-react';
 import { motion } from 'motion/react';
 import Image, { type StaticImageData } from 'next/image';
+import { type MouseEvent } from 'react';
 
+import useSplash from '@/hooks/useSplash';
 import { slideIn } from '@/lib/transitions';
+import { isModifiedClick } from '@/lib/utils';
 
 import { Separator } from '@/components/ui/separator';
 
@@ -15,6 +18,7 @@ interface ProjectTileProps {
   color: string;
   type: string;
   link: string;
+  caseStudy?: string;
   setModal: ({ active, index }: { active: boolean; index: number }) => void;
 }
 
@@ -25,15 +29,29 @@ const ProjectTile = ({
   color,
   type,
   link,
+  caseStudy,
   setModal,
 }: ProjectTileProps) => {
+  const { startSplash } = useSplash();
+
+  // Case studies open in-site with the page transition; everything else is external.
+  const linkProps = caseStudy
+    ? {
+        href: caseStudy,
+        onClick: (e: MouseEvent<HTMLAnchorElement>) => {
+          if (isModifiedClick(e)) return;
+          e.preventDefault();
+          startSplash(caseStudy);
+        },
+      }
+    : { href: link, target: '_blank', rel: 'noreferrer' };
+  const ArrowIcon = caseStudy ? ArrowRightIcon : ArrowUpRightIcon;
+
   return (
     <>
       {/* Desktop: text row, the image follows the cursor (ProjectModal) */}
       <motion.a
-        href={link}
-        target='_blank'
-        rel='noreferrer'
+        {...linkProps}
         variants={slideIn(
           index % 2 === 1 ? 'right' : 'left',
           'spring',
@@ -57,12 +75,7 @@ const ProjectTile = ({
       <Separator className='hidden lg:block' />
 
       {/* Mobile / tablet: image cards */}
-      <a
-        href={link}
-        target='_blank'
-        rel='noreferrer'
-        className='group flex w-full flex-col gap-4 lg:hidden'
-      >
+      <a {...linkProps} className='group flex w-full flex-col gap-4 lg:hidden'>
         <div
           style={{ backgroundColor: color }}
           className='flex aspect-square w-full items-center justify-center overflow-hidden rounded-xl ring-1 ring-foreground/10'
@@ -79,7 +92,7 @@ const ProjectTile = ({
         </div>
         <div className='flex items-center justify-between gap-4'>
           <h3 className='text-2xl font-medium tracking-tight'>{title}</h3>
-          <ArrowUpRightIcon className='size-5 text-primary transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5' />
+          <ArrowIcon className='size-5 text-primary transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5' />
         </div>
         <Separator />
         <p className='text-sm text-muted-foreground'>{type}</p>

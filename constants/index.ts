@@ -256,7 +256,8 @@ export const featuredProjects: FeaturedProjectType[] = [
     color: '#47484a',
     image: ecommerceStore,
     type: 'Full Stack Project',
-    link: 'https://ecom-clothes.keeshigan.com/',
+    link: 'https://github.com/kpirabaharan/E-Commerce-Store',
+    caseStudy: '/projects/e-commerce',
   },
   {
     title: 'Netflix Clone',
@@ -264,13 +265,15 @@ export const featuredProjects: FeaturedProjectType[] = [
     image: netflixClone,
     type: 'Full Stack Project',
     link: 'https://github.com/kpirabaharan/Netflix-Clone',
+    caseStudy: '/projects/netflix-clone',
   },
   {
     title: 'Spotify Clone',
     color: '#0f172a',
     image: spotifyClone,
     type: 'Full Stack Project',
-    link: 'https://spotify-clone.keeshigan.com/',
+    link: 'https://github.com/kpirabaharan/Spotify-Clone',
+    caseStudy: '/projects/spotify-clone',
   },
   {
     title: 'Smart Windows App',
