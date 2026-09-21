@@ -1,12 +1,13 @@
 'use client';
 
 import { motion } from 'motion/react';
+import Image from 'next/image';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
 import { fadeIn } from '@/lib/transitions';
 
 import { SectionHeading } from '@/components/SectionHeading';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar } from '@/components/ui/avatar';
 
 import { me } from '@/assets';
 
@@ -48,8 +49,15 @@ const About = () => {
           <div className='relative'>
             <div className='absolute -inset-4 rounded-full bg-primary/20 blur-2xl' />
             <Avatar className='relative size-48 ring-1 ring-primary/40 ring-offset-4 ring-offset-background lg:size-60'>
-              <AvatarImage src={me.src} alt='Keeshigan Pirabaharan' />
-              <AvatarFallback className='text-4xl'>KP</AvatarFallback>
+              {/* next/image rather than AvatarImage so the photo is resized and optimised */}
+              <Image
+                src={me}
+                alt='Keeshigan Pirabaharan'
+                fill
+                sizes='(min-width: 1024px) 240px, 192px'
+                placeholder='blur'
+                className='rounded-full object-cover'
+              />
             </Avatar>
           </div>
         </motion.div>
