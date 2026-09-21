@@ -37,7 +37,7 @@ export const TranslatingName = () => {
       if (xPercent <= -100) xPercent = 0;
       if (xPercent > 0) xPercent = -100;
       gsap.set(textRefs.current, { xPercent });
-      xPercent += 0.03 * direction;
+      xPercent -= 0.03 * direction;
       frame = requestAnimationFrame(translate);
     };
     frame = requestAnimationFrame(translate);
@@ -54,7 +54,7 @@ export const TranslatingName = () => {
     <div
       ref={sliderRef}
       aria-hidden
-      className='relative flex w-max items-center text-[calc(3rem+9.6vw)] leading-none font-semibold tracking-tight whitespace-nowrap text-foreground/15 uppercase'
+      className='relative flex w-max items-center text-[calc(3rem+9.6vw)] leading-none font-bold whitespace-nowrap text-muted-foreground uppercase'
     >
       {positions.map((position, i) => (
         <p
