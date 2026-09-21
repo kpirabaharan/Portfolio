@@ -1,10 +1,10 @@
 'use client';
 
-import { ArrowRightIcon, ExternalLinkIcon } from 'lucide-react';
+import { ArrowRightIcon } from 'lucide-react';
 import Image from 'next/image';
-import { FaGithub, FaYoutube } from 'react-icons/fa6';
 
 import useSplash from '@/hooks/useSplash';
+import { linkMeta } from '@/lib/links';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -21,18 +21,11 @@ import { type ProjectType } from '@/types';
 
 const FILTERS = ['All', 'Full Stack', 'Mobile', 'Mechatronics'] as const;
 
-// Some "github" links are actually demo videos.
-const linkMeta = (url: string, fallback: string) =>
-  url.includes('youtube.com')
-    ? { label: 'Video', Icon: FaYoutube }
-    : url.includes('github.com')
-      ? { label: 'Code', Icon: FaGithub }
-      : { label: fallback, Icon: ExternalLinkIcon };
-
 const ProjectCard = ({ project }: { project: ProjectType }) => {
   const { startSplash } = useSplash();
   const { title, description, type, image, github, website, link } = project;
   const source = linkMeta(github, 'Source');
+  // Only rendered when the project data carries a `website` (see types/index.d.ts).
   const live = website ? linkMeta(website, 'Live site') : undefined;
 
   return (

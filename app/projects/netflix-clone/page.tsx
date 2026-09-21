@@ -14,7 +14,7 @@ const NetflixPage = () => {
         date={netflix.date}
         category={netflix.category}
         keyTech={netflix.key_tech}
-        links={[{ label: 'Live Site', href: netflix.website }]}
+        links={[{ label: 'View Code', href: netflix.github }]}
       />
       <ProjectHero
         image={netflixClone}

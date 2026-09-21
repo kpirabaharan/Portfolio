@@ -39,8 +39,8 @@ const ECommercePage = () => {
         category={eCommerce.category}
         keyTech={eCommerce.key_tech}
         links={[
-          { label: 'Demo #1', href: eCommerce.store_site_1 },
-          { label: 'Demo #2', href: eCommerce.store_site_2 },
+          { label: 'Store Code', href: eCommerce.store_github },
+          { label: 'Admin Code', href: eCommerce.admin_github },
         ]}
       />
       <ProjectHero

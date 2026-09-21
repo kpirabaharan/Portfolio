@@ -1,5 +1,4 @@
-import { ArrowUpRightIcon } from 'lucide-react';
-
+import { linkMeta } from '@/lib/links';
 import { styles } from '@/lib/styles';
 import { cn } from '@/lib/utils';
 
@@ -11,6 +10,7 @@ interface ProjectHeaderProps {
   category: string[];
   keyTech: string[];
   date: string;
+  /** Calls to action: repos, demo videos, or live sites when something is hosted. */
   links: { label: string; href: string }[];
 }
 
@@ -71,14 +71,17 @@ const ProjectHeader = ({
 
       {/* The magnetic circles overlap the top edge of the hero image below. */}
       <div className='relative z-20 mt-12 flex gap-4 md:absolute md:right-16 md:bottom-0 md:mt-0 md:translate-y-1/2'>
-        {links.map(({ label, href }) => (
-          <div key={href}>
-            <MagneticButton href={href} className='text-base lg:text-lg'>
-              {label}
-              <ArrowUpRightIcon className='size-5' />
-            </MagneticButton>
-          </div>
-        ))}
+        {links.map(({ label, href }) => {
+          const { Icon } = linkMeta(href, label);
+          return (
+            <div key={href}>
+              <MagneticButton href={href} className='text-base lg:text-lg'>
+                {label}
+                <Icon className='size-5' />
+              </MagneticButton>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -25,6 +25,8 @@ export interface ProjectType {
   type: string[];
   image: StaticImageData;
   github: string;
+  /** Live/hosted URL (or demo video). Omit while a project isn't hosted — the
+   * card's "Live site" button only appears when this is set. */
   website?: string;
   link?: string;
 }

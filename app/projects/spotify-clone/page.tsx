@@ -14,7 +14,7 @@ const SpotifyPage = () => {
         date={spotify.date}
         category={spotify.category}
         keyTech={spotify.key_tech}
-        links={[{ label: 'Live Site', href: spotify.website }]}
+        links={[{ label: 'View Code', href: spotify.github }]}
       />
       <ProjectHero image={spotifyClone} alt={spotify.title} background='#000' />
     </PageShell>
