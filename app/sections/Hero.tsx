@@ -1,7 +1,7 @@
-import { AnimatedText } from '@/components/AnimatedText';
 import { BackgroundGrid } from '@/components/BackgroundGrid';
 import { SceneObject } from '@/components/three/SceneObject';
 import { TranslatingName } from '@/components/TranslatingName';
+import { Typewriter } from '@/components/Typewriter';
 import { styles } from '@/lib/styles';
 import { cn } from '@/lib/utils';
 
@@ -24,9 +24,9 @@ const Hero = () => {
             <span className='size-1.5 rounded-full bg-primary shadow-[0_0_12px] shadow-primary' />
             Toronto, ON
           </p>
-          <AnimatedText
-            className='mt-6 block min-h-[2.4em] max-w-xl text-4xl font-medium tracking-tight text-balance md:text-5xl xl:text-6xl'
-            text={heroSubHeading}
+          <Typewriter
+            className='mt-6 block min-h-[2.4em] max-w-xl text-4xl font-medium tracking-tight md:text-5xl xl:text-6xl'
+            sequence={heroSubHeading}
           />
         </div>
 
