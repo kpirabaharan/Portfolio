@@ -1,105 +1,67 @@
-'use client';
-
-import { AnimatePresence } from 'framer-motion';
-import { ExternalLinkIcon } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
-
-import { styles } from '@/lib/styles';
-
-import SplashOut from '@/app/components/SplashOut';
-import StandingNavbar from '@/app/components/navbar/StandingNavbar';
 import DisplayPicture from '@/components/DisplayPicture';
-import { MagneticButton } from '@/components/MagneticButton';
+import { PageShell } from '@/components/PageShell';
+import { styles } from '@/lib/styles';
+import { cn } from '@/lib/utils';
 
 import ProjectHeader from '../components/ProjectHeader';
+import ProjectHero from '../components/ProjectHero';
 
-import { ecommerceStore } from '@/assets';
+import { ecommerceAdmin, ecommerceFlutter, ecommerceStore } from '@/assets';
 import { eCommerce } from '@/constants';
 
+const features = [
+  {
+    title: 'Admin Dashboard',
+    description:
+      'The admin dashboard allows the user to manage multiple online stores from a centralized CMS.',
+    image: ecommerceAdmin,
+  },
+  {
+    title: 'Online Store',
+    description:
+      'A responsive online store that allows users to browse and purchase products with stripe integration.',
+    image: ecommerceStore,
+  },
+  {
+    title: 'Mobile Application',
+    description:
+      'Multi-platform mobile application that allows users to browse and purchase products with stripe integration.',
+    image: ecommerceFlutter,
+  },
+];
+
 const ECommercePage = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
   return (
-    <main>
-      <AnimatePresence>
-        {isLoading && <SplashOut setIsLoading={setIsLoading} />}
-      </AnimatePresence>
-
-      <div className={`relative ${isLoading ? 'h-screen' : ''} w-full`}>
-        <StandingNavbar />
-        <div className={'relative mt-36 w-full pb-36 md:mt-44'}>
-          <ProjectHeader
-            title={eCommerce.title}
-            date={eCommerce.date}
-            category={eCommerce.category}
-            keyTech={eCommerce.key_tech}
-          />
-          <div className='absolute bottom-[26rem] right-0 z-20 -translate-x-1/2 translate-y-1/2 md:bottom-0 md:mx-16 md:-translate-x-[200%]'>
-            <Link href={eCommerce.store_site_1} target='_blank'>
-              <MagneticButton onClick={() => {}}>
-                <div className='flex items-end gap-x-2'>
-                  <p className='text-lg leading-5'>Demo #1</p>
-                  <ExternalLinkIcon />
-                </div>
-              </MagneticButton>
-            </Link>
-          </div>
-          <div className='absolute bottom-40 right-0 z-20 -translate-x-1/2 translate-y-1/2 md:bottom-0 md:mx-16'>
-            <Link href={eCommerce.store_site_2} target='_blank'>
-              <MagneticButton onClick={() => {}}>
-                <div className='flex items-end gap-x-2'>
-                  <p className='text-lg leading-5'>Demo #2</p>
-                  <ExternalLinkIcon />
-                </div>
-              </MagneticButton>
-            </Link>
-          </div>
-        </div>
-        <div className='mx-auto w-full max-w-[110rem] md:px-16'>
-          <div className='relative aspect-video w-full border bg-white'>
-            <Image
-              className='object-contain'
-              src={ecommerceStore}
-              alt='Title'
-              fill
-            />
-          </div>
-        </div>
-        <div className='mx-auto mt-32 flex max-w-8xl flex-col text-center'>
-          <div
-            className={`${styles.padding} flex h-screen flex-col justify-center gap-y-4`}
-          >
-            <h2 className='text-5xl font-medium'>Admin Dashboard</h2>
-            <p className='text-lg'>
-              The admin dashboard allows the user to manage multiple online
-              stores from a centralized CMS.
+    <PageShell>
+      <ProjectHeader
+        title={eCommerce.title}
+        date={eCommerce.date}
+        category={eCommerce.category}
+        keyTech={eCommerce.key_tech}
+        links={[
+          { label: 'Store Code', href: eCommerce.store_github },
+          { label: 'Admin Code', href: eCommerce.admin_github },
+        ]}
+      />
+      <ProjectHero
+        image={ecommerceStore}
+        alt={eCommerce.title}
+        background='#fff'
+      />
+      <div className={cn(styles.container, 'flex flex-col gap-32 py-32')}>
+        {features.map(({ title, description, image }) => (
+          <section key={title} className='flex flex-col gap-6 text-center'>
+            <h2 className='text-3xl font-semibold tracking-tight md:text-5xl'>
+              {title}
+            </h2>
+            <p className='mx-auto max-w-2xl text-lg text-muted-foreground'>
+              {description}
             </p>
-            <DisplayPicture src={'/project-vids/e-commerce-admin-video.mp4'} />
-          </div>
-          <div
-            className={`${styles.padding} flex h-screen flex-col justify-center gap-y-4`}
-          >
-            <h2 className='text-5xl font-medium'>Online Store</h2>
-            <p className='text-lg'>
-              A responsive online store that allows users to browse and purchase
-              products with stripe integration.
-            </p>
-            <DisplayPicture src={ecommerceStore} />
-          </div>
-          <div
-            className={`${styles.padding} flex h-screen flex-col justify-center gap-y-4`}
-          >
-            <h2 className='text-5xl font-medium'>Mobile Application</h2>
-            <p className='text-lg'>
-              Multi-platform mobile application that allows users to browse and
-              purchase products with stripe integration.
-            </p>
-          </div>
-        </div>
+            <DisplayPicture src={image} alt={title} className='mt-4' />
+          </section>
+        ))}
       </div>
-    </main>
+    </PageShell>
   );
 };
 

@@ -1,89 +1,55 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { motion } from 'motion/react';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
 import useSplash from '@/hooks/useSplash';
-import { styles } from '@/lib/styles';
-import { textVariant } from '@/lib/transitions';
+import { fadeIn } from '@/lib/transitions';
 
 import { MagneticButton } from '@/components/MagneticButton';
+import { SectionHeading } from '@/components/SectionHeading';
 import SkillCard from '@/components/SkillCard';
 
 import { featuredSkillsText, featuredTech } from '@/constants';
 
 const Skills = () => {
-  const [isMounted, setIsMounted] = useState(false);
   const { startSplash } = useSplash();
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
-
-  const canvas = document.createElement('canvas');
-  let gl: WebGLRenderingContext | null;
-  try {
-    gl =
-      (canvas.getContext('webgl') as WebGLRenderingContext) ||
-      (canvas.getContext('experimental-webgl') as WebGLRenderingContext);
-  } catch (err) {
-    gl = null;
-  }
-
   return (
-    <div className='flex flex-col gap-y-8'>
-      <motion.h2
-        variants={textVariant()}
-        className={`uppercase ${styles.sectionHead}`}
-      >
-        Leading Skills
-      </motion.h2>
-      <div className='flex flex-col gap-y-8'>
-        <div className='flex flex-row items-center justify-between gap-x-8'>
-          <p className='max-w-3xl flex-[3] text-base sm:text-lg lg:text-xl'>
+    <>
+      <SectionHeading index='05' title='Leading Skills' />
+      <div className='mt-10 flex flex-col gap-10'>
+        <div className='flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between'>
+          <motion.p
+            variants={fadeIn('', '', 0.1, 1)}
+            className='max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg'
+          >
             {featuredSkillsText}
-          </p>
-          <div className='hidden w-full flex-1 justify-center lg:flex'>
-            <div>
-              <MagneticButton
-                size={'round'}
-                onClick={() => {
-                  startSplash('/skills');
-                }}
-              >
-                <p className='text-lg text-primary-foreground lg:text-xl'>
-                  More Skills
-                </p>
-              </MagneticButton>
-            </div>
+          </motion.p>
+          <div className='flex justify-center lg:shrink-0'>
+            <MagneticButton
+              size='round'
+              onClick={() => startSplash('/skills')}
+              className='hidden lg:inline-flex'
+            >
+              More Skills
+            </MagneticButton>
+            <MagneticButton
+              size='wide'
+              onClick={() => startSplash('/skills')}
+              className='lg:hidden'
+            >
+              More Skills
+            </MagneticButton>
           </div>
         </div>
-        {gl && (
-          <div className='flex flex-auto flex-wrap'>
-            {featuredTech.map(({ name, icon }, i) => (
-              <SkillCard name={name} icon={icon} key={i} />
-            ))}
-          </div>
-        )}
-        <div className='flex w-full justify-center lg:hidden'>
-          <MagneticButton
-            size='wide'
-            onClick={() => {
-              startSplash('/skills');
-            }}
-          >
-            <p className='text-lg text-primary-foreground lg:text-xl'>
-              More Skills
-            </p>
-          </MagneticButton>
+        <div className='grid grid-cols-3 gap-3 sm:gap-4 lg:grid-cols-6'>
+          {featuredTech.map(({ name, icon }, i) => (
+            <SkillCard key={name} name={name} icon={icon} index={i} />
+          ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

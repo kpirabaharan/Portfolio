@@ -1,65 +1,66 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 
 import SectionWrapper from '@/hoc/SectionWrapper';
-import { styles } from '@/lib/styles';
-import { fadeIn, textVariant } from '@/lib/transitions';
+import { fadeIn } from '@/lib/transitions';
+
+import { SectionHeading } from '@/components/SectionHeading';
+import { Avatar } from '@/components/ui/avatar';
 
 import { me } from '@/assets';
+
+const Highlight = ({ children }: { children: React.ReactNode }) => (
+  <span className='font-medium text-foreground'>{children}</span>
+);
 
 const About = () => {
   return (
     <>
-      <motion.h2
-        variants={textVariant()}
-        className={`${styles.sectionHead} uppercase`}
-      >
-        About Me
-      </motion.h2>
-      <div className='mt-8 flex w-full flex-col-reverse gap-y-8 md:flex-row'>
-        <div className='flex-[4] space-y-8 xl:flex-[3]'>
+      <SectionHeading index='01' title='About Me' />
+      <div className='mt-10 flex flex-col-reverse gap-10 md:flex-row md:items-center'>
+        <div className='flex-3 space-y-6'>
           <motion.p
             variants={fadeIn('', '', 0.1, 1)}
-            className='max-w-3xl text-base text-muted-foreground sm:text-lg md:text-xl md:leading-8'
+            className='max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl md:leading-9'
           >
-            I&apos;m{' '}
-            <span className='font-bold text-primary'>
-              Keeshigan Pirabaharan,{' '}
-            </span>
-            a{' '}
-            <span className='font-bold text-primary'>
-              Mechatronics/Software Engineer
-            </span>{' '}
-            with a track record of crafting{' '}
-            <span className='font-bold text-primary'>innovative</span> solutions
-            that seamlessly blend Frontend and Backend technologies. I possess a
-            strong aptitude for{' '}
-            <span className='font-bold text-primary'>rapid learning</span> and a
+            I&apos;m <Highlight>Keeshigan Pirabaharan</Highlight>, a{' '}
+            <Highlight>Mechatronics/Software Engineer</Highlight> with a track
+            record of crafting <Highlight>innovative</Highlight> solutions that
+            seamlessly blend Frontend and Backend technologies. I possess a
+            strong aptitude for <Highlight>rapid learning</Highlight> and a
             genuine enthusiasm for adopting{' '}
-            <span className='font-bold text-primary'>new technologies</span> to
-            engineer efficient and{' '}
-            <span className='font-bold text-primary'>scalable solutions</span>{' '}
-            that address real-world challenges.
+            <Highlight>new technologies</Highlight> to engineer efficient and{' '}
+            <Highlight>scalable solutions</Highlight> that address real-world
+            challenges.
           </motion.p>
           <motion.p
-            variants={fadeIn('', '', 0.1, 1)}
-            className='max-w-5xl text-base leading-[30px] text-primary sm:text-lg md:text-xl lg:text-2xl'
+            variants={fadeIn('', '', 0.2, 1)}
+            className='max-w-3xl text-lg text-primary md:text-xl lg:text-2xl'
           >
             I am actively seeking opportunities in software development.
           </motion.p>
         </div>
-        <div className='flex w-full flex-[1] items-center justify-center md:pl-12 xl:flex-[2]'>
-          <div className='relative h-48 w-48 rounded-full lg:h-56 lg:w-56'>
-            <Image
-              className='rounded-full object-cover'
-              src={me.src}
-              alt='Me'
-              fill
-            />
+        <motion.div
+          variants={fadeIn('', '', 0.2, 1)}
+          className='flex flex-2 justify-center'
+        >
+          <div className='relative'>
+            <div className='absolute -inset-4 rounded-full bg-primary/20 blur-2xl' />
+            <Avatar className='relative size-48 ring-1 ring-primary/40 ring-offset-4 ring-offset-background lg:size-60'>
+              {/* next/image rather than AvatarImage so the photo is resized and optimised */}
+              <Image
+                src={me}
+                alt='Keeshigan Pirabaharan'
+                fill
+                sizes='(min-width: 1024px) 240px, 192px'
+                placeholder='blur'
+                className='rounded-full object-cover'
+              />
+            </Avatar>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );

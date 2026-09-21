@@ -1,10 +1,15 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { ArrowRightIcon, ArrowUpRightIcon } from 'lucide-react';
+import { motion } from 'motion/react';
 import Image, { type StaticImageData } from 'next/image';
+import { type MouseEvent } from 'react';
+
+import useSplash from '@/hooks/useSplash';
+import { slideIn } from '@/lib/transitions';
+import { isModifiedClick } from '@/lib/utils';
 
 import { Separator } from '@/components/ui/separator';
-import { slideIn } from '@/lib/transitions';
 
 interface ProjectTileProps {
   index: number;
@@ -13,6 +18,7 @@ interface ProjectTileProps {
   color: string;
   type: string;
   link: string;
+  caseStudy?: string;
   setModal: ({ active, index }: { active: boolean; index: number }) => void;
 }
 
@@ -23,50 +29,56 @@ const ProjectTile = ({
   color,
   type,
   link,
+  caseStudy,
   setModal,
 }: ProjectTileProps) => {
+  const { startSplash } = useSplash();
+
+  // Case studies open in-site with the page transition; everything else is external.
+  const linkProps = caseStudy
+    ? {
+        href: caseStudy,
+        onClick: (e: MouseEvent<HTMLAnchorElement>) => {
+          if (isModifiedClick(e)) return;
+          e.preventDefault();
+          startSplash(caseStudy);
+        },
+      }
+    : { href: link, target: '_blank', rel: 'noreferrer' };
+  const ArrowIcon = caseStudy ? ArrowRightIcon : ArrowUpRightIcon;
+
   return (
     <>
-      {/* Desktop */}
-      <motion.div
+      {/* Desktop: text row, the image follows the cursor (ProjectModal) */}
+      <motion.a
+        {...linkProps}
         variants={slideIn(
           index % 2 === 1 ? 'right' : 'left',
           'spring',
           Math.floor(index / 2) * 0.4 + 0.2,
           0.8,
         )}
-        className='group hidden h-full w-full cursor-pointer items-center justify-between px-6 py-12 hover:scale-110 hover:opacity-50 lg:flex xl:px-12 xl:py-16'
-        onClick={() => window.open(link, '_blank')}
-        onMouseEnter={() => {
-          setModal({ active: true, index });
-        }}
-        onMouseLeave={() => {
-          setModal({ active: false, index });
-        }}
+        className='group hidden w-full items-center justify-between px-6 py-12 transition-opacity duration-500 hover:opacity-60 lg:flex xl:px-12 xl:py-14'
+        onMouseEnter={() => setModal({ active: true, index })}
+        onMouseLeave={() => setModal({ active: false, index })}
       >
-        <h2 className='text-3xl font-normal transition duration-500 group-hover:-translate-x-4 lg:text-5xl xl:text-6xl'>
+        <h3 className='flex items-baseline gap-6 text-4xl font-medium tracking-tight transition duration-500 group-hover:-translate-x-3 xl:text-6xl'>
+          <span className='font-mono text-sm text-primary'>
+            {String(index + 1).padStart(2, '0')}
+          </span>
           {title}
-        </h2>
-        <p className='text-base font-light transition duration-500 group-hover:translate-x-4 xl:text-lg'>
+        </h3>
+        <p className='text-base text-muted-foreground transition duration-500 group-hover:translate-x-3 xl:text-lg'>
           {type}
         </p>
-      </motion.div>
-      <Separator className='hidden lg:flex' />
+      </motion.a>
+      <Separator className='hidden lg:block' />
 
-      {/* Mobile */}
-      <div
-        className='group flex w-full cursor-pointer flex-col gap-y-4 px-2 lg:hidden'
-        onClick={() => window.open(link, '_blank')}
-        onMouseEnter={() => {
-          setModal({ active: true, index });
-        }}
-        onMouseLeave={() => {
-          setModal({ active: false, index });
-        }}
-      >
+      {/* Mobile / tablet: image cards */}
+      <a {...linkProps} className='group flex w-full flex-col gap-4 lg:hidden'>
         <div
           style={{ backgroundColor: color }}
-          className='flex aspect-square w-full items-center justify-center'
+          className='flex aspect-square w-full items-center justify-center overflow-hidden rounded-xl ring-1 ring-foreground/10'
         >
           <div className='relative h-[55%] w-[85%] transition duration-500 group-hover:scale-105'>
             <Image
@@ -74,13 +86,17 @@ const ProjectTile = ({
               src={image}
               alt={title}
               fill
+              sizes='(min-width: 640px) 45vw, 90vw'
             />
           </div>
         </div>
-        <h2 className='mt-4 text-3xl sm:text-2xl'>{title}</h2>
+        <div className='flex items-center justify-between gap-4'>
+          <h3 className='text-2xl font-medium tracking-tight'>{title}</h3>
+          <ArrowIcon className='size-5 text-primary transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5' />
+        </div>
         <Separator />
-        <p className='text-base font-light'>{type}</p>
-      </div>
+        <p className='text-sm text-muted-foreground'>{type}</p>
+      </a>
     </>
   );
 };

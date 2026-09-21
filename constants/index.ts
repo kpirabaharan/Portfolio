@@ -75,7 +75,7 @@ export const navLinks = [
 export const socials = [
   { name: 'LinkedIn', link: 'https://linkedin.com/in/kpirabaharan' },
   { name: 'Github', link: 'https://github.com/kpirabaharan' },
-  { name: 'Resume', link: './Keeshigan-Pirabaharan-Resume.pdf' },
+  { name: 'Resume', link: '/Keeshigan-Pirabaharan-Resume.pdf' },
 ];
 
 export const heroSubHeading = [
@@ -256,7 +256,8 @@ export const featuredProjects: FeaturedProjectType[] = [
     color: '#47484a',
     image: ecommerceStore,
     type: 'Full Stack Project',
-    link: 'https://ecom-clothes.keeshigan.com/',
+    link: 'https://github.com/kpirabaharan/E-Commerce-Store',
+    caseStudy: '/projects/e-commerce',
   },
   {
     title: 'Netflix Clone',
@@ -264,13 +265,15 @@ export const featuredProjects: FeaturedProjectType[] = [
     image: netflixClone,
     type: 'Full Stack Project',
     link: 'https://github.com/kpirabaharan/Netflix-Clone',
+    caseStudy: '/projects/netflix-clone',
   },
   {
     title: 'Spotify Clone',
     color: '#0f172a',
     image: spotifyClone,
     type: 'Full Stack Project',
-    link: 'https://spotify-clone.keeshigan.com/',
+    link: 'https://github.com/kpirabaharan/Spotify-Clone',
+    caseStudy: '/projects/spotify-clone',
   },
   {
     title: 'Smart Windows App',
@@ -308,7 +311,6 @@ export const allProjects: ProjectType[] = [
     image: aisaas,
     type: ['Full Stack', 'AI'],
     github: 'https://github.com/kpirabaharan/AI-SaaS',
-    link: '/projects/ai-saas',
   },
   {
     title: 'E-Commerce Store',
@@ -318,7 +320,7 @@ export const allProjects: ProjectType[] = [
     image: ecommerceStore,
     type: ['Full Stack'],
     github: 'https://github.com/kpirabaharan/E-Commerce-Store',
-    website: 'https://ecom-clothes.keeshigan.com/',
+    // website: 'https://ecom-clothes.keeshigan.com/', // not hosted right now
     link: '/projects/e-commerce',
   },
   {
@@ -328,7 +330,7 @@ export const allProjects: ProjectType[] = [
     image: ecommerceAdmin,
     type: ['Full Stack'],
     github: 'https://github.com/kpirabaharan/E-Commerce-Admin-Dashboard',
-    website: 'https://ecom-admin.keeshigan.com/',
+    // website: 'https://ecom-admin.keeshigan.com/', // not hosted right now
     link: '/projects/e-commerce',
   },
   {
@@ -336,7 +338,7 @@ export const allProjects: ProjectType[] = [
     description: `This Web/Mobile application utilizes Stripe API to provide a secure online 
       shopping experience for users to purchase technology products with confidence.`,
     image: ecommerce,
-    type: ['Full Stack Project', 'Mobile'],
+    type: ['Full Stack', 'Mobile'],
     github: 'https://github.com/kpirabaharan/Tech-Trendz',
   },
   {
@@ -356,7 +358,7 @@ export const allProjects: ProjectType[] = [
     image: netflixClone,
     type: ['Full Stack'],
     github: 'https://github.com/kpirabaharan/Netflix-Clone',
-    website: 'https://netflix-clone.keeshigan.com/',
+    // website: 'https://netflix-clone.keeshigan.com/', // not hosted right now
     link: '/projects/netflix-clone',
   },
   {
@@ -366,7 +368,7 @@ export const allProjects: ProjectType[] = [
     image: spotifyClone,
     type: ['Full Stack'],
     github: 'https://github.com/kpirabaharan/Spotify-Clone',
-    website: 'https://spotify-clone.keeshigan.com/',
+    // website: 'https://spotify-clone.keeshigan.com/', // not hosted right now
     link: '/projects/spotify-clone',
   },
   {
@@ -387,7 +389,6 @@ export const allProjects: ProjectType[] = [
     type: ['Mechatronics', 'Mobile'],
     github: 'https://github.com/kpirabaharan/Smart-Windows-App',
     website: 'https://www.youtube.com/watch?v=4RYRujc7fvM',
-    link: '/projects/smart-windows',
   },
   {
     title: '4 DOF Robot',
@@ -442,10 +443,13 @@ export const eCommerce = {
   key_tech: ['AWS S3', 'AWS RDS', 'Stripe'],
   store_image: ecommerceStore,
   dashboard_image: ecommerceAdmin,
-  github: 'https://github.com/kpirabaharan/E-Commerce-Admin-Dashboard',
-  dashboard_site: 'https://ecom-admin.keeshigan.com/',
-  store_site_1: 'https://ecom-clothes.keeshigan.com/',
-  store_site_2: 'https://ecom-shoes.keeshigan.com/',
+  store_github: 'https://github.com/kpirabaharan/E-Commerce-Store',
+  admin_github: 'https://github.com/kpirabaharan/E-Commerce-Admin-Dashboard',
+  app_github: 'https://github.com/kpirabaharan/E-Commerce-Flutter-App',
+  // Not hosted right now:
+  // dashboard_site: 'https://ecom-admin.keeshigan.com/',
+  // store_site_1: 'https://ecom-clothes.keeshigan.com/',
+  // store_site_2: 'https://ecom-shoes.keeshigan.com/',
 };
 
 export const netflix = {
@@ -456,8 +460,8 @@ export const netflix = {
   category: ['Full Stack'],
   key_tech: ['AWS S3', 'MongoDB', 'NextAuth'],
   website_image: netflixClone,
-  github: 'https://github.com/kpirabaharan/Neflix-Clone',
-  website: 'https://netflix-clone.keeshigan.com/',
+  github: 'https://github.com/kpirabaharan/Netflix-Clone',
+  // website: 'https://netflix-clone.keeshigan.com/', // not hosted right now
 };
 
 export const spotify = {
@@ -468,6 +472,6 @@ export const spotify = {
   category: ['Full Stack'],
   key_tech: ['Supabase', 'Stripe', 'React Player'],
   website_image: spotifyClone,
-  github: 'https://github.com/kpirabaharan/Spotfiy-Clone',
-  website: 'https://spotify-clone.keeshigan.com/',
+  github: 'https://github.com/kpirabaharan/Spotify-Clone',
+  // website: 'https://spotify-clone.keeshigan.com/', // not hosted right now
 };

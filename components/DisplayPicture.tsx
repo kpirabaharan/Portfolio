@@ -1,30 +1,42 @@
 import Image, { type StaticImageData } from 'next/image';
 
+import { cn } from '@/lib/utils';
+
 interface DisplayPictureProps {
   src: string | StaticImageData;
+  alt: string;
+  className?: string;
 }
 
-const DisplayPicture = ({ src }: DisplayPictureProps) => {
+// Framed screenshot (or looping video) used on the project detail pages.
+const DisplayPicture = ({ src, alt, className }: DisplayPictureProps) => {
   return (
-    <div className='relative mx-auto mt-8 aspect-video w-[80%] overflow-visible'>
+    <div
+      className={cn(
+        'relative mx-auto aspect-video w-full overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10',
+        className,
+      )}
+    >
       {typeof src === 'string' ? (
         <video
-          className='h-full w-full object-cover'
+          className='size-full object-cover'
           muted
           loop
           autoPlay
+          playsInline
           controls
           disablePictureInPicture
+          aria-label={alt}
         >
           <source src={src} type='video/mp4' />
-          Your browser does not support the video tag.
         </video>
       ) : (
         <Image
-          className='relative bg-white object-contain'
+          className='object-contain'
           src={src}
-          alt='Project Picture'
+          alt={alt}
           fill
+          sizes='(min-width: 1280px) 1152px, 100vw'
         />
       )}
     </div>

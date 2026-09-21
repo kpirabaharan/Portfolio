@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence, motion, type Variants } from 'framer-motion';
+import { AnimatePresence, motion, type Variants } from 'motion/react';
 import { useEffect, useState } from 'react';
 
 import MagneticComponent from '@/hoc/MagneticComponent';
@@ -40,9 +40,9 @@ const FloatingNav = () => {
     };
   }, []);
 
-  const css = `before:block before:h-[2px] before:w-2/5 before:m-auto before:bg-slate-900 
+  const css = `before:block before:h-[2px] before:w-2/5 before:m-auto before:bg-background 
     before:relative before:transition before:duration-300 after:block 
-    after:h-[2px] after:w-2/5 after:m-auto after:bg-slate-900 after:relative 
+    after:h-[2px] after:w-2/5 after:m-auto after:bg-background after:relative 
     after:transition after:duration-300 before:top-[5px] after:-top-[5px] 
     content-none`;
 
@@ -65,14 +65,17 @@ const FloatingNav = () => {
           className='fixed right-0 z-30 m-6 cursor-pointer rounded-full md-height:m-10'
           modifier={{ x: 0.4, y: 0.4 }}
         >
-          <motion.div
+          <motion.button
+            type='button'
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
             onClick={isOpen ? onClose : onOpen}
             variants={floatingNavVariants}
             initial='initial'
             animate='enter'
             exit='exit'
             whileHover={{ scale: 1.15 }}
-            className='relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-white md-height:xl:h-24 md-height:xl:w-24'
+            className='relative flex h-16 w-16 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-foreground shadow-lg shadow-black/40 outline-offset-4 focus-visible:outline-2 focus-visible:outline-ring md-height:xl:h-24 md-height:xl:w-24'
             onMouseEnter={() => {
               setIsHovered(true);
             }}
@@ -82,8 +85,8 @@ const FloatingNav = () => {
           >
             <AnimatePresence>
               {isHovered && (
-                <motion.div
-                  className='pointer-events-none absolute left-0 top-0 h-full w-full rounded-full bg-teal-600'
+                <motion.span
+                  className='pointer-events-none absolute top-0 left-0 h-full w-full rounded-full bg-brand'
                   variants={buttonHover}
                   initial={'initial'}
                   animate={'enter'}
@@ -92,17 +95,17 @@ const FloatingNav = () => {
               )}
             </AnimatePresence>
             <MagneticComponent
-              className='absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-full'
+              className='absolute top-0 left-0 flex h-full w-full items-center justify-center rounded-full'
               modifier={{ x: 0.3, y: 0.3 }}
             >
-              <div
-                className={`w-full ${css} ${
+              <span
+                className={`block w-full ${css} ${
                   isOpen &&
                   'before:top-px before:-rotate-45 after:-top-px after:rotate-45'
                 }`}
               />
             </MagneticComponent>
-          </motion.div>
+          </motion.button>
         </MagneticComponent>
       )}
     </AnimatePresence>

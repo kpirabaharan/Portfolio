@@ -1,19 +1,21 @@
 'use client';
 
-import { useLayoutEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
-const useWindowSize = () => {
-  const [size, setSize] = useState([0, 0]);
+const subscribe = (onChange: () => void) => {
+  window.addEventListener('resize', onChange);
+  return () => window.removeEventListener('resize', onChange);
+};
 
-  useLayoutEffect(() => {
-    const updateSize = () => {
-      setSize([window.innerWidth, window.innerHeight]);
-    };
-    window.addEventListener('resize', updateSize);
-    updateSize();
-    return () => window.removeEventListener('resize', updateSize);
-  }, []);
-  return size;
+const getWidth = () => window.innerWidth;
+const getHeight = () => window.innerHeight;
+const getServerSize = () => 0;
+
+// [width, height] of the window; [0, 0] during server render and hydration.
+const useWindowSize = (): [number, number] => {
+  const width = useSyncExternalStore(subscribe, getWidth, getServerSize);
+  const height = useSyncExternalStore(subscribe, getHeight, getServerSize);
+  return [width, height];
 };
 
 export default useWindowSize;

@@ -1,9 +1,10 @@
-import { type Variants } from 'framer-motion';
+import { type Variants } from 'motion/react';
 
 type delay = number;
 type duration = number;
 type direction = '' | 'left' | 'right' | 'up' | 'down';
-type type = string;
+// '' keeps the call sites' positional style while meaning "motion's default".
+type type = 'spring' | 'tween' | 'inertia' | 'keyframes' | '';
 type staggerChildren = number;
 type delayChildren = number;
 
@@ -42,7 +43,7 @@ export const fadeIn = (
       y: 0,
       opacity: 1,
       transition: {
-        type,
+        type: type || undefined,
         delay,
         duration,
         ease: 'easeOut',
@@ -85,7 +86,7 @@ export const slideIn = (
       x: 0,
       y: 0,
       transition: {
-        type,
+        type: type || undefined,
         delay,
         duration,
         ease: 'easeOut',

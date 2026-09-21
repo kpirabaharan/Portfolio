@@ -1,5 +1,3 @@
-import studioDisplay from './studio-display.png';
-
 import cw from './company/cw.png';
 import ms from './company/ms.png';
 import opg from './company/opg.png';
@@ -127,11 +125,9 @@ export {
   solidworks,
   spotifyClone,
   springboot,
-  studioDisplay,
   supabase,
   tailwind,
   typescript,
   velocityvoyage,
-  western
+  western,
 };
-

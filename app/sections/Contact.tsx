@@ -1,22 +1,14 @@
-import { motion } from 'framer-motion';
-
 import SectionWrapper from '@/hoc/SectionWrapper';
-import { styles } from '@/lib/styles';
-import { textVariant } from '@/lib/transitions';
 
 import ContactCard from '@/components/ContactCard';
+import { SectionHeading } from '@/components/SectionHeading';
 
 const Contact = () => {
   return (
-    <div className='relative flex flex-col gap-y-8'>
-      <motion.h2
-        variants={textVariant()}
-        className={`${styles.sectionHead} uppercase`}
-      >
-        Contact
-      </motion.h2>
-      <ContactCard />
-    </div>
+    <>
+      <SectionHeading index='07' title='Get In Touch' />
+      <ContactCard className='mt-10' />
+    </>
   );
 };
 
