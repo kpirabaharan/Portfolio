@@ -14,7 +14,7 @@ import { navLinks } from '@/constants';
 
 const StandingNavbar = () => {
   const pathname = usePathname();
-  const { onOpen } = useNavModal();
+  const { isOpen, onOpen } = useNavModal();
   const { startSplash } = useSplash();
 
   return (
@@ -28,9 +28,10 @@ const StandingNavbar = () => {
         className='ml-auto flex cursor-pointer md:hidden'
         padding='p-4'
         side='left'
+        aria-expanded={isOpen}
         onClick={onOpen}
       >
-        <p>Menu</p>
+        Menu
       </NavLink>
 
       {/* DesktopNav */}
@@ -46,6 +47,7 @@ const StandingNavbar = () => {
                 side='bottom'
                 padding={'p-4'}
                 isPath={isPath}
+                href={href}
                 onClick={
                   pathname === href
                     ? () => {
@@ -56,7 +58,7 @@ const StandingNavbar = () => {
                       }
                 }
               >
-                <p>{title}</p>
+                {title}
               </NavLink>
             )
           );

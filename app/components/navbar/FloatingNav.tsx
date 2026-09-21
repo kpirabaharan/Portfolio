@@ -65,14 +65,17 @@ const FloatingNav = () => {
           className='fixed right-0 z-30 m-6 cursor-pointer rounded-full md-height:m-10'
           modifier={{ x: 0.4, y: 0.4 }}
         >
-          <motion.div
+          <motion.button
+            type='button'
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
             onClick={isOpen ? onClose : onOpen}
             variants={floatingNavVariants}
             initial='initial'
             animate='enter'
             exit='exit'
             whileHover={{ scale: 1.15 }}
-            className='relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-foreground shadow-lg shadow-black/40 md-height:xl:h-24 md-height:xl:w-24'
+            className='relative flex h-16 w-16 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-foreground shadow-lg shadow-black/40 outline-offset-4 focus-visible:outline-2 focus-visible:outline-ring md-height:xl:h-24 md-height:xl:w-24'
             onMouseEnter={() => {
               setIsHovered(true);
             }}
@@ -82,7 +85,7 @@ const FloatingNav = () => {
           >
             <AnimatePresence>
               {isHovered && (
-                <motion.div
+                <motion.span
                   className='pointer-events-none absolute top-0 left-0 h-full w-full rounded-full bg-brand'
                   variants={buttonHover}
                   initial={'initial'}
@@ -95,14 +98,14 @@ const FloatingNav = () => {
               className='absolute top-0 left-0 flex h-full w-full items-center justify-center rounded-full'
               modifier={{ x: 0.3, y: 0.3 }}
             >
-              <div
-                className={`w-full ${css} ${
+              <span
+                className={`block w-full ${css} ${
                   isOpen &&
                   'before:top-px before:-rotate-45 after:-top-px after:rotate-45'
                 }`}
               />
             </MagneticComponent>
-          </motion.div>
+          </motion.button>
         </MagneticComponent>
       )}
     </AnimatePresence>

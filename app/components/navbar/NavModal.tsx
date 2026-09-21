@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from 'motion/react';
 import { usePathname } from 'next/navigation';
+import { useEffect, useRef } from 'react';
 
 import useNavModal from '@/hooks/useNavModal';
 import useSplash from '@/hooks/useSplash';
@@ -26,6 +27,26 @@ export const NavModal = () => {
   const [width, height] = useWindowSize();
   const { isOpen, onClose } = useNavModal();
   const { startSplash } = useSplash();
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  // Keyboard support: focus moves into the menu, Escape closes it, and focus
+  // returns to whatever opened it.
+  useEffect(() => {
+    if (!isOpen) return;
+    const trigger = document.activeElement as HTMLElement | null;
+    panelRef.current
+      ?.querySelector<HTMLElement>('a[href]')
+      ?.focus({ preventScroll: true });
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+      trigger?.focus({ preventScroll: true });
+    };
+  }, [isOpen, onClose]);
 
   const animate = width > 1280 ? 'xl' : width > 1024 ? 'lg' : 'base';
 
@@ -41,6 +62,7 @@ export const NavModal = () => {
           className='fixed z-20 h-screen w-full overflow-hidden transition duration-500'
         >
           <motion.div
+            ref={panelRef}
             onClick={e => {
               e.stopPropagation();
             }}
@@ -67,7 +89,7 @@ export const NavModal = () => {
                   <Separator className='bg-muted-foreground' />
                 </div>
 
-                <div className='flex flex-col gap-y-2'>
+                <nav aria-label='Site' className='flex flex-col gap-y-2'>
                   {navLinks.map((link, index) => {
                     const isPath = pathname === link.href;
                     const { title, href } = link;
@@ -77,6 +99,7 @@ export const NavModal = () => {
                         key={index}
                         index={index}
                         isPath={isPath}
+                        href={href}
                         onClick={() => {
                           onClose();
                           if (pathname === href) {
@@ -88,18 +111,18 @@ export const NavModal = () => {
                         size={width > 1024 ? 'large' : 'small'}
                         side='left'
                       >
-                        <motion.p
+                        <motion.span
                           initial='initial'
                           animate={animate}
                           variants={linkVariants(width)}
-                          className='lg-[4rem] xl-[5rem] text-[2rem]'
+                          className='block text-[2rem]'
                         >
                           {title}
-                        </motion.p>
+                        </motion.span>
                       </NavLink>
                     );
                   })}
-                </div>
+                </nav>
                 <div className='mt-4 flex flex-col gap-y-4'>
                   <p className='font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase'>
                     Socials

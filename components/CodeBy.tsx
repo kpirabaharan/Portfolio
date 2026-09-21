@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 import useSplash from '@/hooks/useSplash';
+import { isModifiedClick } from '@/lib/utils';
 
 export const CodeBy = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -24,6 +25,7 @@ export const CodeBy = () => {
       href='/'
       className='group flex cursor-pointer gap-x-1 p-3'
       onClick={e => {
+        if (isModifiedClick(e)) return;
         e.preventDefault();
         // Same transitions as the navbar: reload on home, splash elsewhere.
         if (pathname === '/') window.location.reload();
