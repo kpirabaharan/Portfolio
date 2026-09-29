@@ -35,12 +35,6 @@ const About = () => {
             <Highlight>scalable solutions</Highlight> that address real-world
             challenges.
           </motion.p>
-          <motion.p
-            variants={fadeIn('', '', 0.2, 1)}
-            className='max-w-3xl text-lg text-primary md:text-xl lg:text-2xl'
-          >
-            I am actively seeking opportunities in software development.
-          </motion.p>
         </div>
         <motion.div
           variants={fadeIn('', '', 0.2, 1)}

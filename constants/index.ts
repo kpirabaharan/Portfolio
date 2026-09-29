@@ -1,6 +1,7 @@
 import {
   additivemanufacturing,
   aisaas,
+  amd,
   android,
   arduino,
   aws,
@@ -89,12 +90,38 @@ export const heroSubHeading = [
 
 export const experiences: ExperienceType[] = [
   {
+    title: 'Senior Software Developer',
+    companyName: 'AMD',
+    location: 'Markham, ON',
+    icon: amd,
+    iconBg: '#000000',
+    date: 'January 2026 - Present',
+    points: [
+      `Lead AI-enabled debug and triage workflows, architecting web tooling that routes defects to the correct component owners and speeds up resolution`,
+      `Architected and deployed a ReAct-based AI debug-automation agent as a containerized, load-balanced microservice on a dedicated production Kubernetes cluster, improving scalability and system reliability`,
+      `Re-architected inference from a per-request CPU pipeline (~30s) to a dedicated MI325X GPU service, cutting latency to <0.5s and scaling to 30 concurrent requests across 2 GPUs`,
+      `Integrated third-party debugging and regression-testing agent services into the platform via multi-stage production Dockerfiles, automated test coverage, and isolated per-service database schemas/roles with dedicated health checks to secure cross-service data`,
+    ],
+  },
+  {
+    title: 'Software Developer II (Contract)',
+    companyName: 'AMD',
+    location: 'Markham, ON',
+    icon: amd,
+    iconBg: '#000000',
+    date: 'May 2025 - December 2025',
+    points: [
+      `Built AI-enabled workflows and web tools to automate debug and defect triage, routing issues to the correct component owners`,
+      `Sole maintainer of project infrastructure — built CI/CD with GitHub Actions and self-hosted runners, automated testing and health-check monitoring`,
+    ],
+  },
+  {
     title: 'Software Development Engineer II',
     companyName: 'Curtiss-Wright',
     location: 'Ottawa, ON',
     icon: cw,
     iconBg: '#e51938',
-    date: 'June 2023 - Present',
+    date: 'June 2023 - April 2025',
     points: [
       `Developed and deployed production ready full-stack applications using React, Redux, React
       Query and Nest.js, improving system performance and reducing load times by 20%`,

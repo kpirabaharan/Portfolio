@@ -1,3 +1,4 @@
+import amd from './company/amd.png';
 import cw from './company/cw.png';
 import ms from './company/ms.png';
 import opg from './company/opg.png';
@@ -72,6 +73,7 @@ import me from './me.jpeg';
 export {
   additivemanufacturing,
   aisaas,
+  amd,
   android,
   arduino,
   aws,
